@@ -1,6 +1,6 @@
 package models;
 
-import model.Estacion;
+import models.Estacion;
 /**
  * Created by gusal on 13/08/2015.
  */

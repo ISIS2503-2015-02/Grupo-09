@@ -3,6 +3,13 @@ package models;
 /**
  * Created by gusal on 13/08/2015.
  */
+
+
+
+import javax.persistence.*;
+
+
+@Entity
 public class Estacion
 {
     private String idEstacion;
@@ -13,8 +20,7 @@ public class Estacion
 
 
 
-
-    public Cvubs( String idEstacion, String nombreEstacion, String ubicacion )
+    public Estacion( String idEstacion, String nombreEstacion, String ubicacion )
     {
         this.idEstacion = idEstacion;
         this.nombreEstacion = nombreEstacion;
@@ -41,9 +47,9 @@ public class Estacion
         this.nombreEstacion = nombreEstacion;
     }
 
-    public Estacion getUbicacion( )
+    public String getUbicacion( )
     {
-        return ubicacion
+        return ubicacion;
     }
 
     public void setUbicacion(String ubicacion)

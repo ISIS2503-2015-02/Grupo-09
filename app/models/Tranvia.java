@@ -4,6 +4,8 @@ package models;
  * Created by gusal on 13/08/2015.
  */
 
+import javax.persistence.*;
+
 @Entity
 public class Tranvia
 {
@@ -33,7 +35,7 @@ public class Tranvia
      */
     public String getId( )
     {
-        return id;
+        return idTranvia;
     }
 
     /**
