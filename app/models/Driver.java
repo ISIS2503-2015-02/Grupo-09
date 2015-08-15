@@ -1,11 +1,5 @@
 package models;
 
-<<<<<<< HEAD
-/**
- * Created by gusal on 15/08/2015.
- */
-public class Driver {
-=======
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -103,5 +97,4 @@ public class Driver extends Model {
 
         return driver;
     }
->>>>>>> origin/master
 }
