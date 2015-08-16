@@ -21,7 +21,7 @@ GET         /                       controllers.Application.index()
 #Obtener todos los conductores
 GET        /conductor                 controllers.DriverController.read()
 #Crear nuevo conductor
-POST       /conductor                 controllers.DriverController.read()
+POST       /conductor                 controllers.DriverController.create()
 
 
 #######################################################################  USUARIOS ################
@@ -52,20 +52,20 @@ GET        /mobibuses/:id
 POST        /mobibuses
 #Modificar datos de un mobibus
 PUT        /mobibuses/:id
-#Enviar los datos del mobibus (GPS, hora…)
+#Enviar los datos del mobibus (GPS, horaï¿½)
 POST        /mobibuses/:id/datos
-#Obtener los datos registrados del mobibus (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
+#Obtener los datos registrados del mobibus (a travï¿½s del path param se podrï¿½a indicar si traer sï¿½lo el ï¿½ltimo dato, los n ï¿½ltimos datos, o la hora especï¿½fica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
 
 
-#Registrar una revisión tecnomecánica
+#Registrar una revisiï¿½n tecnomecï¿½nica
 POST        /mobibuses/:id/revisiones
-#Obtener las revisiones tecnomecánicas del vehículo
+#Obtener las revisiones tecnomecï¿½nicas del vehï¿½culo
 GET        /mobibuses/:id/revisiones
-#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
+#Registrar el inicio de un trayecto o ruta (con la hora, informaciï¿½n del conductor y Ruta esperada)
 POST        /mobibuses/:id/trayectos
 #Modificar el registro para poner la hora final del trayecto
 PUT        /mobibuses/:id/trayectos/:id2
-#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
+#Obtener los trayectos de un tranvï¿½a (Para obtener tiempos de conductores y percances
 GET        /mobibuses/:id/trayectos/
 
 
@@ -78,19 +78,19 @@ GET        /tranvias/:id
 POST        /tranvias
 #Modificar datos de un tranvias
 PUT        /tranvias/:id
-#Enviar los datos del tranvias (GPS, hora…)
+#Enviar los datos del tranvias (GPS, horaï¿½)
 POST        /tranvias/:id/datos
-#Obtener los datos registrados del tranvias (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
+#Obtener los datos registrados del tranvias (a travï¿½s del path param se podrï¿½a indicar si traer sï¿½lo el ï¿½ltimo dato, los n ï¿½ltimos datos, o la hora especï¿½fica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
 
-#Registrar una revisión tecnomecánica
+#Registrar una revisiï¿½n tecnomecï¿½nica
 POST        /tranvias/:id/revisiones
-#Obtener las revisiones tecnomecánicas del vehículo
+#Obtener las revisiones tecnomecï¿½nicas del vehï¿½culo
 GET        /tranvias/:id/revisiones
-#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
+#Registrar el inicio de un trayecto o ruta (con la hora, informaciï¿½n del conductor y Ruta esperada)
 POST        /tranvias/:id/trayectos
 #Modificar el registro para poner la hora final del trayecto
 PUT        /tranvias/:id/trayectos/:id2
-#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
+#Obtener los trayectos de un tranvï¿½a (Para obtener tiempos de conductores y percances
 GET        /tranvias/:id/trayectos/
 
 
@@ -104,19 +104,19 @@ GET        /vcubs/:id
 POST        /vcubs
 #Modificar datos de un vcubs
 PUT        /vcubs/:id
-#Enviar los datos del vcubs (GPS, hora…)
+#Enviar los datos del vcubs (GPS, horaï¿½)
 GET        /vcubs
-#Obtener los datos registrados del vcubs (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)
+#Obtener los datos registrados del vcubs (a travï¿½s del path param se podrï¿½a indicar si traer sï¿½lo el ï¿½ltimo dato, los n ï¿½ltimos datos, o la hora especï¿½fica de la que se quieren conocer los datos)
 
-#Registrar una revisión tecnomecánica
+#Registrar una revisiï¿½n tecnomecï¿½nica
 POST        /vcubs/:id/revisiones
-#Obtener las revisiones tecnomecánicas del vehículo
+#Obtener las revisiones tecnomecï¿½nicas del vehï¿½culo
 GET        /vcubs/:id/revisiones
-#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
+#Registrar el inicio de un trayecto o ruta (con la hora, informaciï¿½n del conductor y Ruta esperada)
 POST        /vcubs/:id/trayectos
 #Modificar el registro para poner la hora final del trayecto
 PUT        /vcubs/:id/trayectos/:id2
-#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
+#Obtener los trayectos de un tranvï¿½a (Para obtener tiempos de conductores y percances
 GET        /vcubs/:id/trayectos/
 
 
@@ -129,17 +129,17 @@ POST        /trayectos
 #ESTACIONES
 #Obtener todas las estaciones del sistema
 GET     /estaciones
-#Obtener los datos de una estación
+#Obtener los datos de una estaciï¿½n
 GET     /estaciones/:id
-#Registrar una nueva estación
+#Registrar una nueva estaciï¿½n
 POST     /estaciones
-#Modificar datos de una estación
+#Modificar datos de una estaciï¿½n
 PUT     /estaciones/:id
-#Obtener las bicicletas que se encuentran en una estación
+#Obtener las bicicletas que se encuentran en una estaciï¿½n
 GET     /estaciones/:id/bicicletas
-#Prestar una bicicleta en una estación
+#Prestar una bicicleta en una estaciï¿½n
 DELETE     /estaciones/:id/bicicletas/:id2
-#Entregar una bicicleta en una estación
+#Entregar una bicicleta en una estaciï¿½n
 POST     /estaciones/:id/bicicletas
 
 

@@ -2,6 +2,8 @@ package models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import com.avaje.ebean.Model;
 import models.*;
 import java.io.*;
 
@@ -10,7 +12,7 @@ import java.io.*;
  */
 
 
-public class Tranvia
+public class Tranvia extends Model
 {
     @Id
     private String idTranvia;
