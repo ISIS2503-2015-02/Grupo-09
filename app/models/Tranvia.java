@@ -1,12 +1,15 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import models.*;
+import java.io.*;
+
 /**
  * Created by gusal on 13/08/2015.
  */
 
-import javax.persistence.*;
 
-@Entity
 public class Tranvia
 {
     @Id
@@ -16,7 +19,7 @@ public class Tranvia
 
     private String estado;
 
-    private Emergencia magnitudEmergencia; // Si est· en nivel 0 quiere decir que no hay emergencia, manejemoslo de 0 a 5.
+    private Emergencia magnitudEmergencia; // Si est√° en nivel 0 quiere decir que no hay emergencia, manejemoslo de 0 a 5.
 
     private Driver conductor;
 
@@ -30,7 +33,7 @@ public class Tranvia
     }
 
     /**
-     * Metodo que retorna el id del tranvÌa
+     * Metodo que retorna el id del tranv√≠a
      * @return idTranvia
      */
     public String getId( )
@@ -39,7 +42,7 @@ public class Tranvia
     }
 
     /**
-     * MÈtodo que registra el id del tranvÌa
+     * M√©todo que registra el id del tranv√≠a
      * @param idTranvia
      */
     public void setId(String idTranvia)
@@ -48,7 +51,7 @@ public class Tranvia
     }
 
     /**
-     * Metodo que retorna la lÌnea en la que transita el tranvÌa
+     * Metodo que retorna la l√≠nea en la que transita el tranv√≠a
      * @return linea
      */
     public Linea getLinea( )
@@ -57,7 +60,7 @@ public class Tranvia
     }
 
     /**
-     * MÈtodo que registra la lÌnea en la que transita el tranvÌa
+     * M√©todo que registra la l√≠nea en la que transita el tranv√≠a
      * @param linea
      */
     public void setLinea(Linea linea)
@@ -66,7 +69,7 @@ public class Tranvia
     }
 
     /**
-     * Metodo que retorna el estado en el que se encuentra el tranvÌa
+     * Metodo que retorna el estado en el que se encuentra el tranv√≠a
      * @return estado
      */
     public String getEstado( )
@@ -75,7 +78,7 @@ public class Tranvia
     }
 
     /**
-     * MÈtodo que registra el estado en el que est· el tranvÌa
+     * M√©todo que registra el estado en el que est√° el tranv√≠a
      * @param estado
      */
     public void setEstado(String estado)
@@ -84,7 +87,7 @@ public class Tranvia
     }
 
     /**
-     * Metodo que retorna la magnitud de la emergencia en la que est· el tranvÌa
+     * Metodo que retorna la magnitud de la emergencia en la que est√° el tranv√≠a
      * @return magnitudEmergencia
      */
     public Emergencia getEmergencia( )
@@ -93,7 +96,7 @@ public class Tranvia
     }
 
     /**
-     * MÈtodo que registra la magnitud de la emergencia en la que est· el tranvÌa
+     * M√©todo que registra la magnitud de la emergencia en la que est√° el tranv√≠a
      * @param magnitudEmergencia
      */
     public void setLinea(Emergencia magnitudEmergencia)
@@ -102,7 +105,7 @@ public class Tranvia
     }
 
     /**
-     * Metodo que retorna al conductor del tranvÌa
+     * Metodo que retorna al conductor del tranv√≠a
      * @return conductor
      */
     public Driver getDriver( )
@@ -111,7 +114,7 @@ public class Tranvia
     }
 
     /**
-     * MÈtodo que registra al conductor del tranvÌa
+     * M√©todo que registra al conductor del tranv√≠a
      * @param conductor
      */
     public void setDriver(Driver conductor)

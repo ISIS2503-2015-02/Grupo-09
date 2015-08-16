@@ -3,9 +3,13 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import javax.persistence.Entity;
+
 /**
  * Created by USER on 14/08/2015.
  */
+
+@Entity
 public class Driver extends Model {
 
     //----------------------------------
@@ -39,7 +43,7 @@ public class Driver extends Model {
     }
 
     //----------------------------------
-    // Métodos
+    // MÃ©todos
     //----------------------------------
 
     public String getFullName(){
@@ -83,7 +87,7 @@ public class Driver extends Model {
     }
 
     //-------------------------------------------------
-    // Métodos auxiliares
+    // MÃ©todos auxiliares
     //-------------------------------------------------
 
     public static Driver bind (JsonNode j){

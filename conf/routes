@@ -17,24 +17,132 @@ GET         /                       controllers.Application.index()
 #
 ########################################################################################################################
 
+######################################################### CONDUCTORES #######################################
+#Obtener todos los conductores
+GET        /conductor                 controllers.DriverController.read()
+#Crear nuevo conductor
+POST       /conductor                 controllers.DriverController.read()
 
-POST        /ciudad                 controllers.CiudadController.create()
 
-GET         /ciudad                 controllers.CiudadController.read()
+#######################################################################  USUARIOS ################
+#Obtener todos los usuarios
+GET        /usuarios                 controllers.DriverController.read()
+#Obtener los datos de un usuario
+GET        /usuarios/:id             controllers.DriverController.read()
+#Registrar un nuevo usuario
+POST       /usuarios
+#Modificar datos de un usuario
+PUT	/usuarios/:id
+#Obtener reservas de un usuario
+GET        /usuarios/:id/reservas
+#Crear una reserva
+POST        /usuarios/:id/reservas
+#Modificar una reserva
+PUT        /usuarios/:id/reservas/:id2
+#Eliminar una reserva
+DELETE        /usuarios/:id/reservas/:id2
 
-POST        /experiencia            controllers.ExperienciaVendedorController.create()
 
-GET         /experiencia            controllers.ExperienciaVendedorController.read()
+################################################################   MOBIBUSES  ############################################
+#Obtener todos los mobibuses del sistema
+GET        /mobibuses
+#Obtener los datos de un mobibus
+GET        /mobibuses/:id
+#Registrar un nuevo mobibus
+POST        /mobibuses
+#Modificar datos de un mobibus
+PUT        /mobibuses/:id
+#Enviar los datos del mobibus (GPS, hora…)
+POST        /mobibuses/:id/datos
+#Obtener los datos registrados del mobibus (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
 
-GET         /experiencia/:id        controllers.ExperienciaVendedorController.get(id : Long)
 
-PUT         /experiencia/:id        controllers.ExperienciaVendedorController.update(id : Long)
+#Registrar una revisión tecnomecánica
+POST        /mobibuses/:id/revisiones
+#Obtener las revisiones tecnomecánicas del vehículo
+GET        /mobibuses/:id/revisiones
+#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
+POST        /mobibuses/:id/trayectos
+#Modificar el registro para poner la hora final del trayecto
+PUT        /mobibuses/:id/trayectos/:id2
+#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
+GET        /mobibuses/:id/trayectos/
 
-POST        /mueble                 controllers.MuebleController.create()
 
-GET         /mueble                 controllers.MuebleController.read()
+#####################################################################  TRANVIAS  #######################
+#Obtener todos los tranvias del sistema
+GET        /tranvias
+#Obtener los datos de un tranvia
+GET        /tranvias/:id
+#Registrar un nuevo tranvias
+POST        /tranvias
+#Modificar datos de un tranvias
+PUT        /tranvias/:id
+#Enviar los datos del tranvias (GPS, hora…)
+POST        /tranvias/:id/datos
+#Obtener los datos registrados del tranvias (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
 
-GET         /usuario                controllers.UsuarioController.read()
+#Registrar una revisión tecnomecánica
+POST        /tranvias/:id/revisiones
+#Obtener las revisiones tecnomecánicas del vehículo
+GET        /tranvias/:id/revisiones
+#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
+POST        /tranvias/:id/trayectos
+#Modificar el registro para poner la hora final del trayecto
+PUT        /tranvias/:id/trayectos/:id2
+#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
+GET        /tranvias/:id/trayectos/
+
+
+
+#########################################################  VCUBS #######################################
+#Obtener todos los vcubs del sistema
+GET        /vcubs
+#Obtener los datos de un vcubs
+GET        /vcubs/:id
+#Registrar un nuevo vcubs
+POST        /vcubs
+#Modificar datos de un vcubs
+PUT        /vcubs/:id
+#Enviar los datos del vcubs (GPS, hora…)
+GET        /vcubs
+#Obtener los datos registrados del vcubs (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)
+
+#Registrar una revisión tecnomecánica
+POST        /vcubs/:id/revisiones
+#Obtener las revisiones tecnomecánicas del vehículo
+GET        /vcubs/:id/revisiones
+#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
+POST        /vcubs/:id/trayectos
+#Modificar el registro para poner la hora final del trayecto
+PUT        /vcubs/:id/trayectos/:id2
+#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
+GET        /vcubs/:id/trayectos/
+
+
+
+#TRAYECTOS
+GET        /trayectos
+POST        /trayectos
+
+
+#ESTACIONES
+#Obtener todas las estaciones del sistema
+GET     /estaciones
+#Obtener los datos de una estación
+GET     /estaciones/:id
+#Registrar una nueva estación
+POST     /estaciones
+#Modificar datos de una estación
+PUT     /estaciones/:id
+#Obtener las bicicletas que se encuentran en una estación
+GET     /estaciones/:id/bicicletas
+#Prestar una bicicleta en una estación
+DELETE     /estaciones/:id/bicicletas/:id2
+#Entregar una bicicleta en una estación
+POST     /estaciones/:id/bicicletas
+
+
 
 
 
