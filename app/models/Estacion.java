@@ -18,13 +18,16 @@ public class Estacion
 
     private String ubicacion;
 
+    private int capacidadEstacion;
 
 
-    public Estacion( String idEstacion, String nombreEstacion, String ubicacion )
+
+    public Estacion( String idEstacion, String nombreEstacion, String ubicacion, int capacidadEstacion )
     {
         this.idEstacion = idEstacion;
         this.nombreEstacion = nombreEstacion;
         this.ubicacion = ubicacion;
+        this.capacidadEstacion=capacidadEstacion;
     }
 
     public String getIdEstacion()
@@ -55,5 +58,15 @@ public class Estacion
     public void setUbicacion(String ubicacion)
     {
         this.ubicacion = ubicacion;
+    }
+
+    public int getCapacidadEstacion()
+    {
+        return capacidadEstacion;
+    }
+
+    public void setCapacidadEstacion(int capacidadEstacion)
+    {
+        this.capacidadEstacion = capacidadEstacion;
     }
 }
