@@ -30,7 +30,7 @@ GET        /usuarios                 controllers.DriverController.read()
 #Obtener los datos de un usuario
 GET        /usuarios/:id             controllers.DriverController.read()
 #Registrar un nuevo usuario
-POST       /usuarios
+POST       /usuarios                controllers.UserController.registrar()
 #Modificar datos de un usuario
 PUT	/usuarios/:id
 #Obtener reservas de un usuario
