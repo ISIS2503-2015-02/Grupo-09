@@ -6,7 +6,6 @@ import models.Driver;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
-import play.mvc.Controller;
 import play.mvc.Result;
 
 import java.util.List;

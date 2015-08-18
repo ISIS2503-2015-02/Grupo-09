@@ -1,21 +1,47 @@
 package models;
 
+import com.avaje.ebean.Model;
+
 /**
  * Created by gusal on 13/08/2015.
  */
-public class MoviBus {
+public class MoviBus extends Model
+{
 
-    //----------------------------------
-    // Atributos
-    //----------------------------------
+    //---------------------------------------------------------------------------------------------
+    // Constants
+    //---------------------------------------------------------------------------------------------
 
-    private String posicion;
+    public final static String RESERVADO = "Reservado";
+    public final static String EN_USO = "En uso";
+    public final static String DISPONIBLE = "Disponible";
 
-    private String getPosicionstado;
+    //---------------------------------------------------------------------------------------------
+    // Attributes
+    //---------------------------------------------------------------------------------------------
 
-    private String conductor;
+    private String position;
 
-    private String estado;
+    private String busState;
+
+    private String driverName;
+
+    /**
+     * Either is reserved, on use, or available
+     */
+    private String actualState;
+
+    public MoviBus(){
+
+    }
+
+    public MoviBus(String position, String busState, String driverName){
+        this.position = position;
+        this.busState = busState;
+        this.driverName = driverName;
+        this.actualState = DISPONIBLE;
+    }
+
 
 
 }
