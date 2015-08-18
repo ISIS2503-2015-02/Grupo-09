@@ -126,11 +126,11 @@ GET        /trayectos
 POST        /trayectos
 
 
-#ESTACIONES
+################################################################### ESTACIONES #############################################################
 #Obtener todas las estaciones del sistema
-GET     /estaciones
+GET     /estaciones             controllers.EstacionController.read()
 #Obtener los datos de una estaci�n
-GET     /estaciones/:id
+GET     /estaciones/:id         controllers.EstacionController.read(id: String)
 #Registrar una nueva estaci�n
 POST     /estaciones
 #Modificar datos de una estaci�n
