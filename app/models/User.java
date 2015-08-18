@@ -39,9 +39,9 @@ public class User extends Model {
 
     }
 
-    public User(String userID, String fullName, String document, String address, long phoneNumber,
+    public User(String fullName, String document, String address, long phoneNumber,
                 long cellphone, String email){
-        this.userID = userID;
+
         this.fullName = fullName;
         this.document = document;
         this.address = address;
@@ -123,7 +123,6 @@ public class User extends Model {
     //public User(String fullName, String document, String address, long phoneNumber, long cellphone, String email){
     public static User bind(JsonNode j){
 
-        String userID = j.findPath("userID").asText();
         String fullName = j.findPath("fullName").asText();
         String document = j.findPath("document").asText();
         String address = j.findPath("address").asText();
@@ -131,8 +130,20 @@ public class User extends Model {
         long cellphone = j.findPath("cellphone").asLong();
         String email = j.findPath("email").asText();
 
-        User user = new User(userID,fullName,document,address,phoneNumber,cellphone,email);
+        User user = new User(fullName,document,address,phoneNumber,cellphone,email);
 
         return user;
+    }
+
+    public User update(JsonNode j) {
+
+        fullName = j.findPath("fullName").asText();
+        document = j.findPath("document").asText();
+        address = j.findPath("address").asText();
+        phoneNumber = j.findPath("phoneNumber").asLong();
+        cellphone = j.findPath("cellphone").asLong();
+        email = j.findPath("email").asText();
+
+        return this;
     }
 }
