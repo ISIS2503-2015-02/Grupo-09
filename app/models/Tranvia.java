@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.databind.JsonNode;
 import models.*;
 import java.io.*;
 
@@ -11,7 +12,7 @@ import java.io.*;
  * Created by gusal on 13/08/2015.
  */
 
-
+@Entity
 public class Tranvia extends Model
 {
     @Id
@@ -25,9 +26,8 @@ public class Tranvia extends Model
 
     private Driver conductor;
 
-    public Tranvia( String idTranvia, Linea linea, String estado, Emergencia magnitudEmergencia, Driver conductor )
+    public Tranvia(Linea linea, String estado, Emergencia magnitudEmergencia, Driver conductor )
     {
-        this.idTranvia = idTranvia;
         this.linea = linea;
         this.estado = estado;
         this.magnitudEmergencia = magnitudEmergencia;
@@ -122,6 +122,39 @@ public class Tranvia extends Model
     public void setDriver(Driver conductor)
     {
         this.conductor = conductor;
+    }
+
+    /**
+     * Mapea la información obtenida del Json a una instancia de este objeto
+     */
+    public static Tranvia bind(JsonNode j) {
+
+        Linea lineaJs = Linea.forValue(j.findParent("linea").asText());
+
+        String estadoJs = j.findPath(("estado")).asText();
+
+        String idConductor = j.findPath("idConductor").asText();
+
+        Driver driverJs = (Driver) new Model.Finder(Driver.class).byId(idConductor);
+
+        Tranvia t = new Tranvia(lineaJs, estadoJs, null, driverJs);
+
+        return t;
+
+    }
+
+    public Tranvia update(JsonNode j) {
+
+        linea = Linea.forValue(j.findParent("linea").asText());
+
+        estado = j.findPath(("estado")).asText();
+
+        String idConductor = j.findPath("idConductor").asText();
+
+        conductor = (Driver) new Model.Finder(Driver.class).byId(idConductor);
+
+
+        return this;
     }
 
 
