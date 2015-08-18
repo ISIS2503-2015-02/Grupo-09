@@ -1,5 +1,7 @@
 package models;
 
+import play.db.ebean.Model;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -9,7 +11,7 @@ import java.util.Date;
  * Created by bdrangel10 on 17/08/2015.
  */
 @Entity
-public class Vehiculo {
+public class Vehiculo extends Model {
 
     public final static int EN_MARCHA=1;
 
