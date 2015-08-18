@@ -25,7 +25,9 @@ public class UserController extends Controller{
         JsonNode j = Controller.request().body().asJson();
         User user = User.bind(j);
         user.save();
-        return ok(Json.toJson(user));
+
+        User lastUser = (User) new Model.Finder(User.class).byId(user.getUserID());
+        return ok(Json.toJson(lastUser));
     }
 
     public Result read() {
@@ -33,13 +35,15 @@ public class UserController extends Controller{
         return ok(Json.toJson(users));
     }
 
-    public Result registrar()
+    public Result modify(String id)
     {
         JsonNode j = Controller.request().body().asJson();
-        User user = User.bind(j);
-        user.save();
+        User lastUser = (User) new Model.Finder(User.class).byId(id);
 
-        User lastUser = (User) new Model.Finder(User.class).byId(user.getUserID());
-        return ok("Dato ingresado correctamente:\n"+Json.toJson(lastUser));
+        lastUser.update(j);
+        lastUser.save();
+
+        lastUser = (User) new Model.Finder(User.class).byId(id);
+        return ok(Json.toJson(lastUser));
     }
 }

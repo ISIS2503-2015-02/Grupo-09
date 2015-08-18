@@ -26,13 +26,13 @@ POST       /conductor                 controllers.DriverController.create()
 
 #######################################################################  USUARIOS ################
 #Obtener todos los usuarios
-GET        /usuarios                 controllers.DriverController.read()
+GET        /usuarios                 controllers.UserController.read()
 #Obtener los datos de un usuario
 GET        /usuarios/:id             controllers.DriverController.read()
 #Registrar un nuevo usuario
-POST       /usuarios                controllers.UserController.registrar()
+POST       /usuarios                 controllers.UserController.create()
 #Modificar datos de un usuario
-PUT	/usuarios/:id
+PUT	/usuarios/{id}                   controllers.UserController.modify()
 #Obtener reservas de un usuario
 GET        /usuarios/:id/reservas
 #Crear una reserva
