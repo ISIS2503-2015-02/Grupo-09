@@ -97,13 +97,13 @@ GET        /tranvias/:id/trayectos/
 
 #########################################################  VCUBS #######################################
 #Obtener todos los vcubs del sistema
-GET        /vcubs
+GET        /vcubs                   controllers.VcubController.read()
 #Obtener los datos de un vcubs
-GET        /vcubs/:id
+GET        /vcubs/:id               controllers.VcubController.read(id: String)
 #Registrar un nuevo vcubs
-POST        /vcubs
+POST        /vcubs                  controllers.VcubController.create()
 #Modificar datos de un vcubs
-PUT        /vcubs/:id
+PUT        /vcubs/:id               controllers.VcubController.modify(id: String)
 #Enviar los datos del vcubs (GPS, hora�)
 GET        /vcubs
 #Obtener los datos registrados del vcubs (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)

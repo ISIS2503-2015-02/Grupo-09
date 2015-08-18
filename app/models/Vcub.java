@@ -33,9 +33,8 @@ public class Vcub extends Model
 
     }
 
-    public Vcub(String idCvub, String estado, Estacion estacion)
+    public Vcub(String estado, Estacion estacion)
     {
-        this.idVcub = idCvub;
         this.estado = estado;
         this.estacion = estacion;
     }
@@ -77,12 +76,22 @@ public class Vcub extends Model
     //public Vcub(String idCvub, String estado, Estacion estacion)
 
     public static Vcub bind (JsonNode j){
-        String idVcub = j.findPath("idVcub").asText();
-        String estado = j.findPath("estado").asText();
-        String estacion = j.findPath("estacion").asText();
+        String estadoJs = j.findPath("estado").asText();
+        String estacionJs = j.findPath("estacion").asText();
 
-        Vcub vcub = new Vcub();
+        Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(estacionJs);
+
+        Vcub vcub = new Vcub(estadoJs, estacion);
 
         return vcub;
+    }
+
+    public Vcub update(JsonNode j){
+        estado = j.findPath("estado").asText();
+        String estacionId = j.findPath("estacion").asText();
+
+        estacion = (Estacion) new Model.Finder(Estacion.class).byId(estacionId);
+
+        return this;
     }
 }
