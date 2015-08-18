@@ -35,6 +35,14 @@ public class UserController extends Controller{
         return ok(Json.toJson(users));
     }
 
+    public Result read(String id) {
+        User u = (User) new Model.Finder(User.class).byId(id);
+        if(u != null) {
+            return ok(Json.toJson(u));
+        }
+        return notFound();
+    }
+
     public Result modify(String id)
     {
         JsonNode j = Controller.request().body().asJson();

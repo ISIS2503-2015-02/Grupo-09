@@ -28,7 +28,7 @@ POST       /conductor                 controllers.DriverController.create()
 #Obtener todos los usuarios
 GET        /usuarios                 controllers.UserController.read()
 #Obtener los datos de un usuario
-GET        /usuarios/:id             controllers.DriverController.read()
+GET        /usuarios/{id}             controllers.UserController.read()
 #Registrar un nuevo usuario
 POST       /usuarios                 controllers.UserController.create()
 #Modificar datos de un usuario

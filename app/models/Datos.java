@@ -19,17 +19,17 @@ public class Datos
     @Id
     private String id;
 
-    private String GPS_altitud;
+    private String gpsAltitud;
 
-    private String GPS_latitud;
+    private String gpsLatitud;
 
-    private Date hora_medicion;
+    private Date horaMedicion;
 
-    private boolean sensor_choque;
+    private boolean sensorChoque;
 
-    private double sensor_termino;
+    private double sensorTermico;
 
-    private boolean boton_panico;
+    private boolean botonPanico;
 
     private double kilometraje;
 
@@ -37,40 +37,40 @@ public class Datos
 
     private Tranvia tranvia;
 
-    private int tipo_Vehiculo;
+    private int tipoVehiculo;
 
-    public Datos(String id, String GPS_altitud, String GPS_latitud, Date hora_medicion, boolean sensor_choque,
-                 double sensor_termino, boolean boton_panico, double kilometraje,  MoviBus moviBus)
+    public Datos(String id, String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque,
+                 double sensorTermico, boolean botonPanico, double kilometraje,  MoviBus moviBus)
     {
         this.id = id;
-        this.GPS_altitud = GPS_altitud;
-        this.GPS_latitud = GPS_latitud;
-        this.hora_medicion = hora_medicion;
-        this.sensor_choque = sensor_choque;
-        this.sensor_termino = sensor_termino;
-        this.boton_panico = boton_panico;
+        this.gpsAltitud = gpsAltitud;
+        this.gpsLatitud = gpsLatitud;
+        this.horaMedicion = horaMedicion;
+        this.sensorChoque = sensorChoque;
+        this.sensorTermico = sensorTermico;
+        this.botonPanico = botonPanico;
         this.kilometraje = kilometraje;
-        this.tipo_Vehiculo = tipo_Vehiculo;
+        this.tipoVehiculo = tipoVehiculo;
         this.moviBus = moviBus;
         this.tranvia=null;
-        tipo_Vehiculo=MOVIBUS;
+        tipoVehiculo =MOVIBUS;
     }
 
-    public Datos(String id, String GPS_altitud, String GPS_latitud, Date hora_medicion, boolean sensor_choque,
-                 double sensor_termino, boolean boton_panico, double kilometraje, Tranvia tranvia)
+    public Datos(String id, String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque,
+                 double sensorTermico, boolean botonPanico, double kilometraje, Tranvia tranvia)
     {
         this.id = id;
-        this.GPS_altitud = GPS_altitud;
-        this.GPS_latitud = GPS_latitud;
-        this.hora_medicion = hora_medicion;
-        this.sensor_choque = sensor_choque;
-        this.sensor_termino = sensor_termino;
-        this.boton_panico = boton_panico;
+        this.gpsAltitud = gpsAltitud;
+        this.gpsLatitud = gpsLatitud;
+        this.horaMedicion = horaMedicion;
+        this.sensorChoque = sensorChoque;
+        this.sensorTermico = sensorTermico;
+        this.botonPanico = botonPanico;
         this.kilometraje = kilometraje;
         this.tranvia = tranvia;
         this.moviBus=null;
-        this.tipo_Vehiculo = tipo_Vehiculo;
-        tipo_Vehiculo=TRANVIA;
+        this.tipoVehiculo = tipoVehiculo;
+        tipoVehiculo =TRANVIA;
     }
 
     public String getId() {
@@ -81,52 +81,52 @@ public class Datos
         this.id = id;
     }
 
-    public String getGPS_altitud() {
-        return GPS_altitud;
+    public String getGpsAltitud() {
+        return gpsAltitud;
     }
 
-    public void setGPS_altitud(String GPS_altitud) {
-        this.GPS_altitud = GPS_altitud;
+    public void setGpsAltitud(String gpsAltitud) {
+        this.gpsAltitud = gpsAltitud;
     }
 
-    public String getGPS_latitud() {
-        return GPS_latitud;
+    public String getGpsLatitud() {
+        return gpsLatitud;
     }
 
-    public void setGPS_latitud(String GPS_latitud) {
-        this.GPS_latitud = GPS_latitud;
+    public void setGpsLatitud(String gpsLatitud) {
+        this.gpsLatitud = gpsLatitud;
     }
 
-    public Date getHora_medicion() {
-        return hora_medicion;
+    public Date getHoraMedicion() {
+        return horaMedicion;
     }
 
-    public void setHora_medicion(Date hora_medicion) {
-        this.hora_medicion = hora_medicion;
+    public void setHoraMedicion(Date horaMedicion) {
+        this.horaMedicion = horaMedicion;
     }
 
-    public boolean isSensor_choque() {
-        return sensor_choque;
+    public boolean isSensorChoque() {
+        return sensorChoque;
     }
 
-    public void setSensor_choque(boolean sensor_choque) {
-        this.sensor_choque = sensor_choque;
+    public void setSensorChoque(boolean sensorChoque) {
+        this.sensorChoque = sensorChoque;
     }
 
-    public double getSensor_termino() {
-        return sensor_termino;
+    public double getSensorTermico() {
+        return sensorTermico;
     }
 
-    public void setSensor_termino(double sensor_termino) {
-        this.sensor_termino = sensor_termino;
+    public void setSensorTermico(double sensorTermico) {
+        this.sensorTermico = sensorTermico;
     }
 
-    public boolean isBoton_panico() {
-        return boton_panico;
+    public boolean isBotonPanico() {
+        return botonPanico;
     }
 
-    public void setBoton_panico(boolean boton_panico) {
-        this.boton_panico = boton_panico;
+    public void setBotonPanico(boolean botonPanico) {
+        this.botonPanico = botonPanico;
     }
 
     public double getKilometraje() {
@@ -153,12 +153,12 @@ public class Datos
         this.tranvia = tranvia;
     }
 
-    public int getTipo_Vehiculo() {
-        return tipo_Vehiculo;
+    public int getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
-    public void setTipo_Vehiculo(int tipo_Vehiculo) {
-        this.tipo_Vehiculo = tipo_Vehiculo;
+    public void setTipoVehiculo(int tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
     //-------------------------------------------------
