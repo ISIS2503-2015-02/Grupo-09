@@ -20,17 +20,31 @@ public class Estacion extends Model {
 
     private String ubicacion;
 
+<<<<<<< HEAD
+    private int capacidadEstacion;
+=======
     private int vcubsCapacity;
 
+    public Estacion(){
+>>>>>>> master
 
+    }
 
+<<<<<<< HEAD
 
+    public Estacion( String idEstacion, String nombreEstacion, String ubicacion, int capacidadEstacion )
+=======
     public Estacion( String idEstacion, String nombreEstacion, String ubicacion, int vcubsCapacity )
+>>>>>>> master
     {
         this.idEstacion = idEstacion;
         this.nombreEstacion = nombreEstacion;
         this.ubicacion = ubicacion;
+<<<<<<< HEAD
+        this.capacidadEstacion=capacidadEstacion;
+=======
         this.vcubsCapacity = vcubsCapacity;
+>>>>>>> master
     }
 
     public String getIdEstacion()
@@ -63,6 +77,16 @@ public class Estacion extends Model {
         this.ubicacion = ubicacion;
     }
 
+<<<<<<< HEAD
+    public int getCapacidadEstacion()
+    {
+        return capacidadEstacion;
+    }
+
+    public void setCapacidadEstacion(int capacidadEstacion)
+    {
+        this.capacidadEstacion = capacidadEstacion;
+=======
     //-------------------------------------------------------------------------------------
     // JsonNode
     //-------------------------------------------------------------------------------------
@@ -79,5 +103,6 @@ public class Estacion extends Model {
         Estacion station = new Estacion(idEstacion,nombreEstacion,ubicacion,vcubsCapacity);
 
         return station;
+>>>>>>> master
     }
 }
