@@ -39,7 +39,8 @@ public class User extends Model {
 
     }
 
-    public User(String userID, String fullName, String document, String address, long phoneNumber, long cellphone, String email){
+    public User(String userID, String fullName, String document, String address, long phoneNumber,
+                long cellphone, String email){
         this.userID = userID;
         this.fullName = fullName;
         this.document = document;

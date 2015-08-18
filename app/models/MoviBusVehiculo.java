@@ -1,11 +1,18 @@
 package models;
 
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.collect.ArrayListMultimap;
+
+import javax.persistence.Entity;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by  on 17/08/2015.
  */
+
 public class MoviBusVehiculo extends Vehiculo {
 
     private List<Datos> datos;
@@ -13,7 +20,7 @@ public class MoviBusVehiculo extends Vehiculo {
     public MoviBusVehiculo(String id, String modelo, Date fecha_compra, int estado)
     {
         super(id,modelo,fecha_compra,estado);
-        datos = new List<Datos>();
+        datos = new ArrayList<Datos>();
     }
 
     public static MoviBusVehiculo bind (JsonNode j)

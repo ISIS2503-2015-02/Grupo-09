@@ -25,7 +25,7 @@ public class DriverController extends Controller{
     }
 
     public Result read() {
-        List<Driver> drivers = new Model.Finder(String.class, Driver.class).all();
+        List<Driver> drivers = new Model.Finder(Driver.class).all();
         return ok(Json.toJson(drivers));
     }
 }

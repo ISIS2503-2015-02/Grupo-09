@@ -1,17 +1,29 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import java.util.Date;
+
 /**
  * Created by bdrangel10 on 17/08/2015.
  */
+@Entity
 public class Vehiculo {
 
     public final static int EN_MARCHA=1;
+
     public final static int ACCIDENTE=2;
+
     public final static int FUERA_DE_SERVICIO=0;
 
+    @Id
     private String id_vehiculo;
+
     private String modelo;
+
     private Date fecha_compra;
+
     private int estado;
 
     public Vehiculo(String id, String modelo, Date fecha_compra, int estado)

@@ -1,28 +1,46 @@
 package models;
 
+import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Date;
 
 /**
  * Created by Usuario on 17/08/2015.
  */
+@Entity
 public class Datos
 {
     public final static int TRANVIA=1;
     public final static int MOVIBUS=2;
 
+    @Id
     private String id;
+
     private String GPS_altitud;
+
     private String GPS_latitud;
+
     private Date hora_medicion;
+
     private boolean sensor_choque;
+
     private double sensor_termino;
+
     private boolean boton_panico;
+
     private double kilometraje;
+
     private MoviBus moviBus;
+
     private Tranvia tranvia;
+
     private int tipo_Vehiculo;
 
-    public Datos(String id, String GPS_altitud, String GPS_latitud, Date hora_medicion, boolean sensor_choque, double sensor_termino, boolean boton_panico, double kilometraje,  MoviBus moviBus)
+    public Datos(String id, String GPS_altitud, String GPS_latitud, Date hora_medicion, boolean sensor_choque,
+                 double sensor_termino, boolean boton_panico, double kilometraje,  MoviBus moviBus)
     {
         this.id = id;
         this.GPS_altitud = GPS_altitud;
@@ -38,7 +56,8 @@ public class Datos
         tipo_Vehiculo=MOVIBUS;
     }
 
-    public Datos(String id, String GPS_altitud, String GPS_latitud, Date hora_medicion, boolean sensor_choque, double sensor_termino, boolean boton_panico, double kilometraje, Tranvia tranvia)
+    public Datos(String id, String GPS_altitud, String GPS_latitud, Date hora_medicion, boolean sensor_choque,
+                 double sensor_termino, boolean boton_panico, double kilometraje, Tranvia tranvia)
     {
         this.id = id;
         this.GPS_altitud = GPS_altitud;
@@ -143,33 +162,30 @@ public class Datos
     }
 
     //-------------------------------------------------
-    // Métodos auxiliares
+    // Mtodos auxiliares
     //-------------------------------------------------
 
     public static Datos bind (JsonNode j)
     {
+        String idJs = j.findPath("vehiculoId").asText();
+        String gpsAltitudJs = j.findPath("gpsAltitud").asText();
+        String gpsLatitudJs = j.findPath("gpsLatitud").asText();
+        Date horaMedicionJs = new Date(j.findPath("horaMedicion").asLong());
+        boolean sensorChoqueJs = j.findPath("sensorChoque").asBoolean();
+        double sensorTermicoJs = j.findPath("sensorTermico").asDouble();
+        boolean sensorPanicoJs = j.findPath("sensorPanico").asBoolean();
+        double kilometrajeJs = j.findPath("kilometraje").asDouble();
+        int tipoVehiculoJs = j.findPath("tipoVehiculo").asInt();
 
-        this.id = id;
-        this.GPS_altitud = GPS_altitud;
-        this.GPS_latitud = GPS_latitud;
-        this.hora_medicion = hora_medicion;
-        this.sensor_choque = sensor_choque;
-        this.sensor_termino = sensor_termino;
-        this.boton_panico = boton_panico;
-        this.kilometraje = kilometraje;
-        this.tipo_Vehiculo = tipo_Vehiculo;
-        this.moviBus = moviBus;
-        this.tranvia=null;
-        tipo_Vehiculo=MOVIBUS;
+        if(tipoVehiculoJs == 1) {
+            Tranvia t = (Tranvia) new Model.Finder(Tranvia.class).byId(idJs);
+            return new Datos(idJs, gpsAltitudJs, gpsLatitudJs, horaMedicionJs, sensorChoqueJs, sensorTermicoJs,
+                    sensorPanicoJs, kilometrajeJs, t);
+        }
 
-        String name = j.findPath("fullName").asText();
-        String docNum = j.findPath("documentNumber").asText();
-        long homeP = j.findPath("homePhone").asLong();
-        long mobileP = j.findPath("mobilePhone").asLong();
-        String address = j.findPath("address").asText();
+        MoviBus m = (MoviBus) new Model.Finder(MoviBus.class).byId(idJs);
+        return new Datos(idJs, gpsAltitudJs, gpsLatitudJs, horaMedicionJs, sensorChoqueJs, sensorTermicoJs,
+                sensorPanicoJs, kilometrajeJs, m);
 
-        Driver driver = new Driver(name,docNum,homeP,mobileP,address);
-
-        return driver;
     }
 }
