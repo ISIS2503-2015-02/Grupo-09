@@ -18,7 +18,9 @@ public class Vehiculo extends Model {
 
     public final static int ACCIDENTE=2;
 
-    public final static int FUERA_DE_SERVICIO=0;
+    public final static int DISPONIBLE =0;
+
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Vehiculo.class);
 
     @Id
     private String id_vehiculo;
@@ -28,6 +30,8 @@ public class Vehiculo extends Model {
     private Date fecha_compra;
 
     private int estado;
+
+    private String tipo_vehiculo;
 
     @OneToMany
     private List<RevisionMecanica> revisiones;
@@ -49,20 +53,24 @@ public class Vehiculo extends Model {
 
     private Trayecto ultimoTrayecto;
 
+    private double kilomDesdeUltimaReparacion;
+
     public Vehiculo()
     {
         modelo="";
         fecha_compra=null;
-        estado=FUERA_DE_SERVICIO;
+        estado= DISPONIBLE;
+        kilomDesdeUltimaReparacion=0;
     }
 
-    public Vehiculo(String id, String modelo, Date fecha_compra, int estado)
+    public Vehiculo(String id, String modelo, Date fecha_compra, int estado,String tipoVehiculo)
     {
         this.id_vehiculo = id;
         this.modelo = modelo;
         this.fecha_compra = fecha_compra;
         this.estado=estado;
         revisiones=new ArrayList<RevisionMecanica>();
+        this.tipo_vehiculo=tipoVehiculo;
         datos = new ArrayList<Datos>();
         emergencias = new ArrayList<Emergencia>();
         trayectos = new ArrayList<Trayecto>();
@@ -156,6 +164,7 @@ public class Vehiculo extends Model {
     {
         datos.add(nuevoDato);
         ultimosDatos=nuevoDato;
+        kilomDesdeUltimaReparacion = darKilometrajeDesdeUltimaReparacion();
         this.save();
     }
 

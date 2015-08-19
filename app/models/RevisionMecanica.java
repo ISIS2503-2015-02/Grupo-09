@@ -1,5 +1,8 @@
 package models;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import play.api.libs.json.Json;
+
 import javax.persistence.*;
 
 /**
@@ -70,5 +73,13 @@ public class RevisionMecanica
 
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
+    }
+
+
+
+    //DataBinder-------------------------------------------------------
+    public static RevisionMecanica bind(JsonNode json)
+    {
+        return play.libs.Json.fromJson(json, RevisionMecanica.class);
     }
 }

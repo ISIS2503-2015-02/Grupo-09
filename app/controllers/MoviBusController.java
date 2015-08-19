@@ -20,10 +20,20 @@ public class MoviBusController extends Controller{
     @BodyParser.Of(BodyParser.Json.class)
     public Result create(){
         JsonNode j = Controller.request().body().asJson();
-        Vehiculo movibus = MoviBusVehiculo.bind(j);
+        MoviBusVehiculo movibus = MoviBusVehiculo.bind(j);
         movibus.save();
-
         return ok(Json.toJson(movibus));
+    }
+
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result putMovibus(String idMovibus)
+    {
+        MoviBusVehiculo original = MoviBusVehiculo.finder.byId(idMovibus);
+        JsonNode j = Controller.request().body().asJson();
+        MoviBusVehiculo reemplazarPor = MoviBusVehiculo.bind(j);
+        original=reemplazarPor;
+        original.save();
+        return ok(Json.toJson(original));
     }
 
     public Result read() {
@@ -31,6 +41,22 @@ public class MoviBusController extends Controller{
         return ok(Json.toJson(movibuses));
     }
 
+    public Result readMovibus(String idMovibus)
+    {
+        Result rta;
+        MoviBusVehiculo movibus = MoviBusVehiculo.finder.byId(idMovibus);
+        if(movibus!=null)
+        {
+            rta=ok(Json.toJson(movibus));
+        }
+        else
+        {
+            rta=notFound();
+        }
+        return rta;
+    }
+
+    @BodyParser.Of(BodyParser.Json.class)
     public Result ingresarDatos()
     {
         JsonNode j = Controller.request().body().asJson();
