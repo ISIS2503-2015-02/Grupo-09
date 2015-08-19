@@ -2,8 +2,9 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by USER on 14/08/2015.
@@ -16,6 +17,10 @@ public class Driver extends Model {
     // Atributos
     //----------------------------------
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private String id_conductor;
+
     private String fullName;
 
     private String documentNumber;
@@ -26,12 +31,20 @@ public class Driver extends Model {
 
     private String address;
 
+    @OneToMany
+    private List<Trayecto> trayectos;
+
+    private Trayecto ultimoTrayecto;
+
+
     //----------------------------------
     // Constructor
     //----------------------------------
 
-    public Driver(){
-
+    public Driver()
+    {
+        trayectos = new ArrayList<Trayecto>();
+        ultimoTrayecto=null;
     }
 
     public Driver(String name, String docNum, long homeP, long mobileP, String address){
@@ -40,6 +53,8 @@ public class Driver extends Model {
         homePhone = homeP;
         mobilePhone = mobileP;
         this.address = address;
+        trayectos = new ArrayList<Trayecto>();
+        ultimoTrayecto=null;
     }
 
     //----------------------------------
@@ -86,11 +101,32 @@ public class Driver extends Model {
         this.mobilePhone = mobilePhone;
     }
 
+
+    public void agregarTrayecto(Trayecto nuevoTrayecto)
+    {
+        trayectos.add(nuevoTrayecto);
+        ultimoTrayecto=nuevoTrayecto;
+        this.save();
+    }
+
+    public List<Trayecto> getTrayectos() {
+        return trayectos;
+    }
+
+    public Trayecto getUltimoTrayecto() {
+        return ultimoTrayecto;
+    }
+
+    public String getId_conductor() {
+        return id_conductor;
+    }
+
     //-------------------------------------------------
     // Métodos auxiliares
     //-------------------------------------------------
 
-    public static Driver bind (JsonNode j){
+    public static Driver bind (JsonNode j)
+    {
         String name = j.findPath("fullName").asText();
         String docNum = j.findPath("documentNumber").asText();
         long homeP = j.findPath("homePhone").asLong();

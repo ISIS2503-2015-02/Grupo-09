@@ -38,11 +38,16 @@ public class Vehiculo extends Model {
     @OneToMany
     private List<Emergencia> emergencias;
 
+    @OneToMany
+    private List<Trayecto> trayectos;
+
     private RevisionMecanica ultimaRevision;
 
     private Datos ultimosDatos;
 
     private Emergencia ultimaEmergencia;
+
+    private Trayecto ultimoTrayecto;
 
     public Vehiculo()
     {
@@ -60,9 +65,11 @@ public class Vehiculo extends Model {
         revisiones=new ArrayList<RevisionMecanica>();
         datos = new ArrayList<Datos>();
         emergencias = new ArrayList<Emergencia>();
+        trayectos = new ArrayList<Trayecto>();
         ultimaRevision = null;
         ultimosDatos = null;
         ultimaEmergencia = null;
+        ultimoTrayecto=null;
     }
 
     public String getId() {
@@ -109,6 +116,26 @@ public class Vehiculo extends Model {
         return emergencias;
     }
 
+    public List<Trayecto> getTrayectos() {
+        return trayectos;
+    }
+
+    public RevisionMecanica getUltimaRevision() {
+        return ultimaRevision;
+    }
+
+    public Datos getUltimosDatos() {
+        return ultimosDatos;
+    }
+
+    public Emergencia getUltimaEmergencia() {
+        return ultimaEmergencia;
+    }
+
+    public Trayecto getUltimoTrayecto() {
+        return ultimoTrayecto;
+    }
+
     public String getId_vehiculo() {
         return id_vehiculo;
     }
@@ -136,6 +163,13 @@ public class Vehiculo extends Model {
     {
         emergencias.add(nuevaEmergencia);
         ultimaEmergencia=nuevaEmergencia;
+        this.save();
+    }
+
+    public void agregarTrayecto(Trayecto nuevoTrayecto)
+    {
+        trayectos.add(nuevoTrayecto);
+        ultimoTrayecto=nuevoTrayecto;
         this.save();
     }
 
