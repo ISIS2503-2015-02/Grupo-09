@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  * Created by USER on 16/08/2015.
@@ -31,6 +33,9 @@ public class User extends Model {
 
     private String email;
 
+    @OneToOne
+    private Vcub alquilada;
+
     //------------------------------------------------------------------------
     // Constructors
     //------------------------------------------------------------------------
@@ -48,6 +53,7 @@ public class User extends Model {
         this.phoneNumber = phoneNumber;
         this.cellphone = cellphone;
         this.email = email;
+        alquilada=null;
     }
 
     //------------------------------------------------------------------------
@@ -83,6 +89,10 @@ public class User extends Model {
         return email;
     }
 
+    public Vcub getAlquilada() {
+        return alquilada;
+    }
+
     //------------------------------------------------------------------------
     // Setters
     //------------------------------------------------------------------------
@@ -114,6 +124,10 @@ public class User extends Model {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setAlquilada(Vcub alquilada) {
+        this.alquilada = alquilada;
     }
 
     //------------------------------------------------------------------------

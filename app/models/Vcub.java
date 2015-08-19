@@ -4,6 +4,9 @@ import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * Created by gusal on 13/08/2015.
@@ -27,10 +30,14 @@ public class Vcub extends Model
 
     private String estado; //Prestada,sustiduida o libre
 
+    @ManyToOne
     private Estacion estacion;
 
-    public Vcub(){
+    @OneToOne
+    @JoinColumn(name = "userID", nullable = false)
+    private User cliente;
 
+    public Vcub(){
     }
 
     public Vcub(String estado, Estacion estacion)
@@ -67,6 +74,14 @@ public class Vcub extends Model
     public void setEstacion(Estacion estacion)
     {
         this.estacion = estacion;
+    }
+
+    public User getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(User cliente) {
+        this.cliente = cliente;
     }
 
     //-------------------------------------------------

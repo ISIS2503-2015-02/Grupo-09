@@ -6,8 +6,9 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -22,6 +23,10 @@ public class Estacion extends Model {
 
     private int vcubsCapacity;
 
+    @OneToMany
+    @JoinColumn(name="idVcub", nullable = false)
+    private List<Vcub> vcubs;
+
 
 
 
@@ -31,6 +36,7 @@ public class Estacion extends Model {
         this.nombreEstacion = nombreEstacion;
         this.ubicacion = ubicacion;
         this.vcubsCapacity = vcubsCapacity;
+        vcubs = new ArrayList<Vcub>();
     }
 
     public String getIdEstacion()
@@ -61,6 +67,41 @@ public class Estacion extends Model {
     public void setUbicacion(String ubicacion)
     {
         this.ubicacion = ubicacion;
+    }
+
+    public void devolverVcub(Vcub devolver)
+    {
+        vcubs.add(devolver);
+        User teniaAlquilada = devolver.getCliente();
+        teniaAlquilada.setAlquilada(null);
+        devolver.setEstado(Vcub.LIBRE);
+        devolver.setEstacion(this);
+        teniaAlquilada.save();
+        devolver.setCliente(null);
+        devolver.save();
+        this.save();
+
+    }
+
+    /*
+        Presta una bicicleta al usuario que llega por parámetro, la elimina de las bicicletas de la estación.
+     */
+    public Vcub alquilarVcub(User usuarioAlquila)
+    {
+        Vcub prestar = null;
+        if(vcubs.size()>0)
+        {
+            prestar=vcubs.get(0);
+            vcubs.remove(prestar);
+            prestar.setCliente(usuarioAlquila);
+            prestar.setEstado(Vcub.PRESTADA);
+            prestar.setEstacion(null);
+            prestar.save();
+            usuarioAlquila.setAlquilada(prestar);
+            usuarioAlquila.save();
+        }
+        this.save();
+        return prestar;
     }
 
     //-------------------------------------------------------------------------------------
