@@ -28,7 +28,7 @@ public class VehiculoController extends Controller {
         return ok(Json.toJson(vehiculos));
     }
 
-    public Result read(String id) {
+    public Result readVehiculoID(String id) {
         Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(id);
         if(vehiculoEncontrado != null) {
             return ok(Json.toJson(vehiculoEncontrado));
@@ -78,7 +78,7 @@ public class VehiculoController extends Controller {
     }
 
 
-    public Result agregarTrayecto(String idConductor, String idVehiculo)
+    public Result agregarTrayectoVehiculo(String idConductor, String idVehiculo)
     {
         try
         {
@@ -106,6 +106,31 @@ public class VehiculoController extends Controller {
 
     public Result finalizarTrayecto(String idTrayecto, int inconvenientes)
     {
+        Trayecto trayecoEncontrado = (Trayecto) new Model.Finder(Trayecto.class).byId(idTrayecto);
+        if(Controller.request().body()!=null)
+        {
+            JsonNode json = Controller.request().body().asJson();
+            Trayecto trayectoRecibido= Trayecto.bind(json);
+            if(trayectoRecibido!=null)
+            {
+                trayecoEncontrado.finalizarTrayecto(trayectoRecibido.getHora_fin(),trayectoRecibido.getIncidentes());
+            }
+        }
+        else
+        {
+            trayecoEncontrado.finalizarTrayecto(null,inconvenientes);
+            Vehiculo veh = trayecoEncontrado.getVehiculo();
+            veh.setEstado(Vehiculo.DISPONIBLE);
+            veh.save();
+        }
+        trayecoEncontrado.save();
+        return ok("Se registró la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
+    }
+
+    public Result finalizarUltimoTrayecto(String idVehiculo, int inconvenientes)
+    {
+        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
+
         Trayecto trayecoEncontrado = (Trayecto) new Model.Finder(Trayecto.class).byId(idTrayecto);
         if(Controller.request().body()!=null)
         {
