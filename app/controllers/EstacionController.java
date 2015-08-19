@@ -41,6 +41,7 @@ public class EstacionController extends Controller {
 
     public Result alquilarBicicleta(String idCliente, String idEstacion)
     {
+
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
         User usuario = (User) new Model.Finder(User.class).byId(idCliente);
         if(null!=usuario && estacion != null)
@@ -48,7 +49,12 @@ public class EstacionController extends Controller {
             Vcub prestada =estacion.alquilarVcub(usuario);
             if(prestada!=null)
             {
-                return ok("Se ha prestado la siguiente vCub\n"+Json.toJson(prestada));
+                String mensaje ="";
+                if(estacion.getVcubsCapacity()/10>estacion.getVcubs().size())
+                {
+                    mensaje+="ALERTA: QUEDAN MENOS DEL 10% DE LAS VCUBS PARA LA ESTACIÓN \n";
+                }
+                return ok(mensaje+"Se ha prestado la siguiente vCub\n"+Json.toJson(prestada));
             }
             else
             {

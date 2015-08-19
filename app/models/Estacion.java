@@ -69,6 +69,18 @@ public class Estacion extends Model {
         this.ubicacion = ubicacion;
     }
 
+    public int getVcubsCapacity() {
+        return vcubsCapacity;
+    }
+
+    public void setVcubsCapacity(int vcubsCapacity) {
+        this.vcubsCapacity = vcubsCapacity;
+    }
+
+    public List<Vcub> getVcubs() {
+        return vcubs;
+    }
+
     public void devolverVcub(Vcub devolver)
     {
         vcubs.add(devolver);
