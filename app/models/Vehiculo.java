@@ -1,11 +1,12 @@
 package models;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import play.db.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by bdrangel10 on 17/08/2015.
@@ -28,12 +29,40 @@ public class Vehiculo extends Model {
 
     private int estado;
 
+    @OneToMany
+    private List<RevisionMecanica> revisiones;
+
+    @OneToMany
+    private List<Datos> datos;
+
+    @OneToMany
+    private List<Emergencia> emergencias;
+
+    private RevisionMecanica ultimaRevision;
+
+    private Datos ultimosDatos;
+
+    private Emergencia ultimaEmergencia;
+
+    public Vehiculo()
+    {
+        modelo="";
+        fecha_compra=null;
+        estado=FUERA_DE_SERVICIO;
+    }
+
     public Vehiculo(String id, String modelo, Date fecha_compra, int estado)
     {
         this.id_vehiculo = id;
         this.modelo = modelo;
         this.fecha_compra = fecha_compra;
         this.estado=estado;
+        revisiones=new ArrayList<RevisionMecanica>();
+        datos = new ArrayList<Datos>();
+        emergencias = new ArrayList<Emergencia>();
+        ultimaRevision = null;
+        ultimosDatos = null;
+        ultimaEmergencia = null;
     }
 
     public String getId() {
@@ -66,6 +95,54 @@ public class Vehiculo extends Model {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    public List<Datos> getDatos() {
+        return datos;
+    }
+
+    public List<RevisionMecanica> getRevisiones() {
+        return revisiones;
+    }
+
+    public List<Emergencia> getEmergencias() {
+        return emergencias;
+    }
+
+    public String getId_vehiculo() {
+        return id_vehiculo;
+    }
+
+    //COMPLETAR EL PARSEADOR
+    public static Vehiculo bind(JsonNode j)
+    {
+        return new Vehiculo();
+    }
+
+    public void agregarNuevaRevision(RevisionMecanica nuevaRev)
+    {
+        revisiones.add(nuevaRev);
+        ultimaRevision=nuevaRev;
+        this.save();
+    }
+
+    public void agregarDatos(Datos nuevoDato)
+    {
+        datos.add(nuevoDato);
+        ultimosDatos=nuevoDato;
+        this.save();
+    }
+
+    public void agregarEmergencia (Emergencia nuevaEmergencia)
+    {
+        emergencias.add(nuevaEmergencia);
+        ultimaEmergencia=nuevaEmergencia;
+        this.save();
+    }
+
+    public double darKilometrajeDesdeUltimaReparacion()
+    {
+        return ultimosDatos.getKilometraje()-ultimaRevision.getKilometraje();
     }
 
 

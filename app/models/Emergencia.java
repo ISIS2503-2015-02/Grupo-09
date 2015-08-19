@@ -11,6 +11,9 @@ import java.util.Date;
  */
 public class Emergencia extends Model{
 
+    public final static int CONTROLADA=1;
+    public final static int VIGENTE=0;
+
     @Id
     private String emergencyID;
 
@@ -24,6 +27,8 @@ public class Emergencia extends Model{
 
     private String emergencyLevel;
 
+    private int estado;
+
     public Emergencia(){
 
     }
@@ -35,6 +40,7 @@ public class Emergencia extends Model{
         this.comments = comments;
         this.place = place;
         emergencyLevel = emerLevel;
+        estado=VIGENTE;
     }
 
     public int getEmergencyType(){
@@ -75,6 +81,15 @@ public class Emergencia extends Model{
 
     public void setPlace(String place) {
         this.place = place;
+    }
+
+    public void reportarEmergenciaControlada()
+    {
+        estado=CONTROLADA;
+    }
+
+    public int getEstado() {
+        return estado;
     }
 
     //-------------------------------------------------------------------------------------

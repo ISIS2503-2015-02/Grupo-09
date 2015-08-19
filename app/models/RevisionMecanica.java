@@ -1,34 +1,27 @@
 package models;
 
+import javax.persistence.*;
+
 /**
  * Created by Bdrangel10 on 16/08/2015.
  */
 public class RevisionMecanica
 
 {
+    @Id
     private String id;
+
     private Date fechaRevision;
     private double costo_Revision;
     private double kilometraje;
-    private MoviBus movibus;
-    private Tranvia tranvia;
+    @ManyToOne
+    private Vehiculo vehiculo;
 
-    public RevisionMecanica(double kilometraje, String id, Date fechaRevision, double costo_Revision, Tranvia tranvia) {
-        this.kilometraje = kilometraje;
-        this.id = id;
+    public RevisionMecanica(Date fechaRevision, double costo_Revision, double kilometraje, Vehiculo vehiculo) {
         this.fechaRevision = fechaRevision;
         this.costo_Revision = costo_Revision;
-        this.tranvia=tranvia;
-        movibus=null;
-    }
-
-    public RevisionMecanica(double kilometraje, String id, Date fechaRevision, double costo_Revision, MoviBus movibus) {
         this.kilometraje = kilometraje;
-        this.id = id;
-        this.fechaRevision = fechaRevision;
-        this.costo_Revision = costo_Revision;
-        this.movibus=movibus;
-        tranvia=null;
+        this.vehiculo = vehiculo;
     }
 
     public String getId()
@@ -71,23 +64,11 @@ public class RevisionMecanica
         this.kilometraje = kilometraje;
     }
 
-    public MoviBus getMovibus()
-    {
-        return movibus;
+    public Vehiculo getVehiculo() {
+        return vehiculo;
     }
 
-    public void setMovibus(MoviBus movibus)
-    {
-        this.movibus = movibus;
-    }
-
-    public Tranvia getTranvia()
-    {
-        return tranvia;
-    }
-
-    public void setTranvia(Tranvia tranvia)
-    {
-        this.tranvia = tranvia;
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
     }
 }
