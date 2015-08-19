@@ -38,6 +38,7 @@ public class EstacionController extends Controller {
         Estacion reemplazo = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
         reemplazo=nueva;
         reemplazo.save();
+        return ok(Json.toJson(reemplazo));
     }
 
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import play.api.libs.json.Json;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by Bdrangel10 on 16/08/2015.

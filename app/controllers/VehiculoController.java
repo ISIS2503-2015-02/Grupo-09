@@ -38,7 +38,7 @@ public class VehiculoController extends Controller {
 
     public Result agregarDatos()
     {
-        String mensaje ="";
+        String mensaje;
         JsonNode j = Controller.request().body().asJson();
         String idVehiculo =  j.findPath("id_vehiculo").asText();
         Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(idVehiculo);
@@ -59,13 +59,13 @@ public class VehiculoController extends Controller {
         vehiculoEncontrado.agregarDatos(datosRecibidos);
         vehiculoEncontrado.save();
 
-        return ok(mensaje + "\n Datos agregados:\n" + Controller.request().body().asJson();
+        return ok(mensaje + "\n Datos agregados:\n" + Controller.request().body().asJson());
     }
 
     public Result readDatosVehiculo(String idVehiculo)
     {
         Result rta;
-        Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(idVehiculo);
+        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
         if(vehiculoEncontrado!=null)
         {
             rta=ok(Json.toJson(vehiculoEncontrado.getDatos()));
@@ -94,12 +94,14 @@ public class VehiculoController extends Controller {
             trayectoRecibido.save();
             vehiculoEncontrado.save();
             conductorEncontrado.save();
+            return ok("\n Trayecto Iniciado:\n"+Controller.request().body().asJson()+"\n Conductor:\n"+Json.toJson(conductorEncontrado)+ "\n" +
+                    " Vehiculo:\n" +Json.toJson(vehiculoEncontrado));
         }
-        catch (NullPointerException null)
+        catch (NullPointerException excepcion)
         {
             return notFound("No se ha encontrado alguno de los elementos requeridos, revise nuevamente los datos de la solicitud");
         }
-        return ok("\n Trayecto Iniciado:\n"+Controller.request().body().asJson()+"\n Conductor:\n"+Json.toJson(conductorEncontrado)+"\n Vehiculo:\n"+Json.toJson(vehiculoEncontrado);
+
     }
 
     public Result finalizarTrayecto(String idTrayecto, int inconvenientes)
@@ -127,10 +129,10 @@ public class VehiculoController extends Controller {
 
     public Result readTrayectosVehiculo (String idVehiculo)
     {
-        Vehiculo vehiculoEncontrado = new Model.Finder(Vehiculo.class).byId(idVehiculo);
+        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
         if(vehiculoEncontrado!=null)
         {
-            return ok(Json.toJson(vehiculoEncontrado.getTrayectos());
+            return ok(Json.toJson(vehiculoEncontrado.getTrayectos()));
         }
         else
         {
@@ -141,7 +143,7 @@ public class VehiculoController extends Controller {
     public Result agregarRevision(String idVehiculo)
     {
         Result rta;
-        Vehiculo vehiculoEncontrado = Vehiculo.finder.byId(idVehiculo);
+        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
         if(vehiculoEncontrado!=null)
         {
             JsonNode json = Controller.request().body().asJson();
@@ -167,7 +169,7 @@ public class VehiculoController extends Controller {
     public Result readRevisionesVehiculo(String idVehiculo)
     {
         Result rta;
-        Vehiculo vehiculoEncontrado = Vehiculo.finder.byId(idVehiculo);
+        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
         if(vehiculoEncontrado!=null)
         {
             rta=ok(Json.toJson(vehiculoEncontrado.getRevisiones()));
