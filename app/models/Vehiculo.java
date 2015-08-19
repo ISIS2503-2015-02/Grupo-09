@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+import play.libs.Json;
 /**
  * Created by bdrangel10 on 17/08/2015.
  */
@@ -112,11 +112,10 @@ public class Vehiculo extends Model {
     public String getId_vehiculo() {
         return id_vehiculo;
     }
-
-    //COMPLETAR EL PARSEADOR
+    
     public static Vehiculo bind(JsonNode j)
     {
-        return new Vehiculo();
+        return  Json.fromJson(j, Vehiculo.class);
     }
 
     public void agregarNuevaRevision(RevisionMecanica nuevaRev)
