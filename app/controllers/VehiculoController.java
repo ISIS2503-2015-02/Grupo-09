@@ -62,19 +62,4 @@ public class VehiculoController extends Controller {
         return ok(mensaje+"\n Datos agregados:\n"+Controller.request().body().asJson();
     }
 
-
-    public Result devolverBicicleta(String idCliente, String idEstacionEntrega)
-    {
-        Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacionEntrega);
-        User usuario = (User) new Model.Finder(User.class).byId(idCliente);
-        if(null!=usuario null!= usuario.getAlquilada() && estacion != null)
-        {
-            Vcub alquilada = usuario.getAlquilada();
-            estacion.devolverVcub(alquilada);
-        }
-        else
-        {
-            return notFound("Alguno de los recursos que intenta obtener no fueron encontrados o el usuario no tiene ninguna VCub cargada a su cuenta");
-        }
-    }
 }
