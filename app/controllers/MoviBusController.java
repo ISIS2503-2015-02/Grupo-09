@@ -37,7 +37,7 @@ public class MoviBusController extends Controller{
         MoviBusVehiculo movi = (MoviBusVehiculo) new Model.Finder(MoviBusVehiculo.class).byId((j.findPath("id_vehiculo").asText()));
         List<Datos> actuales = movi.getDatos();
         Datos datosRecibidos = Datos.bind(j);
-        actuales.add(datosRecibidos);
+        actuales.addAll(actuales);
         movi.setDatos(actuales);
         movi.save();
         return ok("Dato ingresado correctamente:\n"+Json.toJson(datosRecibidos));
