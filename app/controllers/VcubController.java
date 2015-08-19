@@ -27,7 +27,7 @@ public class VcubController extends Controller{
         return ok(Json.toJson(lastVcub));
     }
 
-    public Result read() {
+    public Result readAll() {
         List<Vcub> Vcubs = new Model.Finder(Vcub.class).all();
         return ok(Json.toJson(Vcubs));
     }

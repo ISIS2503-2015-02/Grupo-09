@@ -27,7 +27,7 @@ public class TranviaController extends Controller{
         return ok(Json.toJson(lastTranvia));
     }
 
-    public Result read() {
+    public Result readAll() {
         List<Tranvia> tranvias = new Model.Finder(Tranvia.class).all();
         return ok(Json.toJson(tranvias));
     }
