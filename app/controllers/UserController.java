@@ -109,4 +109,24 @@ public class UserController extends Controller{
             return notFound("Usuario no encontrado");
         }
     }
+
+    public Result eliminarReservaCliente(String idCliente, String idReserva)
+    {
+        User cliente = (User) User.finder.byId(idCliente);
+        if(cliente!=null)
+        {
+            Reserva encontrada = (Reserva) Reserva.finder.byId(idReserva);
+            if(encontrada.getCliente().getUserID().equals(idCliente))
+            {
+                encontrada.delete();
+                return ok("RESERVA ELIMINADA:\n Las reservas actuales para este usuario son:\n"+Json.toJson(cliente.getReservas()));
+            }
+            return badRequest("El usuario no tiene ninguna reserva con id:" + idReserva);
+        }
+        else
+        {
+            return notFound("Usuario no encontrado");
+        }
+
+    }
 }
