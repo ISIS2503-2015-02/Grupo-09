@@ -31,10 +31,22 @@ public class EstacionController extends Controller {
         return ok(Json.toJson(stations));
     }
 
-    public Result read(String id) {
-        Estacion station = (Estacion) new Model.Finder(Estacion.class).byId(id);
-        if(station != null) {
-            return ok(Json.toJson(station));
+    public Result modificarEstacion(String idEstacion)
+    {
+        JsonNode j = Controller.request().body().asJson();
+        Estacion nueva = Estacion.bind(j);
+        Estacion reemplazo = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
+        reemplazo=nueva;
+        reemplazo.save();
+    }
+
+
+
+    public Result readVcubs(String idEstacion) {
+        Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
+        if(estacion != null) {
+            List<Vcub> vcubsEstacion = estacion.getVcubs();
+            return ok(Json.toJson(vcubsEstacion));
         }
         return notFound();
     }

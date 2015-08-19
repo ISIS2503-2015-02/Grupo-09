@@ -9,12 +9,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import play.libs.Json;
 
 
 @Entity
 public class Estacion extends Model {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String idEstacion;
 
     private String nombreEstacion;
@@ -26,9 +28,6 @@ public class Estacion extends Model {
     @OneToMany
     @JoinColumn(name="idVcub", nullable = false)
     private List<Vcub> vcubs;
-
-
-
 
     public Estacion( String idEstacion, String nombreEstacion, String ubicacion, int vcubsCapacity )
     {
@@ -122,15 +121,19 @@ public class Estacion extends Model {
 
     //public Estacion( String idEstacion, String nombreEstacion, String ubicacion )
 
-    public static Estacion bind(JsonNode j){
+    public static Estacion bind(JsonNode json){
 
-        String idEstacion = j.findPath("idEstacion").asText();
-        String nombreEstacion = j.findPath("nombreEstacion").asText();
-        String ubicacion = j.findPath("ubicacion").asText();
-        int vcubsCapacity = j.findPath("vcubsCapacity").asInt();
+        /**
+         String idEstacion = j.findPath("idEstacion").asText();
+         String nombreEstacion = j.findPath("nombreEstacion").asText();
+         String ubicacion = j.findPath("ubicacion").asText();
+         int vcubsCapacity = j.findPath("vcubsCapacity").asInt();
 
-        Estacion station = new Estacion(idEstacion,nombreEstacion,ubicacion,vcubsCapacity);
+         Estacion station = new Estacion(idEstacion,nombreEstacion,ubicacion,vcubsCapacity);
 
-        return station;
+         return station;
+         */
+        return Json.fromJson(json, Estacion.class);
+
     }
 }
