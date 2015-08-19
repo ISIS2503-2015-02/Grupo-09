@@ -2,6 +2,7 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.xml.internal.bind.v2.TODO;
 import models.*;
 import play.libs.Json;
 import play.mvc.BodyParser;
@@ -36,30 +37,37 @@ public class VehiculoController extends Controller {
         return notFound();
     }
 
-    public Result agregarDatos()
+    public Result agregarDatosVehiculo(String idVehiculo)
     {
         String mensaje;
         JsonNode j = Controller.request().body().asJson();
-        String idVehiculo =  j.findPath("id_vehiculo").asText();
         Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(idVehiculo);
-        Datos datosRecibidos = Datos.bind(j);
-        datosRecibidos.setVehiculoGenerador(vehiculoEncontrado);
-        datosRecibidos.save();
-        if(vehiculoEncontrado.getEstado()!=Vehiculo.ACCIDENTE  && ( datosRecibidos.isSensorChoque() || datosRecibidos.isBotonPanico() || datosRecibidos.getSensorTermico()>38))
+        if(vehiculoEncontrado!=null)
         {
-            //Crear  emergencia
-            vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
-            mensaje="ATENCIÓN, EMERGENCIA DETECTADA\n" ;
+            Datos datosRecibidos = Datos.bind(j);
+            datosRecibidos.setVehiculoGenerador(vehiculoEncontrado);
+            datosRecibidos.save();
+            if(vehiculoEncontrado.getEstado()!=Vehiculo.ACCIDENTE  && ( datosRecibidos.isSensorChoque() || datosRecibidos.isBotonPanico() || datosRecibidos.getSensorTermico()>38))
+            {
+                //Crear  emergencia
+                vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
+                mensaje="ATENCIÓN, EMERGENCIA DETECTADA\n" ;
+            }
+            else
+            {
+                //Se está atendiendo el accidente
+                mensaje="Se está atendiendo un accidente, recuerde registrar en el sistema cuando la situación regrese a la normalidad";
+            }
+            vehiculoEncontrado.agregarDatos(datosRecibidos);
+            vehiculoEncontrado.save();
+
+            return ok(mensaje + "\n Datos agregados:\n" + Controller.request().body().asJson());
         }
         else
         {
-            //Se está atendiendo el accidente
-            mensaje="Se está atendiendo un accidente, recuerde registrar en el sistema cuando la situación regrese a la normalidad";
+            return notFound("No se ha encontrado el vehiculo con id:"+idVehiculo);
         }
-        vehiculoEncontrado.agregarDatos(datosRecibidos);
-        vehiculoEncontrado.save();
 
-        return ok(mensaje + "\n Datos agregados:\n" + Controller.request().body().asJson());
     }
 
     public Result readDatosVehiculo(String idVehiculo)
@@ -78,14 +86,12 @@ public class VehiculoController extends Controller {
     }
 
 
-    public Result agregarTrayectoVehiculo(String idConductor, String idVehiculo)
-    {
-        try
-        {
+    public Result agregarTrayectoVehiculo(String idConductor, String idVehiculo) {
+        try {
             JsonNode json = Controller.request().body().asJson();
             Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(idVehiculo);
             Driver conductorEncontrado = (Driver) new Model.Finder(Driver.class).byId(idConductor);
-            Trayecto trayectoRecibido= Trayecto.bind(json);
+            Trayecto trayectoRecibido = Trayecto.bind(json);
             trayectoRecibido.setVehiculo(vehiculoEncontrado);
             trayectoRecibido.setConductor(conductorEncontrado);
             conductorEncontrado.agregarTrayecto(trayectoRecibido);
@@ -94,15 +100,38 @@ public class VehiculoController extends Controller {
             trayectoRecibido.save();
             vehiculoEncontrado.save();
             conductorEncontrado.save();
-            return ok("\n Trayecto Iniciado:\n"+Controller.request().body().asJson()+"\n Conductor:\n"+Json.toJson(conductorEncontrado)+ "\n" +
-                    " Vehiculo:\n" +Json.toJson(vehiculoEncontrado));
-        }
-        catch (NullPointerException excepcion)
-        {
+            return ok("\n Trayecto Iniciado:\n" + Controller.request().body().asJson() + "\n Conductor:\n" + Json.toJson(conductorEncontrado) + "\n" +
+                    " Vehiculo:\n" + Json.toJson(vehiculoEncontrado));
+        } catch (NullPointerException excepcion) {
             return notFound("No se ha encontrado alguno de los elementos requeridos, revise nuevamente los datos de la solicitud");
         }
 
     }
+
+    public Result finalizarUltimoTrayecto(String idVehiculo, int inconvenientes)
+    {
+        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
+        Trayecto trayecoEncontrado = vehiculoEncontrado.getUltimoTrayecto();
+        if(Controller.request().body()!=null)
+        {
+            JsonNode json = Controller.request().body().asJson();
+            Trayecto trayectoRecibido= Trayecto.bind(json);
+            if(trayectoRecibido!=null)
+            {
+                trayecoEncontrado.finalizarTrayecto(trayectoRecibido.getHora_fin(),trayectoRecibido.getIncidentes());
+            }
+        }
+        else
+        {
+            trayecoEncontrado.finalizarTrayecto(null,inconvenientes);
+            Vehiculo veh = trayecoEncontrado.getVehiculo();
+            veh.setEstado(Vehiculo.DISPONIBLE);
+            veh.save();
+        }
+        trayecoEncontrado.save();
+        return ok("Se registró la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
+    }
+
 
     public Result finalizarTrayecto(String idTrayecto, int inconvenientes)
     {
@@ -124,32 +153,7 @@ public class VehiculoController extends Controller {
             veh.save();
         }
         trayecoEncontrado.save();
-        return ok("Se registró la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
-    }
-
-    public Result finalizarUltimoTrayecto(String idVehiculo, int inconvenientes)
-    {
-        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
-
-        Trayecto trayecoEncontrado = (Trayecto) new Model.Finder(Trayecto.class).byId(idTrayecto);
-        if(Controller.request().body()!=null)
-        {
-            JsonNode json = Controller.request().body().asJson();
-            Trayecto trayectoRecibido= Trayecto.bind(json);
-            if(trayectoRecibido!=null)
-            {
-                trayecoEncontrado.finalizarTrayecto(trayectoRecibido.getHora_fin(),trayectoRecibido.getIncidentes());
-            }
-        }
-        else
-        {
-            trayecoEncontrado.finalizarTrayecto(null,inconvenientes);
-            Vehiculo veh = trayecoEncontrado.getVehiculo();
-            veh.setEstado(Vehiculo.DISPONIBLE);
-            veh.save();
-        }
-        trayecoEncontrado.save();
-        return ok("Se registró la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
+        return ok("Se registró la finalizacion del trayecto:\n"+ Json.toJson(trayecoEncontrado));
     }
 
     public Result readTrayectosVehiculo (String idVehiculo)

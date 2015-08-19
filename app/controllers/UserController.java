@@ -2,10 +2,7 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.Datos;
-import models.MoviBus;
-import models.MoviBusVehiculo;
-import models.User;
+import models.*;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
@@ -53,5 +50,63 @@ public class UserController extends Controller{
 
         lastUser = (User) new Model.Finder(User.class).byId(id);
         return ok(Json.toJson(lastUser));
+    }
+
+    public Result crearReseva(String idCliente)
+    {
+        User cliente = (User) User.finder.byId(idCliente);
+        if(cliente!=null)
+        {
+            JsonNode j = Controller.request().body().asJson();
+            Reserva jsonReserva = Reserva.bind(j);
+            Reserva nuevaReserva = new Reserva(jsonReserva.getHora_reserva(),jsonReserva.getCosto(),cliente);
+            cliente.agregarReserva(nuevaReserva);
+            nuevaReserva.save();
+            cliente.save();
+            return ok("Reserva creada:\n"+Json.toJson(nuevaReserva));
+        }
+        else
+        {
+            return notFound("Cliente no encontrado");
+        }
+    }
+
+    public Result consultarReservasUsuario(String idCliente)
+    {
+        User cliente = (User) User.finder.byId(idCliente);
+        if(cliente!=null)
+        {
+            return ok(Json.toJson(cliente.getReservas()));
+        }
+        else
+        {
+            return notFound("Usuario no encontrado");
+        }
+    }
+
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result modificarReservaCliente(String idCliente, String idReserva)
+    {
+        User cliente = (User) User.finder.byId(idCliente);
+        if(cliente!=null)
+        {
+            Reserva original = (Reserva) Reserva.finder.byId(idReserva);
+            if(original.getCliente().getUserID().equals(idCliente))
+            {
+                JsonNode j = Controller.request().body().asJson();
+                Reserva jsonReserva = Reserva.bind(j);
+                original.setEstado(jsonReserva.getEstado());
+                original.setHora_reserva(jsonReserva.getHora_reserva());
+                original.setMovibusReservado(jsonReserva.getMovibusReservado());
+                original.setCosto(jsonReserva.getCosto());
+                original.save();
+                return ok("Los datos de la reserva ahora son:\n"+Json.toJson(original));
+            }
+            return badRequest("El usuario no tiene ninguna reserva con id:" + idReserva);
+        }
+        else
+        {
+            return notFound("Usuario no encontrado");
+        }
     }
 }

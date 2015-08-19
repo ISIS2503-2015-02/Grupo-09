@@ -3,16 +3,17 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by USER on 16/08/2015.
  */
 @Entity
 public class User extends Model {
+
+    public static Finder finder = new com.avaje.ebean.Model.Finder(User.class);
 
     //------------------------------------------------------------------------
     // Atributos
@@ -36,6 +37,10 @@ public class User extends Model {
     @OneToOne
     private Vcub alquilada;
 
+    @OneToMany
+    private List<Reserva> reservas;
+
+
     //------------------------------------------------------------------------
     // Constructors
     //------------------------------------------------------------------------
@@ -54,6 +59,7 @@ public class User extends Model {
         this.cellphone = cellphone;
         this.email = email;
         alquilada=null;
+        reservas = new ArrayList<Reserva>();
     }
 
     //------------------------------------------------------------------------
@@ -159,5 +165,14 @@ public class User extends Model {
         email = j.findPath("email").asText();
 
         return this;
+    }
+
+    public void agregarReserva(Reserva nReserva)
+    {
+        reservas.add(nReserva);
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
     }
 }

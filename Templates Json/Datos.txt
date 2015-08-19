@@ -1,5 +1,4 @@
 {
-"id_vehiculo":"vehiculo1",
 "gpsAltitud":"la altitud",
 "gpsLatitud":"la latitud",
 "horaMedicion":"dd-mm-yyyy-HH:mm:ss",

@@ -48,7 +48,7 @@ public class VcubController extends Controller{
         lastVcub.update(j);
         lastVcub.save();
 
-        lastVcub = (Vcub) new Model.Finder(User.class).byId(id);
+        lastVcub = (Vcub) new Model.Finder(Vcub.class).byId(id);
         return ok(Json.toJson(lastVcub));
     }
 }
