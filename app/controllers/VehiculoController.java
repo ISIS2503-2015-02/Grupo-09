@@ -23,7 +23,7 @@ public class VehiculoController extends Controller {
         return ok(Json.toJson(vehiculoN));
     }
 
-    public Result read() {
+    public Result readAll() {
         List<Vehiculo> vehiculos = new Model.Finder(Vehiculo.class).all();
         return ok(Json.toJson(vehiculos));
     }

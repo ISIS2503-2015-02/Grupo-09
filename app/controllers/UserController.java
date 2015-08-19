@@ -30,7 +30,7 @@ public class UserController extends Controller{
         return ok(Json.toJson(lastUser));
     }
 
-    public Result read() {
+    public Result readAll() {
         List<User> users = new Model.Finder(User.class).all();
         return ok(Json.toJson(users));
     }
