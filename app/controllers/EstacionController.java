@@ -45,7 +45,7 @@ public class EstacionController extends Controller {
         User usuario = (User) new Model.Finder(User.class).byId(idCliente);
         if(null!=usuario && estacion != null)
         {
-            Vcub prestada estacion.alquilarVcub(usuario);
+            Vcub prestada =estacion.alquilarVcub(usuario);
             if(prestada!=null)
             {
                 return ok("Se ha prestado la siguiente vCub\n"+Json.toJson(prestada));
@@ -66,7 +66,7 @@ public class EstacionController extends Controller {
     {
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacionEntrega);
         User usuario = (User) new Model.Finder(User.class).byId(idCliente);
-        if(null!=usuario null!= usuario.getAlquilada() && estacion != null)
+        if(null!=usuario && null!= usuario.getAlquilada() && estacion != null)
         {
             Vcub alquilada = usuario.getAlquilada();
             estacion.devolverVcub(alquilada);
@@ -75,5 +75,6 @@ public class EstacionController extends Controller {
         {
             return notFound("Alguno de los recursos que intenta obtener no fueron encontrados o el usuario no tiene ninguna VCub cargada a su cuenta");
         }
+        return notFound("Alguno de los recursos que intenta obtener no fueron encontrados o el usuario no tiene ninguna VCub cargada a su cuenta");
     }
 }
