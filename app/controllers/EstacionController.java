@@ -43,7 +43,7 @@ public class EstacionController extends Controller {
 
 
 
-    public Result read(String idEstacion) {
+    public Result readVcubsEstacion(String idEstacion) {
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
         if(estacion != null) {
             List<Vcub> vcubsEstacion = estacion.getVcubs();
