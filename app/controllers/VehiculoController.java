@@ -37,6 +37,7 @@ public class VehiculoController extends Controller {
         return notFound();
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result agregarDatosVehiculo(String idVehiculo)
     {
         String mensaje;
@@ -51,12 +52,12 @@ public class VehiculoController extends Controller {
             {
                 //Crear  emergencia
                 vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
-                mensaje="ATENCIÓN, EMERGENCIA DETECTADA\n" ;
+                mensaje="ATENCIÃ“N, EMERGENCIA DETECTADA\n" ;
             }
             else
             {
-                //Se está atendiendo el accidente
-                mensaje="Se está atendiendo un accidente, recuerde registrar en el sistema cuando la situación regrese a la normalidad";
+                //Se estï¿½ atendiendo el accidente
+                mensaje="Se estï¿½ atendiendo un accidente, recuerde registrar en el sistema cuando la situaciÃ³n regrese a la normalidad";
             }
             vehiculoEncontrado.agregarDatos(datosRecibidos);
             vehiculoEncontrado.save();
@@ -80,12 +81,12 @@ public class VehiculoController extends Controller {
         }
         else
         {
-            rta=notFound("No se ha encontrado vehículo con el id:"+idVehiculo);
+            rta=notFound("No se ha encontrado vehï¿½culo con el id:"+idVehiculo);
         }
         return rta;
     }
 
-
+    @BodyParser.Of(BodyParser.Json.class)
     public Result agregarTrayectoVehiculo(String idConductor, String idVehiculo) {
         try {
             JsonNode json = Controller.request().body().asJson();
@@ -108,6 +109,7 @@ public class VehiculoController extends Controller {
 
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result finalizarUltimoTrayecto(String idVehiculo, int inconvenientes)
     {
         Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
@@ -129,10 +131,10 @@ public class VehiculoController extends Controller {
             veh.save();
         }
         trayecoEncontrado.save();
-        return ok("Se registró la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
+        return ok("Se registrï¿½ la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
     }
 
-
+    @BodyParser.Of(BodyParser.Json.class)
     public Result finalizarTrayecto(String idTrayecto, int inconvenientes)
     {
         Trayecto trayecoEncontrado = (Trayecto) new Model.Finder(Trayecto.class).byId(idTrayecto);
@@ -153,8 +155,9 @@ public class VehiculoController extends Controller {
             veh.save();
         }
         trayecoEncontrado.save();
-        return ok("Se registró la finalizacion del trayecto:\n"+ Json.toJson(trayecoEncontrado));
+        return ok("Se registrï¿½ la finalizacion del trayecto:\n"+ Json.toJson(trayecoEncontrado));
     }
+
 
     public Result readTrayectosVehiculo (String idVehiculo)
     {
@@ -169,6 +172,7 @@ public class VehiculoController extends Controller {
         }
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result agregarRevision(String idVehiculo)
     {
         Result rta;
@@ -184,7 +188,7 @@ public class VehiculoController extends Controller {
             }
             else
             {
-                rta=badRequest("La revisión no pudo ser convertida a un objeto RevisionMecanica.class");
+                rta=badRequest("La revisiï¿½n no pudo ser convertida a un objeto RevisionMecanica.class");
             }
 
         }
@@ -194,6 +198,7 @@ public class VehiculoController extends Controller {
         }
         return rta;
     }
+
 
     public Result readRevisionesVehiculo(String idVehiculo)
     {

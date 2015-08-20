@@ -20,6 +20,7 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String userID;
 
     private String fullName;

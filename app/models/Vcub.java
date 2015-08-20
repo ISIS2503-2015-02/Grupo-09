@@ -3,10 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * Created by gusal on 13/08/2015.
@@ -26,6 +23,7 @@ public class Vcub extends Model
     //------------------------------------------------------------------------
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String idVcub;
 
     private String estado; //Prestada,sustiduida o libre

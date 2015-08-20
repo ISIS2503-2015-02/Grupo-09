@@ -40,6 +40,7 @@ public class VcubController extends Controller{
         return notFound();
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result modify(String id)
     {
         JsonNode j = Controller.request().body().asJson();

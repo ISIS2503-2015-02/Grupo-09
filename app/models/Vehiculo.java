@@ -23,6 +23,7 @@ public class Vehiculo extends Model {
     public static Finder finder = new com.avaje.ebean.Model.Finder(Vehiculo.class);
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String id_vehiculo;
 
     private String modelo;
