@@ -1,0 +1,7 @@
+New log file opened at Thu Aug 20 00:02:55 COT 2015 by 9927@Okarin
+Taking next connection to: 41865
+New client attempting to connect on port: 59454-41865
+  Address = /192.168.0.20:41865
+This client on port 59454 has uuid fc0fa62f-ce47-41b3-b205-386d4bcfce02 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-fc0fa62f-ce47-41b3-b205-386d4bcfce02
+Taking next connection to: 41865
