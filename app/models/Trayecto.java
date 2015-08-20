@@ -113,8 +113,8 @@ public class Trayecto extends Model
     }
 
     /**
-     * Indica cu·nto ha durado el trayecto
-     * @return duracion DuraciÛn del trayecto en minutos.
+     * Indica cu√°nto ha durado el trayecto
+     * @return duracion Duraci√≥n del trayecto en minutos.
      */
     public double getDuracion()
     {
