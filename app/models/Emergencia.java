@@ -3,6 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +12,7 @@ import java.util.Date;
 /**
  * Created by gusal on 15/08/2015.
  */
+@Entity
 public class Emergencia extends Model{
 
     public final static int CONTROLADA=1;

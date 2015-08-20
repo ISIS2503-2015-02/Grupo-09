@@ -158,9 +158,19 @@ PUT /vehiculos/{id} controllers.VehiculoController.agregarDatosVehiculo(id : Str
 
 GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
 
-#POST /vehiculos/{id}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo()
+
+POST /vehiculos/{id}/conductores/{id2}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo(id : String, id2 : String)
+#finalizarUltimoTrayecto
+#PUT /vehiculos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarUltimoTrayecto(id : String, id2  : int)
+#finalizarTrayecto
+#PUT /trayectos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarTrayecto(id : String, id2  : int)
 
 
+GET /vehiculos/{id}/trayectos controllers.VehiculoController.readTrayectosVehiculo(id : String)
+
+POST /vehiculos/{id}/revisiones controllers.VehiculoController.agregarRevision(id : String)
+
+GET /vehiculos/{id}/revisiones controllers.VehiculoController.agregarRevision(id : String)
 
 
 

@@ -4,12 +4,13 @@ package models;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
+import javax.persistence.Entity;
 import java.util.Date;
 
 /**
  * Created by bdrangel10 on 17/08/2015.
  */
-
+@Entity
 public class TranviaVehiculo extends Vehiculo {
 
 

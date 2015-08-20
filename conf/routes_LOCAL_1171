@@ -74,7 +74,7 @@ PUT        /mobibuses/:id   controllers.MoviBusController.putMovibus(id : String
 #Obtener todos los tranvias del sistema
 GET        /tranvias                    controllers.TranviaVehController.readAll()
 #Obtener los datos de un tranvia
-GET        /tranvias/:id               controllers.TranviaVehController.readTranvia(id: String)
+GET        /tranvias/:id               controllers.TranviaVehController.readVehiculoID(id: String)
 #Registrar un nuevo tranvias
 POST        /tranvias                   controllers.TranviaVehController.create()
 #Modificar datos de un tranvias

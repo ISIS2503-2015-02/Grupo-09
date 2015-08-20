@@ -9,6 +9,7 @@ import java.util.Date;
 /**
  * Created by Bdrangel10 on 16/08/2015.
  */
+@Entity
 public class RevisionMecanica
 
 {

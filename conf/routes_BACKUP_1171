@@ -74,7 +74,11 @@ PUT        /mobibuses/:id   controllers.MoviBusController.putMovibus(id : String
 #Obtener todos los tranvias del sistema
 GET        /tranvias                    controllers.TranviaVehController.readAll()
 #Obtener los datos de un tranvia
+<<<<<<< HEAD
+GET        /tranvias/:id               controllers.TranviaVehController.readVehiculoID(id: String)
+=======
 GET        /tranvias/:id               controllers.TranviaVehController.readTranvia(id: String)
+>>>>>>> 1c551230fda6b237f8982b7ae2267c3af93a1c05
 #Registrar un nuevo tranvias
 POST        /tranvias                   controllers.TranviaVehController.create()
 #Modificar datos de un tranvias
@@ -158,9 +162,19 @@ PUT /vehiculos/{id} controllers.VehiculoController.agregarDatosVehiculo(id : Str
 
 GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
 
-#POST /vehiculos/{id}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo()
+
+POST /vehiculos/{id}/conductores/{id2}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo(id : String, id2 : String)
+#finalizarUltimoTrayecto
+#PUT /vehiculos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarUltimoTrayecto(id : String, id2  : int)
+#finalizarTrayecto
+#PUT /trayectos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarTrayecto(id : String, id2  : int)
 
 
+GET /vehiculos/{id}/trayectos controllers.VehiculoController.readTrayectosVehiculo(id : String)
+
+POST /vehiculos/{id}/revisiones controllers.VehiculoController.agregarRevision(id : String)
+
+GET /vehiculos/{id}/revisiones controllers.VehiculoController.agregarRevision(id : String)
 
 
 
