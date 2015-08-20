@@ -35,10 +35,10 @@ public class User extends Model {
 
     private String email;
 
-    @OneToOne
+
     private Vcub alquilada;
 
-    @OneToMany
+
     private List<Reserva> reservas;
 
 
