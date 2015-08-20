@@ -125,15 +125,15 @@ PUT        /vcubs/:id               controllers.VcubController.modify(id: String
 
 
 #TRAYECTOS
-GET        /trayectos  controllers.TrayectoController.read();
-POST        /trayectos     controllers.TrayectoController.create();
+GET        /trayectos  controllers.TrayectoController.readAll()
+POST        /trayectos     controllers.TrayectoController.create()
 
 
 ################################################################### ESTACIONES #############################################################
 #Obtener todas las estaciones del sistema
 GET     /estaciones             controllers.EstacionController.readAll()
 #Obtener los datos de una estaci�n
-GET     /estaciones/:id         controllers.EstacionController.read(id: String)
+GET     /estaciones/:id         controllers.EstacionController.readVcubsEstacion(id: String)
 #Registrar una nueva estaci�n
 POST     /estaciones       controllers.EstacionController.create()
 #Modificar datos de una estaci�n
