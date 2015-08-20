@@ -47,7 +47,7 @@ DELETE        /usuarios/:id/reservas/:id2    controllers.UserController.eliminar
 #Obtener todos los mobibuses del sistema
 GET        /mobibuses      controllers.MoviBusController.read()
 #Obtener los datos de un mobibus
-GET        /mobibuses/:id  controllers.MoviBusController.readMovibus(String idMovibus)
+GET        /mobibuses/:id  controllers.MoviBusController.readMovibus(id : String )
 #Registrar un nuevo mobibus
 POST        /mobibuses    controllers.MoviBusController.create()
 #Modificar datos de un mobibus
@@ -125,8 +125,8 @@ PUT        /vcubs/:id               controllers.VcubController.modify(id: String
 
 
 #TRAYECTOS
-GET        /trayectos  controllers.TrayectoController.read();
-POST        /trayectos     controllers.TrayectoController.create();
+GET        /trayectos  controllers.TrayectoController.read()
+POST        /trayectos     controllers.TrayectoController.create()
 
 
 ################################################################### ESTACIONES #############################################################
@@ -144,6 +144,22 @@ PUT     /estaciones/:id    controllers.EstacionController.modificarEstacion(id :
 DELETE     /estaciones/:id/bicicletas/:id2    controllers.EstacionController.alquilarBicicleta(id : String, id2 :  String)
 #Entregar una bicicleta en una estaci�n
 POST     /estaciones/:id/bicicletas    controllers.EstacionController.devolverBicicleta(id : String, id2 :  String)
+
+
+#VEHICULOS
+
+GET /vehiculos controllers.VehiculoController.readAll()
+
+POST /vehiculos controllers.VehiculoController.create()
+
+GET /vehiculos/{id} controllers.VehiculoController.readVehiculoID(id : String)
+
+PUT /vehiculos/{id} controllers.VehiculoController.agregarDatosVehiculo(id : String)
+
+GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
+
+#POST /vehiculos/{id}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo()
+
 
 
 

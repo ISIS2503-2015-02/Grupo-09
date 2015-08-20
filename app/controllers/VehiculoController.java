@@ -51,12 +51,12 @@ public class VehiculoController extends Controller {
             {
                 //Crear  emergencia
                 vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
-                mensaje="ATENCI”N, EMERGENCIA DETECTADA\n" ;
+                mensaje="ATENCI√ìN, EMERGENCIA DETECTADA\n" ;
             }
             else
             {
-                //Se est· atendiendo el accidente
-                mensaje="Se est· atendiendo un accidente, recuerde registrar en el sistema cuando la situaciÛn regrese a la normalidad";
+                //Se est√° atendiendo el accidente
+                mensaje="Se est√° atendiendo un accidente, recuerde registrar en el sistema cuando la situaci√≥n regrese a la normalidad";
             }
             vehiculoEncontrado.agregarDatos(datosRecibidos);
             vehiculoEncontrado.save();
@@ -80,7 +80,7 @@ public class VehiculoController extends Controller {
         }
         else
         {
-            rta=notFound("No se ha encontrado vehÌculo con el id:"+idVehiculo);
+            rta=notFound("No se ha encontrado veh√≠culo con el id:"+idVehiculo);
         }
         return rta;
     }
@@ -129,7 +129,7 @@ public class VehiculoController extends Controller {
             veh.save();
         }
         trayecoEncontrado.save();
-        return ok("Se registrÛ la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
+        return ok("Se registr√≥ la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
     }
 
 
@@ -153,7 +153,7 @@ public class VehiculoController extends Controller {
             veh.save();
         }
         trayecoEncontrado.save();
-        return ok("Se registrÛ la finalizacion del trayecto:\n"+ Json.toJson(trayecoEncontrado));
+        return ok("Se registr√≥ la finalizacion del trayecto:\n"+ Json.toJson(trayecoEncontrado));
     }
 
     public Result readTrayectosVehiculo (String idVehiculo)
@@ -184,7 +184,7 @@ public class VehiculoController extends Controller {
             }
             else
             {
-                rta=badRequest("La revisiÛn no pudo ser convertida a un objeto RevisionMecanica.class");
+                rta=badRequest("La revisi√≥n no pudo ser convertida a un objeto RevisionMecanica.class");
             }
 
         }
