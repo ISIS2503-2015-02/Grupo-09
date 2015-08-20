@@ -26,7 +26,7 @@ POST       /conductor                 controllers.DriverController.create()
 
 #######################################################################  USUARIOS ################
 #Obtener todos los usuarios
-GET        /usuarios                 controllers.UserController.read()
+GET        /usuarios                 controllers.UserController.readAll()
 #Obtener los datos de un usuario
 GET        /usuarios/:id            controllers.UserController.read(id: String)
 #Registrar un nuevo usuario
@@ -34,28 +34,29 @@ POST       /usuarios                 controllers.UserController.create()
 #Modificar datos de un usuario
 PUT	/usuarios/:id                   controllers.UserController.modify(id: String)
 #Obtener reservas de un usuario
-#GET        /usuarios/:id/reservas
+GET        /usuarios/:id/reservas    controllers.UserController.consultarReservasUsuario(id: String)
 #Crear una reserva
-#POST        /usuarios/:id/reservas
+POST        /usuarios/:id/reservas      controllers.UserController.crearReseva(id: String)
 #Modificar una reserva
-#PUT        /usuarios/:id/reservas/:id2
+PUT        /usuarios/:id/reservas/:id2   controllers.UserController.modificarReservaCliente(id: String,id2: String )
 #Eliminar una reserva
-#DELETE        /usuarios/:id/reservas/:id2
+DELETE        /usuarios/:id/reservas/:id2    controllers.UserController.eliminarReservaCliente(id: String,id2: String )
 
 
 ################################################################   MOBIBUSES  ############################################
 #Obtener todos los mobibuses del sistema
-#GET        /mobibuses
+GET        /mobibuses      controllers.MoviBusController.read()
 #Obtener los datos de un mobibus
-#GET        /mobibuses/:id
+GET        /mobibuses/:id  controllers.MoviBusController.readMovibus(String idMovibus)
 #Registrar un nuevo mobibus
-#POST        /mobibuses
+POST        /mobibuses    controllers.MoviBusController.create()
 #Modificar datos de un mobibus
-#PUT        /mobibuses/:id
-#Enviar los datos del mobibus (GPS, hora�)
-#POST        /mobibuses/:id/datos
-#Obtener los datos registrados del mobibus (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
+PUT        /mobibuses/:id   controllers.MoviBusController.putMovibus(id : String)
 
+
+#Enviar los datos del mobibus (GPS, hora�)
+#POST        /mobibuses/:id/datos    controllers.MoviBusController.
+#Obtener los datos registrados del mobibus (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
 
 #Registrar una revisi�n tecnomec�nica
 #POST        /mobibuses/:id/revisiones
@@ -71,13 +72,15 @@ PUT	/usuarios/:id                   controllers.UserController.modify(id: String
 
 #####################################################################  TRANVIAS  #######################
 #Obtener todos los tranvias del sistema
-GET        /tranvias                    controllers.TranviaController.read()
+GET        /tranvias                    controllers.TranviaController.readAll()
 #Obtener los datos de un tranvia
 GET        /tranvias/:id               controllers.TranviaController.read(id: String)
 #Registrar un nuevo tranvias
 POST        /tranvias                   controllers.TranviaController.create()
 #Modificar datos de un tranvias
 PUT        /tranvias/:id               controllers.TranviaController.modify(id: String)
+
+
 #Enviar los datos del tranvias (GPS, hora�)
 #POST        /tranvias/:id/datos
 #Obtener los datos registrados del tranvias (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
@@ -122,25 +125,25 @@ PUT        /vcubs/:id               controllers.VcubController.modify(id: String
 
 
 #TRAYECTOS
-#GET        /trayectos
-#POST        /trayectos
+GET        /trayectos  controllers.TrayectoController.read();
+POST        /trayectos     controllers.TrayectoController.create();
 
 
 ################################################################### ESTACIONES #############################################################
 #Obtener todas las estaciones del sistema
-GET     /estaciones             controllers.EstacionController.read()
+GET     /estaciones             controllers.EstacionController.readAll()
 #Obtener los datos de una estaci�n
 GET     /estaciones/:id         controllers.EstacionController.read(id: String)
 #Registrar una nueva estaci�n
-#POST     /estaciones
+POST     /estaciones       controllers.EstacionController.create()
 #Modificar datos de una estaci�n
-#PUT     /estaciones/:id
+PUT     /estaciones/:id    controllers.EstacionController.modificarEstacion(id : String)
 #Obtener las bicicletas que se encuentran en una estaci�n
-#GET     /estaciones/:id/bicicletas
+#GET     /estaciones/:id/bicicletas   controllers.EstacionController.
 #Prestar una bicicleta en una estaci�n
-#DELETE     /estaciones/:id/bicicletas/:id2
+DELETE     /estaciones/:id/bicicletas/:id2    controllers.EstacionController.alquilarBicicleta(id : String, id2 :  String)
 #Entregar una bicicleta en una estaci�n
-#POST     /estaciones/:id/bicicletas
+POST     /estaciones/:id/bicicletas    controllers.EstacionController.devolverBicicleta(id : String, id2 :  String)
 
 
 

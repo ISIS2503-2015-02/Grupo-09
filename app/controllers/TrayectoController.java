@@ -21,4 +21,13 @@ public class TrayectoController extends Controller{
         List<Trayecto> trayectos = new Model.Finder(Trayecto.class).all();
         return ok(Json.toJson(trayectos));
     }
+
+
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result create(){
+        JsonNode j = Controller.request().body().asJson();
+        Trayecto t = Trayecto.bind(j);
+        t.save();
+        return ok(Json.toJson(t));
+    }
 }
