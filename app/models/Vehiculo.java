@@ -11,7 +11,7 @@ import play.libs.Json;
 /**
  * Created by bdrangel10 on 17/08/2015.
  */
-@Entity
+@MappedSuperclass
 public class Vehiculo extends Model {
 
     public final static int EN_MARCHA=1;

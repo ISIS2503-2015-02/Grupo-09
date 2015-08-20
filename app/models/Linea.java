@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by gusal on 15/08/2015.
  */
-@Entity
+
 public enum Linea {
 
     A,
