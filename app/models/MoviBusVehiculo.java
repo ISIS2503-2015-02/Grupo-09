@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by bdrangel10 on 17/08/2015.
  */
-
+@Entity
 public class MoviBusVehiculo extends Vehiculo {
 
 

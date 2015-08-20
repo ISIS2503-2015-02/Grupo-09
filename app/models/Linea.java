@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.persistence.Entity;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by gusal on 15/08/2015.
  */
+@Entity
 public enum Linea {
 
     A,
