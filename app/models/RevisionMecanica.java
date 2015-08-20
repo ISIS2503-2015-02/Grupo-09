@@ -19,7 +19,7 @@ public class RevisionMecanica
     private Date fechaRevision;
     private double costo_Revision;
     private double kilometraje;
-    @ManyToOne
+    //@ManyToOne
     private Vehiculo vehiculo;
 
     public RevisionMecanica(Date fechaRevision, double costo_Revision, double kilometraje, Vehiculo vehiculo) {

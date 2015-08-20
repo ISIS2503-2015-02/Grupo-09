@@ -33,10 +33,10 @@ public class Reserva extends Model {
     private double costo;
     private String estado;
 
-    @ManyToOne
+    //@ManyToOne
     private MoviBus movibusReservado;
 
-    @ManyToOne
+    //@ManyToOne
     private User cliente;
 
     public Reserva(Date hora_reserva, double costo, User cliente) {

@@ -34,16 +34,16 @@ public class Vehiculo extends Model {
 
     private String tipo_vehiculo;
 
-    @OneToMany
+    //@OneToMany
     private List<RevisionMecanica> revisiones;
 
-    @OneToMany
+    //@OneToMany
     private List<Datos> datos;
 
-    @OneToMany
+    //@OneToMany
     private List<Emergencia> emergencias;
 
-    @OneToMany
+    //@OneToMany
     private List<Trayecto> trayectos;
 
     private RevisionMecanica ultimaRevision;
