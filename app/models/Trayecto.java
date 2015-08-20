@@ -27,10 +27,10 @@ public class Trayecto extends Model
     private int estado;
     private double duracion;
 
-    @ManyToOne
+    //@ManyToOne
     private Driver conductor;
 
-    @ManyToOne
+    //@ManyToOne
     private Vehiculo vehiculo;
 
     public Trayecto(String ruta, Date hora_inicio)

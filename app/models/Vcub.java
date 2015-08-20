@@ -28,11 +28,11 @@ public class Vcub extends Model
 
     private String estado; //Prestada,sustiduida o libre
 
-    @ManyToOne
+    //@ManyToOne
     private Estacion estacion;
 
-    @OneToOne
-    @JoinColumn(name = "userID", nullable = false)
+    //@OneToOne
+    //@JoinColumn(name = "userID", nullable = false)
     private User cliente;
 
     public Vcub(){

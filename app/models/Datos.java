@@ -33,7 +33,7 @@ public class Datos extends Model
 
     private double kilometraje;
 
-    @ManyToOne
+    //@ManyToOne
     private Vehiculo vehiculoGenerador;
 
 
