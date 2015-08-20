@@ -161,9 +161,9 @@ GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : 
 
 POST /vehiculos/{id}/conductores/{id2}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo(id : String, id : String)
 #finalizarUltimoTrayecto
-PUT /vehiculos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarUltimoTrayecto(id : String, id2  : int)
+#PUT /vehiculos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarUltimoTrayecto(id : String, id2  : int)
 #finalizarTrayecto
-PUT /trayectos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarTrayecto(id : String, id2  : int)
+#PUT /trayectos/{id}/inconvenientes/:id2/trayectos  controllers.VehiculoController.finalizarTrayecto(id : String, id2  : int)
 
 
 GET /vehiculos/{id}/trayectos controllers.VehiculoController.readTrayectosVehiculo(id : String)
