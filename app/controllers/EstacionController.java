@@ -31,6 +31,7 @@ public class EstacionController extends Controller {
         return ok(Json.toJson(stations));
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result modificarEstacion(String idEstacion)
     {
         JsonNode j = Controller.request().body().asJson();
@@ -65,7 +66,7 @@ public class EstacionController extends Controller {
                 String mensaje ="";
                 if(estacion.getVcubsCapacity()/10>estacion.getVcubs().size())
                 {
-                    mensaje+="ALERTA: QUEDAN MENOS DEL 10% DE LAS VCUBS PARA LA ESTACIÓN \n";
+                    mensaje+="ALERTA: QUEDAN MENOS DEL 10% DE LAS VCUBS PARA LA ESTACIï¿½N \n";
                 }
                 return ok(mensaje+"Se ha prestado la siguiente vCub\n"+Json.toJson(prestada));
             }

@@ -2,9 +2,8 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,6 +16,7 @@ public class Datos extends Model
     public final static int MOVIBUS=2;
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String idDatos;
 
     private String gpsAltitud;
@@ -133,8 +133,8 @@ public class Datos extends Model
     //-------------------------------------------------
 
     /**
-     * Retorna unos Datos con un vehículo null.
-     * @param j El JsonNode que contiene la información a ser convertida a Datos
+     * Retorna unos Datos con un vehï¿½culo null.
+     * @param j El JsonNode que contiene la informaciï¿½n a ser convertida a Datos
      * @return
      */
     public static Datos bind (JsonNode j)

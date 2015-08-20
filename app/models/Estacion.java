@@ -95,7 +95,7 @@ public class Estacion extends Model {
     }
 
     /*
-        Presta una bicicleta al usuario que llega por par·metro, la elimina de las bicicletas de la estaciÛn.
+        Presta una bicicleta al usuario que llega por par√°metro, la elimina de las bicicletas de la estaci√≥n.
      */
     public Vcub alquilarVcub(User usuarioAlquila)
     {

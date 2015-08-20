@@ -40,6 +40,7 @@ public class UserController extends Controller{
         return notFound();
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result modify(String id)
     {
         JsonNode j = Controller.request().body().asJson();
@@ -52,6 +53,7 @@ public class UserController extends Controller{
         return ok(Json.toJson(lastUser));
     }
 
+    @BodyParser.Of(BodyParser.Json.class)
     public Result crearReseva(String idCliente)
     {
         User cliente = (User) User.finder.byId(idCliente);
