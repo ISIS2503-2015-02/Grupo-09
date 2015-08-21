@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="fork-run"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run"
-		date="20150821143518"/>
+		date="20150821144851"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="fork-run_2.11">
 			<revision name="2.4.2" status="release" pubdate="20150703003826" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
@@ -17,6 +17,18 @@
 				<artifacts>
 					<artifact name="fork-run_2.11" type="jar" ext="jar" status="no" details="" size="97144" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe.play/fork-run_2.11/jars/fork-run_2.11-2.4.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/fork-run_2.11/2.4.2/fork-run_2.11-2.4.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.contentobjects.jnotify" name="jnotify">
+			<revision name="0.94-play-1" status="release" pubdate="20150415123211" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/jnotify" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*)" position="28">
+				<license name="LGPL-2.1" url="https://www.gnu.org/licenses/lgpl-2.1.html"/>
+				<metadata-artifact status="no" details="" size="1225" time="0" location="/home/ryogi/.ivy2/cache/net.contentobjects.jnotify/jnotify/ivy-0.94-play-1.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/net.contentobjects.jnotify/jnotify/0.94-play-1/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.play" name="fork-run_2.11" conf="default, compile, runtime, master" rev="0.94-play-1" rev-constraint-default="0.94-play-1" rev-constraint-dynamic="0.94-play-1" callerrev="2.4.2"/>
+				<artifacts>
+					<artifact name="jnotify" type="jar" ext="jar" status="no" details="" size="660779" time="0" location="/home/ryogi/.ivy2/cache/net.contentobjects.jnotify/jnotify/jars/jnotify-0.94-play-1.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/net.contentobjects.jnotify/jnotify/0.94-play-1/jars/jnotify.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -462,13 +474,6 @@
 				<caller organisation="com.typesafe.sbtrc" name="actor-client-2-11" conf="compile" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="0.3.1"/>
 				<caller organisation="com.typesafe.sbtrc" name="client-2-11" conf="compile" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="0.3.1"/>
 				<caller organisation="org.scala-lang.modules" name="scala-xml_2.11" conf="compile, runtime" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0.2"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="net.contentobjects.jnotify" name="jnotify">
-			<revision name="0.94-play-1" error="not found" downloaded="false" searched="false" conf="runtime(*), master(compile), compile(*)" position="-1">
-				<caller organisation="com.typesafe.play" name="fork-run_2.11" conf="default, compile, runtime, master" rev="0.94-play-1" rev-constraint-default="0.94-play-1" rev-constraint-dynamic="0.94-play-1" callerrev="2.4.2"/>
 				<artifacts>
 				</artifacts>
 			</revision>
