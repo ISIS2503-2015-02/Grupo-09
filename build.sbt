@@ -12,6 +12,9 @@ libraryDependencies ++= {Seq(
   javaWs
 )}
 
+val appDependencies = {Seq(
+  "mysql" % "mysql-connector-java" % "5.1.18"
+)}
 
 resolvers += Resolver.url("Typesafe Ivy releases", url("https://repo.typesafe.com/typesafe/ivy-releases"))(Resolver.ivyStylePatterns)
 
