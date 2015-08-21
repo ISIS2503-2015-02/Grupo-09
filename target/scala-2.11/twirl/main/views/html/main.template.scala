@@ -64,7 +64,7 @@ Seq[Any](format.raw/*1.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Thu Aug 20 19:49:43 COT 2015
+                  DATE: Thu Aug 20 20:03:01 COT 2015
                   SOURCE: /home/ryogi/Arquisoft/Grupo-09/app/views/main.scala.html
                   HASH: 1d71e5a57e6705098fc1b5447ce76b35638f9469
                   MATRIX: 748->1|873->31|901->33|988->94|1013->99|1101->161|1115->167|1177->208|1264->269|1278->275|1338->314|1390->339|1405->345|1467->386|1561->453|1589->460|1621->465
