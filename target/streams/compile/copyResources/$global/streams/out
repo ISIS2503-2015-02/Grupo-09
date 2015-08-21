@@ -1,0 +1,13 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/application.conf,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/routes_REMOTE_1171,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/routes_REMOTE_1171)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/routes_BACKUP_1171,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/routes_BACKUP_1171)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/evolutions,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/routes_LOCAL_1171,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/routes_LOCAL_1171)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/routes,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/routes_BASE_1171,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/routes_BASE_1171)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/routes.orig,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/routes.orig)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/logback.xml,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/openshift.conf,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/openshift.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/evolutions/default,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/home/ryogi/Arquisoft/Grupo-09/conf/evolutions/default/1.sql,/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/evolutions/default/1.sql)[0m
