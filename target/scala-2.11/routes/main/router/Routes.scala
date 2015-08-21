@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Fri Aug 21 10:38:15 COT 2015
+// @DATE:Fri Aug 21 10:42:29 COT 2015
 
 package router
 
