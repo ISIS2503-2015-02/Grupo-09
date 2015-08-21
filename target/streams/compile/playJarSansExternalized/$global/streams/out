@@ -118,8 +118,6 @@
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.class[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.class[0m
-[0m[[0mdebug[0m] [0m	META-INF/resources/webjars/mueblesdelosalpes/1.0-SNAPSHOT/stylesheets[0m
-[0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/public/stylesheets[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript/ReverseTrayectoController.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/controllers/javascript/ReverseTrayectoController.class[0m
 [0m[[0mdebug[0m] [0m	views/html/main_Scope0$main.class[0m
@@ -176,14 +174,10 @@
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/views/html/index$.class[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript/ReverseVehiculoController.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/controllers/javascript/ReverseVehiculoController.class[0m
-[0m[[0mdebug[0m] [0m	META-INF/resources/webjars/mueblesdelosalpes/1.0-SNAPSHOT/images/favicon.png[0m
-[0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/public/images/favicon.png[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$router$Routes$$controllers_MoviBusController_readMovibus12_invoker$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_MoviBusController_readMovibus12_invoker$1.class[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$router$Routes$$controllers_UserController_modificarReservaCliente9_invoker$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_UserController_modificarReservaCliente9_invoker$1.class[0m
-[0m[[0mdebug[0m] [0m	META-INF/resources/webjars/mueblesdelosalpes/1.0-SNAPSHOT/javascripts/hello.js[0m
-[0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/public/javascripts/hello.js[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$router$Routes$$controllers_VcubController_modify22_invoker$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_VcubController_modify22_invoker$1.class[0m
 [0m[[0mdebug[0m] [0m	models/Datos.class[0m
@@ -240,8 +234,6 @@
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$29.class[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$15$$anonfun$apply$15.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$15$$anonfun$apply$15.class[0m
-[0m[[0mdebug[0m] [0m	META-INF/resources/webjars/mueblesdelosalpes/1.0-SNAPSHOT/stylesheets/main.css[0m
-[0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/public/stylesheets/main.css[0m
 [0m[[0mdebug[0m] [0m	controllers/routes.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/controllers/routes.class[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript/ReverseEstacionController.class[0m
@@ -298,8 +290,6 @@
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9$$anonfun$apply$9.class[0m
 [0m[[0mdebug[0m] [0m	models/MoviBus.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/models/MoviBus.class[0m
-[0m[[0mdebug[0m] [0m	META-INF/resources/webjars/mueblesdelosalpes/1.0-SNAPSHOT/javascripts[0m
-[0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/public/javascripts[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript/ReverseVcubController.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/controllers/javascript/ReverseVcubController.class[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript[0m
@@ -314,8 +304,6 @@
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7.class[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$27.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$27.class[0m
-[0m[[0mdebug[0m] [0m	META-INF/resources/webjars/mueblesdelosalpes/1.0-SNAPSHOT/images[0m
-[0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/public/images[0m
 [0m[[0mdebug[0m] [0m	router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$31$$anonfun$apply$31.class[0m
 [0m[[0mdebug[0m] [0m	  /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$31$$anonfun$apply$31.class[0m
 [0m[[0mdebug[0m] [0m	views/html/main_Scope0$main$$anonfun$f$1$$anonfun$apply$1.class[0m

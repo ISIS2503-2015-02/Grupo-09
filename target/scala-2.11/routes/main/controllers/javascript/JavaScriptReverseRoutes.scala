@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Thu Aug 20 20:21:55 COT 2015
+// @DATE:Thu Aug 20 20:30:01 COT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
