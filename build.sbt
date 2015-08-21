@@ -12,7 +12,7 @@ Seq(
   javaJdbc,
   cache,
   javaWs,
-  "com.typesafe" % "config" % typesafeConfigVersion % "test"
+  "com.typesafe" % "config" % typesafeConfigVersion
 )}
 
 

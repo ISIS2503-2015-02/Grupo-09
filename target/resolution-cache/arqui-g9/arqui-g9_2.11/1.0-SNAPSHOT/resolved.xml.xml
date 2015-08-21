@@ -4,7 +4,7 @@
 		module="arqui-g9_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150821104417"
+		publication="20150821143518"
 	>
 		<description>
 		arqui-g9
@@ -47,6 +47,6 @@
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe" name="config" rev="1.2.1" conf="test->default(compile)"/>
+		<dependency org="com.typesafe" name="config" rev="1.2.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

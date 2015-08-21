@@ -3,6 +3,9 @@
 # script. The application will work only if it binds to
 # $OPENSHIFT_INTERNAL_IP:8080 
 
+export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk/jdk1.8.0_05"
+export PATH=$JDK8_PATH:$PATH
+
 LOG_FILE="${OPENSHIFT_DIY_LOG_DIR}play.log"
 
 # figure out the start script (and ensure it is runnable)

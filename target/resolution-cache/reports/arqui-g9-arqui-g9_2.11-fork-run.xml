@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="fork-run"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run"
-		date="20150821104417"/>
+		date="20150821143518"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="fork-run_2.11">
 			<revision name="2.4.2" status="release" pubdate="20150703003826" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
@@ -17,18 +17,6 @@
 				<artifacts>
 					<artifact name="fork-run_2.11" type="jar" ext="jar" status="no" details="" size="97144" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe.play/fork-run_2.11/jars/fork-run_2.11-2.4.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/fork-run_2.11/2.4.2/fork-run_2.11-2.4.2.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="net.contentobjects.jnotify" name="jnotify">
-			<revision name="0.94-play-1" status="release" pubdate="20150415123211" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/jnotify" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*)" position="28">
-				<license name="LGPL-2.1" url="https://www.gnu.org/licenses/lgpl-2.1.html"/>
-				<metadata-artifact status="no" details="" size="1225" time="0" location="/home/ryogi/.ivy2/cache/net.contentobjects.jnotify/jnotify/ivy-0.94-play-1.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/net.contentobjects.jnotify/jnotify/0.94-play-1/ivys/ivy.xml"/>
-				<caller organisation="com.typesafe.play" name="fork-run_2.11" conf="default, compile, runtime, master" rev="0.94-play-1" rev-constraint-default="0.94-play-1" rev-constraint-dynamic="0.94-play-1" callerrev="2.4.2"/>
-				<artifacts>
-					<artifact name="jnotify" type="jar" ext="jar" status="no" details="" size="660779" time="0" location="/home/ryogi/.ivy2/cache/net.contentobjects.jnotify/jnotify/jars/jnotify-0.94-play-1.jar">
-						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/net.contentobjects.jnotify/jnotify/0.94-play-1/jars/jnotify.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -72,7 +60,7 @@
 		<module organisation="com.typesafe" name="config">
 			<revision name="1.2.1" status="release" pubdate="20140502095416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="26">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="no" details="" size="2752" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
+				<metadata-artifact status="no" details="" size="2734" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
 				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="default, compile, runtime, master" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="2.3.8"/>
 				<artifacts>
 					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="219554" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar">
@@ -210,11 +198,11 @@
 		</module>
 		<module organisation="com.thoughtworks.paranamer" name="paranamer">
 			<revision name="2.6" status="release" pubdate="20131008225654" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
-				<metadata-artifact status="no" details="" size="4124" time="0" location="/home/ryogi/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom"/>
+				<metadata-artifact status="no" details="" size="4124" time="0" location="/home/ryogi/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom"/>
 				<caller organisation="org.json4s" name="json4s-core_2.11" conf="default, compile, runtime, master" rev="2.6" rev-constraint-default="2.6" rev-constraint-dynamic="2.6" callerrev="3.2.10"/>
 				<artifacts>
 					<artifact name="paranamer" type="jar" ext="jar" status="no" details="" size="32806" time="0" location="/home/ryogi/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.6.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar"/>
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -284,13 +272,13 @@
 		<module organisation="org.scala-lang" name="scala-reflect">
 			<revision name="2.11.5" status="release" pubdate="20150106193224" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.5/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="8">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/ryogi/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.5/scala-reflect-2.11.5.pom"/>
+				<metadata-artifact status="no" details="" size="2637" time="0" location="/home/ryogi/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.5/scala-reflect-2.11.5.pom"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
 				<caller organisation="org.scala-lang.modules" name="scala-pickling_2.11" conf="default, compile, runtime, master" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="0.10.0"/>
 				<caller organisation="com.typesafe.sbtrc" name="client-2-11" conf="compile" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="0.3.1"/>
 				<artifacts>
 					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4454732" time="0" location="/home/ryogi/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.5.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.5/scala-reflect-2.11.5.jar"/>
+						<origin-location is-local="false" location="UNKNOWN"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -354,7 +342,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.11.6" status="release" pubdate="20150225200105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, default(compile)" position="1">
+			<revision name="2.11.6" status="release" pubdate="20150225200105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, master(*), default(compile)" position="1">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/ryogi/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.pom"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
@@ -385,7 +373,7 @@
 					</artifact>
 				</artifacts>
 			</revision>
-			<revision name="2.10.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="-1">
+			<revision name="2.10.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, compile, runtime, default(compile), master, master(*), runtime(*), master(compile), compile(*)" position="-1">
 				<evicted-by rev="2.11.1"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
 				<caller organisation="org.json4s" name="json4s-core_2.11" conf="default, compile, runtime, master" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="3.2.10"/>
@@ -402,7 +390,7 @@
 				<artifacts>
 				</artifacts>
 			</revision>
-			<revision name="2.11.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, default(compile)" position="-1">
+			<revision name="2.11.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, master(*), default(compile)" position="-1">
 				<evicted-by rev="2.10.4"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
 				<caller organisation="org.json4s" name="json4s-core_2.11" conf="default, compile, runtime, master" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="3.2.10"/>
@@ -417,7 +405,7 @@
 				<artifacts>
 				</artifacts>
 			</revision>
-			<revision name="2.11.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, default(compile)" position="-1">
+			<revision name="2.11.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, master(*), default(compile)" position="-1">
 				<evicted-by rev="2.11.2"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
 				<caller organisation="org.json4s" name="json4s-core_2.11" conf="default, compile, runtime, master" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="3.2.10"/>
@@ -430,7 +418,7 @@
 				<artifacts>
 				</artifacts>
 			</revision>
-			<revision name="2.11.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="-1">
+			<revision name="2.11.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master, master(*)" position="-1">
 				<evicted-by rev="2.11.6"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
 				<caller organisation="org.json4s" name="json4s-core_2.11" conf="default, compile, runtime, master" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="3.2.10"/>
@@ -451,7 +439,7 @@
 				<artifacts>
 				</artifacts>
 			</revision>
-			<revision name="2.11.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, default(compile)" position="-1">
+			<revision name="2.11.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default, master(*), default(compile)" position="-1">
 				<evicted-by rev="2.11.6"/>
 				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="default, compile, runtime, master" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.3.8"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
@@ -464,7 +452,7 @@
 				<artifacts>
 				</artifacts>
 			</revision>
-			<revision name="2.11.5" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="-1">
+			<revision name="2.11.5" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master, master(compile)" position="-1">
 				<evicted-by rev="2.11.6"/>
 				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="default, compile, runtime, master" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.3.8"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.11.4" rev-constraint-default="2.11.4" rev-constraint-dynamic="2.11.4" callerrev="2.11.4"/>
@@ -474,6 +462,13 @@
 				<caller organisation="com.typesafe.sbtrc" name="actor-client-2-11" conf="compile" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="0.3.1"/>
 				<caller organisation="com.typesafe.sbtrc" name="client-2-11" conf="compile" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="0.3.1"/>
 				<caller organisation="org.scala-lang.modules" name="scala-xml_2.11" conf="compile, runtime" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.contentobjects.jnotify" name="jnotify">
+			<revision name="0.94-play-1" error="not found" downloaded="false" searched="false" conf="runtime(*), master(compile), compile(*)" position="-1">
+				<caller organisation="com.typesafe.play" name="fork-run_2.11" conf="default, compile, runtime, master" rev="0.94-play-1" rev-constraint-default="0.94-play-1" rev-constraint-dynamic="0.94-play-1" callerrev="2.4.2"/>
 				<artifacts>
 				</artifacts>
 			</revision>
