@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-	<info organisation="mueblesdelosalpes"
-		module="mueblesdelosalpes_2.11"
+	<info organisation="arqui-g9"
+		module="arqui-g9_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150821102756"
+		publication="20150821103815"
 	>
 		<description>
-		mueblesdelosalpes
+		arqui-g9
 		</description>
 	</info>
 	<configurations>
@@ -27,10 +27,10 @@
 		<conf name="fork-run" visibility="private" description=""/>
 	</configurations>
 	<publications>
-		<artifact name="mueblesdelosalpes_2.11" type="pom" ext="pom" conf="pom"/>
-		<artifact name="mueblesdelosalpes_2.11" type="jar" ext="jar" conf="compile"/>
-		<artifact name="mueblesdelosalpes_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		<artifact name="mueblesdelosalpes_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		<artifact name="arqui-g9_2.11" type="pom" ext="pom" conf="pom"/>
+		<artifact name="arqui-g9_2.11" type="jar" ext="jar" conf="compile"/>
+		<artifact name="arqui-g9_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="arqui-g9_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.6" conf="scala-tool->default,optional(default)"/>
@@ -47,5 +47,6 @@
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.4.2" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe" name="config" rev="1.3.0" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>

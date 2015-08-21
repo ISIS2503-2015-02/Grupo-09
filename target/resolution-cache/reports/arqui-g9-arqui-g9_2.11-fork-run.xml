@@ -2,18 +2,18 @@
 <?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
 <ivy-report version="1.0">
 	<info
-		organisation="mueblesdelosalpes"
-		module="mueblesdelosalpes_2.11"
+		organisation="arqui-g9"
+		module="arqui-g9_2.11"
 		revision="1.0-SNAPSHOT"
 		conf="fork-run"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run"
-		date="20150821102756"/>
+		date="20150821103815"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="fork-run_2.11">
 			<revision name="2.4.2" status="release" pubdate="20150703003826" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="2991" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe.play/fork-run_2.11/ivy-2.4.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/fork-run_2.11/2.4.2/fork-run_2.11-2.4.2.pom"/>
-				<caller organisation="mueblesdelosalpes" name="mueblesdelosalpes_2.11" conf="fork-run" rev="2.4.2" rev-constraint-default="2.4.2" rev-constraint-dynamic="2.4.2" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="arqui-g9" name="arqui-g9_2.11" conf="fork-run" rev="2.4.2" rev-constraint-default="2.4.2" rev-constraint-dynamic="2.4.2" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="fork-run_2.11" type="jar" ext="jar" status="no" details="" size="97144" time="0" location="/home/ryogi/.ivy2/cache/com.typesafe.play/fork-run_2.11/jars/fork-run_2.11-2.4.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/fork-run_2.11/2.4.2/fork-run_2.11-2.4.2.jar"/>
