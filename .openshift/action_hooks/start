@@ -27,8 +27,7 @@ chmod +x $START_SCRIPT
 APP_COMMAND="$START_SCRIPT $PLAY_PARAMS "\
 "-Dhttp.port=${OPENSHIFT_DIY_PORT} "\
 "-Dhttp.address=${OPENSHIFT_DIY_IP} "\
-"-Dconfig.resource=openshift.conf" \
-"-Dplay.evolutions.db.default.autoApply=true"
+"-Dconfig.resource=openshift.conf"
 
 echo "$(date) [INFO]: Starting: $APP_COMMAND" &>> $LOG_FILE
 nohup bash -c "${APP_COMMAND} &>> ${LOG_FILE} 2>&1" &> /dev/null &
