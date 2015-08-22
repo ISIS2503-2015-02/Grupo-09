@@ -55,7 +55,7 @@ PUT        /mobibuses/:id   controllers.MoviBusController.putMovibus(id : String
 
 
 #Enviar los datos del mobibus (GPS, hora�)
-#POST        /mobibuses/:id/datos    controllers.MoviBusController.
+POST        /mobibuses/:id/datos    controllers.MoviBusController.agregarDatosVehiculo(id: String)
 #Obtener los datos registrados del mobibus (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
 
 #Registrar una revisi�n tecnomec�nica

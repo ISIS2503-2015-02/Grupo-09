@@ -8,9 +8,12 @@ scalaVersion := "2.11.6"
 
 libraryDependencies ++= {Seq(
   javaJdbc,
+  evolutions,
   cache,
   javaWs,
-  jdbc
+  jdbc,
+  javaJpa,
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final" // replace by your jpa implementation
 )}
 
 //val appDependencies = {Seq(

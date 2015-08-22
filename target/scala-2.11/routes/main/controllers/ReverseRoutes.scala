@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Fri Aug 21 17:41:53 COT 2015
+// @SOURCE:G:/OneDrive/Universidad/Arquisoft/Grupo-09/conf/routes
+// @DATE:Sat Aug 22 00:11:46 COT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -278,16 +278,16 @@ package controllers {
     }
 
   
-    // @LINE:54
-    def putMovibus(id:String): Call = {
-      import ReverseRouteContext.empty
-      Call("PUT", _prefix + { _defaultPrefix } + "mobibuses/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)))
-    }
-  
     // @LINE:50
     def readMovibus(id:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "mobibuses/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)))
+    }
+  
+    // @LINE:58
+    def agregarDatosVehiculo(id:String): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "mobibuses/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/datos")
     }
   
     // @LINE:52
@@ -300,6 +300,12 @@ package controllers {
     def read(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "mobibuses")
+    }
+  
+    // @LINE:54
+    def putMovibus(id:String): Call = {
+      import ReverseRouteContext.empty
+      Call("PUT", _prefix + { _defaultPrefix } + "mobibuses/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)))
     }
   
   }

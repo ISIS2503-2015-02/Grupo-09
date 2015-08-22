@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Fri Aug 21 17:41:53 COT 2015
+// @SOURCE:G:/OneDrive/Universidad/Arquisoft/Grupo-09/conf/routes
+// @DATE:Sat Aug 22 00:11:46 COT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -413,22 +413,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:54
-    def putMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MoviBusController.putMovibus",
-      """
-        function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
-        }
-      """
-    )
-  
     // @LINE:50
     def readMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.readMovibus",
       """
         function(id) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+        }
+      """
+    )
+  
+    // @LINE:58
+    def agregarDatosVehiculo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.agregarDatosVehiculo",
+      """
+        function(id) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/datos"})
         }
       """
     )
@@ -449,6 +449,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses"})
+        }
+      """
+    )
+  
+    // @LINE:54
+    def putMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.putMovibus",
+      """
+        function(id) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
         }
       """
     )
