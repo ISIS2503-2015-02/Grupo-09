@@ -16,7 +16,7 @@ import play.libs.Json;
 public class Estacion extends Model {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String idEstacion;
 
     private String nombreEstacion;
@@ -28,6 +28,14 @@ public class Estacion extends Model {
     //    @OneToMany
     //  @JoinColumn(name="idVcub", nullable = false)
     private List<Vcub> vcubs;
+
+    public Estacion() {
+    }
+
+    public Estacion(String nombreEstacion, String ubicacion) {
+        this.nombreEstacion = nombreEstacion;
+        this.ubicacion = ubicacion;
+    }
 
     public Estacion( String idEstacion, String nombreEstacion, String ubicacion, int vcubsCapacity )
     {

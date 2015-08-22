@@ -20,7 +20,7 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private String userID;
 
     private String fullName;
@@ -38,8 +38,8 @@ public class User extends Model {
 
     private Vcub alquilada;
 
-
-    private List<Reserva> reservas;
+    @OneToMany
+    private Reserva reservas;
 
 
     //------------------------------------------------------------------------
@@ -60,7 +60,7 @@ public class User extends Model {
         this.cellphone = cellphone;
         this.email = email;
         alquilada=null;
-        reservas = new ArrayList<Reserva>();
+        reservas = new Reserva();
     }
 
     //------------------------------------------------------------------------
@@ -170,10 +170,14 @@ public class User extends Model {
 
     public void agregarReserva(Reserva nReserva)
     {
-        reservas.add(nReserva);
+        reservas.setCliente(this);
     }
 
-    public List<Reserva> getReservas() {
+    public Reserva getReservas() {
         return reservas;
+    }
+
+    public void setReservas(Reserva reservas) {
+        this.reservas = reservas;
     }
 }

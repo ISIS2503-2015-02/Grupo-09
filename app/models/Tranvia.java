@@ -18,7 +18,7 @@ import java.io.*;
 public class Tranvia extends Model
 {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String idTranvia;
 
     private Linea linea;

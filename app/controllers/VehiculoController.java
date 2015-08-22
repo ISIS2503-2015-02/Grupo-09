@@ -42,31 +42,39 @@ public class VehiculoController extends Controller {
     {
         String mensaje;
         JsonNode j = Controller.request().body().asJson();
-        Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(idVehiculo);
-        if(vehiculoEncontrado!=null)
+        //@TODO Coregir para tranvias tambien!!!
+        if(true)
         {
-            Datos datosRecibidos = Datos.bind(j);
-            datosRecibidos.setVehiculoGenerador(vehiculoEncontrado);
-            datosRecibidos.save();
-            if(vehiculoEncontrado.getEstado()!=Vehiculo.ACCIDENTE  && ( datosRecibidos.isSensorChoque() || datosRecibidos.isBotonPanico() || datosRecibidos.getSensorTermico()>38))
+            Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(MoviBusVehiculo.class).byId(idVehiculo);
+            if(vehiculoEncontrado!=null)
             {
-                //Crear  emergencia
-                vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
-                mensaje="ATENCIÓN, EMERGENCIA DETECTADA\n" ;
+                Datos datosRecibidos = Datos.bind(j);
+                //datosRecibidos.setVehiculoGenerador(vehiculoEncontrado);
+                datosRecibidos.save();
+                if(vehiculoEncontrado.getEstado()!=Vehiculo.ACCIDENTE  && ( datosRecibidos.isSensorChoque() || datosRecibidos.isBotonPanico() || datosRecibidos.getSensorTermico()>38))
+                {
+                    //Crear  emergencia
+                    vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
+                    mensaje="ATENCIÓN, EMERGENCIA DETECTADA\n" ;
+                }
+                else
+                {
+                    //Se est� atendiendo el accidente
+                    mensaje="Se est� atendiendo un accidente, recuerde registrar en el sistema cuando la situación regrese a la normalidad";
+                }
+                vehiculoEncontrado.agregarDatos(datosRecibidos);
+                vehiculoEncontrado.save();
+
+                return ok(mensaje + "\n Datos agregados:\n" + Controller.request().body().asJson());
             }
             else
             {
-                //Se est� atendiendo el accidente
-                mensaje="Se est� atendiendo un accidente, recuerde registrar en el sistema cuando la situación regrese a la normalidad";
+                return notFound("No se ha encontrado el vehiculo con id:"+idVehiculo);
             }
-            vehiculoEncontrado.agregarDatos(datosRecibidos);
-            vehiculoEncontrado.save();
 
-            return ok(mensaje + "\n Datos agregados:\n" + Controller.request().body().asJson());
         }
-        else
-        {
-            return notFound("No se ha encontrado el vehiculo con id:"+idVehiculo);
+        else {
+            return notFound("No implementado de momento");
         }
 
     }

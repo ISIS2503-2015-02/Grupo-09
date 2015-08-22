@@ -3,10 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -19,7 +16,7 @@ public class Emergencia extends Model{
     public final static int VIGENTE=0;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String emergencyID;
 
     private int emergencyType;
@@ -34,12 +31,34 @@ public class Emergencia extends Model{
 
     private int estado;
 
+    private Vehiculo vehiculo;
+
     public Emergencia(){
 
     }
 
-    public Emergencia(String emergencyID, int emerType, String emerDate, String comments, String place, String emerLevel){
+
+    public String getEmergencyID() {
+        return emergencyID;
+    }
+
+    public void setEmergencyID(String emergencyID) {
         this.emergencyID = emergencyID;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public Emergencia( int emerType, String emerDate, String comments, String place, String emerLevel){
         emergencyType = emerType;
         emergencyDate = emerDate;
         this.comments = comments;
@@ -111,7 +130,7 @@ public class Emergencia extends Model{
         String place = j.findPath("place").asText();
         String emergencyLevel = j.findPath("emergencyLevel").asText();
 
-        Emergencia emergency = new Emergencia(emergencyID,emergencyType,emergencyDate,comments,place,emergencyLevel);
+        Emergencia emergency = new Emergencia(emergencyType,emergencyDate,comments,place,emergencyLevel);
 
         return emergency;
     }

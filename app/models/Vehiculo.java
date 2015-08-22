@@ -1,13 +1,13 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.JsonNode;
-import play.db.ebean.Model;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import play.libs.Json;
+import play.db.ebean.Model;
 /**
  * Created by bdrangel10 on 17/08/2015.
  */
@@ -23,7 +23,7 @@ public class Vehiculo extends Model {
     public static Finder finder = new com.avaje.ebean.Model.Finder(Vehiculo.class);
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id_vehiculo;
 
     private String modelo;
@@ -34,26 +34,34 @@ public class Vehiculo extends Model {
 
     private String tipo_vehiculo;
 
-    //@OneToMany
+    //@OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //@JsonManagedReference(value = "revision")
+
     private List<RevisionMecanica> revisiones;
 
-    //@OneToMany
+    //@OneToMany(mappedBy = "vehiculoGenerador")
+    @JsonManagedReference(value = "dato")
     private List<Datos> datos;
 
-    //@OneToMany
+    //@OneToMany(mappedBy = "vehiculo")
     private List<Emergencia> emergencias;
 
     //@OneToMany
+    @JsonManagedReference(value = "trayecto")
     private List<Trayecto> trayectos;
 
+    //@OneToOne
     private RevisionMecanica ultimaRevision;
 
+    //@OneToOne
     private Datos ultimosDatos;
-
+    //@OneToOne
     private Emergencia ultimaEmergencia;
 
+    //@OneToOne
     private Trayecto ultimoTrayecto;
 
+    //@OneToOne
     private double kilomDesdeUltimaReparacion;
 
     public Vehiculo()

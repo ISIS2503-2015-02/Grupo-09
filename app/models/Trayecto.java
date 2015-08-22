@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
@@ -17,7 +18,7 @@ public class Trayecto extends Model
     public final static int FINALIZADO=0;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id_trayecto;
 
     private String ruta;
@@ -27,10 +28,12 @@ public class Trayecto extends Model
     private int estado;
     private double duracion;
 
-    //@ManyToOne
+
     private Driver conductor;
 
-    //@ManyToOne
+
+
+    @JsonBackReference(value = "trayecto")
     private Vehiculo vehiculo;
 
     public Trayecto(String ruta, Date hora_inicio)

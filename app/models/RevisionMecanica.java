@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.api.libs.json.Json;
 
@@ -14,20 +15,24 @@ public class RevisionMecanica
 
 {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id;
 
     private Date fechaRevision;
     private double costo_Revision;
     private double kilometraje;
     //@ManyToOne
-    private Vehiculo vehiculo;
+    //@JsonBackReference(value = "revision")
+    //private Vehiculo vehiculo;
+
+    public RevisionMecanica() {
+    }
 
     public RevisionMecanica(Date fechaRevision, double costo_Revision, double kilometraje, Vehiculo vehiculo) {
         this.fechaRevision = fechaRevision;
         this.costo_Revision = costo_Revision;
         this.kilometraje = kilometraje;
-        this.vehiculo = vehiculo;
+        //this.vehiculo = vehiculo;
     }
 
     public String getId()
@@ -70,13 +75,13 @@ public class RevisionMecanica
         this.kilometraje = kilometraje;
     }
 
-    public Vehiculo getVehiculo() {
+    /*public Vehiculo getVehiculo() {
         return vehiculo;
     }
 
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
-    }
+    }*/
 
 
 
