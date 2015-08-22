@@ -25,7 +25,7 @@ public class Reserva extends Model {
     //------------------------------------------------------------------------
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id_reserva;
 
     private Date hora_reserva;
@@ -34,10 +34,14 @@ public class Reserva extends Model {
     private String estado;
 
     //@ManyToOne
-    private MoviBus movibusReservado;
+    private MoviBusVehiculo movibusReservado;
 
     //@ManyToOne
     private User cliente;
+
+    public Reserva(){
+
+    }
 
     public Reserva(Date hora_reserva, double costo, User cliente) {
         this.hora_reserva = hora_reserva;
@@ -72,11 +76,11 @@ public class Reserva extends Model {
         this.estado = estado;
     }
 
-    public MoviBus getMovibusReservado() {
+    public MoviBusVehiculo getMovibusReservado() {
         return movibusReservado;
     }
 
-    public void setMovibusReservado(MoviBus movibusReservado) {
+    public void setMovibusReservado(MoviBusVehiculo movibusReservado) {
         this.movibusReservado = movibusReservado;
     }
 
@@ -90,6 +94,10 @@ public class Reserva extends Model {
 
     public User getCliente() {
         return cliente;
+    }
+
+    public void setCliente(User nUser){
+        cliente=nUser;
     }
 
     //DataBinder-------------------------------------------------------

@@ -18,7 +18,7 @@ public class Driver extends Model {
     //----------------------------------
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id_conductor;
 
     private String fullName;
@@ -40,6 +40,19 @@ public class Driver extends Model {
     //----------------------------------
     // Constructor
     //----------------------------------
+
+
+    public void setId_conductor(String id_conductor) {
+        this.id_conductor = id_conductor;
+    }
+
+    public void setTrayectos(List<Trayecto> trayectos) {
+        this.trayectos = trayectos;
+    }
+
+    public void setUltimoTrayecto(Trayecto ultimoTrayecto) {
+        this.ultimoTrayecto = ultimoTrayecto;
+    }
 
     public Driver()
     {

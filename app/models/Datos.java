@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Datos extends Model
     public final static int MOVIBUS=2;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String idDatos;
 
     private String gpsAltitud;
@@ -34,7 +35,12 @@ public class Datos extends Model
     private double kilometraje;
 
     //@ManyToOne
+    @JsonBackReference(value = "dato")
     private Vehiculo vehiculoGenerador;
+
+    public Datos() {
+    }
+
 
 
     public Datos(String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque, double sensorTermico, boolean botonPanico, double kilometraje, Vehiculo vehiculoGenerador) {
