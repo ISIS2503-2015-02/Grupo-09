@@ -39,6 +39,9 @@ public class MoviBusController extends VehiculoController {
 
     public Result read() {
         List<MoviBusVehiculo> movibuses = new Model.Finder(MoviBusVehiculo.class).all();
+
+
+
         return ok(Json.toJson(movibuses));
     }
 

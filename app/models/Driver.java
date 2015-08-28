@@ -31,9 +31,10 @@ public class Driver extends Model {
 
     private String address;
 
-    //@OneToMany
+//    @OneToMany(mappedBy = "conductor")
     private List<Trayecto> trayectos;
 
+//    @OneToOne
     private Trayecto ultimoTrayecto;
 
 

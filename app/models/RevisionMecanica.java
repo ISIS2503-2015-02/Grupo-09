@@ -1,6 +1,7 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.api.libs.json.Json;
 
@@ -18,12 +19,17 @@ public class RevisionMecanica
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id;
 
+    @Temporal(TemporalType.DATE)
     private Date fechaRevision;
+
     private double costo_Revision;
+
+
     private double kilometraje;
-    //@ManyToOne
-    //@JsonBackReference(value = "revision")
-    //private Vehiculo vehiculo;
+
+//    @ManyToOne
+    @JsonIgnoreProperties
+    private Vehiculo vehiculo;
 
     public RevisionMecanica() {
     }
@@ -32,8 +38,10 @@ public class RevisionMecanica
         this.fechaRevision = fechaRevision;
         this.costo_Revision = costo_Revision;
         this.kilometraje = kilometraje;
-        //this.vehiculo = vehiculo;
+        this.vehiculo = vehiculo;
     }
+
+
 
     public String getId()
     {
@@ -75,17 +83,17 @@ public class RevisionMecanica
         this.kilometraje = kilometraje;
     }
 
-    /*public Vehiculo getVehiculo() {
+    public Vehiculo getVehiculo() {
         return vehiculo;
     }
 
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
-    }*/
+    }
 
 
 
-    //DataBinder-------------------------------------------------------
+    //DataBinder------------------------------------------------------------
     public static RevisionMecanica bind(JsonNode json)
     {
         return play.libs.Json.fromJson(json, RevisionMecanica.class);

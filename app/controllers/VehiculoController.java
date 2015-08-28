@@ -49,7 +49,8 @@ public class VehiculoController extends Controller {
             if(vehiculoEncontrado!=null)
             {
                 Datos datosRecibidos = Datos.bind(j);
-                //datosRecibidos.setVehiculoGenerador(vehiculoEncontrado);
+                datosRecibidos.setVehiculoGenerador(vehiculoEncontrado);
+                System.out.println("configuró el vehículo a los datos");
                 datosRecibidos.save();
                 if(vehiculoEncontrado.getEstado()!=Vehiculo.ACCIDENTE  && ( datosRecibidos.isSensorChoque() || datosRecibidos.isBotonPanico() || datosRecibidos.getSensorTermico()>38))
                 {
@@ -79,17 +80,17 @@ public class VehiculoController extends Controller {
 
     }
 
-    public Result readDatosVehiculo(String idVehiculo)
+    public Result readDatosMovibus(String idVehiculo)
     {
         Result rta;
-        Vehiculo vehiculoEncontrado = (Vehiculo) Vehiculo.finder.byId(idVehiculo);
+        Vehiculo vehiculoEncontrado = (MoviBusVehiculo) MoviBusVehiculo.finder.byId(idVehiculo);
         if(vehiculoEncontrado!=null)
         {
             rta=ok(Json.toJson(vehiculoEncontrado.getDatos()));
         }
         else
         {
-            rta=notFound("No se ha encontrado veh�culo con el id:"+idVehiculo);
+            rta=notFound("No se ha encontrado vehículo con el id:"+idVehiculo);
         }
         return rta;
     }
@@ -101,7 +102,7 @@ public class VehiculoController extends Controller {
             Vehiculo vehiculoEncontrado = (Vehiculo) new Model.Finder(Vehiculo.class).byId(idVehiculo);
             Driver conductorEncontrado = (Driver) new Model.Finder(Driver.class).byId(idConductor);
             Trayecto trayectoRecibido = Trayecto.bind(json);
-            trayectoRecibido.setVehiculo(vehiculoEncontrado);
+//            trayectoRecibido.setVehiculo(vehiculoEncontrado);
             trayectoRecibido.setConductor(conductorEncontrado);
             conductorEncontrado.agregarTrayecto(trayectoRecibido);
             vehiculoEncontrado.agregarTrayecto(trayectoRecibido);
@@ -133,10 +134,10 @@ public class VehiculoController extends Controller {
         }
         else
         {
-            trayecoEncontrado.finalizarTrayecto(null,inconvenientes);
-            Vehiculo veh = trayecoEncontrado.getVehiculo();
-            veh.setEstado(Vehiculo.DISPONIBLE);
-            veh.save();
+//            trayecoEncontrado.finalizarTrayecto(null,inconvenientes);
+//            Vehiculo veh = trayecoEncontrado.getVehiculo();
+//            veh.setEstado(Vehiculo.DISPONIBLE);
+//            veh.save();
         }
         trayecoEncontrado.save();
         return ok("Se registr� la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
@@ -158,9 +159,9 @@ public class VehiculoController extends Controller {
         else
         {
             trayecoEncontrado.finalizarTrayecto(null,inconvenientes);
-            Vehiculo veh = trayecoEncontrado.getVehiculo();
-            veh.setEstado(Vehiculo.DISPONIBLE);
-            veh.save();
+//           Vehiculo veh = trayecoEncontrado.getVehiculo();
+//            veh.setEstado(Vehiculo.DISPONIBLE);
+//            veh.save();
         }
         trayecoEncontrado.save();
         return ok("Se registr� la finalizacion del trayecto:\n"+ Json.toJson(trayecoEncontrado));

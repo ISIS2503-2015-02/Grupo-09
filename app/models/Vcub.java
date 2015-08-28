@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import javax.persistence.*;
@@ -29,11 +30,13 @@ public class Vcub extends Model
 
     private String estado; //Prestada,sustiduida o libre
 
-    //@ManyToOne
+//    @ManyToOne
+    @JsonIgnoreProperties
     private Estacion estacion;
 
-    //@OneToOne
+//    @OneToOne
     //@JoinColumn(name = "userID", nullable = false)
+    @JsonIgnoreProperties
     private User cliente;
 
     public Vcub(){

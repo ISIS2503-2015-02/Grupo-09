@@ -1,7 +1,12 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.JsonNode;
+
+import javax.annotation.Nullable;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +17,8 @@ import play.db.ebean.Model;
  * Created by bdrangel10 on 17/08/2015.
  */
 @MappedSuperclass
+//@JsonInclude(JsonInclude.Include.NON_NULL)
+
 public class Vehiculo extends Model {
 
     public final static int EN_MARCHA=1;
@@ -34,34 +41,45 @@ public class Vehiculo extends Model {
 
     private String tipo_vehiculo;
 
-    //@OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    //@JsonManagedReference(value = "revision")
+    //    @OneToMany(mappedBy = "vehiculo"
+//    @JsonInclude(JsonInclude.Include.NON_NULL)
+//    @JsonIgnoreType(value = )
+    @Transient
+    private List<Emergencia> emergencias= new ArrayList<>();
 
-    private List<RevisionMecanica> revisiones;
 
-    //@OneToMany(mappedBy = "vehiculoGenerador")
-    @JsonManagedReference(value = "dato")
-    private List<Datos> datos;
+    //@JsonManagedReference(value = "dato")
+//    @OneToMany(mappedBy = "vehiculoGenerador",  cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @OneToMany
 
-    //@OneToMany(mappedBy = "vehiculo")
-    private List<Emergencia> emergencias;
+    @Transient
+    private List<Datos> datos = new ArrayList<>() ;
 
-    //@OneToMany
-    @JsonManagedReference(value = "trayecto")
-    private List<Trayecto> trayectos;
 
-    //@OneToOne
+//        @OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Transient
+    private List<RevisionMecanica> revisiones = new ArrayList<>();
+
+
+
+//    @OneToMany(mappedBy = "vehiculo")
+    //@JsonManagedReference(value = "trayecto")
+    @Transient
+    private List<Trayecto> trayectos = new ArrayList<>();
+
+//    @OneToOne
     private RevisionMecanica ultimaRevision;
 
-    //@OneToOne
+//    @OneToOne
     private Datos ultimosDatos;
-    //@OneToOne
+
+//    @OneToOne
     private Emergencia ultimaEmergencia;
 
-    //@OneToOne
+//    @OneToOne
     private Trayecto ultimoTrayecto;
 
-    //@OneToOne
+
     private double kilomDesdeUltimaReparacion;
 
     public Vehiculo()
@@ -70,6 +88,11 @@ public class Vehiculo extends Model {
         fecha_compra=null;
         estado= DISPONIBLE;
         kilomDesdeUltimaReparacion=0;
+        emergencias= new ArrayList<>();
+        datos= new ArrayList<>();
+        revisiones= new ArrayList<>();
+        trayectos= new ArrayList<>();
+
     }
 
     public Vehiculo(String id, String modelo, Date fecha_compra, int estado,String tipoVehiculo)
@@ -78,15 +101,15 @@ public class Vehiculo extends Model {
         this.modelo = modelo;
         this.fecha_compra = fecha_compra;
         this.estado=estado;
-        revisiones=new ArrayList<RevisionMecanica>();
         this.tipo_vehiculo=tipoVehiculo;
-        datos = new ArrayList<Datos>();
-        emergencias = new ArrayList<Emergencia>();
-        trayectos = new ArrayList<Trayecto>();
         ultimaRevision = null;
         ultimosDatos = null;
         ultimaEmergencia = null;
         ultimoTrayecto=null;
+        emergencias= new ArrayList<>();
+        datos= new ArrayList<>();
+        revisiones= new ArrayList<>();
+        trayectos= new ArrayList<>();
     }
 
     public String getId() {
@@ -122,19 +145,20 @@ public class Vehiculo extends Model {
     }
 
     public List<Datos> getDatos() {
-        return datos;
+        return datos!=null?datos:new ArrayList<>();
     }
 
+
     public List<RevisionMecanica> getRevisiones() {
-        return revisiones;
+        return revisiones!=null?revisiones:new ArrayList<>();
     }
 
     public List<Emergencia> getEmergencias() {
-        return emergencias;
+        return emergencias!=null?emergencias:new ArrayList<>();
     }
 
     public List<Trayecto> getTrayectos() {
-        return trayectos;
+        return trayectos!=null?trayectos:new ArrayList<>();
     }
 
     public RevisionMecanica getUltimaRevision() {
@@ -173,7 +197,8 @@ public class Vehiculo extends Model {
     {
         datos.add(nuevoDato);
         ultimosDatos=nuevoDato;
-        kilomDesdeUltimaReparacion = darKilometrajeDesdeUltimaReparacion();
+        double kil =darKilometrajeDesdeUltimaReparacion();
+        kilomDesdeUltimaReparacion = kil!=-1?kil:nuevoDato.getKilometraje();
         this.save();
     }
 
@@ -193,7 +218,46 @@ public class Vehiculo extends Model {
 
     public double darKilometrajeDesdeUltimaReparacion()
     {
-        return ultimosDatos.getKilometraje()-ultimaRevision.getKilometraje();
+        double kil=-1;
+        if(ultimaRevision!=null)
+            kil = ultimosDatos.getKilometraje()-ultimaRevision.getKilometraje();
+        return kil;
+    }
+
+    public void setId_vehiculo(String id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
+    }
+
+    public String getTipo_vehiculo() {
+        return tipo_vehiculo;
+    }
+
+    public void setTipo_vehiculo(String tipo_vehiculo) {
+        this.tipo_vehiculo = tipo_vehiculo;
+    }
+
+    public void setUltimaRevision(RevisionMecanica ultimaRevision) {
+        this.ultimaRevision = ultimaRevision;
+    }
+
+    public void setUltimosDatos(Datos ultimosDatos) {
+        this.ultimosDatos = ultimosDatos;
+    }
+
+    public void setUltimaEmergencia(Emergencia ultimaEmergencia) {
+        this.ultimaEmergencia = ultimaEmergencia;
+    }
+
+    public void setUltimoTrayecto(Trayecto ultimoTrayecto) {
+        this.ultimoTrayecto = ultimoTrayecto;
+    }
+
+    public double getKilomDesdeUltimaReparacion() {
+        return kilomDesdeUltimaReparacion;
+    }
+
+    public void setKilomDesdeUltimaReparacion(double kilomDesdeUltimaReparacion) {
+        this.kilomDesdeUltimaReparacion = kilomDesdeUltimaReparacion;
     }
 
 

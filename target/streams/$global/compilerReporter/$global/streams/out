@@ -1,0 +1,3 @@
+[error] C:\Users\template\Desktop\Experimento 1\Grupo-09\conf\routes:159: value readDatosVehiculo is not a member of controllers.VehiculoController
+[error] GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
+[error] one error found

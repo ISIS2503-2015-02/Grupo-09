@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import javax.persistence.*;
@@ -13,7 +14,10 @@ import java.util.Date;
 @Entity
 public class Datos extends Model
 {
+    @Enumerated
     public final static int TRANVIA=1;
+
+    @Enumerated
     public final static int MOVIBUS=2;
 
     @Id
@@ -24,6 +28,7 @@ public class Datos extends Model
 
     private String gpsLatitud;
 
+    @Temporal(TemporalType.DATE)
     private Date horaMedicion;
 
     private boolean sensorChoque;
@@ -34,8 +39,10 @@ public class Datos extends Model
 
     private double kilometraje;
 
-    //@ManyToOne
-    @JsonBackReference(value = "dato")
+
+//    @JsonBackReference(value = "dato")
+//    @ManyToOne
+    @JsonIgnoreProperties
     private Vehiculo vehiculoGenerador;
 
     public Datos() {

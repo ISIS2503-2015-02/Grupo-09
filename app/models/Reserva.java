@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
@@ -28,15 +29,20 @@ public class Reserva extends Model {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String id_reserva;
 
+    @Temporal(TemporalType.DATE)
     private Date hora_reserva;
+
+    @Temporal(TemporalType.DATE)
     private Date hora_creacion;
     private double costo;
     private String estado;
 
-    //@ManyToOne
+//    @ManyToOne
+    @JsonIgnoreProperties
     private MoviBusVehiculo movibusReservado;
 
-    //@ManyToOne
+//    @ManyToOne
+    @JsonIgnoreProperties
     private User cliente;
 
     public Reserva(){

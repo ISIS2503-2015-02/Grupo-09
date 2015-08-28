@@ -36,9 +36,10 @@ public class User extends Model {
     private String email;
 
 
+//    @OneToOne
     private Vcub alquilada;
 
-    @OneToMany
+//    @OneToMany(mappedBy = "cliente")
     private Reserva reservas;
 
 

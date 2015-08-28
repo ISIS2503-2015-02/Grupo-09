@@ -71,14 +71,6 @@ create table revision_mecanica (
   constraint pk_revision_mecanica primary key (id))
 ;
 
-create table tranvia (
-  id_tranvia                varchar(255) not null,
-  linea                     integer,
-  estado                    varchar(255),
-  constraint ck_tranvia_linea check (linea in (0,1,2)),
-  constraint pk_tranvia primary key (id_tranvia))
-;
-
 create table tranvia_vehiculo (
   id_vehiculo               varchar(255) not null,
   modelo                    varchar(255),
@@ -96,7 +88,6 @@ create table trayecto (
   hora_fin                  timestamp,
   incidentes                integer,
   estado                    integer,
-  duracion                  double,
   constraint pk_trayecto primary key (id_trayecto))
 ;
 
@@ -131,8 +122,6 @@ create sequence reserva_seq;
 
 create sequence revision_mecanica_seq;
 
-create sequence tranvia_seq;
-
 create sequence tranvia_vehiculo_seq;
 
 create sequence trayecto_seq;
@@ -160,8 +149,6 @@ drop table if exists reserva;
 
 drop table if exists revision_mecanica;
 
-drop table if exists tranvia;
-
 drop table if exists tranvia_vehiculo;
 
 drop table if exists trayecto;
@@ -185,8 +172,6 @@ drop sequence if exists movi_bus_vehiculo_seq;
 drop sequence if exists reserva_seq;
 
 drop sequence if exists revision_mecanica_seq;
-
-drop sequence if exists tranvia_seq;
 
 drop sequence if exists tranvia_vehiculo_seq;
 

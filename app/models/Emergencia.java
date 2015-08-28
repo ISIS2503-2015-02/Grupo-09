@@ -1,8 +1,10 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
-
+import play.mvc.BodyParser;
+import play.libs.Json;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,7 +14,10 @@ import java.util.Date;
 @Entity
 public class Emergencia extends Model{
 
+    @Enumerated
     public final static int CONTROLADA=1;
+
+    @Enumerated
     public final static int VIGENTE=0;
 
     @Id
@@ -31,6 +36,8 @@ public class Emergencia extends Model{
 
     private int estado;
 
+//    @ManyToOne
+    @JsonIgnoreProperties
     private Vehiculo vehiculo;
 
     public Emergencia(){
@@ -123,6 +130,8 @@ public class Emergencia extends Model{
     //public Emergencia(String emerType, Date emerDate, String comments, String place, String emerLevel){
 
     public static Emergencia bind(JsonNode j){
+
+        /**
         String emergencyID = j.findPath("emergencyID").asText();
         int emergencyType = j.findPath("emergencyType").asInt();
         String emergencyDate = j.findPath("emergencyDate").asText();
@@ -131,7 +140,8 @@ public class Emergencia extends Model{
         String emergencyLevel = j.findPath("emergencyLevel").asText();
 
         Emergencia emergency = new Emergencia(emergencyType,emergencyDate,comments,place,emergencyLevel);
+         **/
 
-        return emergency;
+        return Json.fromJson(j, Emergencia.class);
     }
 }

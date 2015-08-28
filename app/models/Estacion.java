@@ -25,7 +25,7 @@ public class Estacion extends Model {
 
     private int vcubsCapacity;
 
-    //    @OneToMany
+//    @OneToMany(mappedBy = "estacion")
     //  @JoinColumn(name="idVcub", nullable = false)
     private List<Vcub> vcubs;
 

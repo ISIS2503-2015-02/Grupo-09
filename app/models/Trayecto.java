@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
@@ -14,7 +15,9 @@ import java.util.Date;
 @Entity
 public class Trayecto extends Model
 {
+    @Enumerated
     public final static int EN_CURSO=1;
+    @Enumerated
     public final static int FINALIZADO=0;
 
     @Id
@@ -22,18 +25,28 @@ public class Trayecto extends Model
     private String id_trayecto;
 
     private String ruta;
+
+    @Temporal(TemporalType.DATE)
     private Date hora_inicio;
+
+    @Temporal(TemporalType.DATE)
     private Date hora_fin;
     private int incidentes;
     private int estado;
+
+    @Transient
     private double duracion;
 
 
+//    @ManyToOne
+    @JsonIgnoreProperties
     private Driver conductor;
 
 
 
-    @JsonBackReference(value = "trayecto")
+//    @ManyToOne
+    //@JsonBackReference(value = "trayecto")
+    @JsonIgnoreProperties
     private Vehiculo vehiculo;
 
     public Trayecto(String ruta, Date hora_inicio)
@@ -107,13 +120,7 @@ public class Trayecto extends Model
         this.conductor = conductor;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
-    }
 
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
-    }
 
     /**
      * Indica cuánto ha durado el trayecto
@@ -125,7 +132,7 @@ public class Trayecto extends Model
         {
             duracion= (hora_fin.getTime()-hora_inicio.getTime())/(1000*60);
         }
-        return duracion;
+        return -1;
     }
 
     //DataBinder-------------------------------------------------------
