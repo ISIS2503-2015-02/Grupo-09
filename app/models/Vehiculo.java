@@ -21,17 +21,38 @@ import play.db.ebean.Model;
 
 public class Vehiculo extends Model {
 
+    //------------------------------------------------------------------------
+    //Constantes
+    //------------------------------------------------------------------------
+
     public final static int EN_MARCHA=1;
 
     public final static int ACCIDENTE=2;
 
     public final static int DISPONIBLE =0;
 
+    public final static int MOVIBUS=0;
+
+    public final static int TRANVIA=1;
+
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+
     public static Finder finder = new com.avaje.ebean.Model.Finder(Vehiculo.class);
+
+    //------------------------------------------------------------------------
+    //ATRIBUTOS
+    //------------------------------------------------------------------------
+
+    public static List darVehiculos()
+    {
+        return finder.all();
+    }
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String id_vehiculo;
+    private Long id_vehiculo;
 
     private String modelo;
 
@@ -39,33 +60,7 @@ public class Vehiculo extends Model {
 
     private int estado;
 
-    private String tipo_vehiculo;
-
-    //    @OneToMany(mappedBy = "vehiculo"
-//    @JsonInclude(JsonInclude.Include.NON_NULL)
-//    @JsonIgnoreType(value = )
-    @Transient
-    private List<Emergencia> emergencias= new ArrayList<>();
-
-
-    //@JsonManagedReference(value = "dato")
-//    @OneToMany(mappedBy = "vehiculoGenerador",  cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @OneToMany
-
-    @Transient
-    private List<Datos> datos = new ArrayList<>() ;
-
-
-//        @OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Transient
-    private List<RevisionMecanica> revisiones = new ArrayList<>();
-
-
-
-//    @OneToMany(mappedBy = "vehiculo")
-    //@JsonManagedReference(value = "trayecto")
-    @Transient
-    private List<Trayecto> trayectos = new ArrayList<>();
+    private int tipo_vehiculo;
 
 //    @OneToOne
     private RevisionMecanica ultimaRevision;
@@ -80,6 +75,7 @@ public class Vehiculo extends Model {
     private Trayecto ultimoTrayecto;
 
 
+    @Transient
     private double kilomDesdeUltimaReparacion;
 
     public Vehiculo()
@@ -88,14 +84,9 @@ public class Vehiculo extends Model {
         fecha_compra=null;
         estado= DISPONIBLE;
         kilomDesdeUltimaReparacion=0;
-        emergencias= new ArrayList<>();
-        datos= new ArrayList<>();
-        revisiones= new ArrayList<>();
-        trayectos= new ArrayList<>();
-
     }
 
-    public Vehiculo(String id, String modelo, Date fecha_compra, int estado,String tipoVehiculo)
+    public Vehiculo(Long id, String modelo, Date fecha_compra, int estado,int tipoVehiculo)
     {
         this.id_vehiculo = id;
         this.modelo = modelo;
@@ -106,18 +97,6 @@ public class Vehiculo extends Model {
         ultimosDatos = null;
         ultimaEmergencia = null;
         ultimoTrayecto=null;
-        emergencias= new ArrayList<>();
-        datos= new ArrayList<>();
-        revisiones= new ArrayList<>();
-        trayectos= new ArrayList<>();
-    }
-
-    public String getId() {
-        return id_vehiculo;
-    }
-
-    public void setId(String id) {
-        this.id_vehiculo = id;
     }
 
     public String getModelo() {
@@ -144,23 +123,6 @@ public class Vehiculo extends Model {
         this.estado = estado;
     }
 
-    public List<Datos> getDatos() {
-        return datos!=null?datos:new ArrayList<>();
-    }
-
-
-    public List<RevisionMecanica> getRevisiones() {
-        return revisiones!=null?revisiones:new ArrayList<>();
-    }
-
-    public List<Emergencia> getEmergencias() {
-        return emergencias!=null?emergencias:new ArrayList<>();
-    }
-
-    public List<Trayecto> getTrayectos() {
-        return trayectos!=null?trayectos:new ArrayList<>();
-    }
-
     public RevisionMecanica getUltimaRevision() {
         return ultimaRevision;
     }
@@ -177,62 +139,19 @@ public class Vehiculo extends Model {
         return ultimoTrayecto;
     }
 
-    public String getId_vehiculo() {
+    public Long getId_vehiculo() {
         return id_vehiculo;
     }
-    
-    public static Vehiculo bind(JsonNode j)
-    {
-        return  Json.fromJson(j, Vehiculo.class);
-    }
 
-    public void agregarNuevaRevision(RevisionMecanica nuevaRev)
-    {
-        revisiones.add(nuevaRev);
-        ultimaRevision=nuevaRev;
-        this.save();
-    }
-
-    public void agregarDatos(Datos nuevoDato)
-    {
-        datos.add(nuevoDato);
-        ultimosDatos=nuevoDato;
-        double kil =darKilometrajeDesdeUltimaReparacion();
-        kilomDesdeUltimaReparacion = kil!=-1?kil:nuevoDato.getKilometraje();
-        this.save();
-    }
-
-    public void agregarEmergencia (Emergencia nuevaEmergencia)
-    {
-        emergencias.add(nuevaEmergencia);
-        ultimaEmergencia=nuevaEmergencia;
-        this.save();
-    }
-
-    public void agregarTrayecto(Trayecto nuevoTrayecto)
-    {
-        trayectos.add(nuevoTrayecto);
-        ultimoTrayecto=nuevoTrayecto;
-        this.save();
-    }
-
-    public double darKilometrajeDesdeUltimaReparacion()
-    {
-        double kil=-1;
-        if(ultimaRevision!=null)
-            kil = ultimosDatos.getKilometraje()-ultimaRevision.getKilometraje();
-        return kil;
-    }
-
-    public void setId_vehiculo(String id_vehiculo) {
+    public void setId_vehiculo(Long id_vehiculo) {
         this.id_vehiculo = id_vehiculo;
     }
 
-    public String getTipo_vehiculo() {
+    public int getTipo_vehiculo() {
         return tipo_vehiculo;
     }
 
-    public void setTipo_vehiculo(String tipo_vehiculo) {
+    public void setTipo_vehiculo(int tipo_vehiculo) {
         this.tipo_vehiculo = tipo_vehiculo;
     }
 
@@ -252,13 +171,21 @@ public class Vehiculo extends Model {
         this.ultimoTrayecto = ultimoTrayecto;
     }
 
-    public double getKilomDesdeUltimaReparacion() {
-        return kilomDesdeUltimaReparacion;
+    public double getKilomDesdeUltimaReparacion()
+    {
+        double kil=0;
+        if(ultimosDatos!=null)
+        {
+            if(ultimaRevision!=null)
+                kil = ultimosDatos.getKilometraje()-ultimaRevision.getKilometraje();
+            else
+                kil=ultimosDatos.getKilometraje();
+        }
+        return kil;
     }
 
-    public void setKilomDesdeUltimaReparacion(double kilomDesdeUltimaReparacion) {
-        this.kilomDesdeUltimaReparacion = kilomDesdeUltimaReparacion;
+    public static Vehiculo bind(JsonNode j)
+    {
+        return  Json.fromJson(j, Vehiculo.class);
     }
-
-
 }

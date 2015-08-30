@@ -13,7 +13,9 @@ import java.util.Date;
 @Entity
 public class TranviaVehiculo extends Vehiculo {
 
-
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
     public static Finder finder = new Finder(TranviaVehiculo.class);
 
     public TranviaVehiculo()
@@ -21,7 +23,7 @@ public class TranviaVehiculo extends Vehiculo {
 
     }
 
-    public TranviaVehiculo(String id, String modelo, Date fecha_compra, int estado)
+    public TranviaVehiculo(Long id, String modelo, Date fecha_compra, int estado)
     {
         super(id,modelo,fecha_compra,estado,"Tranvia");
     }

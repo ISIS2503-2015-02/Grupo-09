@@ -56,5 +56,34 @@ public class MoviBusController extends VehiculoController {
         return rta;
     }
 
+    public Result readDatosMovibus(String idVehiculo)
+    {
+        Result rta;
+
+        List<Datos> datos = Datos.finder.where().eq("id_vehiculo",idVehiculo).findList();
+
+        Vehiculo vehiculoEncontrado = (MoviBusVehiculo) MoviBusVehiculo.finder.byId(idVehiculo);
+        if(vehiculoEncontrado!=null)
+        {
+            rta=ok(Json.toJson(datos));
+        }
+        else
+        {
+            rta=notFound("No se ha encontrado vehículo con el id:"+idVehiculo);
+        }
+        return rta;
+    }
+
+
+    public Result readRevisionesMovibus(Long id_movibus)
+    {
+        return VehiculoController.readRevisionesVehiculo(id_movibus,Vehiculo.MOVIBUS);
+    }
+
+    public Result readTrayectosMovibus(Long id_movibus)
+    {
+        return VehiculoController.readTrayectosVehiculo(id_movibus,Vehiculo.MOVIBUS);
+    }
+
 
 }

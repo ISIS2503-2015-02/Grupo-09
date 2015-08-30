@@ -17,6 +17,9 @@ import java.util.List;
 public class MoviBusVehiculo extends Vehiculo {
 
 
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
     public static Finder finder = new com.avaje.ebean.Model.Finder(MoviBusVehiculo.class);
 
     public MoviBusVehiculo()
@@ -24,9 +27,9 @@ public class MoviBusVehiculo extends Vehiculo {
 
     }
 
-    public MoviBusVehiculo(String id, String modelo, Date fecha_compra, int estado)
+    public MoviBusVehiculo(Long id, String modelo, Date fecha_compra, int estado)
     {
-        super(id,modelo,fecha_compra,estado,"MoviBus");
+        super(id,modelo,fecha_compra,estado, Vehiculo.MOVIBUS);
     }
 
 

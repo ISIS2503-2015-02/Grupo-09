@@ -10,12 +10,20 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by USER on 16/08/2015.
+ * Created by bdrangel10 on 16/08/2015.
  */
 @Entity
 public class Reserva extends Model {
 
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+
     public static Finder finder = new com.avaje.ebean.Model.Finder(Reserva.class);
+
+    //------------------------------------------------------------------------
+    //Constantes
+    //------------------------------------------------------------------------
 
     public final static String CREADA="CREADA";
     public final static String CONFIRMADA="CONFIRMADA";

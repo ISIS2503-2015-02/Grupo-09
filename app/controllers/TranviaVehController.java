@@ -4,6 +4,7 @@ import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import models.MoviBusVehiculo;
 import models.TranviaVehiculo;
+import models.Vehiculo;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
@@ -52,6 +53,16 @@ public class TranviaVehController extends VehiculoController {
             rta = notFound();
         }
         return rta;
+    }
+
+    public Result readRevisionesTranvia(Long id_Tranvia)
+    {
+        return VehiculoController.readRevisionesVehiculo(id_Tranvia, Vehiculo.TRANVIA);
+    }
+
+    public Result readTrayectosTranvia(Long id_Tranvia)
+    {
+        return VehiculoController.readTrayectosVehiculo(id_Tranvia, Vehiculo.TRANVIA);
     }
 
 

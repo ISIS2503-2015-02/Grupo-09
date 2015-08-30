@@ -14,12 +14,25 @@ import java.util.Date;
 @Entity
 public class Emergencia extends Model{
 
+
+    //------------------------------------------------------------------------
+    //Constantes
+    //------------------------------------------------------------------------
     @Enumerated
     public final static int CONTROLADA=1;
 
     @Enumerated
     public final static int VIGENTE=0;
 
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Emergencia.class);
+
+    //------------------------------------------------------------------------
+    //Atributsos
+    //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String emergencyID;
@@ -39,6 +52,8 @@ public class Emergencia extends Model{
 //    @ManyToOne
     @JsonIgnoreProperties
     private Vehiculo vehiculo;
+
+
 
     public Emergencia(){
 

@@ -1,9 +1,7 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import play.api.libs.json.Json;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,45 +10,53 @@ import java.util.Date;
  * Created by Bdrangel10 on 16/08/2015.
  */
 @Entity
-public class RevisionMecanica
-
+public class RevisionMecanica extends Model
 {
+
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+
+    public static Model.Finder finder = new com.avaje.ebean.Model.Finder(RevisionMecanica.class);
+
+    //------------------------------------------------------------------------
+    //Atributos
+    //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String id;
+    private Long id_revision;
 
     @Temporal(TemporalType.DATE)
     private Date fechaRevision;
 
     private double costo_Revision;
 
-
     private double kilometraje;
 
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private Vehiculo vehiculo;
+    private Long id_vehiculo;
+
+    //------------------------------------------------------------------------
+    //Constructores
+    //------------------------------------------------------------------------
 
     public RevisionMecanica() {
     }
 
-    public RevisionMecanica(Date fechaRevision, double costo_Revision, double kilometraje, Vehiculo vehiculo) {
+    public RevisionMecanica(Date fechaRevision, double costo_Revision, double kilometraje, Long id_vehiculo) {
         this.fechaRevision = fechaRevision;
         this.costo_Revision = costo_Revision;
         this.kilometraje = kilometraje;
-        this.vehiculo = vehiculo;
+        this.id_vehiculo = id_vehiculo;
     }
 
-
-
-    public String getId()
+    public Long getId_revision()
     {
-        return id;
+        return id_revision;
     }
 
-    public void setId(String id)
+    public void setId_revision(Long id_revision)
     {
-        this.id = id;
+        this.id_revision = id_revision;
     }
 
     public Date getFechaRevision()
@@ -83,12 +89,12 @@ public class RevisionMecanica
         this.kilometraje = kilometraje;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public Long getId_vehiculo() {
+        return id_vehiculo;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setId_vehiculo(Long id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
     }
 
 

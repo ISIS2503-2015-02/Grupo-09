@@ -13,6 +13,10 @@ import java.util.List;
 @Entity
 public class User extends Model {
 
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+
     public static Finder finder = new com.avaje.ebean.Model.Finder(User.class);
 
     //------------------------------------------------------------------------
@@ -41,6 +45,8 @@ public class User extends Model {
 
 //    @OneToMany(mappedBy = "cliente")
     private Reserva reservas;
+
+
 
 
     //------------------------------------------------------------------------

@@ -1,9 +1,8 @@
 package models;
 
 import com.avaje.ebean.Model;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
+import play.libs.Json;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,15 +13,24 @@ import java.util.Date;
 @Entity
 public class Datos extends Model
 {
+
+    //------------------------------------------------------------------------
+    //Constantes
+    //------------------------------------------------------------------------
+
     @Enumerated
     public final static int TRANVIA=1;
 
     @Enumerated
     public final static int MOVIBUS=2;
 
+    //------------------------------------------------------------------------
+    //Atributos
+    //------------------------------------------------------------------------
+
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String idDatos;
+    private Long id_Datos;
 
     private String gpsAltitud;
 
@@ -40,17 +48,19 @@ public class Datos extends Model
     private double kilometraje;
 
 
-//    @JsonBackReference(value = "dato")
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private Vehiculo vehiculoGenerador;
+    private Long id_vehiculo;
 
-    public Datos() {
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Datos.class);
+
+
+    public Datos()
+    {
     }
 
 
 
-    public Datos(String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque, double sensorTermico, boolean botonPanico, double kilometraje, Vehiculo vehiculoGenerador) {
+    public Datos(String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque, double sensorTermico, boolean botonPanico, double kilometraje)
+    {
         this.gpsAltitud = gpsAltitud;
         this.gpsLatitud = gpsLatitud;
         this.horaMedicion = horaMedicion;
@@ -58,15 +68,14 @@ public class Datos extends Model
         this.sensorTermico = sensorTermico;
         this.botonPanico = botonPanico;
         this.kilometraje = kilometraje;
-        this.vehiculoGenerador = vehiculoGenerador;
     }
 
-    public String getId() {
-        return idDatos;
+    public Long getId() {
+        return id_Datos;
     }
 
-    public void setId(String id) {
-        this.idDatos = id;
+    public void setId(Long id) {
+        this.id_Datos = id;
     }
 
     public String getGpsAltitud() {
@@ -125,20 +134,12 @@ public class Datos extends Model
         this.kilometraje = kilometraje;
     }
 
-    public Vehiculo getVehiculoGenerador() {
-        return vehiculoGenerador;
+    public Long getId_vehiculo() {
+        return id_vehiculo;
     }
 
-    public void setVehiculoGenerador(Vehiculo vehiculoGenerador) {
-        this.vehiculoGenerador = vehiculoGenerador;
-    }
-
-    public String getIdDatos() {
-        return idDatos;
-    }
-
-    public void setIdDatos(String idDatos) {
-        this.idDatos = idDatos;
+    public void setId_vehiculo(Long id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
     }
 
     //-------------------------------------------------
@@ -150,7 +151,7 @@ public class Datos extends Model
      * @param j El JsonNode que contiene la informaci�n a ser convertida a Datos
      * @return
      */
-    public static Datos bind (JsonNode j)
+   /* public static Datos bind (JsonNode j)
     {
         String gpsAltitudJs = j.findPath("gpsAltitud").asText();
         String gpsLatitudJs = j.findPath("gpsLatitud").asText();
@@ -162,5 +163,10 @@ public class Datos extends Model
         return new Datos(gpsAltitudJs,gpsLatitudJs,horaMedicionJs,sensorChoqueJs,sensorTermicoJs,sensorPanicoJs,kilometrajeJs,null);
 
 
+    }*/
+
+    public static Datos bind(JsonNode json)
+    {
+        return Json.fromJson(json, Datos.class);
     }
 }

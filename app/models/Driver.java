@@ -13,13 +13,19 @@ import java.util.List;
 @Entity
 public class Driver extends Model {
 
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Driver.class);
+
     //----------------------------------
     // Atributos
     //----------------------------------
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String id_conductor;
+    private Long id_conductor;
 
     private String fullName;
 
@@ -31,19 +37,33 @@ public class Driver extends Model {
 
     private String address;
 
-//    @OneToMany(mappedBy = "conductor")
+    @Transient
     private List<Trayecto> trayectos;
 
-//    @OneToOne
     private Trayecto ultimoTrayecto;
-
 
     //----------------------------------
     // Constructor
     //----------------------------------
 
+    public Driver()
+    {
+        ultimoTrayecto=null;
+    }
 
-    public void setId_conductor(String id_conductor) {
+    public Driver(String name, String docNum, long homeP, long mobileP, String address){
+        fullName = name;
+        documentNumber = docNum;
+        homePhone = homeP;
+        mobilePhone = mobileP;
+        this.address = address;
+        ultimoTrayecto=null;
+    }
+
+    //----------------------------------
+    // Métodos
+    //----------------------------------
+    public void setId_conductor(Long id_conductor) {
         this.id_conductor = id_conductor;
     }
 
@@ -54,26 +74,6 @@ public class Driver extends Model {
     public void setUltimoTrayecto(Trayecto ultimoTrayecto) {
         this.ultimoTrayecto = ultimoTrayecto;
     }
-
-    public Driver()
-    {
-        trayectos = new ArrayList<Trayecto>();
-        ultimoTrayecto=null;
-    }
-
-    public Driver(String name, String docNum, long homeP, long mobileP, String address){
-        fullName = name;
-        documentNumber = docNum;
-        homePhone = homeP;
-        mobilePhone = mobileP;
-        this.address = address;
-        trayectos = new ArrayList<Trayecto>();
-        ultimoTrayecto=null;
-    }
-
-    //----------------------------------
-    // Métodos
-    //----------------------------------
 
     public String getFullName(){
         return fullName;
@@ -115,24 +115,17 @@ public class Driver extends Model {
         this.mobilePhone = mobilePhone;
     }
 
-
-    public void agregarTrayecto(Trayecto nuevoTrayecto)
-    {
-        trayectos.add(nuevoTrayecto);
-        ultimoTrayecto=nuevoTrayecto;
-        this.save();
-    }
-
-    public List<Trayecto> getTrayectos() {
-        return trayectos;
-    }
-
     public Trayecto getUltimoTrayecto() {
         return ultimoTrayecto;
     }
 
-    public String getId_conductor() {
+    public Long getId_conductor() {
         return id_conductor;
+    }
+
+    //@TODO Invocar a la clase
+    public List<Trayecto> getTrayectos() {
+        return trayectos;
     }
 
     //-------------------------------------------------

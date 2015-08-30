@@ -14,7 +14,15 @@ import play.libs.Json;
 
 @Entity
 public class Estacion extends Model {
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
 
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Estacion.class);
+
+    //------------------------------------------------------------------------
+    //Atributos
+    //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private String idEstacion;
@@ -24,6 +32,8 @@ public class Estacion extends Model {
     private String ubicacion;
 
     private int vcubsCapacity;
+
+
 
 //    @OneToMany(mappedBy = "estacion")
     //  @JoinColumn(name="idVcub", nullable = false)

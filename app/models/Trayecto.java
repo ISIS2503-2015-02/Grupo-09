@@ -15,14 +15,26 @@ import java.util.Date;
 @Entity
 public class Trayecto extends Model
 {
+    //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Trayecto.class);
+
+    //------------------------------------------------------------------------
+    //Constantes
+    //------------------------------------------------------------------------
+
     @Enumerated
     public final static int EN_CURSO=1;
     @Enumerated
     public final static int FINALIZADO=0;
 
+    //------------------------------------------------------------------------
+    //Atributos
+    //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String id_trayecto;
+    private Long id_trayecto;
 
     private String ruta;
 
@@ -31,24 +43,24 @@ public class Trayecto extends Model
 
     @Temporal(TemporalType.DATE)
     private Date hora_fin;
+
     private int incidentes;
+
     private int estado;
 
     @Transient
     private double duracion;
 
+    private Long id_conductor;
 
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private Driver conductor;
+    private Long id_vehiculo;
 
+    //------------------------------------------------------------------------
+    //Constructores
+    //------------------------------------------------------------------------
 
-
-//    @ManyToOne
-    //@JsonBackReference(value = "trayecto")
-    @JsonIgnoreProperties
-    private Vehiculo vehiculo;
-
+    public Trayecto()
+    {    }
     public Trayecto(String ruta, Date hora_inicio)
     {
         this.ruta = ruta;
@@ -60,7 +72,19 @@ public class Trayecto extends Model
         {
             hora_inicio=new Date();
         }
-        duracion=0;
+    }
+
+    //------------------------------------------------------------------------
+    //Métodos
+    //------------------------------------------------------------------------
+
+
+    public Long getId_trayecto() {
+        return id_trayecto;
+    }
+
+    public void setId_trayecto(Long id_trayecto) {
+        this.id_trayecto = id_trayecto;
     }
 
     public String getRuta() {
@@ -83,7 +107,6 @@ public class Trayecto extends Model
         return hora_fin;
     }
 
-
     public int getIncidentes() {
         return incidentes;
     }
@@ -96,31 +119,30 @@ public class Trayecto extends Model
         return estado;
     }
 
-    /**
-     * Finaliza el trayecto
-     * @param hora_fin    Hora final del trayecto, si es null toma la hora del sistema
-     *@param nIncidentes Cantidad de incidentes que ocurrieron durante el trayecto
-     */
-    public void finalizarTrayecto(Date hora_fin, int nIncidentes){
-        this.estado = FINALIZADO;
-        this.hora_fin=hora_fin;
-        if(hora_fin==null)
-        {
-            hora_fin=new Date();
-        }
-        incidentes=nIncidentes;
-        getDuracion();
+    public void setHora_fin(Date hora_fin) {
+        this.hora_fin = hora_fin;
     }
 
-    public Driver getConductor() {
-        return conductor;
-    }
-
-    public void setConductor(Driver conductor) {
-        this.conductor = conductor;
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
 
+    public Long getId_conductor() {
+        return id_conductor;
+    }
+
+    public void setId_conductor(Long id_conductor) {
+        this.id_conductor = id_conductor;
+    }
+
+    public Long getId_vehiculo() {
+        return id_vehiculo;
+    }
+
+    public void setId_vehiculo(Long id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
+    }
 
     /**
      * Indica cuánto ha durado el trayecto
