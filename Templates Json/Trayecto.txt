@@ -1,7 +1,0 @@
-{
-"ruta":String,
-"hora_inicio":Date,
-"hora_fin":Date,
-"incidentes":Integer,
-"estado":Integer
-}

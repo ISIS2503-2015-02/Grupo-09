@@ -26,26 +26,30 @@ public class MoviBusController extends VehiculoController {
 
 
     @BodyParser.Of(BodyParser.Json.class)
-    public Result putMovibus(String idMovibus)
+    public Result putMovibus(Long idMovibus)
     {
         MoviBusVehiculo original = (MoviBusVehiculo) MoviBusVehiculo.finder.byId(idMovibus);
-        original.delete();
         JsonNode j = Controller.request().body().asJson();
-        MoviBusVehiculo reemplazarPor = MoviBusVehiculo.bind(j);
-        original = reemplazarPor;
-        original.save();
+        if(original!=null)
+        {
+            original.delete();
+            MoviBusVehiculo reemplazarPor = MoviBusVehiculo.bind(j);
+            reemplazarPor.setId_vehiculo(idMovibus);
+            reemplazarPor.save();
+
+        }
+        original = (MoviBusVehiculo) MoviBusVehiculo.finder.byId(idMovibus);
         return ok(Json.toJson(original));
+
+
     }
 
-    public Result read() {
+    public Result readAll() {
         List<MoviBusVehiculo> movibuses = new Model.Finder(MoviBusVehiculo.class).all();
-
-
-
         return ok(Json.toJson(movibuses));
     }
 
-    public Result readMovibus(String idMovibus) {
+    public Result readMovibus(Long idMovibus) {
         Result rta;
         MoviBusVehiculo movibus = (MoviBusVehiculo) MoviBusVehiculo.finder.byId(idMovibus);
         if (movibus != null) {
@@ -56,34 +60,42 @@ public class MoviBusController extends VehiculoController {
         return rta;
     }
 
-    public Result readDatosMovibus(String idVehiculo)
+    public Result agregarDatosMovibus(Long id_movibus)
     {
-        Result rta;
-
-        List<Datos> datos = Datos.finder.where().eq("id_vehiculo",idVehiculo).findList();
-
-        Vehiculo vehiculoEncontrado = (MoviBusVehiculo) MoviBusVehiculo.finder.byId(idVehiculo);
-        if(vehiculoEncontrado!=null)
-        {
-            rta=ok(Json.toJson(datos));
-        }
-        else
-        {
-            rta=notFound("No se ha encontrado vehículo con el id:"+idVehiculo);
-        }
-        return rta;
+        return agregarDatos(id_movibus, Vehiculo.MOVIBUS);
     }
 
-
-    public Result readRevisionesMovibus(Long id_movibus)
+    public Result readDatosMovibus(Long idVehiculo)
     {
-        return VehiculoController.readRevisionesVehiculo(id_movibus,Vehiculo.MOVIBUS);
+        return readDatos(idVehiculo, Vehiculo.MOVIBUS);
+    }
+
+    public Result agregarTrayectoMovibus(Long id_movibus)
+    {
+        return agregarTrayecto(id_movibus, Vehiculo.MOVIBUS);
+    }
+
+    public Result finalizarTrayectoMovibus(Long id_movibus, Long id_trayecto)
+    {
+        return finalizarUltimoTrayecto(id_movibus, id_trayecto, Vehiculo.MOVIBUS);
     }
 
     public Result readTrayectosMovibus(Long id_movibus)
     {
-        return VehiculoController.readTrayectosVehiculo(id_movibus,Vehiculo.MOVIBUS);
+        return readTrayectos(id_movibus, Vehiculo.MOVIBUS);
     }
+
+    public Result agregarRevisionMovibus(Long id_movibus)
+    {
+        return agregarRevision(id_movibus,Vehiculo.MOVIBUS);
+    }
+
+    public Result readRevisionesMovibus(Long id_movibus)
+    {
+        return readRevisiones(id_movibus, Vehiculo.MOVIBUS);
+    }
+
+
 
 
 }

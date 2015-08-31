@@ -1,11 +1,9 @@
 package models;
 
 import com.avaje.ebean.Model;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -35,33 +33,31 @@ public class Reserva extends Model {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String id_reserva;
+    private Long id_reserva;
 
     @Temporal(TemporalType.DATE)
     private Date hora_reserva;
 
     @Temporal(TemporalType.DATE)
     private Date hora_creacion;
+
     private double costo;
+
     private String estado;
 
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private MoviBusVehiculo movibusReservado;
+    private Long id_movibus_reservado;
 
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private User cliente;
+    private Long id_cliente;
 
     public Reserva(){
 
     }
 
-    public Reserva(Date hora_reserva, double costo, User cliente) {
+    public Reserva(Date hora_reserva, double costo, Long cliente) {
         this.hora_reserva = hora_reserva;
         this.costo = costo;
-        this.movibusReservado = null;
-        this.cliente = cliente;
+        this.id_movibus_reservado = null;
+        this.id_cliente = cliente;
         hora_creacion=new Date();
         estado=CREADA;
     }
@@ -90,15 +86,15 @@ public class Reserva extends Model {
         this.estado = estado;
     }
 
-    public MoviBusVehiculo getMovibusReservado() {
-        return movibusReservado;
+    public Long getId_movibus_reservado() {
+        return id_movibus_reservado;
     }
 
-    public void setMovibusReservado(MoviBusVehiculo movibusReservado) {
-        this.movibusReservado = movibusReservado;
+    public void setId_movibus_reservado(Long id_movibus_reservado) {
+        this.id_movibus_reservado = id_movibus_reservado;
     }
 
-    public String getId_reserva() {
+    public Long getId_reserva() {
         return id_reserva;
     }
 
@@ -106,15 +102,14 @@ public class Reserva extends Model {
         return hora_creacion;
     }
 
-    public User getCliente() {
-        return cliente;
+    public Long getId_cliente() {
+        return id_cliente;
     }
 
-    public void setCliente(User nUser){
-        cliente=nUser;
-    }
 
-    //DataBinder-------------------------------------------------------
+    //--------------------------------------------------------------------------------------------
+    //DataBinder
+    //--------------------------------------------------------------------------------------------
     public static Reserva bind(JsonNode json)
     {
         return Json.fromJson(json, Reserva.class);

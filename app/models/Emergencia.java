@@ -1,12 +1,9 @@
 package models;
 
 import com.avaje.ebean.Model;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
-import play.mvc.BodyParser;
 import play.libs.Json;
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Created by gusal on 15/08/2015.
@@ -35,7 +32,7 @@ public class Emergencia extends Model{
     //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String emergencyID;
+    private String id_emergencia;
 
     private int emergencyType;
 
@@ -49,36 +46,27 @@ public class Emergencia extends Model{
 
     private int estado;
 
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private Vehiculo vehiculo;
+    private Long id_vehiculo;
 
 
 
     public Emergencia(){
-
+        estado=VIGENTE;
     }
 
 
-    public String getEmergencyID() {
-        return emergencyID;
+    public String getId_emergencia() {
+        return id_emergencia;
     }
 
-    public void setEmergencyID(String emergencyID) {
-        this.emergencyID = emergencyID;
+    public void setId_emergencia(String id_emergencia) {
+        this.id_emergencia = id_emergencia;
     }
 
     public void setEstado(int estado) {
         this.estado = estado;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
-    }
-
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
-    }
 
     public Emergencia( int emerType, String emerDate, String comments, String place, String emerLevel){
         emergencyType = emerType;
@@ -87,6 +75,14 @@ public class Emergencia extends Model{
         this.place = place;
         emergencyLevel = emerLevel;
         estado=VIGENTE;
+    }
+
+    public Long getId_vehiculo() {
+        return id_vehiculo;
+    }
+
+    public void setId_vehiculo(Long id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
     }
 
     public int getEmergencyType(){

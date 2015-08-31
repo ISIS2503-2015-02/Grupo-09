@@ -59,8 +59,9 @@ public class Trayecto extends Model
     //Constructores
     //------------------------------------------------------------------------
 
-    public Trayecto()
-    {    }
+    public Trayecto() {
+    }
+
     public Trayecto(String ruta, Date hora_inicio)
     {
         this.ruta = ruta;

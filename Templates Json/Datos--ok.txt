@@ -1,7 +1,7 @@
 {
 "gpsAltitud":"la altitud",
 "gpsLatitud":"la latitud",
-"horaMedicion":"dd-mm-yyyy-HH:mm:ss",
+"horaMedicion":"2015-10-05T20:32:15.001Z",
 "sensorChoque":false,
 "sensorTermico":82.5,
 "botonPanico":false,

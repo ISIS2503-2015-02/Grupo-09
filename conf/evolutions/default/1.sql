@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table datos (
-  id_datos                  varchar(255) not null,
+  id_datos                  bigint not null,
   gps_altitud               varchar(255),
   gps_latitud               varchar(255),
   hora_medicion             timestamp,
@@ -12,11 +12,12 @@ create table datos (
   sensor_termico            double,
   boton_panico              boolean,
   kilometraje               double,
+  id_vehiculo               bigint,
   constraint pk_datos primary key (id_datos))
 ;
 
 create table driver (
-  id_conductor              varchar(255) not null,
+  id_conductor              bigint not null,
   full_name                 varchar(255),
   document_number           varchar(255),
   home_phone                bigint,
@@ -26,18 +27,19 @@ create table driver (
 ;
 
 create table emergencia (
-  emergency_id              varchar(255) not null,
+  id_emergencia             varchar(255) not null,
   emergency_type            integer,
   emergency_date            varchar(255),
   comments                  varchar(255),
   place                     varchar(255),
   emergency_level           varchar(255),
   estado                    integer,
-  constraint pk_emergencia primary key (emergency_id))
+  id_vehiculo               bigint,
+  constraint pk_emergencia primary key (id_emergencia))
 ;
 
 create table estacion (
-  id_estacion               varchar(255) not null,
+  id_estacion               bigint not null,
   nombre_estacion           varchar(255),
   ubicacion                 varchar(255),
   vcubs_capacity            integer,
@@ -45,75 +47,73 @@ create table estacion (
 ;
 
 create table movi_bus_vehiculo (
-  id_vehiculo               varchar(255) not null,
+  id_vehiculo               bigint not null,
   modelo                    varchar(255),
   fecha_compra              timestamp,
   estado                    integer,
-  tipo_vehiculo             varchar(255),
-  kilom_desde_ultima_reparacion double,
+  tipo_vehiculo             integer,
   constraint pk_movi_bus_vehiculo primary key (id_vehiculo))
 ;
 
 create table reserva (
-  id_reserva                varchar(255) not null,
+  id_reserva                bigint not null,
   hora_reserva              timestamp,
   hora_creacion             timestamp,
   costo                     double,
   estado                    varchar(255),
+  id_movibus_reservado      bigint,
+  id_cliente                bigint,
   constraint pk_reserva primary key (id_reserva))
 ;
 
 create table revision_mecanica (
-  id                        varchar(255) not null,
+  id_revision               bigint not null,
   fecha_revision            timestamp,
   costo_revision            double,
   kilometraje               double,
-  constraint pk_revision_mecanica primary key (id))
-;
-
-create table tranvia (
-  id_tranvia                varchar(255) not null,
-  linea                     integer,
-  estado                    varchar(255),
-  constraint ck_tranvia_linea check (linea in (0,1,2)),
-  constraint pk_tranvia primary key (id_tranvia))
+  id_vehiculo               bigint,
+  constraint pk_revision_mecanica primary key (id_revision))
 ;
 
 create table tranvia_vehiculo (
-  id_vehiculo               varchar(255) not null,
+  id_vehiculo               bigint not null,
   modelo                    varchar(255),
   fecha_compra              timestamp,
   estado                    integer,
-  tipo_vehiculo             varchar(255),
-  kilom_desde_ultima_reparacion double,
+  tipo_vehiculo             integer,
   constraint pk_tranvia_vehiculo primary key (id_vehiculo))
 ;
 
 create table trayecto (
-  id_trayecto               varchar(255) not null,
+  id_trayecto               bigint not null,
   ruta                      varchar(255),
   hora_inicio               timestamp,
   hora_fin                  timestamp,
   incidentes                integer,
   estado                    integer,
-  duracion                  double,
+  id_conductor              bigint,
+  id_vehiculo               bigint,
   constraint pk_trayecto primary key (id_trayecto))
 ;
 
 create table user (
-  user_id                   varchar(255) not null,
+  id_usuario                bigint not null,
   full_name                 varchar(255),
   document                  varchar(255),
   address                   varchar(255),
   phone_number              bigint,
   cellphone                 bigint,
   email                     varchar(255),
-  constraint pk_user primary key (user_id))
+  id_vcub_alquilada         bigint,
+  id_ultima_reserva         bigint,
+  constraint pk_user primary key (id_usuario))
 ;
 
 create table vcub (
-  id_vcub                   varchar(255) not null,
+  id_vcub                   bigint auto_increment not null,
   estado                    varchar(255),
+  id_estacion               bigint,
+  id_cliente                bigint,
   constraint pk_vcub primary key (id_vcub))
 ;
 
@@ -130,8 +130,6 @@ create sequence movi_bus_vehiculo_seq;
 create sequence reserva_seq;
 
 create sequence revision_mecanica_seq;
-
-create sequence tranvia_seq;
 
 create sequence tranvia_vehiculo_seq;
 
@@ -160,8 +158,6 @@ drop table if exists reserva;
 
 drop table if exists revision_mecanica;
 
-drop table if exists tranvia;
-
 drop table if exists tranvia_vehiculo;
 
 drop table if exists trayecto;
@@ -185,8 +181,6 @@ drop sequence if exists movi_bus_vehiculo_seq;
 drop sequence if exists reserva_seq;
 
 drop sequence if exists revision_mecanica_seq;
-
-drop sequence if exists tranvia_seq;
 
 drop sequence if exists tranvia_vehiculo_seq;
 

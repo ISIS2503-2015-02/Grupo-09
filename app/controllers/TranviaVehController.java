@@ -1,8 +1,6 @@
 package controllers;
 
-import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.MoviBusVehiculo;
 import models.TranviaVehiculo;
 import models.Vehiculo;
 import play.libs.Json;
@@ -28,7 +26,7 @@ public class TranviaVehController extends VehiculoController {
 
 
     @BodyParser.Of(BodyParser.Json.class)
-    public Result putTranvia(String idTranvia)
+    public Result putTranvia(Long idTranvia)
     {
         TranviaVehiculo original = (TranviaVehiculo) TranviaVehiculo.finder.byId(idTranvia);
         original.delete();
@@ -44,7 +42,7 @@ public class TranviaVehController extends VehiculoController {
         return ok(Json.toJson(tranvias));
     }
 
-    public Result readTranvia(String idTranvia) {
+    public Result readTranvia(Long idTranvia) {
         Result rta;
         TranviaVehiculo tranvia = (TranviaVehiculo) TranviaVehiculo.finder.byId(idTranvia);
         if (tranvia != null) {
@@ -57,12 +55,12 @@ public class TranviaVehController extends VehiculoController {
 
     public Result readRevisionesTranvia(Long id_Tranvia)
     {
-        return VehiculoController.readRevisionesVehiculo(id_Tranvia, Vehiculo.TRANVIA);
+        return readRevisiones(id_Tranvia, Vehiculo.TRANVIA);
     }
 
     public Result readTrayectosTranvia(Long id_Tranvia)
     {
-        return VehiculoController.readTrayectosVehiculo(id_Tranvia, Vehiculo.TRANVIA);
+        return readTrayectos(id_Tranvia, Vehiculo.TRANVIA);
     }
 
 

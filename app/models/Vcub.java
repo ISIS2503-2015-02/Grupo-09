@@ -3,6 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
+import play.libs.Json;
 
 import javax.persistence.*;
 
@@ -17,7 +18,6 @@ public class Vcub extends Model
     //------------------------------------------------------------------------
 
     public final static String PRESTADA = "Prestada";
-    public final static String SUSTITUIDA = "Sustituida";
     public final static String LIBRE = "Libre";
 
     //------------------------------------------------------------------------
@@ -32,36 +32,39 @@ public class Vcub extends Model
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private String idVcub;
+    private Long id_vcub;
 
     private String estado; //Prestada,sustiduida o libre
 
-//    @ManyToOne
-    @JsonIgnoreProperties
-    private Estacion estacion;
+    private Long id_estacion;
 
-//    @OneToOne
-    //@JoinColumn(name = "userID", nullable = false)
-    @JsonIgnoreProperties
-    private User cliente;
+    private Long id_cliente;
+
+    //------------------------------------------------------------------------
+    // Constructores
+    //------------------------------------------------------------------------
 
     public Vcub(){
     }
 
-    public Vcub(String estado, Estacion estacion)
+    public Vcub(String estado, Long id_estacion)
     {
         this.estado = estado;
-        this.estacion = estacion;
+        this.id_estacion = id_estacion;
     }
 
-    public String getIdCvubs( )
+    //------------------------------------------------------------------------
+    // Métodos
+    //------------------------------------------------------------------------
+
+    public Long getIdCvubs( )
     {
-        return idVcub;
+        return id_vcub;
     }
 
-    public void setIdCvubs( String idCvubs )
+    public void setIdCvubs( Long idCvubs )
     {
-        this.idVcub = idCvubs;
+        this.id_vcub = idCvubs;
     }
 
     public String getEstado( )
@@ -74,33 +77,38 @@ public class Vcub extends Model
         this.estado = estado;
     }
 
-    public Estacion getEstacion( )
+    public Long getId_estacion()
     {
-        return estacion;
+        return id_estacion;
     }
 
-    public void setEstacion(Estacion estacion)
+    public void setId_estacion(Long id_estacion)
     {
-        this.estacion = estacion;
+        this.id_estacion = id_estacion;
     }
 
-    public User getCliente() {
-        return cliente;
+    public Long getId_cliente() {
+        return id_cliente;
     }
 
-    public void setCliente(User cliente) {
-        this.cliente = cliente;
+    public void setId_cliente(Long id_cliente) {
+        this.id_cliente = id_cliente;
     }
 
     //-------------------------------------------------
     // Métodos auxiliares
     //-------------------------------------------------
 
-    //public Vcub(String idCvub, String estado, Estacion estacion)
+    public static Vcub bind(JsonNode j)
+    {
+        return  Json.fromJson(j, Vcub.class);
+    }
+}
 
+    /**
     public static Vcub bind (JsonNode j){
         String estadoJs = j.findPath("estado").asText();
-        String estacionJs = j.findPath("estacion").asText();
+        String estacionJs = j.findPath("id_estacion").asText();
 
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(estacionJs);
 
@@ -111,10 +119,11 @@ public class Vcub extends Model
 
     public Vcub update(JsonNode j){
         estado = j.findPath("estado").asText();
-        String estacionId = j.findPath("estacion").asText();
+        String estacionId = j.findPath("id_estacion").asText();
 
-        estacion = (Estacion) new Model.Finder(Estacion.class).byId(estacionId);
+        id_estacion = (Estacion) new Model.Finder(Estacion.class).byId(estacionId);
 
         return this;
     }
-}
+     **/
+

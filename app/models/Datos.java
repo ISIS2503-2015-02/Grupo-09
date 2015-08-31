@@ -15,6 +15,11 @@ public class Datos extends Model
 {
 
     //------------------------------------------------------------------------
+    //Finder
+    //------------------------------------------------------------------------
+    public static Finder finder = new com.avaje.ebean.Model.Finder(Datos.class);
+
+    //------------------------------------------------------------------------
     //Constantes
     //------------------------------------------------------------------------
 
@@ -30,7 +35,7 @@ public class Datos extends Model
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_Datos;
+    private Long id_datos;
 
     private String gpsAltitud;
 
@@ -47,17 +52,15 @@ public class Datos extends Model
 
     private double kilometraje;
 
-
     private Long id_vehiculo;
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Datos.class);
-
+    //------------------------------------------------------------------------
+    //Constructores
+    //------------------------------------------------------------------------
 
     public Datos()
     {
     }
-
-
 
     public Datos(String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque, double sensorTermico, boolean botonPanico, double kilometraje)
     {
@@ -70,12 +73,16 @@ public class Datos extends Model
         this.kilometraje = kilometraje;
     }
 
-    public Long getId() {
-        return id_Datos;
+    //------------------------------------------------------------------------
+    //Métodos
+    //------------------------------------------------------------------------
+
+    public Long getId_datos() {
+        return id_datos;
     }
 
     public void setId(Long id) {
-        this.id_Datos = id;
+        this.id_datos = id;
     }
 
     public String getGpsAltitud() {

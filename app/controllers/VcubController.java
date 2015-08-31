@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by USER on 14/08/2015.
  */
-public class VcubController extends Controller{
+public class VcubController extends VehiculoController{
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create(){
@@ -32,7 +32,7 @@ public class VcubController extends Controller{
         return ok(Json.toJson(Vcubs));
     }
 
-    public Result read(String id) {
+    public Result read(Long id) {
         Vcub t = (Vcub) new Model.Finder(Vcub.class).byId(id);
         if(t != null) {
             return ok(Json.toJson(t));
@@ -41,15 +41,17 @@ public class VcubController extends Controller{
     }
 
     @BodyParser.Of(BodyParser.Json.class)
-    public Result modify(String id)
+    public Result modify(Long id)
     {
         JsonNode j = Controller.request().body().asJson();
-        Vcub lastVcub = (Vcub) new Model.Finder(Vcub.class).byId(id);
-
-        lastVcub.update(j);
-        lastVcub.save();
-
-        lastVcub = (Vcub) new Model.Finder(Vcub.class).byId(id);
+        Vcub anterior = (Vcub) Vcub.finder.byId(id);
+        Vcub update = Vcub.bind(j);
+        if(anterior!=null && update!=null && anterior.getIdCvubs()==update.getIdCvubs())
+        {
+            anterior.delete();
+            update.save();
+        }
+        Vcub lastVcub = (Vcub) Vcub.finder.byId(id);
         return ok(Json.toJson(lastVcub));
     }
 }

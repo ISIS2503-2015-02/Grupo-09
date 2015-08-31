@@ -2,10 +2,9 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+import play.libs.Json;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by USER on 16/08/2015.
@@ -24,8 +23,8 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private String userID;
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    private Long id_usuario;
 
     private String fullName;
 
@@ -39,14 +38,9 @@ public class User extends Model {
 
     private String email;
 
+    private Long id_vcub_alquilada;
 
-//    @OneToOne
-    private Vcub alquilada;
-
-//    @OneToMany(mappedBy = "cliente")
-    private Reserva reservas;
-
-
+    private Long id_ultimaReserva;
 
 
     //------------------------------------------------------------------------
@@ -54,7 +48,8 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
     public User(){
-
+        id_vcub_alquilada=null;
+        id_ultimaReserva =null;
     }
 
     public User(String fullName, String document, String address, long phoneNumber,
@@ -66,8 +61,7 @@ public class User extends Model {
         this.phoneNumber = phoneNumber;
         this.cellphone = cellphone;
         this.email = email;
-        alquilada=null;
-        reservas = new Reserva();
+        id_vcub_alquilada =null;
     }
 
     //------------------------------------------------------------------------
@@ -75,8 +69,8 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
 
-    public String getUserID() {
-        return userID;
+    public Long getId_usuario() {
+        return id_usuario;
     }
 
     public String getFullName() {
@@ -103,17 +97,20 @@ public class User extends Model {
         return email;
     }
 
-    public Vcub getAlquilada() {
-        return alquilada;
+    public Long getId_vcub_alquilada() {
+        return id_vcub_alquilada;
+    }
+
+    public Long getId_ultimaReserva() {
+        return id_ultimaReserva;
     }
 
     //------------------------------------------------------------------------
     // Setters
     //------------------------------------------------------------------------
 
-
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setId_usuario(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
     public void setFullName(String fullName) {
@@ -140,8 +137,12 @@ public class User extends Model {
         this.email = email;
     }
 
-    public void setAlquilada(Vcub alquilada) {
-        this.alquilada = alquilada;
+    public void setId_vcub_alquilada(Long id_vcub_alquilada) {
+        this.id_vcub_alquilada = id_vcub_alquilada;
+    }
+
+    public void setId_ultimaReserva(Long id_ultimaReserva) {
+        this.id_ultimaReserva = id_ultimaReserva;
     }
 
     //------------------------------------------------------------------------
@@ -150,41 +151,28 @@ public class User extends Model {
 
     //public User(String fullName, String document, String address, long phoneNumber, long cellphone, String email){
     public static User bind(JsonNode j){
-
+        /**
         String fullName = j.findPath("fullName").asText();
         String document = j.findPath("document").asText();
         String address = j.findPath("address").asText();
         long phoneNumber = j.findPath("phoneNumber").asLong();
         long cellphone = j.findPath("cellphone").asLong();
         String email = j.findPath("email").asText();
-
         User user = new User(fullName,document,address,phoneNumber,cellphone,email);
-
         return user;
+         **/
+
+        return  Json.fromJson(j, User.class);
     }
 
-    public User update(JsonNode j) {
-
+    public User update(JsonNode j)
+    {
         fullName = j.findPath("fullName").asText();
         document = j.findPath("document").asText();
         address = j.findPath("address").asText();
         phoneNumber = j.findPath("phoneNumber").asLong();
         cellphone = j.findPath("cellphone").asLong();
         email = j.findPath("email").asText();
-
         return this;
-    }
-
-    public void agregarReserva(Reserva nReserva)
-    {
-        reservas.setCliente(this);
-    }
-
-    public Reserva getReservas() {
-        return reservas;
-    }
-
-    public void setReservas(Reserva reservas) {
-        this.reservas = reservas;
     }
 }

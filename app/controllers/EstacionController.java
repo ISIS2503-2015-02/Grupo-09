@@ -22,7 +22,6 @@ public class EstacionController extends Controller {
         JsonNode j = Controller.request().body().asJson();
         Estacion station = Estacion.bind(j);
         station.save();
-
         return ok(Json.toJson(station));
     }
 
@@ -32,7 +31,7 @@ public class EstacionController extends Controller {
     }
 
     @BodyParser.Of(BodyParser.Json.class)
-    public Result modificarEstacion(String idEstacion)
+    public Result modificarEstacion(Long idEstacion)
     {
         JsonNode j = Controller.request().body().asJson();
         Estacion nueva = Estacion.bind(j);
@@ -43,8 +42,7 @@ public class EstacionController extends Controller {
     }
 
 
-
-    public Result readVcubsEstacion(String idEstacion) {
+    public Result readVcubsEstacion(Long idEstacion) {
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
         if(estacion != null) {
             List<Vcub> vcubsEstacion = estacion.getVcubs();
@@ -53,26 +51,36 @@ public class EstacionController extends Controller {
         return notFound();
     }
 
-    public Result alquilarBicicleta(String idCliente, String idEstacion)
+    public Result alquilarBicicleta(Long idCliente, Long idEstacion)
     {
-
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
         User usuario = (User) new Model.Finder(User.class).byId(idCliente);
         if(null!=usuario && estacion != null)
         {
-            Vcub prestada =estacion.alquilarVcub(usuario);
-            if(prestada!=null)
+            Vcub prestar = null;
+            List<Vcub> disponibles = estacion.getVcubs();
+                if(disponibles.size()>0)
+                {
+                    prestar=disponibles.get(0);
+                    prestar.setId_cliente(idCliente);
+                    prestar.setEstado(Vcub.PRESTADA);
+                    prestar.setId_estacion(null);
+                    prestar.save();
+                    usuario.setId_vcub_alquilada(prestar.getIdCvubs());
+                    usuario.save();
+                }
+            if(prestar!=null)
             {
                 String mensaje ="";
-                if(estacion.getVcubsCapacity()/10>estacion.getVcubs().size())
+                if(estacion.getVcubsCapacity()/10>disponibles.size()-1)
                 {
-                    mensaje+="ALERTA: QUEDAN MENOS DEL 10% DE LAS VCUBS PARA LA ESTACI�N \n";
+                    mensaje+="ALERTA: QUEDAN MENOS DEL 10% DE LAS VCUBS PARA LA ESTACIÓN \n\n";
                 }
-                return ok(mensaje+"Se ha prestado la siguiente vCub\n"+Json.toJson(prestada));
+                return ok(mensaje+"Se ha prestado la siguiente vCub\n"+Json.toJson(prestar));
             }
             else
             {
-                return ok ("No hay Vcubs para ser prestadas");
+                return ok("No hay Vcubs para ser prestadas");
             }
 
         }
@@ -82,19 +90,26 @@ public class EstacionController extends Controller {
         }
     }
 
-    public Result devolverBicicleta(String idCliente, String idEstacionEntrega)
+    public Result devolverBicicleta(Long idCliente, Long idEstacionEntrega)
     {
-        Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacionEntrega);
-        User usuario = (User) new Model.Finder(User.class).byId(idCliente);
-        if(null!=usuario && null!= usuario.getAlquilada() && estacion != null)
-        {
-            Vcub alquilada = usuario.getAlquilada();
-            estacion.devolverVcub(alquilada);
+        Estacion estacion = (Estacion)Estacion.finder.byId(idEstacionEntrega);
+        User usuario = (User) User.finder.byId(idCliente);
+        if(null!=usuario && null!= usuario.getId_vcub_alquilada() && estacion != null) {
+            Vcub alquilada = (Vcub) Vcub.finder.byId(usuario.getId_usuario());
+            if (estacion.getVcubs().size() < estacion.getVcubsCapacity()) {
+                alquilada.setId_estacion(idEstacionEntrega);
+                usuario.setId_vcub_alquilada(null);
+                alquilada.setEstado(Vcub.LIBRE);
+                alquilada.save();
+                usuario.save();
+                return ok("Cliente:\n"+Json.toJson(usuario)+"\n Vcub:\n "+Json.toJson(alquilada));
+            } else {
+                return badRequest("LA ESTACIÓN NO TIENE CAPACIDAD DISPONIBLE PARA RECIBIR LA VCUB");
+            }
         }
         else
         {
             return notFound("Alguno de los recursos que intenta obtener no fueron encontrados o el usuario no tiene ninguna VCub cargada a su cuenta");
         }
-        return notFound("Alguno de los recursos que intenta obtener no fueron encontrados o el usuario no tiene ninguna VCub cargada a su cuenta");
     }
 }

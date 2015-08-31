@@ -25,7 +25,7 @@ public class Estacion extends Model {
     //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String idEstacion;
+    private Long id_estacion;
 
     private String nombreEstacion;
 
@@ -33,37 +33,30 @@ public class Estacion extends Model {
 
     private int vcubsCapacity;
 
-
-
-//    @OneToMany(mappedBy = "estacion")
-    //  @JoinColumn(name="idVcub", nullable = false)
-    private List<Vcub> vcubs;
+    @Transient
+    private List vcubs;
 
     public Estacion() {
     }
 
-    public Estacion(String nombreEstacion, String ubicacion) {
-        this.nombreEstacion = nombreEstacion;
-        this.ubicacion = ubicacion;
-    }
 
-    public Estacion( String idEstacion, String nombreEstacion, String ubicacion, int vcubsCapacity )
+    public Estacion( Long idEstacion, String nombreEstacion, String ubicacion, int vcubsCapacity )
     {
-        this.idEstacion = idEstacion;
+        this.id_estacion = idEstacion;
         this.nombreEstacion = nombreEstacion;
         this.ubicacion = ubicacion;
         this.vcubsCapacity = vcubsCapacity;
         vcubs = new ArrayList<Vcub>();
     }
 
-    public String getIdEstacion()
+    public Long getId_estacion()
     {
-        return idEstacion;
+        return id_estacion;
     }
 
-    public void setIdEstacion(String idEstacion)
+    public void setId_estacion(Long idEstacion)
     {
-        this.idEstacion = idEstacion;
+        this.id_estacion = idEstacion;
     }
 
     public String getNombreEstacion( )
@@ -95,43 +88,9 @@ public class Estacion extends Model {
     }
 
     public List<Vcub> getVcubs() {
-        return vcubs;
+        return Vcub.finder.where().eq("id_estacion",id_estacion).findList();
     }
 
-    public void devolverVcub(Vcub devolver)
-    {
-        vcubs.add(devolver);
-        User teniaAlquilada = devolver.getCliente();
-        teniaAlquilada.setAlquilada(null);
-        devolver.setEstado(Vcub.LIBRE);
-        devolver.setEstacion(this);
-        teniaAlquilada.save();
-        devolver.setCliente(null);
-        devolver.save();
-        this.save();
-
-    }
-
-    /*
-        Presta una bicicleta al usuario que llega por parámetro, la elimina de las bicicletas de la estación.
-     */
-    public Vcub alquilarVcub(User usuarioAlquila)
-    {
-        Vcub prestar = null;
-        if(vcubs.size()>0)
-        {
-            prestar=vcubs.get(0);
-            vcubs.remove(prestar);
-            prestar.setCliente(usuarioAlquila);
-            prestar.setEstado(Vcub.PRESTADA);
-            prestar.setEstacion(null);
-            prestar.save();
-            usuarioAlquila.setAlquilada(prestar);
-            usuarioAlquila.save();
-        }
-        this.save();
-        return prestar;
-    }
 
     //-------------------------------------------------------------------------------------
     // JsonNode

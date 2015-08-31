@@ -25,7 +25,7 @@ public class TranviaVehiculo extends Vehiculo {
 
     public TranviaVehiculo(Long id, String modelo, Date fecha_compra, int estado)
     {
-        super(id,modelo,fecha_compra,estado,"Tranvia");
+        super(id,modelo,fecha_compra,estado,Vehiculo.TRANVIA);
     }
     //DataBinder-------------------------------------------------------
     public static TranviaVehiculo bind(JsonNode json)

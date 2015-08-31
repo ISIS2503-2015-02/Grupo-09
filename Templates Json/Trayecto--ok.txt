@@ -1,0 +1,8 @@
+{
+"ruta":"13:Santa Librada",
+"hora_inicio":"2015-08-30T22:32:15.001Z",
+"hora_fin":null,
+"incidentes":0,
+"estado":1,
+"id_conductor":2
+}
