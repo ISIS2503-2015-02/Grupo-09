@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="root" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="" />
+        <datasource-mapping />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/../../conf/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../target/scala-2.11/classes" />
     <output-test url="file://$MODULE_DIR$/../../target/scala-2.11/test-classes" />
@@ -8,10 +18,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../app-2.11" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/routes/main" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/src_managed/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/twirl/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/routes/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/src_managed/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/twirl/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../test-2.11" isTestSource="true" />
@@ -21,8 +29,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/resolution-cache" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/streams" />
-      <excludeFolder url="file://$MODULE_DIR$/../../target/universal" />
-      <excludeFolder url="file://$MODULE_DIR$/../../target/web" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -146,5 +152,16 @@
     <orderEntry type="library" scope="TEST" name="SBT: xalan:xalan:2.7.1:jar" level="project" />
     <orderEntry type="library" name="SBT: xerces:xercesImpl:2.11.0:jar" level="project" />
     <orderEntry type="library" name="SBT: xml-apis:xml-apis:1.4.01:jar" level="project" />
+    <orderEntry type="library" name="SBT: antlr:antlr:2.7.7:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.play:play-java-jpa_2.11:2.4.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.play:play-jdbc-evolutions_2.11:2.4.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: dom4j:dom4j:1.6.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.hibernate:hibernate-core:4.3.9.Final:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.hibernate:hibernate-entitymanager:4.3.9.Final:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.hibernate.common:hibernate-commons-annotations:4.0.5.Final:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.jboss:jandex:1.1.0.Final:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final:jar" level="project" />
   </component>
 </module>

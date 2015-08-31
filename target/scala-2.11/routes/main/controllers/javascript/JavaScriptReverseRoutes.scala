@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/template/Desktop/Experimento 1/Grupo-09/conf/routes
-// @DATE:Fri Aug 28 18:14:47 COT 2015
+// @SOURCE:C:/Users/Usuario/Desktop/Arquisoft/Experimento 1/conf/routes
+// @DATE:Sun Aug 30 22:55:35 COT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:169
+  // @LINE:162
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:169
+    // @LINE:162
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -35,7 +35,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:75
+  // @LINE:74
   class ReverseTranviaVehController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,17 +43,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:81
-    def putTranvia: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.TranviaVehController.putTranvia",
+    // @LINE:76
+    def readTranvia: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.TranviaVehController.readTranvia",
       """
         function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "tranvias/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tranvias/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
   
-    // @LINE:79
+    // @LINE:78
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TranviaVehController.create",
       """
@@ -63,7 +63,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:75
+    // @LINE:74
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TranviaVehController.readAll",
       """
@@ -73,19 +73,19 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:77
-    def readTranvia: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.TranviaVehController.readTranvia",
+    // @LINE:80
+    def putTranvia: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.TranviaVehController.putTranvia",
       """
         function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tranvias/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "tranvias/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
   
   }
 
-  // @LINE:128
+  // @LINE:127
   class ReverseTrayectoController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -93,7 +93,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:129
+    // @LINE:128
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TrayectoController.create",
       """
@@ -103,7 +103,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:128
+    // @LINE:127
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TrayectoController.readAll",
       """
@@ -115,67 +115,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:151
-  class ReverseVehiculoController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:151
-    def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VehiculoController.readAll",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vehiculos"})
-        }
-      """
-    )
-  
-    // @LINE:159
-    def readDatosVehiculo: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VehiculoController.readDatosVehiculo",
-      """
-        function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vehiculos/{id}/datos" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
-        }
-      """
-    )
-  
-    // @LINE:157
-    def agregarDatosVehiculo: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VehiculoController.agregarDatosVehiculo",
-      """
-        function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "vehiculos/{id}" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
-        }
-      """
-    )
-  
-    // @LINE:153
-    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VehiculoController.create",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "vehiculos"})
-        }
-      """
-    )
-  
-    // @LINE:155
-    def readVehiculoID: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VehiculoController.readVehiculoID",
-      """
-        function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vehiculos/{id}" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:134
+  // @LINE:133
   class ReverseEstacionController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -183,7 +123,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:134
+    // @LINE:133
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.readAll",
       """
@@ -193,17 +133,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:144
+    // @LINE:143
     def alquilarBicicleta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.alquilarBicicleta",
       """
         function(id,id2) {
-          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/bicicletas/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id2", encodeURIComponent(id2))})
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/bicicletas/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id2", id2)})
         }
       """
     )
   
-    // @LINE:138
+    // @LINE:137
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.create",
       """
@@ -213,32 +153,32 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:146
+    // @LINE:145
     def devolverBicicleta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.devolverBicicleta",
       """
         function(id,id2) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/bicicletas" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id2", id2)])})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/bicicletas" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id2", id2)])})
         }
       """
     )
   
-    // @LINE:140
+    // @LINE:139
     def modificarEstacion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.modificarEstacion",
       """
         function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
   
-    // @LINE:136
+    // @LINE:135
     def readVcubsEstacion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.readVcubsEstacion",
       """
         function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "estaciones/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
@@ -263,32 +203,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:41
-    def modificarReservaCliente: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.modificarReservaCliente",
-      """
-        function(id,id2) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/reservas/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id2", encodeURIComponent(id2))})
-        }
-      """
-    )
-  
     // @LINE:35
     def modify: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.modify",
       """
         function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
   
-    // @LINE:31
-    def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.read",
+    // @LINE:37
+    def consultarReservasUsuario: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.consultarReservasUsuario",
       """
         function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/reservas"})
         }
       """
     )
@@ -303,22 +233,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
-    def consultarReservasUsuario: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.consultarReservasUsuario",
+    // @LINE:31
+    def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.read",
       """
         function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/reservas"})
-        }
-      """
-    )
-  
-    // @LINE:39
-    def crearReseva: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.crearReseva",
-      """
-        function(id) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/reservas"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
@@ -328,7 +248,27 @@ package controllers.javascript {
       "controllers.UserController.eliminarReservaCliente",
       """
         function(id,id2) {
-          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/reservas/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id2", encodeURIComponent(id2))})
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/reservas/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id2", id2)})
+        }
+      """
+    )
+  
+    // @LINE:39
+    def crearReseva: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.crearReseva",
+      """
+        function(id) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/reservas"})
+        }
+      """
+    )
+  
+    // @LINE:41
+    def modificarReservaCliente: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.modificarReservaCliente",
+      """
+        function(id,id2) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "usuarios/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/reservas/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id2", id2)})
         }
       """
     )
@@ -355,7 +295,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:103
+  // @LINE:102
   class ReverseVcubController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -363,27 +303,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:109
+    // @LINE:108
     def modify: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.modify",
       """
         function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "vcubs/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "vcubs/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
   
-    // @LINE:105
-    def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VcubController.read",
-      """
-        function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vcubs/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
-        }
-      """
-    )
-  
-    // @LINE:107
+    // @LINE:106
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.create",
       """
@@ -393,12 +323,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:103
+    // @LINE:102
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.readAll",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vcubs"})
+        }
+      """
+    )
+  
+    // @LINE:104
+    def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VcubController.read",
+      """
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "vcubs/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
         }
       """
     )
@@ -413,32 +353,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:50
-    def readMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MoviBusController.readMovibus",
+    // @LINE:65
+    def agregarTrayectoMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.agregarTrayectoMovibus",
       """
         function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/trayectos"})
         }
       """
     )
   
-    // @LINE:60
-    def readDatosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MoviBusController.readDatosMovibus",
+    // @LINE:48
+    def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.readAll",
       """
-        function(id) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/datos"})
-        }
-      """
-    )
-  
-    // @LINE:58
-    def agregarDatosVehiculo: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MoviBusController.agregarDatosVehiculo",
-      """
-        function(id) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/datos"})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses"})
         }
       """
     )
@@ -453,12 +383,62 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:48
-    def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MoviBusController.read",
+    // @LINE:63
+    def readRevisionesMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.readRevisionesMovibus",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses"})
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/revisiones"})
+        }
+      """
+    )
+  
+    // @LINE:57
+    def agregarDatosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.agregarDatosMovibus",
+      """
+        function(id) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/datos"})
+        }
+      """
+    )
+  
+    // @LINE:59
+    def readDatosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.readDatosMovibus",
+      """
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/datos"})
+        }
+      """
+    )
+  
+    // @LINE:50
+    def readMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.readMovibus",
+      """
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+        }
+      """
+    )
+  
+    // @LINE:67
+    def finalizarTrayectoMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.finalizarTrayectoMovibus",
+      """
+        function(id,id2) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/trayectos/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id2", id2)})
+        }
+      """
+    )
+  
+    // @LINE:61
+    def agregarRevisionMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.agregarRevisionMovibus",
+      """
+        function(id) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/revisiones"})
         }
       """
     )
@@ -468,7 +448,17 @@ package controllers.javascript {
       "controllers.MoviBusController.putMovibus",
       """
         function(id) {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+        }
+      """
+    )
+  
+    // @LINE:69
+    def readTrayectosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MoviBusController.readTrayectosMovibus",
+      """
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "mobibuses/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/trayectos/"})
         }
       """
     )

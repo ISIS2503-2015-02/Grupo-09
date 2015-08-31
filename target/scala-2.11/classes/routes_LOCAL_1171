@@ -158,7 +158,7 @@ PUT /vehiculos/{id} controllers.VehiculoController.agregarDatosVehiculo(id : Str
 
 GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
 
-#POST /vehiculos/{id}/trayectos controllers.VehiculoController.agregarTrayectoVehiculo()
+#POST /vehiculos/{id}/trayectos agregarTrayecto()
 
 
 

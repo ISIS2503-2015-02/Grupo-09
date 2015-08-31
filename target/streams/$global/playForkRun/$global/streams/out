@@ -1,5 +1,5 @@
 [0m[[0minfo[0m] [0mSetting up Play fork run ... (use Ctrl+D to cancel)[0m
-[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/template/Desktop/Experimento%201/Grupo-09/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/Usuario/Desktop/Arquisoft/Experimento%201/}root...[0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.6 ...[0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-enhancer;1.1.0 ...[0m
 [0m[[0minfo[0m] [0mResolving org.javassist#javassist;3.18.2-GA ...[0m
@@ -186,3 +186,16 @@
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m(Server started, use Ctrl+D to stop and go back to the console...)[0m
 [0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\Users\Usuario\Desktop\Arquisoft\Experimento 1\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mC:\Users\Usuario\Desktop\Arquisoft\Experimento 1\app\controllers\VehiculoController.java: C:\Users\Usuario\Desktop\Arquisoft\Experimento 1\app\controllers\VehiculoController.java uses unchecked or unsafe operations.[0m
+[0m[[0minfo[0m] [0mC:\Users\Usuario\Desktop\Arquisoft\Experimento 1\app\controllers\VehiculoController.java: Recompile with -Xlint:unchecked for details.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:file:~/data/db[0m
+[0m[[33mwarn[0m] [0m- application - application.conf @ file:/C:/Users/Usuario/Desktop/Arquisoft/Experimento%201/target/scala-2.11/classes/application.conf: 55: applyEvolutions.default is deprecated, use play.evolutions.db.default.autoApply instead[0m
+[0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Starting application default Akka system: application[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[0minfo[0m] [0mStopping Play fork run ...[0m
+[0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Shutdown application default Akka system: application[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0mForked Play process did not exit on its own, terminating it[0m

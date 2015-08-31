@@ -103,16 +103,23 @@ public class VehiculoController extends Controller {
         Trayecto trayectoRecibido = Trayecto.bind(json);
         Driver conductorEncontrado = (Driver) new Model.Finder(Driver.class).byId(trayectoRecibido.getId_conductor());
         if (vehiculoEncontrado != null && conductorEncontrado != null) {
-            trayectoRecibido.setId_vehiculo(vehiculoEncontrado.getId_vehiculo());
-            trayectoRecibido.setId_conductor(conductorEncontrado.getId_conductor());
-            conductorEncontrado.setUltimoTrayecto(trayectoRecibido);
-            vehiculoEncontrado.setUltimoTrayecto(trayectoRecibido);
-            vehiculoEncontrado.setEstado(Vehiculo.EN_MARCHA);
-            trayectoRecibido.save();
-            vehiculoEncontrado.save();
-            conductorEncontrado.save();
-            return ok("\n Trayecto Iniciado:\n" + Json.toJson(trayectoRecibido) + "\n Conductor:\n" + Json.toJson(conductorEncontrado) + "\n" +
-                    " Vehiculo:\n" + Json.toJson(vehiculoEncontrado));
+            if(vehiculoEncontrado.getUltimoTrayecto()==null || vehiculoEncontrado.getUltimoTrayecto().getEstado()==Trayecto.FINALIZADO)
+            {
+                trayectoRecibido.setId_vehiculo(vehiculoEncontrado.getId_vehiculo());
+                trayectoRecibido.setId_conductor(conductorEncontrado.getId_conductor());
+                conductorEncontrado.setUltimoTrayecto(trayectoRecibido);
+                vehiculoEncontrado.setUltimoTrayecto(trayectoRecibido);
+                vehiculoEncontrado.setEstado(Vehiculo.EN_MARCHA);
+                trayectoRecibido.save();
+                vehiculoEncontrado.save();
+                conductorEncontrado.save();
+                return ok("\n Trayecto Iniciado:\n" + Json.toJson(trayectoRecibido) + "\n Conductor:\n" + Json.toJson(conductorEncontrado) + "\n" +
+                        " Vehiculo:\n" + Json.toJson(vehiculoEncontrado));
+            }
+            else {
+                return badRequest("No se puede iniciar un nuevo trayecto antes de finalizar el anterior");
+            }
+
         } else {
             return notFound("No se ha encontrado alguno de los elementos requeridos, revise nuevamente los datos de la solicitud");
         }
@@ -124,24 +131,27 @@ public class VehiculoController extends Controller {
         Vehiculo vehiculoEncontrado = tipo_vehiculo==Vehiculo.TRANVIA?
                 (Vehiculo)TranviaVehiculo.finder.byId(id_vehiculo):
                 (Vehiculo)MoviBusVehiculo.finder.byId(id_vehiculo);
-        Trayecto trayecoEncontrado = vehiculoEncontrado.getUltimoTrayecto();
-        if(trayecoEncontrado!=null && trayecoEncontrado.getId_trayecto()==id_trayecto && vehiculoEncontrado!=null)
-        {
-            JsonNode json = Controller.request().body().asJson();
-            Trayecto trayectoRecibido = Trayecto.bind(json);
-            if (trayectoRecibido != null)
+        //Trayecto trayecoEncontrado = vehiculoEncontrado.getUltimoTrayecto();
+        Trayecto trayecoEncontrado = (Trayecto)Trayecto.finder.byId(id_trayecto);
+        Trayecto ultimo_trayecto_veh = vehiculoEncontrado != null ? vehiculoEncontrado.getUltimoTrayecto() : null;
+        if (trayecoEncontrado != null && vehiculoEncontrado != null) {
+            if (ultimo_trayecto_veh!=null && ultimo_trayecto_veh.getId_trayecto()==id_trayecto)
             {
-                TrayectoController.finalizarTrayecto(trayecoEncontrado.getId_trayecto(), trayectoRecibido.getHora_fin(), trayectoRecibido.getIncidentes());
-                trayectoRecibido.delete();
+                JsonNode json = Controller.request().body().asJson();
+                Trayecto trayectoRecibido = Trayecto.bind(json);
+                if (trayectoRecibido != null) {
+                    TrayectoController.finalizarTrayecto(trayecoEncontrado.getId_trayecto(), trayectoRecibido.getHora_fin(), trayectoRecibido.getIncidentes());
+                    trayectoRecibido.delete();
+                }
+                trayecoEncontrado.save();
+                vehiculoEncontrado.setEstado(Vehiculo.DISPONIBLE);
+                return ok("Se registró la finalizacion del trayecto:\n" + Json.toJson(trayecoEncontrado));
+            } else {
+                return badRequest("Únicamente puede finalizar el trayecto actual del vehículo, no puede finalizar otros trayectos");
             }
-            trayecoEncontrado.save();
-            vehiculoEncontrado.setEstado(Vehiculo.DISPONIBLE);
-            return ok("Se registró la finalizacion del trayecto:\n"+Json.toJson(trayecoEncontrado));
         }
-        else
-        {
-            return badRequest("Únicamente puede finalizar el trayecto actual del vehículo, no puede finalizar otros trayectos");
         }
+
 
     }
 
