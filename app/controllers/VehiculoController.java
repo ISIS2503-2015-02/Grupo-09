@@ -150,7 +150,8 @@ public class VehiculoController extends Controller {
                 return badRequest("Únicamente puede finalizar el trayecto actual del vehículo, no puede finalizar otros trayectos");
             }
         }
-        }
+
+        return badRequest("Hubo un problema obteniendo los trayectos del vehículo");
 
 
     }
@@ -221,5 +222,4 @@ public class VehiculoController extends Controller {
         }
         return rta;
     }
-
 }

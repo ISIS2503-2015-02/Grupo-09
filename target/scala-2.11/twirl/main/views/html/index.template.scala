@@ -56,10 +56,10 @@ Seq[Any](format.raw/*1.19*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Sun Aug 30 22:55:37 COT 2015
-                  SOURCE: C:/Users/Usuario/Desktop/Arquisoft/Experimento 1/app/views/index.scala.html
-                  HASH: 3ef03cb4c1c231acbcf2966cffd468e326536b12
-                  MATRIX: 745->1|857->18|887->23|918->46|957->48|991->57|1005->63|1058->96|1092->101
+                  DATE: Tue Sep 01 11:01:23 COT 2015
+                  SOURCE: /home/ryogi/Arquisoft/Grupo-09/app/views/index.scala.html
+                  HASH: 8037d5e958aa9a759edcdb5f1116183b2d26c798
+                  MATRIX: 745->1|857->18|885->21|916->44|955->46|987->53|1001->59|1054->92|1086->95
                   LINES: 27->1|32->1|34->3|34->3|34->3|36->5|36->5|36->5|38->7
                   -- GENERATED --
               */
