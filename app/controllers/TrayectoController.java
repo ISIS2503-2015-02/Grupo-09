@@ -49,6 +49,7 @@ public class TrayectoController extends Controller{
             }
             trayecto.setHora_fin(hora_fin);
             trayecto.setIncidentes(nIncidentes);
+            trayecto.save();
         }
     }
 

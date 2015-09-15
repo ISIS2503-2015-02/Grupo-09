@@ -1,7 +1,5 @@
 {
-"id_vehiculo":"vehiculo1",
 "modelo":"Mercedes Benz RX 0993",
-"fecha_compra":"2011-07-14",
-"estado":0,
-"datos":[]
+"fecha_compra":"2015-08-10",
+"estado":0
 }

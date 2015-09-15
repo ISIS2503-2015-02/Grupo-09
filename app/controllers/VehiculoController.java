@@ -134,17 +134,20 @@ public class VehiculoController extends Controller {
         //Trayecto trayecoEncontrado = vehiculoEncontrado.getUltimoTrayecto();
         Trayecto trayecoEncontrado = (Trayecto)Trayecto.finder.byId(id_trayecto);
         Trayecto ultimo_trayecto_veh = vehiculoEncontrado != null ? vehiculoEncontrado.getUltimoTrayecto() : null;
-        if (trayecoEncontrado != null && vehiculoEncontrado != null) {
+        if (trayecoEncontrado != null && vehiculoEncontrado != null)
+        {
             if (ultimo_trayecto_veh!=null && ultimo_trayecto_veh.getId_trayecto()==id_trayecto)
             {
                 JsonNode json = Controller.request().body().asJson();
                 Trayecto trayectoRecibido = Trayecto.bind(json);
-                if (trayectoRecibido != null) {
+                if (trayectoRecibido != null)
+                {
                     TrayectoController.finalizarTrayecto(trayecoEncontrado.getId_trayecto(), trayectoRecibido.getHora_fin(), trayectoRecibido.getIncidentes());
-                    trayectoRecibido.delete();
                 }
-                trayecoEncontrado.save();
                 vehiculoEncontrado.setEstado(Vehiculo.DISPONIBLE);
+                vehiculoEncontrado.save();
+                trayecoEncontrado = (Trayecto)Trayecto.finder.byId(id_trayecto);
+//                trayectoRecibido.delete();
                 return ok("Se registró la finalizacion del trayecto:\n" + Json.toJson(trayecoEncontrado));
             } else {
                 return badRequest("Únicamente puede finalizar el trayecto actual del vehículo, no puede finalizar otros trayectos");

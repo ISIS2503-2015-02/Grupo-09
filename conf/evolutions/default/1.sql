@@ -52,6 +52,14 @@ create table movi_bus_vehiculo (
   fecha_compra              timestamp,
   estado                    integer,
   tipo_vehiculo             integer,
+  id_revision               bigint,
+  id_datos                  bigint,
+  id_emergencia             varchar(255),
+  id_trayecto               bigint,
+  constraint uq_movi_bus_vehiculo_id_revision unique (id_revision),
+  constraint uq_movi_bus_vehiculo_id_datos unique (id_datos),
+  constraint uq_movi_bus_vehiculo_id_emergenc unique (id_emergencia),
+  constraint uq_movi_bus_vehiculo_id_trayecto unique (id_trayecto),
   constraint pk_movi_bus_vehiculo primary key (id_vehiculo))
 ;
 
@@ -81,6 +89,14 @@ create table tranvia_vehiculo (
   fecha_compra              timestamp,
   estado                    integer,
   tipo_vehiculo             integer,
+  id_revision               bigint,
+  id_datos                  bigint,
+  id_emergencia             varchar(255),
+  id_trayecto               bigint,
+  constraint uq_tranvia_vehiculo_id_revision unique (id_revision),
+  constraint uq_tranvia_vehiculo_id_datos unique (id_datos),
+  constraint uq_tranvia_vehiculo_id_emergenci unique (id_emergencia),
+  constraint uq_tranvia_vehiculo_id_trayecto unique (id_trayecto),
   constraint pk_tranvia_vehiculo primary key (id_vehiculo))
 ;
 
@@ -137,6 +153,22 @@ create sequence trayecto_seq;
 
 create sequence user_seq;
 
+alter table movi_bus_vehiculo add constraint fk_movi_bus_vehiculo_ultimaRev_1 foreign key (id_revision) references revision_mecanica (id_revision) on delete restrict on update restrict;
+create index ix_movi_bus_vehiculo_ultimaRev_1 on movi_bus_vehiculo (id_revision);
+alter table movi_bus_vehiculo add constraint fk_movi_bus_vehiculo_ultimosDa_2 foreign key (id_datos) references datos (id_datos) on delete restrict on update restrict;
+create index ix_movi_bus_vehiculo_ultimosDa_2 on movi_bus_vehiculo (id_datos);
+alter table movi_bus_vehiculo add constraint fk_movi_bus_vehiculo_ultimaEme_3 foreign key (id_emergencia) references emergencia (id_emergencia) on delete restrict on update restrict;
+create index ix_movi_bus_vehiculo_ultimaEme_3 on movi_bus_vehiculo (id_emergencia);
+alter table movi_bus_vehiculo add constraint fk_movi_bus_vehiculo_ultimoTra_4 foreign key (id_trayecto) references trayecto (id_trayecto) on delete restrict on update restrict;
+create index ix_movi_bus_vehiculo_ultimoTra_4 on movi_bus_vehiculo (id_trayecto);
+alter table tranvia_vehiculo add constraint fk_tranvia_vehiculo_ultimaRevi_5 foreign key (id_revision) references revision_mecanica (id_revision) on delete restrict on update restrict;
+create index ix_tranvia_vehiculo_ultimaRevi_5 on tranvia_vehiculo (id_revision);
+alter table tranvia_vehiculo add constraint fk_tranvia_vehiculo_ultimosDat_6 foreign key (id_datos) references datos (id_datos) on delete restrict on update restrict;
+create index ix_tranvia_vehiculo_ultimosDat_6 on tranvia_vehiculo (id_datos);
+alter table tranvia_vehiculo add constraint fk_tranvia_vehiculo_ultimaEmer_7 foreign key (id_emergencia) references emergencia (id_emergencia) on delete restrict on update restrict;
+create index ix_tranvia_vehiculo_ultimaEmer_7 on tranvia_vehiculo (id_emergencia);
+alter table tranvia_vehiculo add constraint fk_tranvia_vehiculo_ultimoTray_8 foreign key (id_trayecto) references trayecto (id_trayecto) on delete restrict on update restrict;
+create index ix_tranvia_vehiculo_ultimoTray_8 on tranvia_vehiculo (id_trayecto);
 
 
 

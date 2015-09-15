@@ -1,5 +1,5 @@
 [0m[[0minfo[0m] [0mSetting up Play fork run ... (use Ctrl+D to cancel)[0m
-[0m[[0minfo[0m] [0mUpdating {file:/home/ryogi/Arquisoft/Grupo-09/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/template/Desktop/Experimento%201/Grupo-09/}root...[0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.6 ...[0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-enhancer;1.1.0 ...[0m
 [0m[[0minfo[0m] [0mResolving org.javassist#javassist;3.18.2-GA ...[0m
@@ -179,21 +179,164 @@
 [0m[[0minfo[0m] [0mResolving net.contentobjects.jnotify#jnotify;0.94-play-1 ...[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m[35m--- (Running the application, auto-reloading is enabled) ---[0m[0m
+[0m[[0minfo[0m] [0m--- (Running the application, auto-reloading is enabled) ---[0m
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0mp.a.l.c.ActorSystemProvider - Starting application default Akka system: application[0m
 [0m[[0minfo[0m] [0mp.c.s.NettyServer - Listening for HTTP on /0:0:0:0:0:0:0:0:9000[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m[32m(Server started, use Ctrl+D to stop and go back to the console...)[0m[0m
+[0m[[0minfo[0m] [0m(Server started, use Ctrl+D to stop and go back to the console...)[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0mCompiling 6 Scala sources and 23 Java sources to /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes...[0m
-[0m[[0minfo[0m] [0m/home/ryogi/Arquisoft/Grupo-09/app/models/Vehiculo.java: /home/ryogi/Arquisoft/Grupo-09/app/models/Vehiculo.java uses or overrides a deprecated API.[0m
-[0m[[0minfo[0m] [0m/home/ryogi/Arquisoft/Grupo-09/app/models/Vehiculo.java: Recompile with -Xlint:deprecation for details.[0m
-[0m[[0minfo[0m] [0m/home/ryogi/Arquisoft/Grupo-09/app/controllers/DriverController.java: Some input files use unchecked or unsafe operations.[0m
-[0m[[0minfo[0m] [0m/home/ryogi/Arquisoft/Grupo-09/app/controllers/DriverController.java: Recompile with -Xlint:unchecked for details.[0m
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
 [0m[[0minfo[0m] [0m- play.api.db.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS[0m
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:file:~/data/db[0m
-[0m[[33mwarn[0m] [0m- application - application.conf @ file:/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/application.conf: 55: applyEvolutions.default is deprecated, use play.evolutions.db.default.autoApply instead[0m
+[0m[[33mwarn[0m] [0m- application - application.conf @ file:/C:/Users/template/Desktop/Experimento%201/Grupo-09/target/scala-2.11/classes/application.conf: 55: applyEvolutions.default is deprecated, use play.evolutions.db.default.autoApply instead[0m
+[0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Starting application default Akka system: application[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[31merror[0m] [0m- play.core.server.netty.PlayDefaultUpstreamHandler - Cannot invoke the action[0m
+[0m[[0minfo[0m] [0mjavax.persistence.OptimisticLockException: Data has changed. updated [0] rows sql[delete from trayecto where id_trayecto=?] bind[null][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DmlHandler.checkRowCount(DmlHandler.java:91) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DeleteHandler.execute(DeleteHandler.java:49) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:80) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.delete(DmlBeanPersister.java:48) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeDeleteBean(DefaultPersistExecute.java:88) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:458) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:480) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:528) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:327) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1765) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1757) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebean.Model.delete(Model.java:235) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at controllers.VehiculoController.finalizarUltimoTrayecto(VehiculoController.java:150) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at controllers.MoviBusController.finalizarTrayectoMovibus(MoviBusController.java:80) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.apply(Routes.scala:918) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.apply(Routes.scala:918) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.GlobalSettings$1.call(GlobalSettings.java:67) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na][0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
+[0m[[31merror[0m] [0m- application - [0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m! @6nf0ddebg - Internal server error, for (PUT) [/mobibuses/1/trayectos/1] ->[0m
+[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[OptimisticLockException: Data has changed. updated [0] rows sql[delete from trayecto where id_trayecto=?] bind[null]]][0m
+[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaGlobalSettingsAdapter.play$core$j$JavaGlobalSettingsAdapter$$super$onError(JavaGlobalSettingsAdapter.scala:36) [play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaGlobalSettingsAdapter$$anonfun$onError$2.apply(JavaGlobalSettingsAdapter.scala:36) [play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaGlobalSettingsAdapter$$anonfun$onError$2.apply(JavaGlobalSettingsAdapter.scala:36) [play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.Option.getOrElse(Option.scala:121) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaGlobalSettingsAdapter.onError(JavaGlobalSettingsAdapter.scala:36) [play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:273) [play-netty-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:269) [play-netty-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.11.jar:na][0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.11.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0mCaused by: javax.persistence.OptimisticLockException: Data has changed. updated [0] rows sql[delete from trayecto where id_trayecto=?] bind[null][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DmlHandler.checkRowCount(DmlHandler.java:91) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DeleteHandler.execute(DeleteHandler.java:49) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:80) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.delete(DmlBeanPersister.java:48) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeDeleteBean(DefaultPersistExecute.java:88) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:458) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:480) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:528) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:327) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1765) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1757) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at com.avaje.ebean.Model.delete(Model.java:235) ~[avaje-ebeanorm-4.6.2.jar:na][0m
+[0m[[0minfo[0m] [0m	at controllers.VehiculoController.finalizarUltimoTrayecto(VehiculoController.java:150) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at controllers.MoviBusController.finalizarTrayectoMovibus(MoviBusController.java:80) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.apply(Routes.scala:918) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.apply(Routes.scala:918) ~[classes/:na][0m
+[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.GlobalSettings$1.call(GlobalSettings.java:67) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	... 6 common frames omitted[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\Users\template\Desktop\Experimento 1\Grupo-09\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mC:\Users\template\Desktop\Experimento 1\Grupo-09\app\controllers\VehiculoController.java: C:\Users\template\Desktop\Experimento 1\Grupo-09\app\controllers\VehiculoController.java uses unchecked or unsafe operations.[0m
+[0m[[0minfo[0m] [0mC:\Users\template\Desktop\Experimento 1\Grupo-09\app\controllers\VehiculoController.java: Recompile with -Xlint:unchecked for details.[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Shutdown application default Akka system: application[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:file:~/data/db[0m
+[0m[[33mwarn[0m] [0m- application - application.conf @ file:/C:/Users/template/Desktop/Experimento%201/Grupo-09/target/scala-2.11/classes/application.conf: 55: applyEvolutions.default is deprecated, use play.evolutions.db.default.autoApply instead[0m
 [0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Starting application default Akka system: application[0m
 [0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m

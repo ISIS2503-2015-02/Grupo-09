@@ -62,16 +62,21 @@ public class Vehiculo extends Model {
 
     private int tipo_vehiculo;
 
-//    @OneToOne
+    @OneToOne
+    @JoinColumn(name = "id_revision")
     private RevisionMecanica ultimaRevision;
 
-//    @OneToOne
+    @OneToOne
+    @JoinColumn(name = "id_datos")
     private Datos ultimosDatos;
 
-//    @OneToOne
+    @OneToOne
+    @JoinColumn(name = "id_emergencia")
     private Emergencia ultimaEmergencia;
 
-//    @OneToOne
+
+    @OneToOne
+    @JoinColumn(name = "id_trayecto")
     private Trayecto ultimoTrayecto;
 
 
@@ -161,7 +166,7 @@ public class Vehiculo extends Model {
 
     public void setUltimosDatos(Datos ultimosDatos) {
         this.ultimosDatos = ultimosDatos;
-    }
+       }
 
     public void setUltimaEmergencia(Emergencia ultimaEmergencia) {
         this.ultimaEmergencia = ultimaEmergencia;
