@@ -39,13 +39,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui.fxml"));
+        primaryStage.setTitle("Tbc/Embeded System");
+        primaryStage.setScene(new Scene(root, 850, 610));
         primaryStage.show();
 
-        ArrayList<MoviBusVehiculo> a = new ArrayList<MoviBusVehiculo>(getMoviBus());
-        System.out.println("vcubs " + a.size());
+        //ArrayList<MoviBusVehiculo> a = new ArrayList<MoviBusVehiculo>(getMoviBus());
+        //System.out.println("vcubs " + a.size());
     }
 
 

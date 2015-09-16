@@ -1,7 +1,2 @@
-New log file opened at Wed Sep 16 10:06:22 COT 2015 by 6519@Shiki
-Taking next connection to: 52742
-New client attempting to connect on port: 58477-52742
-  Address = /157.253.217.200:52742
-This client on port 58477 has uuid bb05d14d-b0b1-4e72-a7f5-ccf4659b8bd9 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-bb05d14d-b0b1-4e72-a7f5-ccf4659b8bd9
-Taking next connection to: 52742
+New log file opened at Wed Sep 16 13:33:17 COT 2015 by 11399@Shiki
+Taking next connection to: 43662
