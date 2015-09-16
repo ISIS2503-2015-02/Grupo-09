@@ -6,18 +6,22 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Documento</th>
-                    <th>Email</th>
+                    <th>Modelo</th>
+                    <th>Fecha de Compra</th>
+                    <th>Tipo</th>
+                    <th>Ultima Revision</th>
+                    <th>Estado</th>
                     <th>Ver Mas</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="active" ng-repeat="user in user| orderby: 'id'">
-                    <td>{{user.user_id}}</td>
-                    <td>{{user.full_name}}</td>
-                    <td>{{user.document}}</td>
-                    <td>{{user.email}}</td>
+                <tr class="active" ng-repeat="tranvia in tranvia_vehiculo| orderBy: 'id'">
+                    <td>{{tranvia.id_vehiculo}}</td>
+                    <td>{{tranvia.modelo}}</td>
+                    <td>{{tranvia.fecha_compra}}</td>
+                    <td>{{tranvia.tipo_vehiculo}}</td>
+                    <td>{{tranvia.id_revision}}</td>
+                    <td>{{tranvia.estado}}</td>
                     <td><a href="https://google.com">Ver Mas</a></td>
                 </tr>
                 </tbody>
