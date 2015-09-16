@@ -1,6 +1,6 @@
-New log file opened at Tue Sep 01 11:35:49 COT 2015 by 1934@Shiki
-jvm 1934@Shiki
-jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.51-b03
+New log file opened at Wed Sep 16 08:47:19 COT 2015 by 10681@Shiki
+jvm 10681@Shiki
+jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.60-b23
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
 Starting event engine
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /home/ryogi/.sbt/0.13/plugins, returning: (global-plugins)
 Loading global plugins from /home/ryogi/.sbt/0.13/plugins
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@42fbb1a2, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@28dd44be, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -62,7 +62,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /home/ryogi/Arquisoft/Grupo-09/project, returning: (grupo-09-build)
 Loading project definition from /home/ryogi/Arquisoft/Grupo-09/project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@42fbb1a2, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@28dd44be, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -102,3 +102,10 @@ Set current project to arqui-g9 (in build file:/home/ryogi/Arquisoft/Grupo-09/)
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
+Done executing sbt server engine, result Right(Exit(0))
+Closing listening server socket
+Waiting for socket thread
+Waiting for request processor thread
+Waiting for command engine result
+Returning control to sbt launcher with result Exit(0)
+Closing the 10681@Shiki logs at Wed Sep 16 08:50:19 COT 2015, goodbye.
