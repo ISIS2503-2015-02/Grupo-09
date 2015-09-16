@@ -15,7 +15,6 @@ import java.net.URI;
  * Created by ryogi on 15/09/15.
  */
 public class Request {
-    public static final String APPLICATION_JSON = "application/json";
 
     public static String httpPostJsonRequest(StringEntity body, String uri) {
 
@@ -24,7 +23,7 @@ public class Request {
 
         try {
             HttpPost request = new HttpPost(URI.create(uri));
-            request.addHeader("content-type", APPLICATION_JSON);
+            request.addHeader(HttpConstants.H_CONTENT_TYPE, HttpConstants.APPLICATION_JSON);
 
             request.setEntity(body);
 
