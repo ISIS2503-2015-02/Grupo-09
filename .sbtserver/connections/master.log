@@ -1,8 +1,13 @@
-New log file opened at Wed Sep 16 08:47:19 COT 2015 by 10681@Shiki
-Taking next connection to: 58709
+New log file opened at Wed Sep 16 09:12:12 COT 2015 by 2906@Shiki
+Taking next connection to: 59767
+New client attempting to connect on port: 42081-59767
+  Address = /157.253.217.200:59767
+This client on port 42081 has uuid 3ef9e855-9161-4e0d-866a-9f559973ce20 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-3ef9e855-9161-4e0d-866a-9f559973ce20
+Taking next connection to: 59767
 Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 10681@Shiki logs at Wed Sep 16 08:50:19 COT 2015, goodbye.
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59767
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59767

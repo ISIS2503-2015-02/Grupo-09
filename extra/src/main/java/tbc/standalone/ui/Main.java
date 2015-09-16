@@ -1,6 +1,6 @@
 package tbc.standalone.ui;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +16,7 @@ import tbc.standalone.http.Request;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 public class Main extends Application {
@@ -23,17 +24,27 @@ public class Main extends Application {
     private Gson gson;
 
     public Main() {
-        gson = new Gson();
+        // Creates the json object which will manage the information received
+        GsonBuilder builder = new GsonBuilder();
+
+        // Register an adapter to manage the date types as long values
+        builder.registerTypeAdapter(Date.class, new JsonDeserializer<Date>() {
+            public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+                return new Date(json.getAsJsonPrimitive().getAsLong());
+            }
+        });
+
+        gson = builder.create();
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-        ArrayList<Vcub> a = new ArrayList<Vcub>(getVcubs());
+        ArrayList<MoviBusVehiculo> a = new ArrayList<MoviBusVehiculo>(getMoviBus());
         System.out.println("vcubs " + a.size());
     }
 
@@ -44,7 +55,8 @@ public class Main extends Application {
 
     public List<Vcub> getVcubs() {
         String response = Request.httpGetJsonRequest(HttpConstants.HOSTNAME + "/vcubs");
-        Type token = new TypeToken<Collection<Vcub>>() {}.getType();
+        Type token = new TypeToken<Collection<Vcub>>() {
+        }.getType();
         Collection<Vcub> result = gson.fromJson(response, token);
 
         return new ArrayList<Vcub>(result);
@@ -53,7 +65,8 @@ public class Main extends Application {
 
     public List<TranviaVehiculo> getTranvias() {
         String response = Request.httpGetJsonRequest(HttpConstants.HOSTNAME + "/tranvias");
-        Type token = new TypeToken<Collection<TranviaVehiculo>>() {}.getType();
+        Type token = new TypeToken<Collection<TranviaVehiculo>>() {
+        }.getType();
         Collection<TranviaVehiculo> result = gson.fromJson(response, token);
 
         return new ArrayList<TranviaVehiculo>(result);
@@ -62,7 +75,8 @@ public class Main extends Application {
 
     public List<MoviBusVehiculo> getMoviBus() {
         String response = Request.httpGetJsonRequest(HttpConstants.HOSTNAME + "/mobibuses");
-        Type token = new TypeToken<Collection<MoviBusVehiculo>>() {}.getType();
+        Type token = new TypeToken<Collection<MoviBusVehiculo>>() {
+        }.getType();
         Collection<MoviBusVehiculo> result = gson.fromJson(response, token);
 
         return new ArrayList<MoviBusVehiculo>(result);
