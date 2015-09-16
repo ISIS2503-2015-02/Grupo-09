@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Wed Sep 16 08:17:26 COT 2015
+// @DATE:Wed Sep 16 10:05:39 COT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:162
+  // @LINE:6
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,25 @@ package controllers.javascript {
     }
 
   
-    // @LINE:162
+    // @LINE:6
+    def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.at",
+      """
+        function(file) {
+        
+          if (file == """ + implicitly[JavascriptLiteral[String]].to("index.html") + """) {
+            return _wA({method:"GET", url:"""" + _prefix + """"})
+          }
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:163
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -35,7 +53,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:74
+  // @LINE:75
   class ReverseTranviaVehController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +61,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:76
+    // @LINE:77
     def readTranvia: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TranviaVehController.readTranvia",
       """
@@ -53,7 +71,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:78
+    // @LINE:79
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TranviaVehController.create",
       """
@@ -63,7 +81,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:74
+    // @LINE:75
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TranviaVehController.readAll",
       """
@@ -73,7 +91,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:80
+    // @LINE:81
     def putTranvia: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TranviaVehController.putTranvia",
       """
@@ -85,7 +103,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:127
+  // @LINE:128
   class ReverseTrayectoController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -93,7 +111,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:128
+    // @LINE:129
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TrayectoController.create",
       """
@@ -103,7 +121,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:127
+    // @LINE:128
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TrayectoController.readAll",
       """
@@ -115,7 +133,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:133
+  // @LINE:134
   class ReverseEstacionController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -123,7 +141,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:133
+    // @LINE:134
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.readAll",
       """
@@ -133,7 +151,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:143
+    // @LINE:144
     def alquilarBicicleta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.alquilarBicicleta",
       """
@@ -143,7 +161,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:137
+    // @LINE:138
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.create",
       """
@@ -153,7 +171,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:145
+    // @LINE:146
     def devolverBicicleta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.devolverBicicleta",
       """
@@ -163,7 +181,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:139
+    // @LINE:140
     def modificarEstacion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.modificarEstacion",
       """
@@ -173,7 +191,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:135
+    // @LINE:136
     def readVcubsEstacion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EstacionController.readVcubsEstacion",
       """
@@ -185,7 +203,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:29
+  // @LINE:30
   class ReverseUserController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -193,7 +211,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:29
+    // @LINE:30
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.readAll",
       """
@@ -203,7 +221,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:36
     def modify: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.modify",
       """
@@ -213,7 +231,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:38
     def consultarReservasUsuario: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.consultarReservasUsuario",
       """
@@ -223,7 +241,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:34
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.create",
       """
@@ -233,7 +251,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:31
+    // @LINE:32
     def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.read",
       """
@@ -243,7 +261,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:43
+    // @LINE:44
     def eliminarReservaCliente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.eliminarReservaCliente",
       """
@@ -253,7 +271,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:40
     def crearReseva: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.crearReseva",
       """
@@ -263,7 +281,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:41
+    // @LINE:42
     def modificarReservaCliente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.modificarReservaCliente",
       """
@@ -275,27 +293,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:6
-  class ReverseApplication(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:102
+  // @LINE:103
   class ReverseVcubController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -303,7 +301,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:108
+    // @LINE:109
     def modify: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.modify",
       """
@@ -313,7 +311,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:106
+    // @LINE:107
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.create",
       """
@@ -323,7 +321,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:102
+    // @LINE:103
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.readAll",
       """
@@ -333,7 +331,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:104
+    // @LINE:105
     def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VcubController.read",
       """
@@ -345,7 +343,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:48
+  // @LINE:49
   class ReverseMoviBusController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -353,7 +351,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:65
+    // @LINE:66
     def agregarTrayectoMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.agregarTrayectoMovibus",
       """
@@ -363,7 +361,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:48
+    // @LINE:49
     def readAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.readAll",
       """
@@ -373,7 +371,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:52
+    // @LINE:53
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.create",
       """
@@ -383,7 +381,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:63
+    // @LINE:64
     def readRevisionesMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.readRevisionesMovibus",
       """
@@ -393,7 +391,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:57
+    // @LINE:58
     def agregarDatosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.agregarDatosMovibus",
       """
@@ -403,7 +401,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:59
+    // @LINE:60
     def readDatosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.readDatosMovibus",
       """
@@ -413,7 +411,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:50
+    // @LINE:51
     def readMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.readMovibus",
       """
@@ -423,7 +421,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:67
+    // @LINE:68
     def finalizarTrayectoMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.finalizarTrayectoMovibus",
       """
@@ -433,7 +431,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:61
+    // @LINE:62
     def agregarRevisionMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.agregarRevisionMovibus",
       """
@@ -443,7 +441,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:54
+    // @LINE:55
     def putMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.putMovibus",
       """
@@ -453,7 +451,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:69
+    // @LINE:70
     def readTrayectosMovibus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MoviBusController.readTrayectosMovibus",
       """
@@ -465,7 +463,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:23
   class ReverseDriverController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -473,7 +471,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
+    // @LINE:25
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DriverController.create",
       """
@@ -483,7 +481,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:22
+    // @LINE:23
     def read: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DriverController.read",
       """

@@ -1,5 +1,5 @@
-New log file opened at Wed Sep 16 09:12:12 COT 2015 by 2906@Shiki
-jvm 2906@Shiki
+New log file opened at Wed Sep 16 10:06:22 COT 2015 by 6519@Shiki
+jvm 6519@Shiki
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.60-b23
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /home/ryogi/.sbt/0.13/plugins, returning: (global-plugins)
 Loading global plugins from /home/ryogi/.sbt/0.13/plugins
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@5533f31c, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@453d82ae, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -62,7 +62,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /home/ryogi/Arquisoft/Grupo-09/project, returning: (grupo-09-build)
 Loading project definition from /home/ryogi/Arquisoft/Grupo-09/project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@5533f31c, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@453d82ae, check cycles: false
 
 Initial source changes: 
 	removed:Set()

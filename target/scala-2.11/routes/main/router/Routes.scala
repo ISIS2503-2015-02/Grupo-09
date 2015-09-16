@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Wed Sep 16 08:17:26 COT 2015
+// @DATE:Wed Sep 16 10:05:39 COT 2015
 
 package router
 
@@ -17,53 +17,49 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  Application_8: controllers.Application,
-  // @LINE:22
-  DriverController_5: controllers.DriverController,
-  // @LINE:29
-  UserController_3: controllers.UserController,
-  // @LINE:48
-  MoviBusController_0: controllers.MoviBusController,
-  // @LINE:74
-  TranviaVehController_2: controllers.TranviaVehController,
-  // @LINE:102
-  VcubController_4: controllers.VcubController,
-  // @LINE:127
-  TrayectoController_1: controllers.TrayectoController,
-  // @LINE:133
-  EstacionController_7: controllers.EstacionController,
-  // @LINE:162
   Assets_6: controllers.Assets,
+  // @LINE:23
+  DriverController_5: controllers.DriverController,
+  // @LINE:30
+  UserController_3: controllers.UserController,
+  // @LINE:49
+  MoviBusController_0: controllers.MoviBusController,
+  // @LINE:75
+  TranviaVehController_2: controllers.TranviaVehController,
+  // @LINE:103
+  VcubController_4: controllers.VcubController,
+  // @LINE:128
+  TrayectoController_1: controllers.TrayectoController,
+  // @LINE:134
+  EstacionController_7: controllers.EstacionController,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    Application_8: controllers.Application,
-    // @LINE:22
+    Assets_6: controllers.Assets,
+    // @LINE:23
     DriverController_5: controllers.DriverController,
-    // @LINE:29
+    // @LINE:30
     UserController_3: controllers.UserController,
-    // @LINE:48
+    // @LINE:49
     MoviBusController_0: controllers.MoviBusController,
-    // @LINE:74
+    // @LINE:75
     TranviaVehController_2: controllers.TranviaVehController,
-    // @LINE:102
+    // @LINE:103
     VcubController_4: controllers.VcubController,
-    // @LINE:127
+    // @LINE:128
     TrayectoController_1: controllers.TrayectoController,
-    // @LINE:133
-    EstacionController_7: controllers.EstacionController,
-    // @LINE:162
-    Assets_6: controllers.Assets
-  ) = this(errorHandler, Application_8, DriverController_5, UserController_3, MoviBusController_0, TranviaVehController_2, VcubController_4, TrayectoController_1, EstacionController_7, Assets_6, "/")
+    // @LINE:134
+    EstacionController_7: controllers.EstacionController
+  ) = this(errorHandler, Assets_6, DriverController_5, UserController_3, MoviBusController_0, TranviaVehController_2, VcubController_4, TrayectoController_1, EstacionController_7, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_8, DriverController_5, UserController_3, MoviBusController_0, TranviaVehController_2, VcubController_4, TrayectoController_1, EstacionController_7, Assets_6, prefix)
+    new Routes(errorHandler, Assets_6, DriverController_5, UserController_3, MoviBusController_0, TranviaVehController_2, VcubController_4, TrayectoController_1, EstacionController_7, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -71,7 +67,8 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.Application.index()"""),
+    ("""GET""", this.prefix, """controllers.Assets.at(path:String = "/public", file:String = "index.html")"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """$file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """conductor""", """controllers.DriverController.read()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """conductor""", """controllers.DriverController.create()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """usuarios""", """controllers.UserController.readAll()"""),
@@ -118,27 +115,44 @@ class Routes(
 
 
   // @LINE:6
-  private[this] lazy val controllers_Application_index0_route = Route("GET",
+  private[this] lazy val controllers_Assets_at0_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_Application_index0_invoker = createInvoker(
-    Application_8.index(),
+  private[this] lazy val controllers_Assets_at0_invoker = createInvoker(
+    Assets_6.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.Application",
-      "index",
-      Nil,
+      "controllers.Assets",
+      "at",
+      Seq(classOf[String], classOf[String]),
       "GET",
       """ Home page""",
       this.prefix + """"""
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_DriverController_read1_route = Route("GET",
+  // @LINE:7
+  private[this] lazy val controllers_Assets_at1_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("file", """.+""",false)))
+  )
+  private[this] lazy val controllers_Assets_at1_invoker = createInvoker(
+    Assets_6.at(fakeValue[String], fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Assets",
+      "at",
+      Seq(classOf[String], classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """$file<.+>"""
+    )
+  )
+
+  // @LINE:23
+  private[this] lazy val controllers_DriverController_read2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("conductor")))
   )
-  private[this] lazy val controllers_DriverController_read1_invoker = createInvoker(
+  private[this] lazy val controllers_DriverController_read2_invoker = createInvoker(
     DriverController_5.read(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -152,11 +166,11 @@ Obtener todos los conductores""",
     )
   )
 
-  // @LINE:24
-  private[this] lazy val controllers_DriverController_create2_route = Route("POST",
+  // @LINE:25
+  private[this] lazy val controllers_DriverController_create3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("conductor")))
   )
-  private[this] lazy val controllers_DriverController_create2_invoker = createInvoker(
+  private[this] lazy val controllers_DriverController_create3_invoker = createInvoker(
     DriverController_5.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -169,11 +183,11 @@ Obtener todos los conductores""",
     )
   )
 
-  // @LINE:29
-  private[this] lazy val controllers_UserController_readAll3_route = Route("GET",
+  // @LINE:30
+  private[this] lazy val controllers_UserController_readAll4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios")))
   )
-  private[this] lazy val controllers_UserController_readAll3_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_readAll4_invoker = createInvoker(
     UserController_3.readAll(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -187,11 +201,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:31
-  private[this] lazy val controllers_UserController_read4_route = Route("GET",
+  // @LINE:32
+  private[this] lazy val controllers_UserController_read5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_read4_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_read5_invoker = createInvoker(
     UserController_3.read(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -204,11 +218,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:33
-  private[this] lazy val controllers_UserController_create5_route = Route("POST",
+  // @LINE:34
+  private[this] lazy val controllers_UserController_create6_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios")))
   )
-  private[this] lazy val controllers_UserController_create5_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_create6_invoker = createInvoker(
     UserController_3.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -221,11 +235,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:35
-  private[this] lazy val controllers_UserController_modify6_route = Route("PUT",
+  // @LINE:36
+  private[this] lazy val controllers_UserController_modify7_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_modify6_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_modify7_invoker = createInvoker(
     UserController_3.modify(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -238,11 +252,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:37
-  private[this] lazy val controllers_UserController_consultarReservasUsuario7_route = Route("GET",
+  // @LINE:38
+  private[this] lazy val controllers_UserController_consultarReservasUsuario8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios/"), DynamicPart("id", """[^/]+""",true), StaticPart("/reservas")))
   )
-  private[this] lazy val controllers_UserController_consultarReservasUsuario7_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_consultarReservasUsuario8_invoker = createInvoker(
     UserController_3.consultarReservasUsuario(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -255,11 +269,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:39
-  private[this] lazy val controllers_UserController_crearReseva8_route = Route("POST",
+  // @LINE:40
+  private[this] lazy val controllers_UserController_crearReseva9_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios/"), DynamicPart("id", """[^/]+""",true), StaticPart("/reservas")))
   )
-  private[this] lazy val controllers_UserController_crearReseva8_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_crearReseva9_invoker = createInvoker(
     UserController_3.crearReseva(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -272,11 +286,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_UserController_modificarReservaCliente9_route = Route("PUT",
+  // @LINE:42
+  private[this] lazy val controllers_UserController_modificarReservaCliente10_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios/"), DynamicPart("id", """[^/]+""",true), StaticPart("/reservas/"), DynamicPart("id2", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_modificarReservaCliente9_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_modificarReservaCliente10_invoker = createInvoker(
     UserController_3.modificarReservaCliente(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -289,11 +303,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:43
-  private[this] lazy val controllers_UserController_eliminarReservaCliente10_route = Route("DELETE",
+  // @LINE:44
+  private[this] lazy val controllers_UserController_eliminarReservaCliente11_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("usuarios/"), DynamicPart("id", """[^/]+""",true), StaticPart("/reservas/"), DynamicPart("id2", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_eliminarReservaCliente10_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_eliminarReservaCliente11_invoker = createInvoker(
     UserController_3.eliminarReservaCliente(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -306,11 +320,11 @@ Obtener todos los usuarios""",
     )
   )
 
-  // @LINE:48
-  private[this] lazy val controllers_MoviBusController_readAll11_route = Route("GET",
+  // @LINE:49
+  private[this] lazy val controllers_MoviBusController_readAll12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses")))
   )
-  private[this] lazy val controllers_MoviBusController_readAll11_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_readAll12_invoker = createInvoker(
     MoviBusController_0.readAll(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -324,11 +338,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:50
-  private[this] lazy val controllers_MoviBusController_readMovibus12_route = Route("GET",
+  // @LINE:51
+  private[this] lazy val controllers_MoviBusController_readMovibus13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_MoviBusController_readMovibus12_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_readMovibus13_invoker = createInvoker(
     MoviBusController_0.readMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -341,11 +355,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:52
-  private[this] lazy val controllers_MoviBusController_create13_route = Route("POST",
+  // @LINE:53
+  private[this] lazy val controllers_MoviBusController_create14_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses")))
   )
-  private[this] lazy val controllers_MoviBusController_create13_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_create14_invoker = createInvoker(
     MoviBusController_0.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -358,11 +372,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:54
-  private[this] lazy val controllers_MoviBusController_putMovibus14_route = Route("PUT",
+  // @LINE:55
+  private[this] lazy val controllers_MoviBusController_putMovibus15_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_MoviBusController_putMovibus14_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_putMovibus15_invoker = createInvoker(
     MoviBusController_0.putMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -375,11 +389,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:57
-  private[this] lazy val controllers_MoviBusController_agregarDatosMovibus15_route = Route("POST",
+  // @LINE:58
+  private[this] lazy val controllers_MoviBusController_agregarDatosMovibus16_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/datos")))
   )
-  private[this] lazy val controllers_MoviBusController_agregarDatosMovibus15_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_agregarDatosMovibus16_invoker = createInvoker(
     MoviBusController_0.agregarDatosMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -392,11 +406,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:59
-  private[this] lazy val controllers_MoviBusController_readDatosMovibus16_route = Route("GET",
+  // @LINE:60
+  private[this] lazy val controllers_MoviBusController_readDatosMovibus17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/datos")))
   )
-  private[this] lazy val controllers_MoviBusController_readDatosMovibus16_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_readDatosMovibus17_invoker = createInvoker(
     MoviBusController_0.readDatosMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -409,11 +423,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:61
-  private[this] lazy val controllers_MoviBusController_agregarRevisionMovibus17_route = Route("POST",
+  // @LINE:62
+  private[this] lazy val controllers_MoviBusController_agregarRevisionMovibus18_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/revisiones")))
   )
-  private[this] lazy val controllers_MoviBusController_agregarRevisionMovibus17_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_agregarRevisionMovibus18_invoker = createInvoker(
     MoviBusController_0.agregarRevisionMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -426,11 +440,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:63
-  private[this] lazy val controllers_MoviBusController_readRevisionesMovibus18_route = Route("GET",
+  // @LINE:64
+  private[this] lazy val controllers_MoviBusController_readRevisionesMovibus19_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/revisiones")))
   )
-  private[this] lazy val controllers_MoviBusController_readRevisionesMovibus18_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_readRevisionesMovibus19_invoker = createInvoker(
     MoviBusController_0.readRevisionesMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -443,11 +457,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:65
-  private[this] lazy val controllers_MoviBusController_agregarTrayectoMovibus19_route = Route("POST",
+  // @LINE:66
+  private[this] lazy val controllers_MoviBusController_agregarTrayectoMovibus20_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/trayectos")))
   )
-  private[this] lazy val controllers_MoviBusController_agregarTrayectoMovibus19_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_agregarTrayectoMovibus20_invoker = createInvoker(
     MoviBusController_0.agregarTrayectoMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -460,11 +474,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:67
-  private[this] lazy val controllers_MoviBusController_finalizarTrayectoMovibus20_route = Route("PUT",
+  // @LINE:68
+  private[this] lazy val controllers_MoviBusController_finalizarTrayectoMovibus21_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/trayectos/"), DynamicPart("id2", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_MoviBusController_finalizarTrayectoMovibus20_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_finalizarTrayectoMovibus21_invoker = createInvoker(
     MoviBusController_0.finalizarTrayectoMovibus(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -477,11 +491,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:69
-  private[this] lazy val controllers_MoviBusController_readTrayectosMovibus21_route = Route("GET",
+  // @LINE:70
+  private[this] lazy val controllers_MoviBusController_readTrayectosMovibus22_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("mobibuses/"), DynamicPart("id", """[^/]+""",true), StaticPart("/trayectos/")))
   )
-  private[this] lazy val controllers_MoviBusController_readTrayectosMovibus21_invoker = createInvoker(
+  private[this] lazy val controllers_MoviBusController_readTrayectosMovibus22_invoker = createInvoker(
     MoviBusController_0.readTrayectosMovibus(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -494,11 +508,11 @@ Obtener todos los mobibuses del sistema""",
     )
   )
 
-  // @LINE:74
-  private[this] lazy val controllers_TranviaVehController_readAll22_route = Route("GET",
+  // @LINE:75
+  private[this] lazy val controllers_TranviaVehController_readAll23_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tranvias")))
   )
-  private[this] lazy val controllers_TranviaVehController_readAll22_invoker = createInvoker(
+  private[this] lazy val controllers_TranviaVehController_readAll23_invoker = createInvoker(
     TranviaVehController_2.readAll(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -512,11 +526,11 @@ Obtener todos los tranvias del sistema""",
     )
   )
 
-  // @LINE:76
-  private[this] lazy val controllers_TranviaVehController_readTranvia23_route = Route("GET",
+  // @LINE:77
+  private[this] lazy val controllers_TranviaVehController_readTranvia24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tranvias/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TranviaVehController_readTranvia23_invoker = createInvoker(
+  private[this] lazy val controllers_TranviaVehController_readTranvia24_invoker = createInvoker(
     TranviaVehController_2.readTranvia(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -529,11 +543,11 @@ Obtener todos los tranvias del sistema""",
     )
   )
 
-  // @LINE:78
-  private[this] lazy val controllers_TranviaVehController_create24_route = Route("POST",
+  // @LINE:79
+  private[this] lazy val controllers_TranviaVehController_create25_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tranvias")))
   )
-  private[this] lazy val controllers_TranviaVehController_create24_invoker = createInvoker(
+  private[this] lazy val controllers_TranviaVehController_create25_invoker = createInvoker(
     TranviaVehController_2.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -546,11 +560,11 @@ Obtener todos los tranvias del sistema""",
     )
   )
 
-  // @LINE:80
-  private[this] lazy val controllers_TranviaVehController_putTranvia25_route = Route("PUT",
+  // @LINE:81
+  private[this] lazy val controllers_TranviaVehController_putTranvia26_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tranvias/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TranviaVehController_putTranvia25_invoker = createInvoker(
+  private[this] lazy val controllers_TranviaVehController_putTranvia26_invoker = createInvoker(
     TranviaVehController_2.putTranvia(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -563,11 +577,11 @@ Obtener todos los tranvias del sistema""",
     )
   )
 
-  // @LINE:102
-  private[this] lazy val controllers_VcubController_readAll26_route = Route("GET",
+  // @LINE:103
+  private[this] lazy val controllers_VcubController_readAll27_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vcubs")))
   )
-  private[this] lazy val controllers_VcubController_readAll26_invoker = createInvoker(
+  private[this] lazy val controllers_VcubController_readAll27_invoker = createInvoker(
     VcubController_4.readAll(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -581,11 +595,11 @@ Obtener todos los vcubs del sistema""",
     )
   )
 
-  // @LINE:104
-  private[this] lazy val controllers_VcubController_read27_route = Route("GET",
+  // @LINE:105
+  private[this] lazy val controllers_VcubController_read28_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vcubs/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_VcubController_read27_invoker = createInvoker(
+  private[this] lazy val controllers_VcubController_read28_invoker = createInvoker(
     VcubController_4.read(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -598,11 +612,11 @@ Obtener todos los vcubs del sistema""",
     )
   )
 
-  // @LINE:106
-  private[this] lazy val controllers_VcubController_create28_route = Route("POST",
+  // @LINE:107
+  private[this] lazy val controllers_VcubController_create29_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vcubs")))
   )
-  private[this] lazy val controllers_VcubController_create28_invoker = createInvoker(
+  private[this] lazy val controllers_VcubController_create29_invoker = createInvoker(
     VcubController_4.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -615,11 +629,11 @@ Obtener todos los vcubs del sistema""",
     )
   )
 
-  // @LINE:108
-  private[this] lazy val controllers_VcubController_modify29_route = Route("PUT",
+  // @LINE:109
+  private[this] lazy val controllers_VcubController_modify30_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("vcubs/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_VcubController_modify29_invoker = createInvoker(
+  private[this] lazy val controllers_VcubController_modify30_invoker = createInvoker(
     VcubController_4.modify(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -632,11 +646,11 @@ Obtener todos los vcubs del sistema""",
     )
   )
 
-  // @LINE:127
-  private[this] lazy val controllers_TrayectoController_readAll30_route = Route("GET",
+  // @LINE:128
+  private[this] lazy val controllers_TrayectoController_readAll31_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trayectos")))
   )
-  private[this] lazy val controllers_TrayectoController_readAll30_invoker = createInvoker(
+  private[this] lazy val controllers_TrayectoController_readAll31_invoker = createInvoker(
     TrayectoController_1.readAll(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -649,11 +663,11 @@ Obtener todos los vcubs del sistema""",
     )
   )
 
-  // @LINE:128
-  private[this] lazy val controllers_TrayectoController_create31_route = Route("POST",
+  // @LINE:129
+  private[this] lazy val controllers_TrayectoController_create32_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("trayectos")))
   )
-  private[this] lazy val controllers_TrayectoController_create31_invoker = createInvoker(
+  private[this] lazy val controllers_TrayectoController_create32_invoker = createInvoker(
     TrayectoController_1.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -666,11 +680,11 @@ Obtener todos los vcubs del sistema""",
     )
   )
 
-  // @LINE:133
-  private[this] lazy val controllers_EstacionController_readAll32_route = Route("GET",
+  // @LINE:134
+  private[this] lazy val controllers_EstacionController_readAll33_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estaciones")))
   )
-  private[this] lazy val controllers_EstacionController_readAll32_invoker = createInvoker(
+  private[this] lazy val controllers_EstacionController_readAll33_invoker = createInvoker(
     EstacionController_7.readAll(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -684,11 +698,11 @@ Obtener todas las estaciones del sistema""",
     )
   )
 
-  // @LINE:135
-  private[this] lazy val controllers_EstacionController_readVcubsEstacion33_route = Route("GET",
+  // @LINE:136
+  private[this] lazy val controllers_EstacionController_readVcubsEstacion34_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estaciones/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_EstacionController_readVcubsEstacion33_invoker = createInvoker(
+  private[this] lazy val controllers_EstacionController_readVcubsEstacion34_invoker = createInvoker(
     EstacionController_7.readVcubsEstacion(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -701,11 +715,11 @@ Obtener todas las estaciones del sistema""",
     )
   )
 
-  // @LINE:137
-  private[this] lazy val controllers_EstacionController_create34_route = Route("POST",
+  // @LINE:138
+  private[this] lazy val controllers_EstacionController_create35_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estaciones")))
   )
-  private[this] lazy val controllers_EstacionController_create34_invoker = createInvoker(
+  private[this] lazy val controllers_EstacionController_create35_invoker = createInvoker(
     EstacionController_7.create(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -718,11 +732,11 @@ Obtener todas las estaciones del sistema""",
     )
   )
 
-  // @LINE:139
-  private[this] lazy val controllers_EstacionController_modificarEstacion35_route = Route("PUT",
+  // @LINE:140
+  private[this] lazy val controllers_EstacionController_modificarEstacion36_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estaciones/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_EstacionController_modificarEstacion35_invoker = createInvoker(
+  private[this] lazy val controllers_EstacionController_modificarEstacion36_invoker = createInvoker(
     EstacionController_7.modificarEstacion(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -735,11 +749,11 @@ Obtener todas las estaciones del sistema""",
     )
   )
 
-  // @LINE:143
-  private[this] lazy val controllers_EstacionController_alquilarBicicleta36_route = Route("DELETE",
+  // @LINE:144
+  private[this] lazy val controllers_EstacionController_alquilarBicicleta37_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estaciones/"), DynamicPart("id", """[^/]+""",true), StaticPart("/bicicletas/"), DynamicPart("id2", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_EstacionController_alquilarBicicleta36_invoker = createInvoker(
+  private[this] lazy val controllers_EstacionController_alquilarBicicleta37_invoker = createInvoker(
     EstacionController_7.alquilarBicicleta(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -754,11 +768,11 @@ Prestar una bicicleta en una estaci�n""",
     )
   )
 
-  // @LINE:145
-  private[this] lazy val controllers_EstacionController_devolverBicicleta37_route = Route("POST",
+  // @LINE:146
+  private[this] lazy val controllers_EstacionController_devolverBicicleta38_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estaciones/"), DynamicPart("id", """[^/]+""",true), StaticPart("/bicicletas")))
   )
-  private[this] lazy val controllers_EstacionController_devolverBicicleta37_invoker = createInvoker(
+  private[this] lazy val controllers_EstacionController_devolverBicicleta38_invoker = createInvoker(
     EstacionController_7.devolverBicicleta(fakeValue[Long], fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -771,11 +785,11 @@ Prestar una bicicleta en una estaci�n""",
     )
   )
 
-  // @LINE:162
-  private[this] lazy val controllers_Assets_versioned38_route = Route("GET",
+  // @LINE:163
+  private[this] lazy val controllers_Assets_versioned39_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned38_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned39_invoker = createInvoker(
     Assets_6.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -793,237 +807,243 @@ Prestar una bicicleta en una estaci�n""",
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
-    case controllers_Application_index0_route(params) =>
-      call { 
-        controllers_Application_index0_invoker.call(Application_8.index())
+    case controllers_Assets_at0_route(params) =>
+      call(Param[String]("path", Right("/public")), Param[String]("file", Right("index.html"))) { (path, file) =>
+        controllers_Assets_at0_invoker.call(Assets_6.at(path, file))
       }
   
-    // @LINE:22
-    case controllers_DriverController_read1_route(params) =>
-      call { 
-        controllers_DriverController_read1_invoker.call(DriverController_5.read())
+    // @LINE:7
+    case controllers_Assets_at1_route(params) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
+        controllers_Assets_at1_invoker.call(Assets_6.at(path, file))
       }
   
-    // @LINE:24
-    case controllers_DriverController_create2_route(params) =>
+    // @LINE:23
+    case controllers_DriverController_read2_route(params) =>
       call { 
-        controllers_DriverController_create2_invoker.call(DriverController_5.create())
+        controllers_DriverController_read2_invoker.call(DriverController_5.read())
       }
   
-    // @LINE:29
-    case controllers_UserController_readAll3_route(params) =>
+    // @LINE:25
+    case controllers_DriverController_create3_route(params) =>
       call { 
-        controllers_UserController_readAll3_invoker.call(UserController_3.readAll())
+        controllers_DriverController_create3_invoker.call(DriverController_5.create())
       }
   
-    // @LINE:31
-    case controllers_UserController_read4_route(params) =>
+    // @LINE:30
+    case controllers_UserController_readAll4_route(params) =>
+      call { 
+        controllers_UserController_readAll4_invoker.call(UserController_3.readAll())
+      }
+  
+    // @LINE:32
+    case controllers_UserController_read5_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_read4_invoker.call(UserController_3.read(id))
+        controllers_UserController_read5_invoker.call(UserController_3.read(id))
       }
   
-    // @LINE:33
-    case controllers_UserController_create5_route(params) =>
+    // @LINE:34
+    case controllers_UserController_create6_route(params) =>
       call { 
-        controllers_UserController_create5_invoker.call(UserController_3.create())
+        controllers_UserController_create6_invoker.call(UserController_3.create())
       }
   
-    // @LINE:35
-    case controllers_UserController_modify6_route(params) =>
+    // @LINE:36
+    case controllers_UserController_modify7_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_modify6_invoker.call(UserController_3.modify(id))
+        controllers_UserController_modify7_invoker.call(UserController_3.modify(id))
       }
   
-    // @LINE:37
-    case controllers_UserController_consultarReservasUsuario7_route(params) =>
+    // @LINE:38
+    case controllers_UserController_consultarReservasUsuario8_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_consultarReservasUsuario7_invoker.call(UserController_3.consultarReservasUsuario(id))
+        controllers_UserController_consultarReservasUsuario8_invoker.call(UserController_3.consultarReservasUsuario(id))
       }
   
-    // @LINE:39
-    case controllers_UserController_crearReseva8_route(params) =>
+    // @LINE:40
+    case controllers_UserController_crearReseva9_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_UserController_crearReseva8_invoker.call(UserController_3.crearReseva(id))
+        controllers_UserController_crearReseva9_invoker.call(UserController_3.crearReseva(id))
       }
   
-    // @LINE:41
-    case controllers_UserController_modificarReservaCliente9_route(params) =>
+    // @LINE:42
+    case controllers_UserController_modificarReservaCliente10_route(params) =>
       call(params.fromPath[Long]("id", None), params.fromPath[Long]("id2", None)) { (id, id2) =>
-        controllers_UserController_modificarReservaCliente9_invoker.call(UserController_3.modificarReservaCliente(id, id2))
+        controllers_UserController_modificarReservaCliente10_invoker.call(UserController_3.modificarReservaCliente(id, id2))
       }
   
-    // @LINE:43
-    case controllers_UserController_eliminarReservaCliente10_route(params) =>
+    // @LINE:44
+    case controllers_UserController_eliminarReservaCliente11_route(params) =>
       call(params.fromPath[Long]("id", None), params.fromPath[Long]("id2", None)) { (id, id2) =>
-        controllers_UserController_eliminarReservaCliente10_invoker.call(UserController_3.eliminarReservaCliente(id, id2))
+        controllers_UserController_eliminarReservaCliente11_invoker.call(UserController_3.eliminarReservaCliente(id, id2))
       }
   
-    // @LINE:48
-    case controllers_MoviBusController_readAll11_route(params) =>
+    // @LINE:49
+    case controllers_MoviBusController_readAll12_route(params) =>
       call { 
-        controllers_MoviBusController_readAll11_invoker.call(MoviBusController_0.readAll())
+        controllers_MoviBusController_readAll12_invoker.call(MoviBusController_0.readAll())
       }
   
-    // @LINE:50
-    case controllers_MoviBusController_readMovibus12_route(params) =>
+    // @LINE:51
+    case controllers_MoviBusController_readMovibus13_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_readMovibus12_invoker.call(MoviBusController_0.readMovibus(id))
+        controllers_MoviBusController_readMovibus13_invoker.call(MoviBusController_0.readMovibus(id))
       }
   
-    // @LINE:52
-    case controllers_MoviBusController_create13_route(params) =>
+    // @LINE:53
+    case controllers_MoviBusController_create14_route(params) =>
       call { 
-        controllers_MoviBusController_create13_invoker.call(MoviBusController_0.create())
+        controllers_MoviBusController_create14_invoker.call(MoviBusController_0.create())
       }
   
-    // @LINE:54
-    case controllers_MoviBusController_putMovibus14_route(params) =>
+    // @LINE:55
+    case controllers_MoviBusController_putMovibus15_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_putMovibus14_invoker.call(MoviBusController_0.putMovibus(id))
+        controllers_MoviBusController_putMovibus15_invoker.call(MoviBusController_0.putMovibus(id))
       }
   
-    // @LINE:57
-    case controllers_MoviBusController_agregarDatosMovibus15_route(params) =>
+    // @LINE:58
+    case controllers_MoviBusController_agregarDatosMovibus16_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_agregarDatosMovibus15_invoker.call(MoviBusController_0.agregarDatosMovibus(id))
+        controllers_MoviBusController_agregarDatosMovibus16_invoker.call(MoviBusController_0.agregarDatosMovibus(id))
       }
   
-    // @LINE:59
-    case controllers_MoviBusController_readDatosMovibus16_route(params) =>
+    // @LINE:60
+    case controllers_MoviBusController_readDatosMovibus17_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_readDatosMovibus16_invoker.call(MoviBusController_0.readDatosMovibus(id))
+        controllers_MoviBusController_readDatosMovibus17_invoker.call(MoviBusController_0.readDatosMovibus(id))
       }
   
-    // @LINE:61
-    case controllers_MoviBusController_agregarRevisionMovibus17_route(params) =>
+    // @LINE:62
+    case controllers_MoviBusController_agregarRevisionMovibus18_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_agregarRevisionMovibus17_invoker.call(MoviBusController_0.agregarRevisionMovibus(id))
+        controllers_MoviBusController_agregarRevisionMovibus18_invoker.call(MoviBusController_0.agregarRevisionMovibus(id))
       }
   
-    // @LINE:63
-    case controllers_MoviBusController_readRevisionesMovibus18_route(params) =>
+    // @LINE:64
+    case controllers_MoviBusController_readRevisionesMovibus19_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_readRevisionesMovibus18_invoker.call(MoviBusController_0.readRevisionesMovibus(id))
+        controllers_MoviBusController_readRevisionesMovibus19_invoker.call(MoviBusController_0.readRevisionesMovibus(id))
       }
   
-    // @LINE:65
-    case controllers_MoviBusController_agregarTrayectoMovibus19_route(params) =>
+    // @LINE:66
+    case controllers_MoviBusController_agregarTrayectoMovibus20_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_agregarTrayectoMovibus19_invoker.call(MoviBusController_0.agregarTrayectoMovibus(id))
+        controllers_MoviBusController_agregarTrayectoMovibus20_invoker.call(MoviBusController_0.agregarTrayectoMovibus(id))
       }
   
-    // @LINE:67
-    case controllers_MoviBusController_finalizarTrayectoMovibus20_route(params) =>
+    // @LINE:68
+    case controllers_MoviBusController_finalizarTrayectoMovibus21_route(params) =>
       call(params.fromPath[Long]("id", None), params.fromPath[Long]("id2", None)) { (id, id2) =>
-        controllers_MoviBusController_finalizarTrayectoMovibus20_invoker.call(MoviBusController_0.finalizarTrayectoMovibus(id, id2))
+        controllers_MoviBusController_finalizarTrayectoMovibus21_invoker.call(MoviBusController_0.finalizarTrayectoMovibus(id, id2))
       }
   
-    // @LINE:69
-    case controllers_MoviBusController_readTrayectosMovibus21_route(params) =>
+    // @LINE:70
+    case controllers_MoviBusController_readTrayectosMovibus22_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_MoviBusController_readTrayectosMovibus21_invoker.call(MoviBusController_0.readTrayectosMovibus(id))
+        controllers_MoviBusController_readTrayectosMovibus22_invoker.call(MoviBusController_0.readTrayectosMovibus(id))
       }
   
-    // @LINE:74
-    case controllers_TranviaVehController_readAll22_route(params) =>
+    // @LINE:75
+    case controllers_TranviaVehController_readAll23_route(params) =>
       call { 
-        controllers_TranviaVehController_readAll22_invoker.call(TranviaVehController_2.readAll())
+        controllers_TranviaVehController_readAll23_invoker.call(TranviaVehController_2.readAll())
       }
   
-    // @LINE:76
-    case controllers_TranviaVehController_readTranvia23_route(params) =>
+    // @LINE:77
+    case controllers_TranviaVehController_readTranvia24_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_TranviaVehController_readTranvia23_invoker.call(TranviaVehController_2.readTranvia(id))
+        controllers_TranviaVehController_readTranvia24_invoker.call(TranviaVehController_2.readTranvia(id))
       }
   
-    // @LINE:78
-    case controllers_TranviaVehController_create24_route(params) =>
+    // @LINE:79
+    case controllers_TranviaVehController_create25_route(params) =>
       call { 
-        controllers_TranviaVehController_create24_invoker.call(TranviaVehController_2.create())
+        controllers_TranviaVehController_create25_invoker.call(TranviaVehController_2.create())
       }
   
-    // @LINE:80
-    case controllers_TranviaVehController_putTranvia25_route(params) =>
+    // @LINE:81
+    case controllers_TranviaVehController_putTranvia26_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_TranviaVehController_putTranvia25_invoker.call(TranviaVehController_2.putTranvia(id))
+        controllers_TranviaVehController_putTranvia26_invoker.call(TranviaVehController_2.putTranvia(id))
       }
   
-    // @LINE:102
-    case controllers_VcubController_readAll26_route(params) =>
+    // @LINE:103
+    case controllers_VcubController_readAll27_route(params) =>
       call { 
-        controllers_VcubController_readAll26_invoker.call(VcubController_4.readAll())
+        controllers_VcubController_readAll27_invoker.call(VcubController_4.readAll())
       }
   
-    // @LINE:104
-    case controllers_VcubController_read27_route(params) =>
+    // @LINE:105
+    case controllers_VcubController_read28_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_VcubController_read27_invoker.call(VcubController_4.read(id))
+        controllers_VcubController_read28_invoker.call(VcubController_4.read(id))
       }
   
-    // @LINE:106
-    case controllers_VcubController_create28_route(params) =>
+    // @LINE:107
+    case controllers_VcubController_create29_route(params) =>
       call { 
-        controllers_VcubController_create28_invoker.call(VcubController_4.create())
+        controllers_VcubController_create29_invoker.call(VcubController_4.create())
       }
   
-    // @LINE:108
-    case controllers_VcubController_modify29_route(params) =>
+    // @LINE:109
+    case controllers_VcubController_modify30_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_VcubController_modify29_invoker.call(VcubController_4.modify(id))
-      }
-  
-    // @LINE:127
-    case controllers_TrayectoController_readAll30_route(params) =>
-      call { 
-        controllers_TrayectoController_readAll30_invoker.call(TrayectoController_1.readAll())
+        controllers_VcubController_modify30_invoker.call(VcubController_4.modify(id))
       }
   
     // @LINE:128
-    case controllers_TrayectoController_create31_route(params) =>
+    case controllers_TrayectoController_readAll31_route(params) =>
       call { 
-        controllers_TrayectoController_create31_invoker.call(TrayectoController_1.create())
+        controllers_TrayectoController_readAll31_invoker.call(TrayectoController_1.readAll())
       }
   
-    // @LINE:133
-    case controllers_EstacionController_readAll32_route(params) =>
+    // @LINE:129
+    case controllers_TrayectoController_create32_route(params) =>
       call { 
-        controllers_EstacionController_readAll32_invoker.call(EstacionController_7.readAll())
+        controllers_TrayectoController_create32_invoker.call(TrayectoController_1.create())
       }
   
-    // @LINE:135
-    case controllers_EstacionController_readVcubsEstacion33_route(params) =>
+    // @LINE:134
+    case controllers_EstacionController_readAll33_route(params) =>
+      call { 
+        controllers_EstacionController_readAll33_invoker.call(EstacionController_7.readAll())
+      }
+  
+    // @LINE:136
+    case controllers_EstacionController_readVcubsEstacion34_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_EstacionController_readVcubsEstacion33_invoker.call(EstacionController_7.readVcubsEstacion(id))
+        controllers_EstacionController_readVcubsEstacion34_invoker.call(EstacionController_7.readVcubsEstacion(id))
       }
   
-    // @LINE:137
-    case controllers_EstacionController_create34_route(params) =>
+    // @LINE:138
+    case controllers_EstacionController_create35_route(params) =>
       call { 
-        controllers_EstacionController_create34_invoker.call(EstacionController_7.create())
+        controllers_EstacionController_create35_invoker.call(EstacionController_7.create())
       }
   
-    // @LINE:139
-    case controllers_EstacionController_modificarEstacion35_route(params) =>
+    // @LINE:140
+    case controllers_EstacionController_modificarEstacion36_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_EstacionController_modificarEstacion35_invoker.call(EstacionController_7.modificarEstacion(id))
+        controllers_EstacionController_modificarEstacion36_invoker.call(EstacionController_7.modificarEstacion(id))
       }
   
-    // @LINE:143
-    case controllers_EstacionController_alquilarBicicleta36_route(params) =>
+    // @LINE:144
+    case controllers_EstacionController_alquilarBicicleta37_route(params) =>
       call(params.fromPath[Long]("id", None), params.fromPath[Long]("id2", None)) { (id, id2) =>
-        controllers_EstacionController_alquilarBicicleta36_invoker.call(EstacionController_7.alquilarBicicleta(id, id2))
+        controllers_EstacionController_alquilarBicicleta37_invoker.call(EstacionController_7.alquilarBicicleta(id, id2))
       }
   
-    // @LINE:145
-    case controllers_EstacionController_devolverBicicleta37_route(params) =>
+    // @LINE:146
+    case controllers_EstacionController_devolverBicicleta38_route(params) =>
       call(params.fromPath[Long]("id", None), params.fromQuery[Long]("id2", None)) { (id, id2) =>
-        controllers_EstacionController_devolverBicicleta37_invoker.call(EstacionController_7.devolverBicicleta(id, id2))
+        controllers_EstacionController_devolverBicicleta38_invoker.call(EstacionController_7.devolverBicicleta(id, id2))
       }
   
-    // @LINE:162
-    case controllers_Assets_versioned38_route(params) =>
+    // @LINE:163
+    case controllers_Assets_versioned39_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned38_invoker.call(Assets_6.versioned(path, file))
+        controllers_Assets_versioned39_invoker.call(Assets_6.versioned(path, file))
       }
   }
 }

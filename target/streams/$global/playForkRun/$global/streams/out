@@ -186,6 +186,7 @@
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m[32m(Server started, use Ctrl+D to stop and go back to the console...)[0m[0m
 [0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 1 Java source to /home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes...[0m
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
 [0m[[0minfo[0m] [0m- play.api.db.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS[0m
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:file:~/data/db[0m
