@@ -6,19 +6,19 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Documento</th>
-                    <th>Email</th>
+                    <th>Estacion</th>
+                    <th>Ubicacion</th>
+                    <th>Capacidad VCubs</th>
                     <th>Ver Mas</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="active" ng-repeat="user in user| orderBy: 'id'">
-                    <td>{{user.user_id}}</td>
-                    <td>{{user.full_name}}</td>
-                    <td>{{user.document}}</td>
-                    <td>{{user.email}}</td>
-                    <td><a href="https://google.com">Ver Mas</a></td>
+                <tr class="active" ng-repeat="estacion in estacion| orderBy: 'id'">
+                    <td>{{estacion.id_estacion}}</td>
+                    <td>{{estacion.nombre_estacion}}</td>
+                    <td>{{estacion.ubicacion}}</td>
+                    <td>{{estacion.vcubs_capacity}}</td>
+                    <td><a href="https://google.com">Ver VCubs</a></td>
                 </tr>
                 </tbody>
             </table>
