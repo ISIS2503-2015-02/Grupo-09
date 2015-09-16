@@ -44,8 +44,8 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 850, 610));
         primaryStage.show();
 
-        //ArrayList<MoviBusVehiculo> a = new ArrayList<MoviBusVehiculo>(getMoviBus());
-        //System.out.println("vcubs " + a.size());
+        ArrayList<MoviBusVehiculo> a = new ArrayList<MoviBusVehiculo>(getMoviBus());
+        System.out.println("vcubs " + a.size());
     }
 
 
@@ -80,7 +80,6 @@ public class Main extends Application {
         Collection<MoviBusVehiculo> result = gson.fromJson(response, token);
 
         return new ArrayList<MoviBusVehiculo>(result);
-
     }
 
 }

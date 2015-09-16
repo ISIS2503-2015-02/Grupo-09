@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-lg-6">
+        <h2>Tranvias</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Modelo</th>
+                    <th>Fecha de Compra</th>
+                    <th>Tipo</th>
+                    <th>Ultima Revision</th>
+                    <th>Estado</th>
+                    <th>Ver Mas</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="active" ng-repeat="tranvia in tranvia_vehiculo| orderBy: 'id'">
+                    <td>{{tranvia.id_vehiculo}}</td>
+                    <td>{{tranvia.modelo}}</td>
+                    <td>{{tranvia.fecha_compra}}</td>
+                    <td>{{tranvia.tipo_vehiculo}}</td>
+                    <td>{{tranvia.id_revision}}</td>
+                    <td>{{tranvia.estado}}</td>
+                    <td><a href="https://google.com">Ver Mas</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- /.row -->

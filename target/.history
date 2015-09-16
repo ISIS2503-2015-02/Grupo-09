@@ -1,0 +1,18 @@
+dependencyGraph
+clean-files
+taks
+tasks
+dependencyGraph
+dependencyGraphML
+dependencyGraphMLFile
+dependencyGraphMLFile : file
+dependencyGraphML
+dependencyGraphML 1
+projects
+dependencyGraphML help
+help dependencyGraphML
+dependencyGraphML arqui-g9
+clean compile stage
+clean
+compile
+exit
