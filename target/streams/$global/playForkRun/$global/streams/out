@@ -197,3 +197,7 @@
 [0m[[33mwarn[0m] [0m- application - application.conf @ file:/home/ryogi/Arquisoft/Grupo-09/target/scala-2.11/classes/application.conf: 55: applyEvolutions.default is deprecated, use play.evolutions.db.default.autoApply instead[0m
 [0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Starting application default Akka system: application[0m
 [0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[0minfo[0m] [0mStopping Play fork run ...[0m
+[0m[[0minfo[0m] [0mJVM exiting, shutting down Play fork run ...[0m
+[0m[[0minfo[0m] [0mPlay fork run already stopped ...[0m
+[0m[[0minfo[0m] [0mForked Play process exited with status: 130[0m
