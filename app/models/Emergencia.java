@@ -4,6 +4,7 @@ import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by gusal on 15/08/2015.
@@ -36,7 +37,8 @@ public class Emergencia extends Model{
 
     private int emergencyType;
 
-    private String emergencyDate;
+    @Temporal(TemporalType.DATE)
+    private Date emergencyDate;
 
     private String comments;
 
@@ -68,7 +70,7 @@ public class Emergencia extends Model{
     }
 
 
-    public Emergencia( int emerType, String emerDate, String comments, String place, String emerLevel){
+    public Emergencia( int emerType, Date emerDate, String comments, String place, String emerLevel){
         emergencyType = emerType;
         emergencyDate = emerDate;
         this.comments = comments;
@@ -89,7 +91,7 @@ public class Emergencia extends Model{
         return emergencyType;
     }
 
-    public String getEmergencyDate() {
+    public Date getEmergencyDate() {
         return emergencyDate;
     }
 
@@ -109,7 +111,7 @@ public class Emergencia extends Model{
         this.comments = comments;
     }
 
-    public void setEmergencyDate(String emergencyDate) {
+    public void setEmergencyDate(Date emergencyDate) {
         this.emergencyDate = emergencyDate;
     }
 

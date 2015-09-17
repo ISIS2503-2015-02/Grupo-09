@@ -51,6 +51,19 @@ public class EstacionController extends Controller {
         return notFound();
     }
 
+    public Result porcentajeOcupacionEstacion(Long idEstacion)
+    {
+        Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
+        if(null!=estacion)
+        {
+            List<Vcub> disponibles = estacion.getVcubs();
+            int capacidad = estacion.getVcubsCapacity();
+            double porcentaje = disponibles.size()*100/capacidad;
+            return ok(""+porcentaje);
+        }
+        return notFound();
+    }
+
     public Result alquilarBicicleta(Long idCliente, Long idEstacion)
     {
         Estacion estacion = (Estacion) new Model.Finder(Estacion.class).byId(idEstacion);
@@ -68,28 +81,25 @@ public class EstacionController extends Controller {
                     prestar.save();
                     usuario.setId_vcub_alquilada(prestar.getIdCvubs());
                     usuario.save();
+                    return ok(Json.toJson(prestar));
                 }
-            if(prestar!=null)
-            {
-                String mensaje ="";
-                if(estacion.getVcubsCapacity()/10>disponibles.size()-1)
+                else
                 {
-                    mensaje+="ALERTA: QUEDAN MENOS DEL 10% DE LAS VCUBS PARA LA ESTACIÓN \n\n";
+                    return badRequest();
                 }
-                return ok(mensaje+"Se ha prestado la siguiente vCub\n"+Json.toJson(prestar));
-            }
-            else
-            {
-                return ok("No hay Vcubs para ser prestadas");
-            }
-
         }
         else
         {
-            return notFound("Alguno de los recursos que intenta obtener no fueron encontrados");
+            return notFound();
         }
     }
 
+    /**
+     * Retorna el Json de la bicicleta entregada, null en caso de poder devolverla
+     * @param idCliente
+     * @param idEstacionEntrega
+     * @return
+     */
     public Result devolverBicicleta(Long idCliente, Long idEstacionEntrega)
     {
         Estacion estacion = (Estacion)Estacion.finder.byId(idEstacionEntrega);
@@ -102,14 +112,16 @@ public class EstacionController extends Controller {
                 alquilada.setEstado(Vcub.LIBRE);
                 alquilada.save();
                 usuario.save();
-                return ok("Cliente:\n"+Json.toJson(usuario)+"\n Vcub:\n "+Json.toJson(alquilada));
-            } else {
-                return badRequest("LA ESTACIÓN NO TIENE CAPACIDAD DISPONIBLE PARA RECIBIR LA VCUB");
+                return ok(Json.toJson(alquilada));
+            }
+            else
+            {
+                return badRequest();
             }
         }
         else
         {
-            return notFound("Alguno de los recursos que intenta obtener no fueron encontrados o el usuario no tiene ninguna VCub cargada a su cuenta");
+            return notFound();
         }
     }
 }

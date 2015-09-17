@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Wed Sep 16 14:13:19 COT 2015
+// @SOURCE:C:/Users/template/Documents/TBC2/TBC3/conf/routes
+// @DATE:Wed Sep 16 18:24:15 COT 2015
 
 package router
 
@@ -109,7 +109,7 @@ class Routes(
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """estaciones/$id<[^/]+>""", """controllers.EstacionController.modificarEstacion(id:Long)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """estaciones/$id<[^/]+>/bicicletas/$id2<[^/]+>""", """controllers.EstacionController.alquilarBicicleta(id:Long, id2:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """estaciones/$id<[^/]+>/bicicletas""", """controllers.EstacionController.devolverBicicleta(id:Long, id2:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -772,16 +772,16 @@ Prestar una bicicleta en una estaci�n""",
   )
 
   // @LINE:163
-  private[this] lazy val controllers_Assets_versioned38_route = Route("GET",
+  private[this] lazy val controllers_Assets_at38_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned38_invoker = createInvoker(
-    Assets_6.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_at38_invoker = createInvoker(
+    Assets_6.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
-      "versioned",
-      Seq(classOf[String], classOf[Asset]),
+      "at",
+      Seq(classOf[String], classOf[String]),
       "GET",
       """POST /vehiculos/{id}/trayectos agregarTrayecto
  Map static resources from the /public folder to the /assets URL path""",
@@ -1021,9 +1021,9 @@ Prestar una bicicleta en una estaci�n""",
       }
   
     // @LINE:163
-    case controllers_Assets_versioned38_route(params) =>
-      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned38_invoker.call(Assets_6.versioned(path, file))
+    case controllers_Assets_at38_route(params) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
+        controllers_Assets_at38_invoker.call(Assets_6.at(path, file))
       }
   }
 }

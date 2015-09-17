@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Wed Sep 16 14:13:19 COT 2015
+// @SOURCE:C:/Users/template/Documents/TBC2/TBC3/conf/routes
+// @DATE:Wed Sep 16 18:24:15 COT 2015
 
 package controllers;
 

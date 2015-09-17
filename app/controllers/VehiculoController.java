@@ -10,6 +10,7 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,18 +62,18 @@ public class VehiculoController extends Controller {
                 {
                     //Crear  emergencia
                     vehiculoEncontrado.setEstado(Vehiculo.ACCIDENTE);
-                    mensaje="ATENCIÓN, EMERGENCIA DETECTADA\n" ;
+                    Datos ultimosDatos = vehiculoEncontrado.getUltimosDatos();
+                    Emergencia em = new Emergencia(0 , ultimosDatos.getHoraMedicion(), "Comentarios", "Altitud:"+ultimosDatos.getGpsAltitud()+"-Latitud:"+ultimosDatos.getGpsLatitud(), "Niv Indef/moment");
+                    vehiculoEncontrado.setUltimaEmergencia(em);
+                    vehiculoEncontrado.save();
+                    em.save();
                 }
-                else
-                {
-                    //Se est� atendiendo el accidente
-                    mensaje="Se está atendiendo un accidente, recuerde registrar en el sistema cuando la situación regrese a la normalidad";
-                }
-                return ok(mensaje + "\n Datos agregados:\n" + Json.toJson(datosRecibidos));
+
+                return ok(Json.toJson(datosRecibidos));
             }
             else
             {
-                return notFound("No se ha encontrado el vehiculo con id:"+id_vehiculo);
+                return notFound();
             }
 
 
@@ -90,10 +91,16 @@ public class VehiculoController extends Controller {
         }
         else
         {
-            return notFound("No se ha encontrado el vehiculo solicitado");
+            return notFound();
         }
     }
 
+    /**
+     * Retorna el Json del trayecto que se acaba de crear
+     * @param id_vehiculo
+     * @param tipo_vehiculo
+     * @return
+     */
     @BodyParser.Of(BodyParser.Json.class)
     public Result agregarTrayecto( Long id_vehiculo, int tipo_vehiculo) {
         JsonNode json = Controller.request().body().asJson();
@@ -113,18 +120,26 @@ public class VehiculoController extends Controller {
                 trayectoRecibido.save();
                 vehiculoEncontrado.save();
                 conductorEncontrado.save();
-                return ok("\n Trayecto Iniciado:\n" + Json.toJson(trayectoRecibido) + "\n Conductor:\n" + Json.toJson(conductorEncontrado) + "\n" +
-                        " Vehiculo:\n" + Json.toJson(vehiculoEncontrado));
+                return ok(Json.toJson(trayectoRecibido));
             }
             else {
                 return badRequest("No se puede iniciar un nuevo trayecto antes de finalizar el anterior");
             }
 
         } else {
-            return notFound("No se ha encontrado alguno de los elementos requeridos, revise nuevamente los datos de la solicitud");
+            return notFound();
         }
     }
 
+    /**
+     * Finaliza el ultimo Trayecto que se ha iniciado
+     * @param id_vehiculo
+     * @param id_trayecto
+     * @param tipo_vehiculo
+     * @return ok con el Json del Trayecto que se finalizo,
+     * @return badReques si no se está intentando finalizar el ultimo trayecto iniciado
+     * @return notFound si no se encuentra alguno de los datos necesarios
+     */
     @BodyParser.Of(BodyParser.Json.class)
     public Result finalizarUltimoTrayecto(Long id_vehiculo, Long id_trayecto, int tipo_vehiculo)
     {
@@ -148,13 +163,13 @@ public class VehiculoController extends Controller {
                 vehiculoEncontrado.save();
                 trayecoEncontrado = (Trayecto)Trayecto.finder.byId(id_trayecto);
 //                trayectoRecibido.delete();
-                return ok("Se registró la finalizacion del trayecto:\n" + Json.toJson(trayecoEncontrado));
+                return ok(Json.toJson(trayecoEncontrado));
             } else {
-                return badRequest("Únicamente puede finalizar el trayecto actual del vehículo, no puede finalizar otros trayectos");
+                return badRequest();
             }
         }
 
-        return badRequest("Hubo un problema obteniendo los trayectos del vehículo");
+        return notFound();
 
 
     }
@@ -170,9 +185,16 @@ public class VehiculoController extends Controller {
         }
         else
         {
-            return notFound("No se ha encontrado el vehiculo solicitado");
+            return notFound();
         }
     }
+
+    /**
+     * Retorna la nueva revisión mecánica
+     * @param id_vehiculo
+     * @param tipo_vehiculo
+     * @return
+     */
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result agregarRevision(Long id_vehiculo, int tipo_vehiculo)
@@ -193,16 +215,16 @@ public class VehiculoController extends Controller {
                 vehiculoEncontrado.setUltimaRevision(revision);
                 vehiculoEncontrado.save();
                 revision.save();
-                rta =ok("Revision Agregada:\n"+Json.toJson(revision)+"\n Vehiculo:\n"+Json.toJson(vehiculoEncontrado));
+                rta =ok(Json.toJson(revision));
             }
             else
             {
-                rta=badRequest("La revisión no pudo ser convertida a un objeto RevisionMecanica.class");
+                rta=badRequest();
             }
         }
         else
         {
-            rta=notFound("No se ha encontrado el vehiculo con id:"+id_vehiculo);
+            rta=notFound();
         }
         return rta;
     }
@@ -221,7 +243,7 @@ public class VehiculoController extends Controller {
         }
         else
         {
-            rta=notFound("No se ha encontrado el vehiculo con id:"+id_vehiculo);
+            rta=notFound();
         }
         return rta;
     }
