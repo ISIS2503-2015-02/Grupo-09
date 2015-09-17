@@ -238,3 +238,7 @@
 [0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.6.jar:na][0m
 [0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na][0m
+[0m[[0minfo[0m] [0mStopping Play fork run ...[0m
+[0m[[0minfo[0m] [0mJVM exiting, shutting down Play fork run ...[0m
+[0m[[0minfo[0m] [0mPlay fork run already stopped ...[0m
+[0m[[0minfo[0m] [0mForked Play process exited with status: 0[0m
