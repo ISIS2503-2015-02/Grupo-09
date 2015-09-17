@@ -4,7 +4,7 @@
 		module="arqui-g9_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150916193935"
+		publication="20150916194339"
 	>
 		<description>
 		arqui-g9
@@ -28,9 +28,7 @@
 	</configurations>
 	<publications>
 		<artifact name="arqui-g9_2.11" type="pom" ext="pom" conf="pom"/>
-		<artifact name="arqui-g9_2.11" type="jar" ext="jar" conf="compile"/>
-		<artifact name="arqui-g9_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		<artifact name="arqui-g9_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		<artifact name="arqui-g9_2.11" type="jar" ext="jar" conf="optional" e:classifier=""/>
 	</publications>
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.6" conf="scala-tool->default,optional(default)"/>
