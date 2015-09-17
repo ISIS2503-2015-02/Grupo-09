@@ -107,7 +107,7 @@
                 $scope.competitors = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Daï¿½o acï¿½");
             });
     });
 
@@ -117,7 +117,7 @@
                 $scope.competitors = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Daï¿½o acï¿½");
             });
     });
 
@@ -127,7 +127,7 @@
                 $scope.competitors = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Daï¿½o acï¿½");
             });
     });
 
@@ -137,9 +137,61 @@
                 $scope.competitors = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Daï¿½o acï¿½");
             });
     });
+
+    //=======================================================================================
+    //===================================== MÃ©todos =========================================
+    //=======================================================================================
+
+    admintbc.controller("driverCtrl", function($http, $scope, alertService){
+
+        $scope.addDriver=function(){
+            $http.post('/conductor', JSON.stringify($scope.driver)).success(function(data, headers){
+                $scope.driver={};
+            });
+        };
+
+        $scope.addUser=function(){
+            $http.post('/usuarios', JSON.stringify($scope.driver)).success(function(data, headers){
+                $scope.user={};
+            });
+        };
+
+        scope.addTranvia=function(){
+             $http.post('/tranvias', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.tranvia={};
+             });
+        };
+
+        scope.addEstacion=function(){
+            $http.post('/estaciones', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.estacion={};
+            });
+        };
+
+        scope.addMobibus=function(){
+            $http.post('/mobibuses', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.mobibus={};
+            });
+        };
+
+        scope.addVcub=function(){
+            console.log('name');
+            $http.post('/vcubs', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.vcub={};
+            });
+        };
+
+        scope.addTrayecto=function(){
+            $http.post('/trayectos', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.trayecto={};
+            });
+        };
+    });
+
+
 
 })();
 
