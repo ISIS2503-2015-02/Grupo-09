@@ -12,7 +12,7 @@ create table datos (
   sensor_termico            double,
   boton_panico              boolean,
   kilometraje               double,
-  idVehiculo               bigint,
+  id_vehiculo               bigint,
   constraint pk_datos primary key (id_datos))
 ;
 
@@ -34,24 +34,24 @@ create table emergencia (
   place                     varchar(255),
   emergency_level           varchar(255),
   estado                    integer,
-  idVehiculo               bigint,
+  id_vehiculo               bigint,
   constraint pk_emergencia primary key (id_emergencia))
 ;
 
 create table estacion (
-  idEstacion               bigint not null,
+  id_estacion               bigint not null,
   nombre_estacion           varchar(255),
   ubicacion                 varchar(255),
   vcubs_capacity            integer,
-  constraint pk_estacion primary key (idEstacion))
+  constraint pk_estacion primary key (id_estacion))
 ;
 
 create table movi_bus_vehiculo (
-  idVehiculo               bigint not null,
+  id_vehiculo               bigint not null,
   modelo                    varchar(255),
-  fechaCompra              timestamp,
+  fecha_compra              timestamp,
   estado                    integer,
-  tipoVehiculo             integer,
+  tipo_vehiculo             integer,
   id_revision               bigint,
   id_datos                  bigint,
   id_emergencia             varchar(255),
@@ -60,7 +60,7 @@ create table movi_bus_vehiculo (
   constraint uq_movi_bus_vehiculo_id_datos unique (id_datos),
   constraint uq_movi_bus_vehiculo_id_emergenc unique (id_emergencia),
   constraint uq_movi_bus_vehiculo_id_trayecto unique (id_trayecto),
-  constraint pk_movi_bus_vehiculo primary key (idVehiculo))
+  constraint pk_movi_bus_vehiculo primary key (id_vehiculo))
 ;
 
 create table reserva (
@@ -70,7 +70,7 @@ create table reserva (
   costo                     double,
   estado                    varchar(255),
   id_movibus_reservado      bigint,
-  idCliente                bigint,
+  id_cliente                bigint,
   constraint pk_reserva primary key (id_reserva))
 ;
 
@@ -79,16 +79,16 @@ create table revision_mecanica (
   fecha_revision            timestamp,
   costo_revision            double,
   kilometraje               double,
-  idVehiculo               bigint,
+  id_vehiculo               bigint,
   constraint pk_revision_mecanica primary key (id_revision))
 ;
 
 create table tranvia_vehiculo (
-  idVehiculo               bigint not null,
+  id_vehiculo               bigint not null,
   modelo                    varchar(255),
-  fechaCompra              timestamp,
+  fecha_compra              timestamp,
   estado                    integer,
-  tipoVehiculo             integer,
+  tipo_vehiculo             integer,
   id_revision               bigint,
   id_datos                  bigint,
   id_emergencia             varchar(255),
@@ -97,7 +97,7 @@ create table tranvia_vehiculo (
   constraint uq_tranvia_vehiculo_id_datos unique (id_datos),
   constraint uq_tranvia_vehiculo_id_emergenci unique (id_emergencia),
   constraint uq_tranvia_vehiculo_id_trayecto unique (id_trayecto),
-  constraint pk_tranvia_vehiculo primary key (idVehiculo))
+  constraint pk_tranvia_vehiculo primary key (id_vehiculo))
 ;
 
 create table trayecto (
@@ -108,7 +108,7 @@ create table trayecto (
   incidentes                integer,
   estado                    integer,
   id_conductor              bigint,
-  idVehiculo               bigint,
+  id_vehiculo               bigint,
   constraint pk_trayecto primary key (id_trayecto))
 ;
 
@@ -128,8 +128,8 @@ create table user (
 create table vcub (
   id_vcub                   bigint auto_increment not null,
   estado                    varchar(255),
-  idEstacion               bigint,
-  idCliente                bigint,
+  id_estacion               bigint,
+  id_cliente                bigint,
   constraint pk_vcub primary key (id_vcub))
 ;
 
