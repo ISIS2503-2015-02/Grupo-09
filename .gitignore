@@ -14,6 +14,12 @@
 .idea/tasks.xml
 .idea/dictionaries
 
+proyect/
+target/
+logs/
+.idea/
+
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml

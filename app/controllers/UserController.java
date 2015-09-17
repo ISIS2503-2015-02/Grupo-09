@@ -64,11 +64,11 @@ public class UserController extends Controller{
             cliente.setId_ultimaReserva(nuevaReserva.getId_reserva());
             nuevaReserva.save();
             cliente.save();
-            return ok("Reserva creada:\n"+Json.toJson(nuevaReserva));
+            return ok(Json.toJson(nuevaReserva));
         }
         else
         {
-            return notFound("Cliente no encontrado");
+            return notFound();
         }
     }
 
@@ -81,7 +81,7 @@ public class UserController extends Controller{
         }
         else
         {
-            return notFound("Usuario no encontrado");
+            return notFound();
         }
     }
 
@@ -101,16 +101,22 @@ public class UserController extends Controller{
                 original.setId_movibus_reservado(jsonReserva.getId_movibus_reservado());
                 original.setCosto(jsonReserva.getCosto());
                 original.save();
-                return ok("Los datos de la reserva ahora son:\n"+Json.toJson(original));
+                return ok(Json.toJson(original));
             }
-            return badRequest("El usuario no tiene ninguna reserva con id:" + id_reserva);
+            return badRequest();
         }
         else
         {
-            return notFound("Usuario no encontrado");
+            return notFound();
         }
     }
 
+    /**
+     * REtorna las reservas que ahora tiene el cliente
+     * @param idCliente
+     * @param idReserva
+     * @return
+     */
     public Result eliminarReservaCliente(Long idCliente, Long idReserva)
     {
         User cliente = (User) User.finder.byId(idCliente);
@@ -120,13 +126,13 @@ public class UserController extends Controller{
             if(encontrada.getId_cliente().equals(idCliente))
             {
                 encontrada.delete();
-                return ok("RESERVA ELIMINADA:\n Las reservas actuales para este usuario son:\n"+Json.toJson(Reserva.finder.where().eq("id_cliente",idCliente)));
+                return ok(Json.toJson(Reserva.finder.where().eq("id_cliente",idCliente)));
             }
-            return badRequest("El usuario no tiene ninguna reserva con id:" + idReserva);
+            return badRequest();
         }
         else
         {
-            return notFound("Usuario no encontrado");
+            return notFound();
         }
 
     }

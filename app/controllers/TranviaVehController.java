@@ -63,5 +63,31 @@ public class TranviaVehController extends VehiculoController {
         return readTrayectos(id_Tranvia, Vehiculo.TRANVIA);
     }
 
+    public Result agregarDatosTranvia(Long id_tranvia)
+    {
+        return agregarDatos(id_tranvia, Vehiculo.TRANVIA);
+    }
+
+    public Result readDatosTranvia(Long id_tranvia)
+    {
+        return readDatos(id_tranvia, Vehiculo.TRANVIA);
+    }
+
+    public Result agregarTrayectoTranvia(Long id_tranvia)
+    {
+        return agregarTrayecto(id_tranvia, Vehiculo.TRANVIA);
+    }
+
+    public Result finalizarTrayectoTranvia (Long id_tranvia, Long id_trayecto)
+    {
+        return finalizarUltimoTrayecto(id_tranvia, id_trayecto, Vehiculo.TRANVIA);
+    }
+
+
+    public Result agregarRevisionMovibus(Long id_tranvia)
+    {
+        return agregarRevision(id_tranvia, Vehiculo.TRANVIA);
+    }
+
 
 }
