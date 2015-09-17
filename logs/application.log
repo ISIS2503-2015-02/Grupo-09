@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2015-09-16 18:14:50,458 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-15 - Starting application default Akka system: application
 2015-09-16 18:14:51,065 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-15 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 2015-09-16 18:15:08,558 [ERROR] from application in New I/O worker #1 - 
@@ -31,3 +32,7 @@ play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation erro
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) ~[scala-library-2.11.6.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.6.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.6.jar:na]
+=======
+2015-09-16 19:04:10,199 [INFO] from play.api.libs.concurrent.ActorSystemProvider in play-fork-run-akka.actor.default-dispatcher-6 - Starting application default Akka system: application
+2015-09-16 19:04:10,322 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-6 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+>>>>>>> 122630aeefbea02391f4a4b86a78ef4bab8d6396
