@@ -1,13 +1,14 @@
 package tbc.standalone.ui.controllers;
 
 import javafx.collections.ObservableList;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import tbc.standalone.models.MoviBusVehiculo;
 import tbc.standalone.models.TranviaVehiculo;
 import tbc.standalone.models.Vcub;
 
-import javax.xml.ws.Service;
 import java.util.ArrayList;
 
 
@@ -38,8 +39,12 @@ public class Controller {
     @FXML
     public void initialize() {
 
-        // final Service s = new Service()
+        final Service s = new Service() {
+            @Override
+            protected Task createTask() {
 
+            }
+        };
     }
 
     public void addVcub(Vcub v) {
