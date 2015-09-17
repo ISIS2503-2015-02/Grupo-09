@@ -1,5 +1,5 @@
 [0m[[0minfo[0m] [0mSetting up Play fork run ... (use Ctrl+D to cancel)[0m
-[0m[[0minfo[0m] [0mUpdating {file:/C:/Dev/Grupo-09/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/gusal/OneDrive/Universidad/Arquisoft/TBC/TBC3/}root...[0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.6 ...[0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-enhancer;1.1.0 ...[0m
 [0m[[0minfo[0m] [0mResolving org.javassist#javassist;3.18.2-GA ...[0m
@@ -186,59 +186,9 @@
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m(Server started, use Ctrl+D to stop and go back to the console...)[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 23 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:8: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">[0m
-[0m[[31merror[0m] [0m                                                                          ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:9: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">[0m
-[0m[[31merror[0m] [0m                                                                                ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:10: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>[0m
-[0m[[31merror[0m] [0m                                             ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[31merror[0m] [0mapplication - [0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6nfakn95a - Internal server error, for (GET) [/] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value versioned is not a member of controllers.ReverseAssets][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na][0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 23 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:8: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">[0m
-[0m[[31merror[0m] [0m                                                                          ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:9: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">[0m
-[0m[[31merror[0m] [0m                                                                                ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:10: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>[0m
-[0m[[31merror[0m] [0m                                             ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[31merror[0m] [0mapplication - [0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6nfakne27 - Internal server error, for (GET) [/] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value versioned is not a member of controllers.ReverseAssets][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na][0m
-[0m[[0minfo[0m] [0mStopping Play fork run ...[0m
-[0m[[0minfo[0m] [0mJVM exiting, shutting down Play fork run ...[0m
-[0m[[0minfo[0m] [0mPlay fork run already stopped ...[0m
-[0m[[0minfo[0m] [0mForked Play process exited with status: 0[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.HikariCPConnectionPool - datasource [default] bound to JNDI as DefaultDS[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:file:~/data/db[0m
+[0m[[33mwarn[0m] [0m- application - application.conf @ file:/C:/Users/gusal/OneDrive/Universidad/Arquisoft/TBC/TBC3/target/scala-2.11/classes/application.conf: 55: applyEvolutions.default is deprecated, use play.evolutions.db.default.autoApply instead[0m
+[0m[[0minfo[0m] [0m- play.api.libs.concurrent.ActorSystemProvider - Starting application default Akka system: application[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m

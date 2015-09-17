@@ -29,7 +29,7 @@ create table driver (
 create table emergencia (
   id_emergencia             varchar(255) not null,
   emergency_type            integer,
-  emergency_date            varchar(255),
+  emergency_date            timestamp,
   comments                  varchar(255),
   place                     varchar(255),
   emergency_level           varchar(255),
