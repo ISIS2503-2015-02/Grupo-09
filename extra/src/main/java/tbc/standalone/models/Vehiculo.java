@@ -25,15 +25,15 @@ public class Vehiculo {
     //ATRIBUTOS
     //------------------------------------------------------------------------
 
-    private Long id_vehiculo;
+    private Long idVehiculo;
 
     private String modelo;
 
-    private Date fecha_compra;
+    private Date fechaCompra;
 
     private int estado;
 
-    private int tipo_vehiculo;
+    private int tipoVehiculo;
 
     private RevisionMecanica ultimaRevision;
 
@@ -48,18 +48,18 @@ public class Vehiculo {
     public Vehiculo()
     {
         modelo="";
-        fecha_compra=null;
+        fechaCompra =null;
         estado= DISPONIBLE;
         kilomDesdeUltimaReparacion=0;
     }
 
-    public Vehiculo(Long id, String modelo, Date fecha_compra, int estado,int tipoVehiculo)
+    public Vehiculo(Long id, String modelo, Date fechaCompra, int estado,int tipoVehiculo)
     {
-        this.id_vehiculo = id;
+        this.idVehiculo = id;
         this.modelo = modelo;
-        this.fecha_compra = fecha_compra;
+        this.fechaCompra = fechaCompra;
         this.estado=estado;
-        this.tipo_vehiculo=tipoVehiculo;
+        this.tipoVehiculo =tipoVehiculo;
         ultimaRevision = null;
         ultimosDatos = null;
         ultimaEmergencia = null;
@@ -74,12 +74,12 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public Date getFecha_compra() {
-        return fecha_compra;
+    public Date getFechaCompra() {
+        return fechaCompra;
     }
 
-    public void setFecha_compra(Date fecha_compra) {
-        this.fecha_compra = fecha_compra;
+    public void setFechaCompra(Date fechaCompra) {
+        this.fechaCompra = fechaCompra;
     }
 
     public int getEstado() {
@@ -106,20 +106,20 @@ public class Vehiculo {
         return ultimoTrayecto;
     }
 
-    public Long getId_vehiculo() {
-        return id_vehiculo;
+    public Long getIdVehiculo() {
+        return idVehiculo;
     }
 
-    public void setId_vehiculo(Long id_vehiculo) {
-        this.id_vehiculo = id_vehiculo;
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
-    public int getTipo_vehiculo() {
-        return tipo_vehiculo;
+    public int getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
-    public void setTipo_vehiculo(int tipo_vehiculo) {
-        this.tipo_vehiculo = tipo_vehiculo;
+    public void setTipoVehiculo(int tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
     public void setUltimaRevision(RevisionMecanica ultimaRevision) {

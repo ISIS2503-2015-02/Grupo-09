@@ -19,5 +19,10 @@ public class MoviBusVehiculo extends Vehiculo {
         super(id,modelo,fecha_compra,estado, Vehiculo.MOVIBUS);
     }
 
+    @Override
+    public String toString() {
+        return "Mobibus:Id:" + this.getIdVehiculo();
+    }
+
 
 }

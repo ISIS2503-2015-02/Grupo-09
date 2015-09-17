@@ -34,7 +34,7 @@ public class MoviBusController extends VehiculoController {
         {
             original.delete();
             MoviBusVehiculo reemplazarPor = MoviBusVehiculo.bind(j);
-            reemplazarPor.setId_vehiculo(idMovibus);
+            reemplazarPor.setIdVehiculo(idMovibus);
             reemplazarPor.save();
 
         }

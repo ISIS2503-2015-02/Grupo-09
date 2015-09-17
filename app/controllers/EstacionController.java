@@ -75,9 +75,9 @@ public class EstacionController extends Controller {
                 if(disponibles.size()>0)
                 {
                     prestar=disponibles.get(0);
-                    prestar.setId_cliente(idCliente);
+                    prestar.setIdCliente(idCliente);
                     prestar.setEstado(Vcub.PRESTADA);
-                    prestar.setId_estacion(null);
+                    prestar.setIdEstacion(null);
                     prestar.save();
                     usuario.setId_vcub_alquilada(prestar.getIdCvubs());
                     usuario.save();
@@ -107,7 +107,7 @@ public class EstacionController extends Controller {
         if(null!=usuario && null!= usuario.getId_vcub_alquilada() && estacion != null) {
             Vcub alquilada = (Vcub) Vcub.finder.byId(usuario.getId_usuario());
             if (estacion.getVcubs().size() < estacion.getVcubsCapacity()) {
-                alquilada.setId_estacion(idEstacionEntrega);
+                alquilada.setIdEstacion(idEstacionEntrega);
                 usuario.setId_vcub_alquilada(null);
                 alquilada.setEstado(Vcub.LIBRE);
                 alquilada.save();

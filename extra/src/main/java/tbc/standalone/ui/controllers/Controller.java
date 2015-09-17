@@ -84,6 +84,7 @@ public class Controller {
                         Collection<MoviBusVehiculo> resultMobis = gson.fromJson(response, token);
 
                         mobis = new ArrayList<MoviBusVehiculo>(resultMobis);
+                        System.out.println("carga " + tranvias.size() + " " + vcubs.size() + " " + mobis.size());
 
                         return null;
                     }
@@ -93,8 +94,15 @@ public class Controller {
             @Override
             protected void succeeded() {
                 vcubsItems = FXCollections.observableArrayList(vcubs);
+                vcubsList.setItems(vcubsItems);
+
                 tranviasItems = FXCollections.observableArrayList(tranvias);
+                tranviaList.setItems(tranviasItems);
+
                 movisItems = FXCollections.observableArrayList(mobis);
+                movibusList.setItems(movisItems);
+
+                System.out.println("succ");
             }
         };
 

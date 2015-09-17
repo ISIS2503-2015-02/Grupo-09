@@ -16,13 +16,13 @@ public class Vcub
     //------------------------------------------------------------------------
     // Atributos
     //------------------------------------------------------------------------
-    private Long id_vcub;
+    private Long idVcub;
 
     private String estado; //Prestada,sustiduida o libre
 
-    private Long id_estacion;
+    private Long idEstacion;
 
-    private Long id_cliente;
+    private Long idCliente;
 
     //------------------------------------------------------------------------
     // Constructores
@@ -31,24 +31,24 @@ public class Vcub
     public Vcub(){
     }
 
-    public Vcub(String estado, Long id_estacion)
+    public Vcub(String estado, Long idEstacion)
     {
         this.estado = estado;
-        this.id_estacion = id_estacion;
+        this.idEstacion = idEstacion;
     }
 
     //------------------------------------------------------------------------
     // Métodos
     //------------------------------------------------------------------------
 
-    public Long getIdCvubs( )
+    public Long getIdVcubs()
     {
-        return id_vcub;
+        return idVcub;
     }
 
     public void setIdCvubs( Long idCvubs )
     {
-        this.id_vcub = idCvubs;
+        this.idVcub = idCvubs;
     }
 
     public String getEstado( )
@@ -61,22 +61,27 @@ public class Vcub
         this.estado = estado;
     }
 
-    public Long getId_estacion()
+    public Long getIdEstacion()
     {
-        return id_estacion;
+        return idEstacion;
     }
 
-    public void setId_estacion(Long id_estacion)
+    public void setIdEstacion(Long idEstacion)
     {
-        this.id_estacion = id_estacion;
+        this.idEstacion = idEstacion;
     }
 
-    public Long getId_cliente() {
-        return id_cliente;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
-    public void setId_cliente(Long id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    @Override
+    public String toString() {
+        return "Vcubs:Id:" + this.getIdVcubs();
     }
 
 }

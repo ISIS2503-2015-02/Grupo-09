@@ -18,5 +18,10 @@ public class TranviaVehiculo extends Vehiculo {
         super(id,modelo,fecha_compra,estado,Vehiculo.TRANVIA);
     }
 
+    @Override
+    public String toString() {
+        return "Tranvia:Id:" + this.getIdVehiculo();
+    }
+
 
 }
