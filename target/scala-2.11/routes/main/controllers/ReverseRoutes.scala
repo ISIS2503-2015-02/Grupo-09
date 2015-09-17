@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ryogi/Arquisoft/Grupo-09/conf/routes
-// @DATE:Wed Sep 16 14:13:19 COT 2015
+// @SOURCE:C:/Users/template/Documents/TBC2/TBC3/conf/routes
+// @DATE:Wed Sep 16 18:24:15 COT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -21,9 +21,9 @@ package controllers {
 
   
     // @LINE:163
-    def versioned(file:Asset): Call = {
+    def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
-      Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
+      Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
     }
   
   }
