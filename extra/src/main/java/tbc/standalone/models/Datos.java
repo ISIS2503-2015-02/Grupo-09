@@ -133,6 +133,4 @@ public class Datos
     public void setId_vehiculo(Long id_vehiculo) {
         this.id_vehiculo = id_vehiculo;
     }
-
-
 }

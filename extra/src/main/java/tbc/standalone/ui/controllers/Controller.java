@@ -13,6 +13,8 @@ import tbc.standalone.http.Request;
 import tbc.standalone.models.MoviBusVehiculo;
 import tbc.standalone.models.TranviaVehiculo;
 import tbc.standalone.models.Vcub;
+import tbc.standalone.services.MobiSimulator;
+import tbc.standalone.services.TranviaSimulator;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -101,6 +103,14 @@ public class Controller {
 
                 movisItems = FXCollections.observableArrayList(mobis);
                 movibusList.setItems(movisItems);
+
+                for(MoviBusVehiculo mb : mobis) {
+                    new MobiSimulator(mb).start();
+                }
+
+                for(TranviaVehiculo t : tranvias) {
+                    new TranviaSimulator(t).start();
+                }
 
                 System.out.println("succ");
             }

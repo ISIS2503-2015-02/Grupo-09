@@ -82,7 +82,7 @@ PUT           /tranvias/:id                          controllers.TranviaVehContr
 
 
 #Enviar los datos del tranvias (GPS, hora�)
-#POST        /tranvias/:id/datos
+POST        /tranvias/:id/datos                     controllers.TranviaVehController.agregarDatosMovibus(id: Long)
 #Obtener los datos registrados del tranvias (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
 
 #Registrar una revisi�n tecnomec�nica

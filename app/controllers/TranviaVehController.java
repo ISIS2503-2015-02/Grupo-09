@@ -78,8 +78,7 @@ public class TranviaVehController extends VehiculoController {
         return agregarTrayecto(id_tranvia, Vehiculo.TRANVIA);
     }
 
-    public Result finalizarTrayectoTranvia (Long id_tranvia, Long id_trayecto)
-    {
+    public Result finalizarTrayectoTranvia (Long id_tranvia, Long id_trayecto) {
         return finalizarUltimoTrayecto(id_tranvia, id_trayecto, Vehiculo.TRANVIA);
     }
 
