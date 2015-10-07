@@ -1,0 +1,33 @@
+#!/bin/bash
+# The logic to start up your application should be put in this
+# script. The application will work only if it binds to
+# $OPENSHIFT_INTERNAL_IP:8080 
+
+export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk1.8.0_40" 
+export PATH=$JAVA_HOME/bin:$PATH
+
+LOG_FILE="${OPENSHIFT_DIY_LOG_DIR}play.log"
+
+# figure out the start script (and ensure it is runnable)
+
+if [[ -f "${OPENSHIFT_REPO_DIR}target/start" ]]
+then
+	# for 2.0.x/2.1.x
+	START_SCRIPT="${OPENSHIFT_REPO_DIR}target/universal/start"
+else
+	# for 2.2.x or later
+	START_SCRIPT_BAT=`find ${OPENSHIFT_REPO_DIR}target/universal/stage/bin -name \*.bat`
+	START_SCRIPT=${START_SCRIPT_BAT%.bat}
+fi
+
+chmod +x $START_SCRIPT
+
+# start application
+
+APP_COMMAND="$START_SCRIPT $PLAY_PARAMS "\
+"-Dhttp.port=${OPENSHIFT_DIY_PORT} "\
+"-Dhttp.address=${OPENSHIFT_DIY_IP} "\
+"-Dconfig.resource=openshift.conf"
+
+echo "$(date) [INFO]: Starting: $APP_COMMAND" &>> $LOG_FILE
+nohup bash -c "${APP_COMMAND} &>> ${LOG_FILE} 2>&1" &> /dev/null &

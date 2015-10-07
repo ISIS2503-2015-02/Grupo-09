@@ -1,0 +1,8 @@
+{
+"email":"javier.ojeda@correo.com",
+"fullName":"Javier Gonzales Ojeda",
+"document":"63.449.967",
+"phoneNumber":7952032,
+"cellphone":3138536438,
+"address":"Clle 57 I No 93-24, Segundo piso, Brr. Nueva Leona"
+}

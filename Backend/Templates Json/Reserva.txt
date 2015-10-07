@@ -1,0 +1,7 @@
+{
+"id_reserva":
+"hora_reserva":Date
+"hora_creacion":Date
+"costo":double
+"estado":integer
+}

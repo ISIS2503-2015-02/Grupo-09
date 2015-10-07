@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+#Server Startup at 2015-08-20T05:02+0000
+#Thu Aug 20 00:02:55 COT 2015
+server.uri=http\://0.0.0.0\:41865
+=======
+#Server Startup at 2015-08-20T04:54+0000
+#Wed Aug 19 23:54:44 COT 2015
+server.uri=http\://0.0.0.0\:63028
+>>>>>>> 1c551230fda6b237f8982b7ae2267c3af93a1c05

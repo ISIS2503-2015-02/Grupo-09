@@ -1,0 +1,55 @@
+#!/bin/bash
+# The logic to stop your application should be put in this script.
+
+LOG_FILE="${OPENSHIFT_DIY_LOG_DIR}play.log"
+
+# figure out RUNNING_PID location
+
+if [[ -f "${OPENSHIFT_REPO_DIR}target/start" ]]
+then
+	# for 2.0.x/2.1.x
+	PID_FILE="${OPENSHIFT_REPO_DIR}RUNNING_PID"
+else
+	# for 2.2.x or later
+	PID_FILE="${OPENSHIFT_REPO_DIR}target/universal/stage/RUNNING_PID"
+fi
+
+#kill play process if it was running
+
+function kill_app {
+	COMMAND="$1 $2"
+	PID=$2
+	# try 5 times to kill it
+	for c in `seq 1 5`; do
+		echo "$(date) [INFO]: Trying to kill proccess, attempt number $c" >> $LOG_FILE
+		echo "$(date) [INFO]: $COMMAND" >> $LOG_FILE
+		bash -c "$COMMAND &>> $LOG_FILE 2>&1" &> /dev/null
+		sleep $c
+		if [[ -z `ps -p $PID | grep -v PID` ]]; then
+			#killed it - check, maybe there is a cleanup needed to be done
+			if [[ -f "$PID_FILE" ]]; then
+				echo "$(date) [WARNING]: RUNNING_PID still exist after process has been killed (possible application crash/forced kill)" >> $LOG_FILE
+				rm "$PID_FILE"
+			fi
+			exit 0
+		fi
+	done
+}
+
+if [[ -f "$PID_FILE" ]]
+then
+	PID=`cat $PID_FILE`
+	echo "$(date) [INFO]: Stopping play application process: $PID" >> $LOG_FILE
+
+	# try to kill it nicely
+	kill_app "kill -SIGTERM" $PID
+
+	# try to kill it harshly
+	kill_app "kill -SIGKILL" $PID
+	
+	# failed to kill process
+	echo "$(date) [ERROR]: Could not stop play application" >> $LOG_FILE
+	exit 1
+else
+	echo "$(date) [INFO]: $PID_FILE missing - nothing to stop" >> $LOG_FILE
+fi
