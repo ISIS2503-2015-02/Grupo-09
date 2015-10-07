@@ -1,8 +1,0 @@
-#!/bin/bash
-# This is a simple script and will be executed on your CI system if 
-# available.  Otherwise it will execute while your application is stopped
-# before the build step.  This script gets executed directly, so it
-# could be python, php, ruby, etc.
-
-export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk/jdk1.8.0_05"
-export PATH=$JDK8_PATH:$PATH

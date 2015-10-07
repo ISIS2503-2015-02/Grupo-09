@@ -1,7 +1,0 @@
-{
-"fullName":"Javier Gonzales Ojeda",
-"documentNumber":"63.449.967",
-"homePhone":7952032,
-"mobilePhone":3138536438,
-"address":"Clle 57 I No 93-24, Segundo piso, Brr. Nueva Leona"
-}
