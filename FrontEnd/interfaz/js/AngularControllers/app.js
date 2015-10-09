@@ -2,6 +2,16 @@
  * Created by USER on 9/14/2015.
  */
 (function(){var admintbc= angular.module('admintbc',[]);
+    
+   
+   
+   
+   admintbc.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+]);
 
     admintbc.directive('navbar', function(){
         return{
@@ -23,7 +33,7 @@
         return {
             restrict:'E',
             templateUrl: 'partials/mobibuses.html',
-            controllerAs: 'getMobibuses'
+            controller: 'getMobibuses'
         }
     });
 
@@ -31,7 +41,7 @@
         return {
             restrict:'E',
             templateUrl: 'partials/vcubs.html',
-            controllerAs: 'getVcubs'
+            controller: 'getVcubs'
         }
     });
 
@@ -39,7 +49,7 @@
         return {
             restrict:'E',
             templateUrl: 'partials/tranvias.html',
-            controllerAs: 'getTranvias'
+            controller: 'getTranvias'
         }
     });
 
@@ -47,7 +57,7 @@
         return {
             restrict:'E',
             templateUrl: 'partials/conductores.html',
-            controllerAs: 'getConductores'
+            controller: 'getConductores'
         }
     });
 
@@ -55,7 +65,7 @@
         return {
             restrict:'E',
             templateUrl: 'partials/estaciones.html',
-            controllerAs: 'getTranvias'
+            controller: 'getEstaciones'
         }
     });
 
@@ -63,18 +73,21 @@
         return {
             restrict:'E',
             templateUrl: 'partials/trayectos.html',
-            controllerAs: 'getTrayectos'
+            controller: 'getTrayectos'
         }
     });
 
     //=======================================================================================
     //==================================== Controllers ======================================
     //=======================================================================================
+    
+    
+    
 
     admintbc.controller("getMobibuses", function($http, $scope) {
         $http.get('http://localhost:9000/mobibuses').
             success(function(data, status, headers, config) {
-                $scope.competitors = data;
+                $scope.mobibuses = data;
             }).
             error(function(data, status, headers, config) {
                 // log error
@@ -94,7 +107,7 @@
     admintbc.controller("getVcubs", function($http, $scope) {
         $http.get('http://localhost:9000/vcubs').
             success(function(data, status, headers, config) {
-                $scope.competitors = data;
+                $scope.vcubs = data;
             }).
             error(function(data, status, headers, config) {
                 // log error
@@ -104,42 +117,216 @@
     admintbc.controller("getUsers", function($http, $scope) {
         $http.get('http://localhost:9000/usuarios').
             success(function(data, status, headers, config) {
-                $scope.competitors = data;
+                $scope.users = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Da?o ac?");
             });
     });
 
     admintbc.controller("getConductores", function($http, $scope) {
         $http.get('http://localhost:9000/conductor').
             success(function(data, status, headers, config) {
-                $scope.competitors = data;
+                $scope.driver = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Da?o ac?");
             });
     });
 
     admintbc.controller("getEstaciones", function($http, $scope) {
         $http.get('http://localhost:9000/estaciones').
             success(function(data, status, headers, config) {
-                $scope.competitors = data;
+                $scope.estacion = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Da?o ac?");
             });
     });
 
     admintbc.controller("getTrayectos", function($http, $scope) {
         $http.get('http://localhost:9000/trayectos').
             success(function(data, status, headers, config) {
-                $scope.competitors = data;
+                $scope.trayecto = data;
             }).
             error(function(data, status, headers, config) {
-                console.log("Daño acá");
+                console.log("Da?o ac?");
             });
     });
+
+    //=======================================================================================
+    //===================================== MÃ©todos =========================================
+    //=======================================================================================
+    
+    //Usuario
+	
+     admintbc.controller("userCtrl", function($http, $scope) {
+         
+         
+         $http.defaults.useXDomain = true; 
+         $scope.user = {};
+         
+ 
+        $scope.addUser=function(){
+            
+            console.log(JSON.stringify($scope.user));
+            
+            $http.post('http://localhost:9000/usuarios', JSON.stringify($scope.user)).success(function(data, headers){
+                $scope.user={};
+            });
+        };
+		
+		$scope.addMobibus=function(){
+			$http.post('/mobibus', JSON.stringify($scope.user)).success(function(data, headers)){
+				$scope.user={};
+			});
+		};	
+				
+    }); 
+    
+	
+	//Mobibus
+	
+	admintbc.controller("mobibusCtrl", function($http, $scope, alertService) {
+		
+		$scope.addMobibus=function(){
+			$http.post('http://localhost:9000/mobibus', JSON.stringify($scope.user)).success(function(data, headers)){
+				$scope.user={};
+			});
+		};	
+		
+		$scope.addDriver=function($http, $scope){
+            $http.post('http://localhost:9000/conductor', JSON.stringify($scope.driver)).success(function(data, headers){
+                $scope.driver={};
+            });
+        };
+		
+		scope.addTrayecto=function($http, $scope){
+            $http.post('http://localhost:9000/trayecto', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.trayecto={};
+            });
+        };
+		
+		scope.addUser=function($http, $scope){
+            $http.post('http://localhost:9000/user', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.trayecto={};
+            });
+        };
+		
+	});
+	
+	//VCubs
+	admintbc.controller("vcubCtrl", function($http, $scope, alertService) {
+	
+		scope.addVcub=function($http, $scope){
+				$http.post('http://localhost:9000/vcub', JSON.stringify($scope.driver)).success(function(data, headers){
+						$scope.vcub={};
+				});
+			};
+		
+		scope.addEstacion=function($http, $scope){
+				$http.post('http://localhost:9000/estacion', JSON.stringify($scope.driver)).success(function(data, headers){
+						$scope.estacion={};
+				});
+			};
+
+		scope.addUser=function($http, $scope){
+            $http.post('/user', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.trayecto={};
+            });
+        };
+	
+	
+	});
+	
+   //TranvÃ­a
+    admintbc.controller("tranviaCtrl", function($http, $scope, alertService) {
+	
+		scope.addTranvia=function($http, $scope){
+				 $http.post('http://localhost:9000/tranvia', JSON.stringify($scope.driver)).success(function(data, headers){
+						$scope.tranvia={};
+				 });
+			};
+			
+		$scope.addDriver=function($http, $scope){
+            $http.post('http://localhost:9000/conductor', JSON.stringify($scope.driver)).success(function(data, headers){
+                $scope.driver={};
+            });
+        };
+	
+		scope.addTrayecto=function($http, $scope){
+            $http.post('http://localhost:9000/trayectos', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.trayecto={};
+            });
+        };
+	
+	});
+	
+   
+        
+    //Conductor
+
+    admintbc.controller("driverCtrl", function($http, $scope, alertService){
+
+        $scope.addDriver=function($http, $scope){
+            $http.post('http://localhost:9000/conductor', JSON.stringify($scope.driver)).success(function(data, headers){
+                $scope.driver={};
+            });
+        };
+
+        
+
+        scope.addTranvia=function($http, $scope){
+             $http.post('http://localhost:9000/tranvias', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.tranvia={};
+             });
+        };
+
+        scope.addEstacion=function($http, $scope){
+            $http.post('http://localhost:9000/estaciones', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.estacion={};
+            });
+        };
+
+        scope.addMobibus=function($http, $scope){
+            $http.post('http://localhost:9000/mobibuses', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.mobibus={};
+            });
+        };
+
+        scope.addVcub=function($http, $scope){
+            $http.post('http://localhost:9000/vcubs', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.vcub={};
+            });
+        };
+
+        scope.addTrayecto=function($http, $scope){
+            $http.post('http://localhost:9000/trayectos', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.trayecto={};
+            });
+        };
+    });
+	
+	//Reservas
+	
+	admintbc.controller("reservCtrl", function($http, $scope, alertService){
+		
+		scope.addUser=function($http, $scope){
+            $http.post('http://localhost:9000/user', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.vcub={};
+            });
+        };
+		
+		scope.addMobibus=function($http, $scope){
+            $http.post('http://localhost:9000/mobibuses', JSON.stringify($scope.driver)).success(function(data, headers){
+                    $scope.mobibus={};
+            });
+        };
+	});
+	
+	
+	
+
 
 })();
 
