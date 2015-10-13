@@ -7,6 +7,7 @@ import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.mobibuses;
 
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class MoviBusController extends VehiculoController {
 
     public Result readAll() {
         List<MoviBusVehiculo> movibuses = new Model.Finder(MoviBusVehiculo.class).all();
-        return ok(Json.toJson(movibuses));
+        return ok(mobibuses.render(movibuses));
     }
 
     public Result readMovibus(Long idMovibus) {

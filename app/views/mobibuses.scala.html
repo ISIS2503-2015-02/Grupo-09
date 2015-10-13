@@ -1,0 +1,248 @@
+@(mobibuses:List[MoviBusVehiculo])
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href='@routes.Assets.at("css/bootstrap.min.css")'  >
+
+    <!-- Custom CSS -->
+    <link href='@routes.Assets.at("css/sb-admin.css")' rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href='@routes.Assets.at("css/plugins/morris.css")' rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='@routes.Assets.at("font-awesome/css/font-awesome.min.css")' rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src='@routes.Assets.at("https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")'></script>
+        <script type="text/javascript" src='@routes.Assets.at("https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")'></script>
+    <![endif]-->
+
+    <script type="text/javascript" src='@routes.Assets.at("js/angular.min.js")'></script>
+    <script type="text/javascript" src='@routes.Assets.at("js/AngularControllers/app.js")'></script>
+
+    <script type="text/javascript" src='@routes.Assets.at("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")'></script>
+
+</head>
+
+<body>
+
+    <!-- Modal Add Driver -->
+
+
+    <!-- Start -->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">TBC Admin</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="indexAdmin.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#mob" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Mobibuses <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mob" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-mobibuses.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/mobibuses">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#tran" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Tranvias <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="tran" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-tranvias.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/tranvias">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#vcub" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> VCubs <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="vcub" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-vcubs.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/vcubs">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#driv" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Conductores <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="driv" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-drivers.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/conductor">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#user" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="user" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-usuarios.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/usuarios">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#est" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Estaciones <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="est" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-estaciones.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/estaciones">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#tray" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Trayectos <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="tray" class="collapse" aria-expanded="false" style="height: 0px;">
+                            <li>
+                                <a href="add-trayectos.html">Agregar</a>
+                            </li>
+                            <li>
+                                <a href="/trayectos">Ver</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/mapa"><i class="fa fa-fw fa-map-marker"></i> Mapa</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Conductores
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="indexAdmin.html">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-table"></i> Conductores
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Mobibuses</h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <
+                                    <th>ID</th>
+                                    <th>Modelo</th>
+                                    <th>Fecha Compra</th>
+                                    <th>Estado</th>
+                                    <th>Tipo</th>
+                                    <th>Ver Mas</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @for(mobibus <- mobibuses){
+                                <tr class="active" ng-repeat="movibus in movi_bus_vehiculo| orderby: 'id'">
+
+                                    <td>@mobibus.id_vehiculo</td>
+                                    <td>@mobibus.modelo</td>
+                                    <td>@mobibus.fecha_compra</td>
+                                    <td>@mobibus.estado</td>
+                                    <td>@mobibus.tipo_vehiculo</td>
+                                    <td><a href="https://google.com">Ver Mas</a></td>
+                                </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src='@routes.Assets.at("js/jquery.js")'></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src='@routes.Assets.at("js/bootstrap.min.js")'></script>
+
+</body>
+
+</html>

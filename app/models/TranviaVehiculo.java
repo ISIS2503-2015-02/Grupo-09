@@ -4,7 +4,7 @@ package models;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -12,6 +12,41 @@ import java.util.Date;
  */
 @Entity
 public class TranviaVehiculo extends Vehiculo {
+
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    public Long id_vehiculo;
+
+    public String modelo;
+
+    public Date fecha_compra;
+
+    public int estado;
+
+    public int tipo_vehiculo;
+
+    @OneToOne
+    @JoinColumn(name = "id_revision")
+    public RevisionMecanica ultimaRevision;
+
+    @OneToOne
+    @JoinColumn(name = "id_datos")
+    public Datos ultimosDatos;
+
+    @OneToOne
+    @JoinColumn(name = "id_emergencia")
+    public Emergencia ultimaEmergencia;
+
+
+    @OneToOne
+    @JoinColumn(name = "id_trayecto")
+    public Trayecto ultimoTrayecto;
+
+
+    @Transient
+    public double kilomDesdeUltimaReparacion;
+
 
     //------------------------------------------------------------------------
     //Finder

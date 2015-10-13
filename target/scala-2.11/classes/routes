@@ -4,7 +4,7 @@
 
 # Home page
 GET           /                                      controllers.Application.index()
-#GET           /*file                                controllers.Assets.at(path="/public", file)
+#GET          /*file                                controllers.Assets.at(path="/public", file)
 
 ########################################################################################################################
 #
@@ -22,7 +22,8 @@ GET           /                                      controllers.Application.ind
 #Obtener todos los conductores
 GET           /conductor                             controllers.DriverController.read()
 #Crear nuevo conductor
-POST          /conductor                             controllers.DriverController.create()
+GET           /addConductores                           controllers.DriverController.createDriver()
+POST          /addConductores                           controllers.DriverController.formDriver()
 
 
 ##########################################  USUARIOS ################
@@ -31,7 +32,9 @@ GET           /usuarios                              controllers.UserController.
 #Obtener los datos de un usuario
 GET           /usuarios/:id                          controllers.UserController.read(id: Long)
 #Registrar un nuevo usuario
-POST          /usuarios                              controllers.UserController.create()
+GET           /addUsuarios                           controllers.UserController.createUser()
+POST          /addUsuarios                           controllers.UserController.formUser()
+
 #Modificar datos de un usuario
 PUT           /usuarios/:id                          controllers.UserController.modify(id: Long)
 #Obtener reservas de un usuario
@@ -157,6 +160,12 @@ POST          /estaciones/:id/bicicletas             controllers.EstacionControl
 #PUT           /vehiculos/{id}                        controllers.VehiculoController.agregarDatosVehiculo(id : Long)
 
 #GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
+
+#=========================================================================================================
+#Mapa
+#=========================================================================================================
+#Dibuja el mapa con los mobibuses actuales
+GET            /mapa                                  controllers.MapController.createMap()
 
 #POST /vehiculos/{id}/trayectos agregarTrayecto
 # Map static resources from the /public folder to the /assets URL path

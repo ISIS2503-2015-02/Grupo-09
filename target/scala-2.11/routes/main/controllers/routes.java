@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Dev/Grupo-09/conf/routes
-// @DATE:Wed Sep 16 21:15:05 COT 2015
+// @DATE:Tue Oct 13 10:18:34 COT 2015
 
 package controllers;
 
@@ -18,6 +18,7 @@ public class routes {
   public static final controllers.ReverseVcubController VcubController = new controllers.ReverseVcubController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseMoviBusController MoviBusController = new controllers.ReverseMoviBusController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseDriverController DriverController = new controllers.ReverseDriverController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseMapController MapController = new controllers.ReverseMapController(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
     
@@ -30,6 +31,7 @@ public class routes {
     public static final controllers.javascript.ReverseVcubController VcubController = new controllers.javascript.ReverseVcubController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseMoviBusController MoviBusController = new controllers.javascript.ReverseMoviBusController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseDriverController DriverController = new controllers.javascript.ReverseDriverController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseMapController MapController = new controllers.javascript.ReverseMapController(RoutesPrefix.byNamePrefix());
   }
 
 }

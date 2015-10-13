@@ -186,22 +186,34 @@
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m(Server started, use Ctrl+D to stop and go back to the console...)[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 23 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:8: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">[0m
-[0m[[31merror[0m] [0m                                                                          ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:9: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">[0m
-[0m[[31merror[0m] [0m                                                                                ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:10: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>[0m
-[0m[[31merror[0m] [0m                                             ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
+[0m[[0minfo[0m] [0mCompiling 6 Scala sources and 1 Java source to C:\Dev\Grupo-09\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\conductores.scala.html:216: value getId_conductor is not a member of java.util.List[models.Driver][0m
+[0m[[31merror[0m] [0m                                    <td>@conductores.getHomePhone()</td>[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\conductores.scala.html:217: value getFullName is not a member of java.util.List[models.Driver][0m
+[0m[[31merror[0m] [0m                                    <td>@conductores.getMobilePhone()</td>[0m
+[0m[[31merror[0m] [0m                                           ^[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\conductores.scala.html:218: value getDocumentNumber is not a member of java.util.List[models.Driver][0m
+[0m[[31merror[0m] [0m                                    <td>@conductores.getAddress()</td>[0m
+[0m[[31merror[0m] [0m                                         ^[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\conductores.scala.html:220: value getHomePhone is not a member of java.util.List[models.Driver][0m
+[0m[[31merror[0m] [0m                                }[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\conductores.scala.html:222: value getMobilePhone is not a member of java.util.List[models.Driver][0m
+[0m[[31merror[0m] [0m                            </table>[0m
+[0m[[31merror[0m] [0m          ^[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\conductores.scala.html:224: value getAddress is not a member of java.util.List[models.Driver][0m
+[0m[[31merror[0m] [0m                    </div>[0m
+[0m[[31merror[0m] [0m                  ^[0m
+[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\mainBody.scala.html:4: not found: value theme[0m
+[0m[[31merror[0m] [0m@theme{[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m7 errors found[0m
 [0m[[31merror[0m] [0mapplication - [0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6nfakn95a - Internal server error, for (GET) [/] ->[0m
+[0m[[0minfo[0m] [0m! @6nki4og65 - Internal server error, for (GET) [/] ->[0m
 [0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value versioned is not a member of controllers.ReverseAssets][0m
+[0m[[0minfo[0m] [0mplay.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value getId_conductor is not a member of java.util.List[models.Driver]][0m
 [0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na][0m
@@ -212,32 +224,32 @@
 [0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.6.jar:na][0m
 [0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na][0m
 [0m[[0minfo[0m] [0m	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na][0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 23 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:8: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">[0m
-[0m[[31merror[0m] [0m                                                                          ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:9: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">[0m
-[0m[[31merror[0m] [0m                                                                                ^[0m
-[0m[[31merror[0m] [0mC:\Dev\Grupo-09\app\views\main.scala.html:10: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>[0m
-[0m[[31merror[0m] [0m                                             ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
 [0m[[31merror[0m] [0mapplication - [0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6nfakne27 - Internal server error, for (GET) [/] ->[0m
+[0m[[0minfo[0m] [0m! @6nki5lofb - Internal server error, for (GET) [/] ->[0m
 [0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value versioned is not a member of controllers.ReverseAssets][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.pickling.functions$.unpickle(functions.scala:11) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104) ~[na:na][0m
-[0m[[0minfo[0m] [0m	at sbt.protocol.BuildValue.value(Values.scala:11) ~[na:na][0m
+[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[TimeoutException: Futures timed out after [300000 milliseconds]]][0m
+[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.Server$class.logExceptionAndGetResult$1(Server.scala:50) [play-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:59) [play-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.Server$$anonfun$getHandlerFor$4.apply(Server.scala:57) [play-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at scala.util.Either$RightProjection.flatMap(Either.scala:522) [scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.core.server.Server$class.getHandlerFor(Server.scala:57) [play-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:33) [play-netty-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$8.apply(PlayDefaultUpstreamHandler.scala:139) [play-netty-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$8.apply(PlayDefaultUpstreamHandler.scala:139) [play-netty-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0mCaused by: java.util.concurrent.TimeoutException: Futures timed out after [300000 milliseconds][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:223) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Await$$anonfun$result$1.apply(package.scala:190) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.Await$.result(package.scala:190) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at play.forkrun.ForkRun$$anonfun$askForReload$1.apply(ForkRun.scala:127) ~[na:na][0m
+[0m[[0minfo[0m] [0m	at play.forkrun.ForkRun$$anonfun$askForReload$1.apply(ForkRun.scala:125) ~[na:na][0m
+[0m[[0minfo[0m] [0m	at play.runsupport.Reloader.reload(Reloader.scala:305) ~[na:na][0m
+[0m[[0minfo[0m] [0m	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:113) ~[play-server_2.11-2.4.2.jar:2.4.2][0m
+[0m[[0minfo[0m] [0m	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:111) ~[play-server_2.11-2.4.2.jar:2.4.2][0m
 [0m[[0minfo[0m] [0mStopping Play fork run ...[0m
 [0m[[0minfo[0m] [0mJVM exiting, shutting down Play fork run ...[0m
 [0m[[0minfo[0m] [0mPlay fork run already stopped ...[0m

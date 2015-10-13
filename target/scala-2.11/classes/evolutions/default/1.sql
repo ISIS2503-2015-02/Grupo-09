@@ -29,7 +29,7 @@ create table driver (
 create table emergencia (
   id_emergencia             varchar(255) not null,
   emergency_type            integer,
-  emergency_date            varchar(255),
+  emergency_date            timestamp,
   comments                  varchar(255),
   place                     varchar(255),
   emergency_level           varchar(255),
@@ -61,6 +61,12 @@ create table movi_bus_vehiculo (
   constraint uq_movi_bus_vehiculo_id_emergenc unique (id_emergencia),
   constraint uq_movi_bus_vehiculo_id_trayecto unique (id_trayecto),
   constraint pk_movi_bus_vehiculo primary key (id_vehiculo))
+;
+
+create table posicion (
+  id_vehiculo               varchar(255),
+  longitud                  double,
+  latitud                   double)
 ;
 
 create table reserva (
@@ -185,6 +191,8 @@ drop table if exists emergencia;
 drop table if exists estacion;
 
 drop table if exists movi_bus_vehiculo;
+
+drop table if exists posicion;
 
 drop table if exists reserva;
 

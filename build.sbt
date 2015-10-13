@@ -28,5 +28,5 @@ resolvers += Resolver.url("Typesafe Ivy releases", url("https://repo.typesafe.co
 routesGenerator := InjectedRoutesGenerator
 
 
-fork in run := true
+fork in run := false
 offline:=true

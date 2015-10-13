@@ -7,6 +7,7 @@ import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.tranvias;
 
 import java.util.List;
 
@@ -38,8 +39,8 @@ public class TranviaVehController extends VehiculoController {
     }
 
     public Result readAll() {
-        List<TranviaVehiculo> tranvias = TranviaVehiculo.finder.all();
-        return ok(Json.toJson(tranvias));
+        List<TranviaVehiculo> listaTranvias = TranviaVehiculo.finder.all();
+        return ok(tranvias.render(listaTranvias));
     }
 
     public Result readTranvia(Long idTranvia) {
