@@ -2,13 +2,18 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+import models.Driver;
 import models.Estacion;
 import models.User;
 import models.Vcub;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.addConductores;
+import views.html.addEstaciones;
+import views.html.estaciones;
 
 import java.util.List;
 
@@ -16,6 +21,21 @@ import java.util.List;
  * Created by USER on 18/08/2015.
  */
 public class EstacionController extends Controller {
+
+
+    public Result formEstacion(){
+        Form<Estacion> form = Form.form(Estacion.class);
+        if(form.hasErrors()){
+            return badRequest(addEstaciones.render(form));
+        }
+        Estacion nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.EstacionController.readAll());
+    }
+
+    public Result createEstacion(){
+        return ok(addEstaciones.render(Form.form(Estacion.class)));
+    }
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create(){
@@ -27,7 +47,7 @@ public class EstacionController extends Controller {
 
     public Result readAll() {
         List<Estacion> stations = new Model.Finder(Estacion.class).all();
-        return ok(Json.toJson(stations));
+        return ok(estaciones.render(stations));
     }
 
     @BodyParser.Of(BodyParser.Json.class)

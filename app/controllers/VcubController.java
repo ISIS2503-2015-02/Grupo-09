@@ -4,10 +4,13 @@ import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import models.Vcub;
 import models.User;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.addVCubs;
+import views.html.vcubs;
 
 import java.util.List;
 
@@ -17,19 +20,34 @@ import java.util.List;
  */
 public class VcubController extends VehiculoController{
 
+
+    public Result formVCub(){
+        Form<Vcub> form = Form.form(Vcub.class);
+        if(form.hasErrors()){
+            return badRequest(addVCubs.render(form));
+        }
+        Vcub nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.VcubController.readAll());
+    }
+
+    public Result createVcub(){
+        return ok(addVCubs.render(Form.form(Vcub.class)));
+    }
+
     @BodyParser.Of(BodyParser.Json.class)
     public Result create(){
         JsonNode j = Controller.request().body().asJson();
         Vcub vcub = Vcub.bind(j);
         vcub.save();
 
-        Vcub lastVcub = (Vcub) new Model.Finder(User.class).byId(vcub.getIdCvubs());
+        Vcub lastVcub = (Vcub) new Model.Finder(User.class).byId(vcub.getIdVcub());
         return ok(Json.toJson(lastVcub));
     }
 
     public Result readAll() {
         List<Vcub> Vcubs = new Model.Finder(Vcub.class).all();
-        return ok(Json.toJson(Vcubs));
+        return ok(vcubs.render(Vcubs));
     }
 
     public Result read(Long id) {
@@ -46,7 +64,7 @@ public class VcubController extends VehiculoController{
         JsonNode j = Controller.request().body().asJson();
         Vcub anterior = (Vcub) Vcub.finder.byId(id);
         Vcub update = Vcub.bind(j);
-        if(anterior!=null && update!=null && anterior.getIdCvubs()==update.getIdCvubs())
+        if(anterior!=null && update!=null && anterior.getIdVcub()==update.getIdVcub())
         {
             anterior.delete();
             update.save();

@@ -50,10 +50,6 @@ public class MapController extends Controller {
             posiciones.add(p);
         }
 
-        String respuesta = "data("+Json.toJson(posiciones)+")";
-        respuesta = respuesta.replace("[","");
-        respuesta = respuesta.replace("]","");
-        //return ok(respuesta);
         return ok(map.render(posiciones));
     }
 }

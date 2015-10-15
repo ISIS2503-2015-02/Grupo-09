@@ -57,12 +57,12 @@ public class Vcub extends Model
     // Métodos
     //------------------------------------------------------------------------
 
-    public Long getIdCvubs( )
+    public Long getIdVcub( )
     {
         return id_vcub;
     }
 
-    public void setIdCvubs( Long idCvubs )
+    public void setIdVcub( Long idCvubs )
     {
         this.id_vcub = idCvubs;
     }

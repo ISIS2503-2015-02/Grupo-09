@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Dev/Grupo-09/conf/routes
-// @DATE:Tue Oct 13 10:18:34 COT 2015
+// @DATE:Wed Oct 14 10:38:15 COT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:172
+  // @LINE:179
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:172
+    // @LINE:179
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -61,20 +61,20 @@ package controllers {
   
   }
 
-  // @LINE:131
+  // @LINE:136
   class ReverseTrayectoController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:132
+    // @LINE:137
     def create(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "trayectos")
     }
   
-    // @LINE:131
+    // @LINE:136
     def readAll(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "trayectos")
@@ -82,44 +82,50 @@ package controllers {
   
   }
 
-  // @LINE:137
+  // @LINE:142
   class ReverseEstacionController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:137
+    // @LINE:142
     def readAll(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "estaciones")
     }
   
-    // @LINE:147
+    // @LINE:154
     def alquilarBicicleta(id:Long, id2:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "estaciones/" + implicitly[PathBindable[Long]].unbind("id", id) + "/bicicletas/" + implicitly[PathBindable[Long]].unbind("id2", id2))
     }
   
-    // @LINE:141
-    def create(): Call = {
+    // @LINE:147
+    def formEstacion(): Call = {
       import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "estaciones")
+      Call("POST", _prefix + { _defaultPrefix } + "addEstaciones")
     }
   
-    // @LINE:149
+    // @LINE:146
+    def createEstacion(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "addEstaciones")
+    }
+  
+    // @LINE:156
     def devolverBicicleta(id:Long, id2:Long): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "estaciones/" + implicitly[PathBindable[Long]].unbind("id", id) + "/bicicletas" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id2", id2)))))
     }
   
-    // @LINE:143
+    // @LINE:150
     def modificarEstacion(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "estaciones/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:139
+    // @LINE:144
     def readVcubsEstacion(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "estaciones/" + implicitly[PathBindable[Long]].unbind("id", id))
@@ -212,28 +218,34 @@ package controllers {
     }
 
   
-    // @LINE:112
-    def modify(id:Long): Call = {
-      import ReverseRouteContext.empty
-      Call("PUT", _prefix + { _defaultPrefix } + "vcubs/" + implicitly[PathBindable[Long]].unbind("id", id))
-    }
-  
-    // @LINE:110
-    def create(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "vcubs")
-    }
-  
     // @LINE:106
     def readAll(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vcubs")
     }
   
+    // @LINE:114
+    def modify(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("PUT", _prefix + { _defaultPrefix } + "vcubs/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:111
+    def formVCub(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "addVCubs")
+    }
+  
     // @LINE:108
     def read(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "vcubs/" + implicitly[PathBindable[Long]].unbind("id", id))
+    }
+  
+    // @LINE:110
+    def createVcub(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "addVCubs")
     }
   
   }
@@ -340,14 +352,14 @@ package controllers {
   
   }
 
-  // @LINE:168
+  // @LINE:175
   class ReverseMapController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:168
+    // @LINE:175
     def createMap(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "mapa")

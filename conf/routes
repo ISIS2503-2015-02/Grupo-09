@@ -107,7 +107,9 @@ GET           /vcubs                                 controllers.VcubController.
 #Obtener los datos de un vcubs
 GET           /vcubs/:id                             controllers.VcubController.read(id: Long)
 #Registrar un nuevo vcubs
-POST          /vcubs                                 controllers.VcubController.create()
+GET           /addVCubs                              controllers.VcubController.createVcub()
+POST          /addVCubs                              controllers.VcubController.formVCub()
+
 #Modificar datos de un vcubs
 PUT           /vcubs/:id                             controllers.VcubController.modify(id: Long)
 #Enviar los datos del vcubs (GPS, hora�)
@@ -128,6 +130,9 @@ PUT           /vcubs/:id                             controllers.VcubController.
 
 
 #TRAYECTOS
+#Crear un trayecto nuevo
+
+
 GET           /trayectos                             controllers.TrayectoController.readAll()
 POST          /trayectos                             controllers.TrayectoController.create()
 
@@ -138,7 +143,9 @@ GET           /estaciones                            controllers.EstacionControl
 #Obtener los datos de una estaci�n
 GET           /estaciones/:id                        controllers.EstacionController.readVcubsEstacion(id: Long)
 #Registrar una nueva estaci�n
-POST          /estaciones                            controllers.EstacionController.create()
+GET           /addEstaciones                         controllers.EstacionController.createEstacion()
+POST          /addEstaciones                         controllers.EstacionController.formEstacion()
+
 #Modificar datos de una estaci�n
 PUT           /estaciones/:id                        controllers.EstacionController.modificarEstacion(id : Long)
 #Obtener las bicicletas que se encuentran en una estaci�n
