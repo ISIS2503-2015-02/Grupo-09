@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Dev/Grupo-09/conf/routes
-// @DATE:Wed Oct 14 10:38:15 COT 2015
+// @SOURCE:C:/Users/template/Documents/TBC2/SCALA/conf/routes
+// @DATE:Thu Oct 15 12:52:27 COT 2015
 
 
 package router {
