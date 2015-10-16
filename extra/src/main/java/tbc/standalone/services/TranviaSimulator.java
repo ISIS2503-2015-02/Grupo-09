@@ -11,6 +11,7 @@ import tbc.standalone.models.TranviaVehiculo;
 
 import java.lang.reflect.Type;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * Created by ryogi on 17/09/15.
@@ -39,24 +40,23 @@ public class TranviaSimulator extends Service {
                 });
 
                 Gson gson = builder.create();
-                Datos d = null;
 
-                long latitud = (long) 4.255556;
-                long longitud = (long) 78.255556;
-                double kil = 25.6;
+                Random r = new Random();
+
+                double latitud = (r.nextInt(5000000 - 4000000) + 4000000) * 0.000001;
+                double longitud = (r.nextInt(75000000 - 74000000) + 74000000) * 0.000001;
 
                 while(latitud < 560000) {
-                    d = new Datos();
+                    Datos d = new Datos();
 
                     d.setGpsAltitud(String.valueOf(latitud));
                     d.setGpsAltitud(String.valueOf(longitud));
                     d.setHoraMedicion(new Date(System.currentTimeMillis()));
                     d.setSensorChoque(false);
                     d.setSensorTermico(60);
-                    d.setKilometraje(kil);
+                    d.setKilometraje((r.nextInt(990 - 100) + 100 * 0.1));
                     latitud += 0.00001;
                     longitud += 0.00001;
-                    kil++;
 
                     Request.httpPostJsonRequest(new StringEntity(gson.toJson(d, Datos.class).toString()),
                             HttpConstants.HOST_TRANVIA_DATA.replace(":id", String.valueOf(tranvia.getIdVehiculo())));
