@@ -3,10 +3,13 @@ package controllers;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import models.*;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.addConductores;
+import views.html.addMobibuses;
 import views.html.mobibuses;
 
 import java.util.List;
@@ -16,6 +19,20 @@ import java.util.List;
  * Created by USER on 14/08/2015.
  */
 public class MoviBusController extends VehiculoController {
+
+    public Result formMobibus(){
+        Form<MoviBusVehiculo> form = Form.form(MoviBusVehiculo.class);
+        if(form.hasErrors()){
+            return badRequest(addMobibuses.render(form));
+        }
+        MoviBusVehiculo nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.MoviBusController.readAll());
+    }
+
+    public Result createMobiBus(){
+        return ok(addMobibuses.render(Form.form(MoviBusVehiculo.class)));
+    }
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create() {

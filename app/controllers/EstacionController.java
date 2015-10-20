@@ -99,7 +99,7 @@ public class EstacionController extends Controller {
                     prestar.setEstado(Vcub.PRESTADA);
                     prestar.setId_estacion(null);
                     prestar.save();
-                    usuario.setId_vcub_alquilada(prestar.getIdCvubs());
+                    usuario.setId_vcub_alquilada(prestar.getIdVcub());
                     usuario.save();
                     return ok(Json.toJson(prestar));
                 }

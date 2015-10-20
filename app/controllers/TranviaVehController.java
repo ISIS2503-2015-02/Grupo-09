@@ -1,12 +1,16 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import models.MoviBusVehiculo;
 import models.TranviaVehiculo;
 import models.Vehiculo;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.addMobibuses;
+import views.html.addTranvias;
 import views.html.tranvias;
 
 import java.util.List;
@@ -16,6 +20,22 @@ import java.util.List;
  * Created by USER on 14/08/2015.
  */
 public class TranviaVehController extends VehiculoController {
+
+
+    public Result formTranvia(){
+        Form<TranviaVehiculo> form = Form.form(TranviaVehiculo.class);
+        if(form.hasErrors()){
+            return badRequest(addTranvias.render(form));
+        }
+        TranviaVehiculo nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.TranviaVehController.readAll());
+    }
+
+    public Result createTranvia(){
+        return ok(addTranvias.render(Form.form(TranviaVehiculo.class)));
+    }
+
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create() {

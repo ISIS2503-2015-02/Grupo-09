@@ -53,7 +53,9 @@ GET           /mobibuses                             controllers.MoviBusControll
 #Obtener los datos de un mobibus
 GET           /mobibuses/:id                         controllers.MoviBusController.readMovibus(id : Long )
 #Registrar un nuevo mobibus
-POST          /mobibuses                             controllers.MoviBusController.create()
+GET           /addMobibuses                          controllers.MoviBusController.createMobiBus()
+POST          /addMobibuses                          controllers.MoviBusController.formMobibus()
+
 #Modificar datos de un mobibus
 PUT           /mobibuses/:id                         controllers.MoviBusController.putMovibus(id : Long)
 
@@ -79,7 +81,8 @@ GET           /tranvias                              controllers.TranviaVehContr
 #Obtener los datos de un tranvia
 GET           /tranvias/:id                          controllers.TranviaVehController.readTranvia(id: Long)
 #Registrar un nuevo tranvias
-POST          /tranvias                              controllers.TranviaVehController.create()
+GET           /addTranvias                           controllers.TranviaVehController.createTranvia()
+POST          /addTranvias                           controllers.TranviaVehController.formTranvia()
 #Modificar datos de un tranvias
 PUT           /tranvias/:id                          controllers.TranviaVehController.putTranvia(id: Long)
 

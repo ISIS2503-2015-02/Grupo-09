@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="admintbc">
+@(form:Form[TranviaVehiculo])
+
+<html lang="en">
 
 <head>
 
@@ -12,23 +13,28 @@
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href='@routes.Assets.at("css/bootstrap.min.css")'  >
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href='@routes.Assets.at("css/sb-admin.css")' rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href='@routes.Assets.at("css/plugins/morris.css")' rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='@routes.Assets.at("font-awesome/css/font-awesome.min.css")' rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script type="text/javascript" src='@routes.Assets.at("https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")'></script>
+        <script type="text/javascript" src='@routes.Assets.at("https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")'></script>
     <![endif]-->
 
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/AngularControllers/app.js"></script>
+    <script type="text/javascript" src='@routes.Assets.at("js/angular.min.js")'></script>
+    <script type="text/javascript" src='@routes.Assets.at("js/AngularControllers/app.js")'></script>
+
+    <script type="text/javascript" src='@routes.Assets.at("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")'></script>
 
 </head>
 
@@ -36,6 +42,8 @@
 
     <!-- Modal Add Driver -->
 
+
+    <!-- Start -->
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -48,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="indexAdmin.html">TBC Admin</a>
+                <a class="navbar-brand" href="/">TBC Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -75,16 +83,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="indexAdmin.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#mob" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Mobibuses <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mob" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-mobibuses.html">Agregar</a>
+                                <a href="/addMobibuses">Agregar</a>
                             </li>
                             <li>
-                                <a href="mobibuses.html">Ver</a>
+                                <a href="/mobibuses">Ver</a>
                             </li>
                         </ul>
                     </li>
@@ -92,10 +100,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#tran" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Tranvias <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="tran" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-tranvias.html">Agregar</a>
+                                <a href="/addTranvias">Agregar</a>
                             </li>
                             <li>
-                                <a href="tranvias.html">Ver</a>
+                                <a href="/tranvias">Ver</a>
                             </li>
                         </ul>
                     </li>
@@ -103,10 +111,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#vcub" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> VCubs <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="vcub" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-vcubs.html">Agregar</a>
+                                <a href="/addVCubs">Agregar</a>
                             </li>
                             <li>
-                                <a href="vcubs.html">Ver</a>
+                                <a href="/vcubs">Ver</a>
                             </li>
                         </ul>
                     </li>
@@ -114,10 +122,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#driv" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Conductores <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="driv" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-drivers.html">Agregar</a>
+                                <a href="/addConductores">Agregar</a>
                             </li>
                             <li>
-                                <a href="conductores.html">Ver</a>
+                                <a href="/conductor">Ver</a>
                             </li>
                         </ul>
                     </li>
@@ -125,10 +133,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#user" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="user" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-usuarios.html">Agregar</a>
+                                <a href="/addUsuarios">Agregar</a>
                             </li>
                             <li>
-                                <a href="usuarios.html">Ver</a>
+                                <a href="/usuarios">Ver</a>
                             </li>
                         </ul>
                     </li>
@@ -136,10 +144,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#est" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Estaciones <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="est" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-estaciones.html">Agregar</a>
+                                <a href="/addEstaciones">Agregar</a>
                             </li>
                             <li>
-                                <a href="estaciones.html">Ver</a>
+                                <a href="/estaciones">Ver</a>
                             </li>
                         </ul>
                     </li>
@@ -147,15 +155,15 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#tray" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Trayectos <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="tray" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-trayectos.html">Agregar</a>
+                                <a href="/addTrayectos">Agregar</a>
                             </li>
                             <li>
-                                <a href="trayectos.html">Ver</a>
+                                <a href="/trayectos">Ver</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="map.html"><i class="fa fa-fw fa-map-marker"></i> Mapa</a>
+                        <a href="/mapa"><i class="fa fa-fw fa-map-marker"></i> Mapa</a>
                     </li>
                 </ul>
             </div>
@@ -170,21 +178,97 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Tranvias
+                            Mobibuses
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="indexAdmin.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-table"></i> Tranvias
+                                <i class="fa fa-table"></i> Agregar Mobibus
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <tranvias></tranvias>
+                @helper.form(routes.TranviaVehController.formTranvia){
+
+                    @if(form.hasErrors) {
+                        @for((key, value) <- form.errors) {
+                            <div class="alert alert-block alert-danger fade in">
+                                @for( err <- value){
+                                    @if(err.message.equals("error.required")){
+                                        El atributo @key es requerido
+                                    } else {
+                                        @err.message
+                                    }
+                                }
+                            </div>
+                        }
+                    }
+
+                <form name="addDriver" ng-submit="addTranvia()" ng-controller="driverCtrl" novalidate>
+
+                    <div class="container">
+                        <div class="content">
+                            <div class="body">
+                                <!--<h1 style="color:black">...</h1>-->
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="modelo" class="form-control" id="modelo" type="text" placeholder="Modelo" value="">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                                    <input name="fecha_compra" class="form-control" id="fecha_compra" type="text" placeholder="Fecha compra">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                    <input name="estado" class="form-control" id="estado" type="text" placeholder="Estado" value="">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input name="tipo_vehiculo" class="form-control" id="tipo_vehiculo" type="text" placeholder="Tipo">
+                                </div>
+
+                                <!--
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input name="id_revision" class="form-control" id="id_revision" type="text" placeholder="Revisión">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input name="id_datos" class="form-control" id="id_datos" type="text" placeholder="Datos">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input name="id_emergencia" class="form-control" id="id_emergencia" type="text" placeholder="Emergencia">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 25px">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                    <input name="id_trayecto" class="form-control" id="id_trayecto" type="text" placeholder="Trayecto">
+                                </div>
+                                -->
+                                <!-- Final Statement -->
+
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+                                <button name="addTranvia" class="btn btn-primary" id="addTranvia" ng-controller="driverCtrl">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                }
 
             </div>
             <!-- /.container-fluid -->
@@ -196,10 +280,10 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src='@routes.Assets.at("js/jquery.js")'></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='@routes.Assets.at("js/bootstrap.min.js")'></script>
 
 </body>
 

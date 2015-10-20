@@ -2,6 +2,7 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+import models.Estacion;
 import models.Vcub;
 import models.User;
 import play.data.Form;
@@ -20,11 +21,11 @@ import java.util.List;
  */
 public class VcubController extends VehiculoController{
 
-
     public Result formVCub(){
         Form<Vcub> form = Form.form(Vcub.class);
+        List<Estacion> stations = new Model.Finder(Estacion.class).all();
         if(form.hasErrors()){
-            return badRequest(addVCubs.render(form));
+            return badRequest(addVCubs.render(form,stations));
         }
         Vcub nuevo = form.bindFromRequest().get();
         nuevo.save();
@@ -32,7 +33,8 @@ public class VcubController extends VehiculoController{
     }
 
     public Result createVcub(){
-        return ok(addVCubs.render(Form.form(Vcub.class)));
+        List<Estacion> stations = new Model.Finder(Estacion.class).all();
+        return ok(addVCubs.render(Form.form(Vcub.class),stations));
     }
 
     @BodyParser.Of(BodyParser.Json.class)

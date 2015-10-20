@@ -1,4 +1,4 @@
-@(form:Form[Vcub])
+@(form:Form[Vcub], stations:List[Estacion])
 
 <html lang="en">
 
@@ -95,7 +95,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#mob" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Mobibuses <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="mob" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-mobibuses.html">Agregar</a>
+                                <a href="/addMobibuses">Agregar</a>
                             </li>
                             <li>
                                 <a href="/mobibuses">Ver</a>
@@ -106,7 +106,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#tran" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Tranvias <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="tran" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-tranvias.html">Agregar</a>
+                                <a href="/addTranvias">Agregar</a>
                             </li>
                             <li>
                                 <a href="/tranvias">Ver</a>
@@ -117,7 +117,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#vcub" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> VCubs <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="vcub" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-vcubs.html">Agregar</a>
+                                <a href="/addVCubs">Agregar</a>
                             </li>
                             <li>
                                 <a href="/vcubs">Ver</a>
@@ -128,7 +128,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#driv" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Conductores <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="driv" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-drivers.html">Agregar</a>
+                                <a href="/addConductores">Agregar</a>
                             </li>
                             <li>
                                 <a href="/conductor">Ver</a>
@@ -139,7 +139,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#user" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Usuarios <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="user" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-usuarios.html">Agregar</a>
+                                <a href="/addUsuarios">Agregar</a>
                             </li>
                             <li>
                                 <a href="/usuarios">Ver</a>
@@ -150,7 +150,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#est" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Estaciones <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="est" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-estaciones.html">Agregar</a>
+                                <a href="/addEstaciones">Agregar</a>
                             </li>
                             <li>
                                 <a href="/estaciones">Ver</a>
@@ -161,7 +161,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#tray" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i> Trayectos <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="tray" class="collapse" aria-expanded="false" style="height: 0px;">
                             <li>
-                                <a href="add-trayectos.html">Agregar</a>
+                                <a href="/addTrayectos">Agregar</a>
                             </li>
                             <li>
                                 <a href="/trayectos">Ver</a>
@@ -169,7 +169,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="map.html"><i class="fa fa-fw fa-map-marker"></i> Mapa</a>
+                        <a href="/mapa"><i class="fa fa-fw fa-map-marker"></i> Mapa</a>
                     </li>
                 </ul>
             </div>
@@ -226,10 +226,8 @@
                                 </div>
 
                                 <div>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-                                    <combobox >
-
-                                    </combobox>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="id_estacion" class="form-control" id="estacion" type="text" placeholder="ID Estacion" value="">
                                 </div>
 
                                 <!--
