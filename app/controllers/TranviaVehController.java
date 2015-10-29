@@ -1,12 +1,17 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import models.MoviBusVehiculo;
 import models.TranviaVehiculo;
 import models.Vehiculo;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.Application.addMobibuses;
+import views.html.Application.addTranvias;
+import views.html.Application.tranvias;
 
 import java.util.List;
 
@@ -15,6 +20,22 @@ import java.util.List;
  * Created by USER on 14/08/2015.
  */
 public class TranviaVehController extends VehiculoController {
+
+
+    public Result formTranvia(){
+        Form<TranviaVehiculo> form = Form.form(TranviaVehiculo.class);
+        if(form.hasErrors()){
+            return badRequest(addTranvias.render(form));
+        }
+        TranviaVehiculo nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.TranviaVehController.readAll());
+    }
+
+    public Result createTranvia(){
+        return ok(addTranvias.render(Form.form(TranviaVehiculo.class)));
+    }
+
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create() {
@@ -38,8 +59,8 @@ public class TranviaVehController extends VehiculoController {
     }
 
     public Result readAll() {
-        List<TranviaVehiculo> tranvias = TranviaVehiculo.finder.all();
-        return ok(Json.toJson(tranvias));
+        List<TranviaVehiculo> listaTranvias = TranviaVehiculo.finder.all();
+        return ok(tranvias.render(listaTranvias));
     }
 
     public Result readTranvia(Long idTranvia) {
@@ -78,7 +99,8 @@ public class TranviaVehController extends VehiculoController {
         return agregarTrayecto(id_tranvia, Vehiculo.TRANVIA);
     }
 
-    public Result finalizarTrayectoTranvia (Long id_tranvia, Long id_trayecto) {
+    public Result finalizarTrayectoTranvia (Long id_tranvia, Long id_trayecto)
+    {
         return finalizarUltimoTrayecto(id_tranvia, id_trayecto, Vehiculo.TRANVIA);
     }
 

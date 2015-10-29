@@ -24,23 +24,23 @@ public class User extends Model {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_usuario;
+    public Long idUsuario;
 
-    private String fullName;
+    public String fullName;
 
-    private String document;
+    public String document;
 
-    private String address;
+    public String address;
 
-    private long phoneNumber;
+    public long phoneNumber;
 
-    private long cellphone;
+    public long cellphone;
 
-    private String email;
+    public String email;
 
-    private Long id_vcub_alquilada;
+    public Long id_vcub_alquilada;
 
-    private Long id_ultimaReserva;
+    public Long id_ultimaReserva;
 
 
     //------------------------------------------------------------------------
@@ -70,7 +70,7 @@ public class User extends Model {
 
 
     public Long getId_usuario() {
-        return id_usuario;
+        return idUsuario;
     }
 
     public String getFullName() {
@@ -110,7 +110,7 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
     public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
+        this.idUsuario = id_usuario;
     }
 
     public void setFullName(String fullName) {

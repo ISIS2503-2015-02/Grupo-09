@@ -4,7 +4,7 @@
 
 # Home page
 GET           /                                      controllers.Application.index()
-#GET           /*file                                controllers.Assets.at(path="/public", file)
+#GET          /*file                                controllers.Assets.at(path="/public", file)
 
 ########################################################################################################################
 #
@@ -22,7 +22,8 @@ GET           /                                      controllers.Application.ind
 #Obtener todos los conductores
 GET           /conductor                             controllers.DriverController.read()
 #Crear nuevo conductor
-POST          /conductor                             controllers.DriverController.create()
+GET           /addConductores                           controllers.DriverController.createDriver()
+POST          /addConductores                           controllers.DriverController.formDriver()
 
 
 ##########################################  USUARIOS ################
@@ -31,7 +32,9 @@ GET           /usuarios                              controllers.UserController.
 #Obtener los datos de un usuario
 GET           /usuarios/:id                          controllers.UserController.read(id: Long)
 #Registrar un nuevo usuario
-POST          /usuarios                              controllers.UserController.create()
+GET           /addUsuarios                           controllers.UserController.createUser()
+POST          /addUsuarios                           controllers.UserController.formUser()
+
 #Modificar datos de un usuario
 PUT           /usuarios/:id                          controllers.UserController.modify(id: Long)
 #Obtener reservas de un usuario
@@ -50,23 +53,25 @@ GET           /mobibuses                             controllers.MoviBusControll
 #Obtener los datos de un mobibus
 GET           /mobibuses/:id                         controllers.MoviBusController.readMovibus(id : Long )
 #Registrar un nuevo mobibus
-POST          /mobibuses                             controllers.MoviBusController.create()
+GET           /addMobibuses                          controllers.MoviBusController.createMobiBus()
+POST          /addMobibuses                          controllers.MoviBusController.formMobibus()
+
 #Modificar datos de un mobibus
 PUT           /mobibuses/:id                         controllers.MoviBusController.putMovibus(id : Long)
 
-#Enviar los datos del mobibus (GPS, hora�)
+#Enviar los datos del mobibus (GPS, hora)
 POST          /mobibuses/:id/datos                   controllers.MoviBusController.agregarDatosMovibus(id: Long)
-#Obtener los datos registrados del mobibus (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
+#Obtener los datos registrados del mobibus (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)  ** pueden ser mas rutas**
 GET           /mobibuses/:id/datos                   controllers.MoviBusController.readDatosMovibus(id: Long)
-#Registrar una revisi�n tecnomec�nica
+#Registrar una revisión tecnomecánica
 POST        /mobibuses/:id/revisiones                controllers.MoviBusController.agregarRevisionMovibus(id: Long)
-#Obtener las revisiones tecnomec�nicas del veh�culo
+#Obtener las revisiones tecnomecánicas del vehículo
 GET        /mobibuses/:id/revisiones                 controllers.MoviBusController.readRevisionesMovibus(id: Long)
-#Registrar el inicio de un trayecto o ruta (con la hora, informaci�n del conductor y Ruta esperada)
+#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
 POST        /mobibuses/:id/trayectos                 controllers.MoviBusController.agregarTrayectoMovibus(id: Long)
 #Modificar el registro para poner la hora final del trayecto
 PUT        /mobibuses/:id/trayectos/:id2             controllers.MoviBusController.finalizarTrayectoMovibus(id: Long, id2: Long)
-#Obtener los trayectos de un tranv�a (Para obtener tiempos de conductores y percances
+#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
 GET        /mobibuses/:id/trayectos/                 controllers.MoviBusController.readTrayectosMovibus(id: Long)
 
 
@@ -76,24 +81,25 @@ GET           /tranvias                              controllers.TranviaVehContr
 #Obtener los datos de un tranvia
 GET           /tranvias/:id                          controllers.TranviaVehController.readTranvia(id: Long)
 #Registrar un nuevo tranvias
-POST          /tranvias                              controllers.TranviaVehController.create()
+GET           /addTranvias                           controllers.TranviaVehController.createTranvia()
+POST          /addTranvias                           controllers.TranviaVehController.formTranvia()
 #Modificar datos de un tranvias
 PUT           /tranvias/:id                          controllers.TranviaVehController.putTranvia(id: Long)
 
 
-#Enviar los datos del tranvias (GPS, hora�)
-POST        /tranvias/:id/datos                     controllers.TranviaVehController.agregarDatosMovibus(id: Long)
-#Obtener los datos registrados del tranvias (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
+#Enviar los datos del tranvias (GPS, hora)
+#POST        /tranvias/:id/datos
+#Obtener los datos registrados del tranvias (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)     ** pueden ser mas rutas**
 
-#Registrar una revisi�n tecnomec�nica
+#Registrar una revisión tecnomecánica
 #POST        /tranvias/:id/revisiones
-#Obtener las revisiones tecnomec�nicas del veh�culo
+#Obtener las revisiones tecnomecánicas del vehículo
 #GET        /tranvias/:id/revisiones
-#Registrar el inicio de un trayecto o ruta (con la hora, informaci�n del conductor y Ruta esperada)
+#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
 #POST        /tranvias/:id/trayectos
 #Modificar el registro para poner la hora final del trayecto
 #PUT        /tranvias/:id/trayectos/:id2
-#Obtener los trayectos de un tranv�a (Para obtener tiempos de conductores y percances
+#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
 #GET        /tranvias/:id/trayectos/
 
 
@@ -104,27 +110,32 @@ GET           /vcubs                                 controllers.VcubController.
 #Obtener los datos de un vcubs
 GET           /vcubs/:id                             controllers.VcubController.read(id: Long)
 #Registrar un nuevo vcubs
-POST          /vcubs                                 controllers.VcubController.create()
+GET           /addVCubs                              controllers.VcubController.createVcub()
+POST          /addVCubs                              controllers.VcubController.formVCub()
+
 #Modificar datos de un vcubs
 PUT           /vcubs/:id                             controllers.VcubController.modify(id: Long)
-#Enviar los datos del vcubs (GPS, hora�)
+#Enviar los datos del vcubs (GPS, hora)
 #GET        /vcubs
-#Obtener los datos registrados del vcubs (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)
+#Obtener los datos registrados del vcubs (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)
 
-#Registrar una revisi�n tecnomec�nica
+#Registrar una revisión tecnomecóánica
 #POST        /vcubs/:id/revisiones
-#Obtener las revisiones tecnomec�nicas del veh�culo
+#Obtener las revisiones tecnomecánicas del vehículo
 #GET        /vcubs/:id/revisiones
-#Registrar el inicio de un trayecto o ruta (con la hora, informaci�n del conductor y Ruta esperada)
+#Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)
 #POST        /vcubs/:id/trayectos
 #Modificar el registro para poner la hora final del trayecto
 #PUT        /vcubs/:id/trayectos/:id2
-#Obtener los trayectos de un tranv�a (Para obtener tiempos de conductores y percances
+#Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances
 #GET        /vcubs/:id/trayectos/
 
 
 
 #TRAYECTOS
+#Crear un trayecto nuevo
+
+
 GET           /trayectos                             controllers.TrayectoController.readAll()
 POST          /trayectos                             controllers.TrayectoController.create()
 
@@ -132,17 +143,19 @@ POST          /trayectos                             controllers.TrayectoControl
 ################################################################### ESTACIONES #############################################################
 #Obtener todas las estaciones del sistema
 GET           /estaciones                            controllers.EstacionController.readAll()
-#Obtener los datos de una estaci�n
+#Obtener los datos de una estación
 GET           /estaciones/:id                        controllers.EstacionController.readVcubsEstacion(id: Long)
-#Registrar una nueva estaci�n
-POST          /estaciones                            controllers.EstacionController.create()
-#Modificar datos de una estaci�n
+#Registrar una nueva estación
+GET           /addEstaciones                         controllers.EstacionController.createEstacion()
+POST          /addEstaciones                         controllers.EstacionController.formEstacion()
+
+#Modificar datos de una estación
 PUT           /estaciones/:id                        controllers.EstacionController.modificarEstacion(id : Long)
-#Obtener las bicicletas que se encuentran en una estaci�n
+#Obtener las bicicletas que se encuentran en una estación
 #GET     /estaciones/:id/bicicletas   controllers.EstacionController.
-#Prestar una bicicleta en una estaci�n
+#Prestar una bicicleta en una estación
 DELETE        /estaciones/:id/bicicletas/:id2        controllers.EstacionController.alquilarBicicleta(id : Long, id2 :  Long)
-#Entregar una bicicleta en una estaci�n
+#Entregar una bicicleta en una estación
 POST          /estaciones/:id/bicicletas             controllers.EstacionController.devolverBicicleta(id : Long, id2 :  Long)
 
 
@@ -157,6 +170,12 @@ POST          /estaciones/:id/bicicletas             controllers.EstacionControl
 #PUT           /vehiculos/{id}                        controllers.VehiculoController.agregarDatosVehiculo(id : Long)
 
 #GET /vehiculos/{id}/datos controllers.VehiculoController.readDatosVehiculo(id : String)
+
+#=========================================================================================================
+#Mapa
+#=========================================================================================================
+#Dibuja el mapa con los mobibuses actuales
+GET            /mapa                                  controllers.MapController.createMap()
 
 #POST /vehiculos/{id}/trayectos agregarTrayecto
 # Map static resources from the /public folder to the /assets URL path

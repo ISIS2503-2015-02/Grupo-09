@@ -13,8 +13,8 @@ import java.util.Date;
  * Created by Usuario on 17/08/2015.
  */
 @Entity
-public class Trayecto extends Model
-{
+public class Trayecto extends Model{
+
     //------------------------------------------------------------------------
     //Finder
     //------------------------------------------------------------------------

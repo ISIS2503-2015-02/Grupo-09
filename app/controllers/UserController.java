@@ -3,10 +3,14 @@ package controllers;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import models.*;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.Application.addConductores;
+import views.html.Application.addUsuarios;
+import views.html.Application.usuarios;
 
 import java.util.List;
 
@@ -15,6 +19,21 @@ import java.util.List;
  * Created by USER on 14/08/2015.
  */
 public class UserController extends Controller{
+
+
+    public Result formUser(){
+        Form<User> form = Form.form(User.class);
+        if(form.hasErrors()){
+            return badRequest(addUsuarios.render(form));
+        }
+        User nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.UserController.readAll());
+    }
+
+    public Result createUser(){
+        return ok(addUsuarios.render(Form.form(User.class)));
+    }
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create(){
@@ -28,7 +47,7 @@ public class UserController extends Controller{
 
     public Result readAll() {
         List<User> users = new Model.Finder(User.class).all();
-        return ok(Json.toJson(users));
+        return ok(usuarios.render(users));
     }
 
     public Result read(Long id) {

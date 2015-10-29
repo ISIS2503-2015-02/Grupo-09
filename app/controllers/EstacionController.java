@@ -2,13 +2,18 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+import models.Driver;
 import models.Estacion;
 import models.User;
 import models.Vcub;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.Application.addConductores;
+import views.html.Application.addEstaciones;
+import views.html.Application.estaciones;
 
 import java.util.List;
 
@@ -16,6 +21,21 @@ import java.util.List;
  * Created by USER on 18/08/2015.
  */
 public class EstacionController extends Controller {
+
+
+    public Result formEstacion(){
+        Form<Estacion> form = Form.form(Estacion.class);
+        if(form.hasErrors()){
+            return badRequest(addEstaciones.render(form));
+        }
+        Estacion nuevo = form.bindFromRequest().get();
+        nuevo.save();
+        return redirect(routes.EstacionController.readAll());
+    }
+
+    public Result createEstacion(){
+        return ok(addEstaciones.render(Form.form(Estacion.class)));
+    }
 
     @BodyParser.Of(BodyParser.Json.class)
     public Result create(){
@@ -27,7 +47,7 @@ public class EstacionController extends Controller {
 
     public Result readAll() {
         List<Estacion> stations = new Model.Finder(Estacion.class).all();
-        return ok(Json.toJson(stations));
+        return ok(estaciones.render(stations));
     }
 
     @BodyParser.Of(BodyParser.Json.class)
@@ -75,11 +95,11 @@ public class EstacionController extends Controller {
                 if(disponibles.size()>0)
                 {
                     prestar=disponibles.get(0);
-                    prestar.setIdCliente(idCliente);
+                    prestar.setId_cliente(idCliente);
                     prestar.setEstado(Vcub.PRESTADA);
-                    prestar.setIdEstacion(null);
+                    prestar.setId_estacion(null);
                     prestar.save();
-                    usuario.setId_vcub_alquilada(prestar.getIdCvubs());
+                    usuario.setId_vcub_alquilada(prestar.getIdVcub());
                     usuario.save();
                     return ok(Json.toJson(prestar));
                 }
@@ -107,7 +127,7 @@ public class EstacionController extends Controller {
         if(null!=usuario && null!= usuario.getId_vcub_alquilada() && estacion != null) {
             Vcub alquilada = (Vcub) Vcub.finder.byId(usuario.getId_usuario());
             if (estacion.getVcubs().size() < estacion.getVcubsCapacity()) {
-                alquilada.setIdEstacion(idEstacionEntrega);
+                alquilada.setId_estacion(idEstacionEntrega);
                 usuario.setId_vcub_alquilada(null);
                 alquilada.setEstado(Vcub.LIBRE);
                 alquilada.save();

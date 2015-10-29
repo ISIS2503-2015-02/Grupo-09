@@ -63,6 +63,12 @@ create table movi_bus_vehiculo (
   constraint pk_movi_bus_vehiculo primary key (id_vehiculo))
 ;
 
+create table posicion (
+  id_vehiculo               varchar(255),
+  longitud                  double,
+  latitud                   double)
+;
+
 create table reserva (
   id_reserva                bigint not null,
   hora_reserva              timestamp,
@@ -185,6 +191,8 @@ drop table if exists emergencia;
 drop table if exists estacion;
 
 drop table if exists movi_bus_vehiculo;
+
+drop table if exists posicion;
 
 drop table if exists reserva;
 

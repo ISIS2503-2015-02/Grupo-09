@@ -52,7 +52,7 @@ public class VehiculoController extends Controller {
             if(vehiculoEncontrado!=null)
             {
                 Datos datosRecibidos = Datos.bind(j);
-                datosRecibidos.setId_vehiculo(vehiculoEncontrado.getIdVehiculo());
+                datosRecibidos.setId_vehiculo(vehiculoEncontrado.getId_vehiculo());
                 datosRecibidos.save();
                 vehiculoEncontrado.setUltimosDatos(datosRecibidos);
                 vehiculoEncontrado.save();
@@ -110,7 +110,7 @@ public class VehiculoController extends Controller {
         if (vehiculoEncontrado != null && conductorEncontrado != null) {
             if(vehiculoEncontrado.getUltimoTrayecto()==null || vehiculoEncontrado.getUltimoTrayecto().getEstado()==Trayecto.FINALIZADO)
             {
-                trayectoRecibido.setId_vehiculo(vehiculoEncontrado.getIdVehiculo());
+                trayectoRecibido.setId_vehiculo(vehiculoEncontrado.getId_vehiculo());
                 trayectoRecibido.setId_conductor(conductorEncontrado.getId_conductor());
                 conductorEncontrado.setUltimoTrayecto(trayectoRecibido);
                 vehiculoEncontrado.setUltimoTrayecto(trayectoRecibido);

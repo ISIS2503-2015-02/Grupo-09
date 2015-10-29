@@ -1,8 +1,14 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import javax.annotation.Nullable;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import play.libs.Json;
@@ -46,15 +52,15 @@ public class Vehiculo extends Model {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long idVehiculo;
+    private Long id_vehiculo;
 
     private String modelo;
 
-    private Date fechaCompra;
+    private Date fecha_compra;
 
     private int estado;
 
-    private int tipoVehiculo;
+    private int tipo_vehiculo;
 
     @OneToOne
     @JoinColumn(name = "id_revision")
@@ -80,18 +86,18 @@ public class Vehiculo extends Model {
     public Vehiculo()
     {
         modelo="";
-        fechaCompra =null;
+        fecha_compra=null;
         estado= DISPONIBLE;
         kilomDesdeUltimaReparacion=0;
     }
 
-    public Vehiculo(Long id, String modelo, Date fechaCompra, int estado,int tipoVehiculo)
+    public Vehiculo(Long id, String modelo, Date fecha_compra, int estado,int tipoVehiculo)
     {
-        this.idVehiculo = id;
+        this.id_vehiculo = id;
         this.modelo = modelo;
-        this.fechaCompra = fechaCompra;
+        this.fecha_compra = fecha_compra;
         this.estado=estado;
-        this.tipoVehiculo = tipoVehiculo;
+        this.tipo_vehiculo=tipoVehiculo;
         ultimaRevision = null;
         ultimosDatos = null;
         ultimaEmergencia = null;
@@ -106,12 +112,12 @@ public class Vehiculo extends Model {
         this.modelo = modelo;
     }
 
-    public Date getFechaCompra() {
-        return fechaCompra;
+    public Date getFecha_compra() {
+        return fecha_compra;
     }
 
-    public void setFechaCompra(Date fechaCompra) {
-        this.fechaCompra = fechaCompra;
+    public void setFecha_compra(Date fecha_compra) {
+        this.fecha_compra = fecha_compra;
     }
 
     public int getEstado() {
@@ -138,20 +144,20 @@ public class Vehiculo extends Model {
         return ultimoTrayecto;
     }
 
-    public Long getIdVehiculo() {
-        return idVehiculo;
+    public Long getId_vehiculo() {
+        return id_vehiculo;
     }
 
-    public void setIdVehiculo(Long idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public void setId_vehiculo(Long id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
     }
 
-    public int getTipoVehiculo() {
-        return tipoVehiculo;
+    public int getTipo_vehiculo() {
+        return tipo_vehiculo;
     }
 
-    public void setTipoVehiculo(int tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
+    public void setTipo_vehiculo(int tipo_vehiculo) {
+        this.tipo_vehiculo = tipo_vehiculo;
     }
 
     public void setUltimaRevision(RevisionMecanica ultimaRevision) {
