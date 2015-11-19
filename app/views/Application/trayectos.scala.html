@@ -209,12 +209,12 @@
                                 <tbody>
                                 @for(trayecto <- trayectos){
                                     <tr class="active">
-                                        <td>@trayecto.getId_trayecto()</td>
+                                        <td>@trayecto.getIdTrayecto()</td>
                                         <td>@trayecto.getRuta()</td>
-                                        <td>@trayecto.getId_conductor()</td>
-                                        <td>@trayecto.getId_vehiculo()</td>
-                                        <td>@trayecto.getHora_inicio()</td>
-                                        <td>@trayecto.getHora_fin()</td>
+                                        <td>@trayecto.getIdConductor()</td>
+                                        <td>@trayecto.getIdVehiculo()</td>
+                                        <td>@trayecto.getHoraInicio()</td>
+                                        <td>@trayecto.getHoraFin()</td>
                                         <td>@trayecto.getEstado()</td>
                                         <td><a href="/trayectos">Ver Vcubs en esta estación</a></td>
                                     </tr>

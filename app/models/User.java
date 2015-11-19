@@ -1,22 +1,27 @@
 package models;
 
+import be.objectify.deadbolt.core.models.Permission;
+import be.objectify.deadbolt.core.models.Role;
+import be.objectify.deadbolt.core.models.Subject;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by USER on 16/08/2015.
  */
 @Entity
-public class User extends Model {
+public class User extends Model implements Subject{
 
     //------------------------------------------------------------------------
     //Finder
     //------------------------------------------------------------------------
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(User.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(User.class);
 
     //------------------------------------------------------------------------
     // Atributos
@@ -38,9 +43,12 @@ public class User extends Model {
 
     public String email;
 
-    public Long id_vcub_alquilada;
+    public Long idVcubAlquilada;
 
-    public Long id_ultimaReserva;
+    public Long idUltimaReserva;
+
+    @ManyToMany
+    private List<UserRole> roles;
 
 
     //------------------------------------------------------------------------
@@ -48,8 +56,9 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
     public User(){
-        id_vcub_alquilada=null;
-        id_ultimaReserva =null;
+        roles = new ArrayList<>();
+        idVcubAlquilada =null;
+        idUltimaReserva =null;
     }
 
     public User(String fullName, String document, String address, long phoneNumber,
@@ -61,7 +70,8 @@ public class User extends Model {
         this.phoneNumber = phoneNumber;
         this.cellphone = cellphone;
         this.email = email;
-        id_vcub_alquilada =null;
+        idVcubAlquilada =null;
+        roles = new ArrayList<>();
     }
 
     //------------------------------------------------------------------------
@@ -69,7 +79,7 @@ public class User extends Model {
     //------------------------------------------------------------------------
 
 
-    public Long getId_usuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
@@ -97,20 +107,20 @@ public class User extends Model {
         return email;
     }
 
-    public Long getId_vcub_alquilada() {
-        return id_vcub_alquilada;
+    public Long getIdVcubAlquilada() {
+        return idVcubAlquilada;
     }
 
-    public Long getId_ultimaReserva() {
-        return id_ultimaReserva;
+    public Long getIdUltimaReserva() {
+        return idUltimaReserva;
     }
 
     //------------------------------------------------------------------------
     // Setters
     //------------------------------------------------------------------------
 
-    public void setId_usuario(Long id_usuario) {
-        this.idUsuario = id_usuario;
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public void setFullName(String fullName) {
@@ -137,12 +147,12 @@ public class User extends Model {
         this.email = email;
     }
 
-    public void setId_vcub_alquilada(Long id_vcub_alquilada) {
-        this.id_vcub_alquilada = id_vcub_alquilada;
+    public void setIdVcubAlquilada(Long idVcubAlquilada) {
+        this.idVcubAlquilada = idVcubAlquilada;
     }
 
-    public void setId_ultimaReserva(Long id_ultimaReserva) {
-        this.id_ultimaReserva = id_ultimaReserva;
+    public void setIdUltimaReserva(Long idUltimaReserva) {
+        this.idUltimaReserva = idUltimaReserva;
     }
 
     //------------------------------------------------------------------------
@@ -174,5 +184,24 @@ public class User extends Model {
         cellphone = j.findPath("cellphone").asLong();
         email = j.findPath("email").asText();
         return this;
+    }
+
+    @Override
+    public List<? extends Role> getRoles() {
+        return roles;
+    }
+
+    public void addRole(UserRole r) {
+        roles.add(r);
+    }
+
+    @Override
+    public List<? extends Permission> getPermissions() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public String getIdentifier() {
+        return null;
     }
 }

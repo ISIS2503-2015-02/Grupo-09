@@ -131,6 +131,13 @@ create table user (
   constraint pk_user primary key (id_usuario))
 ;
 
+create table user_role (
+  id                        bigint not null,
+  role_name                 varchar(255) not null,
+  constraint uq_user_role_role_name unique (role_name),
+  constraint pk_user_role primary key (id))
+;
+
 create table vcub (
   id_vcub                   bigint auto_increment not null,
   estado                    varchar(255),
@@ -139,6 +146,12 @@ create table vcub (
   constraint pk_vcub primary key (id_vcub))
 ;
 
+
+create table user_user_role (
+  user_id_usuario                bigint not null,
+  user_role_id                   bigint not null,
+  constraint pk_user_user_role primary key (user_id_usuario, user_role_id))
+;
 create sequence datos_seq;
 
 create sequence driver_seq;
@@ -159,6 +172,8 @@ create sequence trayecto_seq;
 
 create sequence user_seq;
 
+create sequence user_role_seq;
+
 alter table movi_bus_vehiculo add constraint fk_movi_bus_vehiculo_ultimaRev_1 foreign key (id_revision) references revision_mecanica (id_revision) on delete restrict on update restrict;
 create index ix_movi_bus_vehiculo_ultimaRev_1 on movi_bus_vehiculo (id_revision);
 alter table movi_bus_vehiculo add constraint fk_movi_bus_vehiculo_ultimosDa_2 foreign key (id_datos) references datos (id_datos) on delete restrict on update restrict;
@@ -177,6 +192,10 @@ alter table tranvia_vehiculo add constraint fk_tranvia_vehiculo_ultimoTray_8 for
 create index ix_tranvia_vehiculo_ultimoTray_8 on tranvia_vehiculo (id_trayecto);
 
 
+
+alter table user_user_role add constraint fk_user_user_role_user_01 foreign key (user_id_usuario) references user (id_usuario) on delete restrict on update restrict;
+
+alter table user_user_role add constraint fk_user_user_role_user_role_02 foreign key (user_role_id) references user_role (id) on delete restrict on update restrict;
 
 # --- !Downs
 
@@ -204,6 +223,10 @@ drop table if exists trayecto;
 
 drop table if exists user;
 
+drop table if exists user_user_role;
+
+drop table if exists user_role;
+
 drop table if exists vcub;
 
 SET REFERENTIAL_INTEGRITY TRUE;
@@ -227,4 +250,6 @@ drop sequence if exists tranvia_vehiculo_seq;
 drop sequence if exists trayecto_seq;
 
 drop sequence if exists user_seq;
+
+drop sequence if exists user_role_seq;
 

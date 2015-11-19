@@ -1,8 +1,6 @@
 package models;
 
 import com.avaje.ebean.Model;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
@@ -18,7 +16,7 @@ public class Trayecto extends Model{
     //------------------------------------------------------------------------
     //Finder
     //------------------------------------------------------------------------
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Trayecto.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Trayecto.class);
 
     //------------------------------------------------------------------------
     //Constantes
@@ -34,15 +32,15 @@ public class Trayecto extends Model{
     //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_trayecto;
+    private Long idTrayecto;
 
     private String ruta;
 
     @Temporal(TemporalType.DATE)
-    private Date hora_inicio;
+    private Date horaInicio;
 
     @Temporal(TemporalType.DATE)
-    private Date hora_fin;
+    private Date horaFin;
 
     private int incidentes;
 
@@ -51,27 +49,28 @@ public class Trayecto extends Model{
     @Transient
     private double duracion;
 
-    private Long id_conductor;
+    private Long idConductor;
 
-    private Long id_vehiculo;
+    private Long idVehiculo;
 
     //------------------------------------------------------------------------
     //Constructores
     //------------------------------------------------------------------------
 
     public Trayecto() {
+        // Constructor vacío debido a ppersistencia.
     }
 
-    public Trayecto(String ruta, Date hora_inicio)
+    public Trayecto(String ruta, Date horaInicio)
     {
         this.ruta = ruta;
-        this.hora_inicio = hora_inicio;
-        this.hora_fin = null;
+        this.horaInicio = horaInicio;
+        this.horaFin = null;
         this.incidentes = 0;
         this.estado = EN_CURSO;
-        if(hora_inicio==null)
+        if(horaInicio ==null)
         {
-            hora_inicio=new Date();
+            horaInicio =new Date();
         }
     }
 
@@ -80,12 +79,12 @@ public class Trayecto extends Model{
     //------------------------------------------------------------------------
 
 
-    public Long getId_trayecto() {
-        return id_trayecto;
+    public Long getIdTrayecto() {
+        return idTrayecto;
     }
 
-    public void setId_trayecto(Long id_trayecto) {
-        this.id_trayecto = id_trayecto;
+    public void setIdTrayecto(Long idTrayecto) {
+        this.idTrayecto = idTrayecto;
     }
 
     public String getRuta() {
@@ -96,16 +95,16 @@ public class Trayecto extends Model{
         this.ruta = ruta;
     }
 
-    public Date getHora_inicio() {
-        return hora_inicio;
+    public Date getHoraInicio() {
+        return horaInicio;
     }
 
-    public void setHora_inicio(Date hora_inicio) {
-        this.hora_inicio = hora_inicio;
+    public void setHoraInicio(Date horaInicio) {
+        this.horaInicio = horaInicio;
     }
 
-    public Date getHora_fin() {
-        return hora_fin;
+    public Date getHoraFin() {
+        return horaFin;
     }
 
     public int getIncidentes() {
@@ -120,8 +119,8 @@ public class Trayecto extends Model{
         return estado;
     }
 
-    public void setHora_fin(Date hora_fin) {
-        this.hora_fin = hora_fin;
+    public void setHoraFin(Date horaFin) {
+        this.horaFin = horaFin;
     }
 
     public void setEstado(int estado) {
@@ -129,20 +128,20 @@ public class Trayecto extends Model{
     }
 
 
-    public Long getId_conductor() {
-        return id_conductor;
+    public Long getIdConductor() {
+        return idConductor;
     }
 
-    public void setId_conductor(Long id_conductor) {
-        this.id_conductor = id_conductor;
+    public void setIdConductor(Long idConductor) {
+        this.idConductor = idConductor;
     }
 
-    public Long getId_vehiculo() {
-        return id_vehiculo;
+    public Long getIdVehiculo() {
+        return idVehiculo;
     }
 
-    public void setId_vehiculo(Long id_vehiculo) {
-        this.id_vehiculo = id_vehiculo;
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     /**
@@ -153,7 +152,7 @@ public class Trayecto extends Model{
     {
         if(estado==FINALIZADO)
         {
-            duracion= (hora_fin.getTime()-hora_inicio.getTime())/(1000*60);
+            duracion= (horaFin.getTime()- horaInicio.getTime())/(1000*60);
         }
         return -1;
     }

@@ -1,8 +1,10 @@
 package controllers;
 
-import play.mvc.*;
+import play.mvc.Controller;
+import play.mvc.Result;
 
-import views.html.Application.*;
+import views.html.*;
+import views.html.Application.index;
 
 public class Application extends Controller {
 

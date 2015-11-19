@@ -2,7 +2,6 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.Driver;
 import models.Estacion;
 import models.User;
 import models.Vcub;
@@ -11,7 +10,6 @@ import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.Application.addConductores;
 import views.html.Application.addEstaciones;
 import views.html.Application.estaciones;
 
@@ -78,8 +76,8 @@ public class EstacionController extends Controller {
         {
             List<Vcub> disponibles = estacion.getVcubs();
             int capacidad = estacion.getVcubsCapacity();
-            double porcentaje = disponibles.size()*100/capacidad;
-            return ok(""+porcentaje);
+            double porcentaje = (double) disponibles.size()*100/capacidad;
+            return ok(Double.toString(porcentaje));
         }
         return notFound();
     }
@@ -95,11 +93,11 @@ public class EstacionController extends Controller {
                 if(disponibles.size()>0)
                 {
                     prestar=disponibles.get(0);
-                    prestar.setId_cliente(idCliente);
+                    prestar.setIdCliente(idCliente);
                     prestar.setEstado(Vcub.PRESTADA);
-                    prestar.setId_estacion(null);
+                    prestar.setIdEstacion(null);
                     prestar.save();
-                    usuario.setId_vcub_alquilada(prestar.getIdVcub());
+                    usuario.setIdVcubAlquilada(prestar.getIdVcub());
                     usuario.save();
                     return ok(Json.toJson(prestar));
                 }
@@ -124,11 +122,11 @@ public class EstacionController extends Controller {
     {
         Estacion estacion = (Estacion)Estacion.finder.byId(idEstacionEntrega);
         User usuario = (User) User.finder.byId(idCliente);
-        if(null!=usuario && null!= usuario.getId_vcub_alquilada() && estacion != null) {
-            Vcub alquilada = (Vcub) Vcub.finder.byId(usuario.getId_usuario());
+        if(null!=usuario && null!= usuario.getIdVcubAlquilada() && estacion != null) {
+            Vcub alquilada = (Vcub) Vcub.finder.byId(usuario.getIdUsuario());
             if (estacion.getVcubs().size() < estacion.getVcubsCapacity()) {
-                alquilada.setId_estacion(idEstacionEntrega);
-                usuario.setId_vcub_alquilada(null);
+                alquilada.setIdEstacion(idEstacionEntrega);
+                usuario.setIdVcubAlquilada(null);
                 alquilada.setEstado(Vcub.LIBRE);
                 alquilada.save();
                 usuario.save();

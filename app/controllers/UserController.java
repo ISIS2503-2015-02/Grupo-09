@@ -2,13 +2,13 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.*;
+import models.Reserva;
+import models.User;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.Application.addConductores;
 import views.html.Application.addUsuarios;
 import views.html.Application.usuarios;
 
@@ -41,7 +41,7 @@ public class UserController extends Controller{
         User user = User.bind(j);
         user.save();
 
-        User lastUser = (User) new Model.Finder(User.class).byId(user.getId_usuario());
+        User lastUser = (User) new Model.Finder(User.class).byId(user.getIdUsuario());
         return ok(Json.toJson(lastUser));
     }
 
@@ -79,8 +79,8 @@ public class UserController extends Controller{
         {
             JsonNode j = Controller.request().body().asJson();
             Reserva jsonReserva = Reserva.bind(j);
-            Reserva nuevaReserva = new Reserva(jsonReserva.getHora_reserva(),jsonReserva.getCosto(),idCliente);
-            cliente.setId_ultimaReserva(nuevaReserva.getId_reserva());
+            Reserva nuevaReserva = new Reserva(jsonReserva.getHoraReserva(),jsonReserva.getCosto(),idCliente);
+            cliente.setIdUltimaReserva(nuevaReserva.getIdReserva());
             nuevaReserva.save();
             cliente.save();
             return ok(Json.toJson(nuevaReserva));
@@ -91,12 +91,12 @@ public class UserController extends Controller{
         }
     }
 
-    public Result consultarReservasUsuario(Long id_cliente)
+    public Result consultarReservasUsuario(Long idCliente)
     {
-        User cliente = (User) User.finder.byId(id_cliente);
+        User cliente = (User) User.finder.byId(idCliente);
         if(cliente!=null)
         {
-            return ok(Json.toJson(Reserva.finder.where().eq("id_cliente",id_cliente).findList()));
+            return ok(Json.toJson(Reserva.finder.where().eq("id_cliente",idCliente).findList()));
         }
         else
         {
@@ -105,19 +105,19 @@ public class UserController extends Controller{
     }
 
     @BodyParser.Of(BodyParser.Json.class)
-    public Result modificarReservaCliente(Long id_cliente, Long id_reserva)
+    public Result modificarReservaCliente(Long idCliente, Long idReserva)
     {
-        User cliente = (User) User.finder.byId(id_cliente);
+        User cliente = (User) User.finder.byId(idCliente);
         if(cliente!=null)
         {
-            Reserva original = (Reserva) Reserva.finder.byId(id_reserva);
-            if(original.getId_cliente().equals(id_cliente))
+            Reserva original = (Reserva) Reserva.finder.byId(idReserva);
+            if(original.getIdCliente().equals(idCliente))
             {
                 JsonNode j = Controller.request().body().asJson();
                 Reserva jsonReserva = Reserva.bind(j);
                 original.setEstado(jsonReserva.getEstado());
-                original.setHora_reserva(jsonReserva.getHora_reserva());
-                original.setId_movibus_reservado(jsonReserva.getId_movibus_reservado());
+                original.setHoraReserva(jsonReserva.getHoraReserva());
+                original.setIdMovibusReservado(jsonReserva.getIdMovibusReservado());
                 original.setCosto(jsonReserva.getCosto());
                 original.save();
                 return ok(Json.toJson(original));
@@ -142,7 +142,7 @@ public class UserController extends Controller{
         if(cliente!=null)
         {
             Reserva encontrada = (Reserva) Reserva.finder.byId(idReserva);
-            if(encontrada.getId_cliente().equals(idCliente))
+            if(encontrada.getIdCliente().equals(idCliente))
             {
                 encontrada.delete();
                 return ok(Json.toJson(Reserva.finder.where().eq("id_cliente",idCliente)));

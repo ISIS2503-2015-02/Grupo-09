@@ -2,8 +2,8 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +17,7 @@ public class Driver extends Model {
     //Finder
     //------------------------------------------------------------------------
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Driver.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Driver.class);
 
     //----------------------------------
     // Atributos
@@ -25,7 +25,7 @@ public class Driver extends Model {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_conductor;
+    private Long idConductor;
 
     private String fullName;
 
@@ -63,8 +63,8 @@ public class Driver extends Model {
     //----------------------------------
     // Métodos
     //----------------------------------
-    public void setId_conductor(Long id_conductor) {
-        this.id_conductor = id_conductor;
+    public void setIdConductor(Long idConductor) {
+        this.idConductor = idConductor;
     }
 
     public void setTrayectos(List<Trayecto> trayectos) {
@@ -119,8 +119,8 @@ public class Driver extends Model {
         return ultimoTrayecto;
     }
 
-    public Long getId_conductor() {
-        return id_conductor;
+    public Long getIdConductor() {
+        return idConductor;
     }
 
     //@TODO Invocar a la clase

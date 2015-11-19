@@ -1,5 +1,6 @@
 package tbc.standalone.http;
 
+import com.sun.media.jfxmedia.logging.Logger;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -36,7 +37,7 @@ public class Request {
             jsonResponse = EntityUtils.toString(response.getEntity());
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.logMsg(1, e);
         }
 
         return jsonResponse;
@@ -59,7 +60,7 @@ public class Request {
             jsonResponse = EntityUtils.toString(response.getEntity());
 
         } catch(Exception e) {
-            e.printStackTrace();
+            Logger.logMsg(1, e);
         }
 
         return jsonResponse;

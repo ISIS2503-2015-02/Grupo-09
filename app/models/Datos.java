@@ -17,7 +17,7 @@ public class Datos extends Model
     //------------------------------------------------------------------------
     //Finder
     //------------------------------------------------------------------------
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Datos.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Datos.class);
 
     //------------------------------------------------------------------------
     //Constantes
@@ -35,7 +35,7 @@ public class Datos extends Model
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_datos;
+    private Long idDatos;
 
     private String gpsAltitud;
 
@@ -52,7 +52,7 @@ public class Datos extends Model
 
     private double kilometraje;
 
-    private Long id_vehiculo;
+    private Long idVehiculo;
 
     //------------------------------------------------------------------------
     //Constructores
@@ -60,6 +60,7 @@ public class Datos extends Model
 
     public Datos()
     {
+        // Constructor vacío debido a ppersistencia.
     }
 
     public Datos(String gpsAltitud, String gpsLatitud, Date horaMedicion, boolean sensorChoque, double sensorTermico, boolean botonPanico, double kilometraje)
@@ -77,12 +78,12 @@ public class Datos extends Model
     //Métodos
     //------------------------------------------------------------------------
 
-    public Long getId_datos() {
-        return id_datos;
+    public Long getIdDatos() {
+        return idDatos;
     }
 
     public void setId(Long id) {
-        this.id_datos = id;
+        this.idDatos = id;
     }
 
     public String getGpsAltitud() {
@@ -141,12 +142,12 @@ public class Datos extends Model
         this.kilometraje = kilometraje;
     }
 
-    public Long getId_vehiculo() {
-        return id_vehiculo;
+    public Long getIdVehiculo() {
+        return idVehiculo;
     }
 
-    public void setId_vehiculo(Long id_vehiculo) {
-        this.id_vehiculo = id_vehiculo;
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     //-------------------------------------------------

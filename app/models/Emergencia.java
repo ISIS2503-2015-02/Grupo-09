@@ -3,6 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -26,14 +27,14 @@ public class Emergencia extends Model{
     //Finder
     //------------------------------------------------------------------------
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Emergencia.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Emergencia.class);
 
     //------------------------------------------------------------------------
     //Atributsos
     //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private String id_emergencia;
+    private String idEmergencia;
 
     private int emergencyType;
 
@@ -48,7 +49,7 @@ public class Emergencia extends Model{
 
     private int estado;
 
-    private Long id_vehiculo;
+    private Long idVehiculo;
 
 
 
@@ -57,12 +58,12 @@ public class Emergencia extends Model{
     }
 
 
-    public String getId_emergencia() {
-        return id_emergencia;
+    public String getIdEmergencia() {
+        return idEmergencia;
     }
 
-    public void setId_emergencia(String id_emergencia) {
-        this.id_emergencia = id_emergencia;
+    public void setIdEmergencia(String idEmergencia) {
+        this.idEmergencia = idEmergencia;
     }
 
     public void setEstado(int estado) {
@@ -79,12 +80,12 @@ public class Emergencia extends Model{
         estado=VIGENTE;
     }
 
-    public Long getId_vehiculo() {
-        return id_vehiculo;
+    public Long getIdVehiculo() {
+        return idVehiculo;
     }
 
-    public void setId_vehiculo(Long id_vehiculo) {
-        this.id_vehiculo = id_vehiculo;
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     public int getEmergencyType(){

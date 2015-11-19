@@ -2,6 +2,7 @@ package models;
 
 
 import com.fasterxml.jackson.databind.JsonNode;
+import play.db.ebean.Model;
 import play.libs.Json;
 
 import javax.persistence.*;
@@ -16,15 +17,15 @@ public class TranviaVehiculo extends Vehiculo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    public Long id_vehiculo;
+    public Long idVehiculo;
 
     public String modelo;
 
-    public Date fecha_compra;
+    public Date fechaCompra;
 
     public int estado;
 
-    public int tipo_vehiculo;
+    public int tipoVehiculo;
 
     @OneToOne
     @JoinColumn(name = "id_revision")
@@ -51,16 +52,16 @@ public class TranviaVehiculo extends Vehiculo {
     //------------------------------------------------------------------------
     //Finder
     //------------------------------------------------------------------------
-    public static Finder finder = new Finder(TranviaVehiculo.class);
+    public static final Model.Finder finder  = new Finder(TranviaVehiculo.class);
 
     public TranviaVehiculo()
     {
-
+        // Constructor vacío debido a ppersistencia.
     }
 
-    public TranviaVehiculo(Long id, String modelo, Date fecha_compra, int estado)
+    public TranviaVehiculo(Long id, String modelo, Date fechaCompra, int estado)
     {
-        super(id,modelo,fecha_compra,estado,Vehiculo.TRANVIA);
+        super(id,modelo,fechaCompra,estado,Vehiculo.TRANVIA);
     }
     //DataBinder-------------------------------------------------------
     public static TranviaVehiculo bind(JsonNode json)

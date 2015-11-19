@@ -16,7 +16,7 @@ public class Posicion {
 
     public double latitud;
 
-    public static Model.Finder finder = new com.avaje.ebean.Model.Finder(Posicion.class);
+    public static final Model.Finder finder = new com.avaje.ebean.Model.Finder(Posicion.class);
 
     public Posicion(String id, double longitud, double latitud){
         idVehiculo=id;

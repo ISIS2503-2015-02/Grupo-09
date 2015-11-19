@@ -1,7 +1,6 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import models.MoviBusVehiculo;
 import models.TranviaVehiculo;
 import models.Vehiculo;
 import play.data.Form;
@@ -9,7 +8,6 @@ import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.Application.addMobibuses;
 import views.html.Application.addTranvias;
 import views.html.Application.tranvias;
 
@@ -74,40 +72,40 @@ public class TranviaVehController extends VehiculoController {
         return rta;
     }
 
-    public Result readRevisionesTranvia(Long id_Tranvia)
+    public Result readRevisionesTranvia(Long idTranvia)
     {
-        return readRevisiones(id_Tranvia, Vehiculo.TRANVIA);
+        return readRevisiones(idTranvia, Vehiculo.TRANVIA);
     }
 
-    public Result readTrayectosTranvia(Long id_Tranvia)
+    public Result readTrayectosTranvia(Long idTranvia)
     {
-        return readTrayectos(id_Tranvia, Vehiculo.TRANVIA);
+        return readTrayectos(idTranvia, Vehiculo.TRANVIA);
     }
 
-    public Result agregarDatosTranvia(Long id_tranvia)
+    public Result agregarDatosTranvia(Long idTranvia)
     {
-        return agregarDatos(id_tranvia, Vehiculo.TRANVIA);
+        return agregarDatos(idTranvia, Vehiculo.TRANVIA);
     }
 
-    public Result readDatosTranvia(Long id_tranvia)
+    public Result readDatosTranvia(Long idTranvia)
     {
-        return readDatos(id_tranvia, Vehiculo.TRANVIA);
+        return readDatos(idTranvia, Vehiculo.TRANVIA);
     }
 
-    public Result agregarTrayectoTranvia(Long id_tranvia)
+    public Result agregarTrayectoTranvia(Long idTranvia)
     {
-        return agregarTrayecto(id_tranvia, Vehiculo.TRANVIA);
+        return agregarTrayecto(idTranvia, Vehiculo.TRANVIA);
     }
 
-    public Result finalizarTrayectoTranvia (Long id_tranvia, Long id_trayecto)
+    public Result finalizarTrayectoTranvia (Long idTranvia, Long idTrayecto)
     {
-        return finalizarUltimoTrayecto(id_tranvia, id_trayecto, Vehiculo.TRANVIA);
+        return finalizarUltimoTrayecto(idTranvia, idTrayecto, Vehiculo.TRANVIA);
     }
 
 
-    public Result agregarRevisionMovibus(Long id_tranvia)
+    public Result agregarRevisionMovibus(Long idTranvia)
     {
-        return agregarRevision(id_tranvia, Vehiculo.TRANVIA);
+        return agregarRevision(idTranvia, Vehiculo.TRANVIA);
     }
 
 

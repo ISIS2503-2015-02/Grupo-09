@@ -1,11 +1,13 @@
 package models;
 
 import com.avaje.ebean.Model;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created by gusal on 13/08/2015.
@@ -24,7 +26,7 @@ public class Vcub extends Model
     //Finder
     //------------------------------------------------------------------------
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Datos.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Datos.class);
 
     //------------------------------------------------------------------------
     // Atributos
@@ -32,25 +34,26 @@ public class Vcub extends Model
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id_vcub;
+    private Long idVcub;
 
     private String estado; //Prestada,sustiduida o libre
 
-    private Long id_estacion;
+    private Long idEstacion;
 
-    private Long id_cliente;
+    private Long idCliente;
 
     //------------------------------------------------------------------------
     // Constructores
     //------------------------------------------------------------------------
 
     public Vcub(){
+        // Constructor vacío debido a ppersistencia.
     }
 
-    public Vcub(String estado, Long id_estacion)
+    public Vcub(String estado, Long idEstacion)
     {
         this.estado = estado;
-        this.id_estacion = id_estacion;
+        this.idEstacion = idEstacion;
     }
 
     //------------------------------------------------------------------------
@@ -59,12 +62,12 @@ public class Vcub extends Model
 
     public Long getIdVcub( )
     {
-        return id_vcub;
+        return idVcub;
     }
 
     public void setIdVcub( Long idCvubs )
     {
-        this.id_vcub = idCvubs;
+        this.idVcub = idCvubs;
     }
 
     public String getEstado( )
@@ -77,22 +80,22 @@ public class Vcub extends Model
         this.estado = estado;
     }
 
-    public Long getId_estacion()
+    public Long getIdEstacion()
     {
-        return id_estacion;
+        return idEstacion;
     }
 
-    public void setId_estacion(Long id_estacion)
+    public void setIdEstacion(Long idEstacion)
     {
-        this.id_estacion = id_estacion;
+        this.idEstacion = idEstacion;
     }
 
-    public Long getId_cliente() {
-        return id_cliente;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
-    public void setId_cliente(Long id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
     }
 
     //-------------------------------------------------

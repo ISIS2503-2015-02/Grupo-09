@@ -2,7 +2,8 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.*;
+import models.MoviBusVehiculo;
+import models.Vehiculo;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.BodyParser;
@@ -51,7 +52,7 @@ public class MoviBusController extends VehiculoController {
         {
             original.delete();
             MoviBusVehiculo reemplazarPor = MoviBusVehiculo.bind(j);
-            reemplazarPor.setId_vehiculo(idMovibus);
+            reemplazarPor.setIdVehiculo(idMovibus);
             reemplazarPor.save();
 
         }
@@ -77,9 +78,9 @@ public class MoviBusController extends VehiculoController {
         return rta;
     }
 
-    public Result agregarDatosMovibus(Long id_movibus)
+    public Result agregarDatosMovibus(Long idMovibus)
     {
-        return agregarDatos(id_movibus, Vehiculo.MOVIBUS);
+        return agregarDatos(idMovibus, Vehiculo.MOVIBUS);
     }
 
     public Result readDatosMovibus(Long idVehiculo)
@@ -87,32 +88,29 @@ public class MoviBusController extends VehiculoController {
         return readDatos(idVehiculo, Vehiculo.MOVIBUS);
     }
 
-    public Result agregarTrayectoMovibus(Long id_movibus)
+    public Result agregarTrayectoMovibus(Long idMovibus)
     {
-        return agregarTrayecto(id_movibus, Vehiculo.MOVIBUS);
+        return agregarTrayecto(idMovibus, Vehiculo.MOVIBUS);
     }
 
-    public Result finalizarTrayectoMovibus(Long id_movibus, Long id_trayecto)
+    public Result finalizarTrayectoMovibus(Long idMovibus, Long idTrayecto)
     {
-        return finalizarUltimoTrayecto(id_movibus, id_trayecto, Vehiculo.MOVIBUS);
+        return finalizarUltimoTrayecto(idMovibus, idTrayecto, Vehiculo.MOVIBUS);
     }
 
-    public Result readTrayectosMovibus(Long id_movibus)
+    public Result readTrayectosMovibus(Long idMovibus)
     {
-        return readTrayectos(id_movibus, Vehiculo.MOVIBUS);
+        return readTrayectos(idMovibus, Vehiculo.MOVIBUS);
     }
 
-    public Result agregarRevisionMovibus(Long id_movibus)
+    public Result agregarRevisionMovibus(Long idMovibus)
     {
-        return agregarRevision(id_movibus,Vehiculo.MOVIBUS);
+        return agregarRevision(idMovibus,Vehiculo.MOVIBUS);
     }
 
-    public Result readRevisionesMovibus(Long id_movibus)
+    public Result readRevisionesMovibus(Long idMovibus)
     {
-        return readRevisiones(id_movibus, Vehiculo.MOVIBUS);
+        return readRevisiones(idMovibus, Vehiculo.MOVIBUS);
     }
-
-
-
 
 }

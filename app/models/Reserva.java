@@ -17,7 +17,7 @@ public class Reserva extends Model {
     //Finder
     //------------------------------------------------------------------------
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Reserva.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Reserva.class);
 
     //------------------------------------------------------------------------
     //Constantes
@@ -33,41 +33,41 @@ public class Reserva extends Model {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_reserva;
+    private Long idReserva;
 
     @Temporal(TemporalType.DATE)
-    private Date hora_reserva;
+    private Date horaReserva;
 
     @Temporal(TemporalType.DATE)
-    private Date hora_creacion;
+    private Date horaCreacion;
 
     private double costo;
 
     private String estado;
 
-    private Long id_movibus_reservado;
+    private Long idMovibusReservado;
 
-    private Long id_cliente;
+    private Long idCliente;
 
     public Reserva(){
-
+        // Constructor vacío debido a ppersistencia.
     }
 
-    public Reserva(Date hora_reserva, double costo, Long cliente) {
-        this.hora_reserva = hora_reserva;
+    public Reserva(Date horaReserva, double costo, Long cliente) {
+        this.horaReserva = horaReserva;
         this.costo = costo;
-        this.id_movibus_reservado = null;
-        this.id_cliente = cliente;
-        hora_creacion=new Date();
+        this.idMovibusReservado = null;
+        this.idCliente = cliente;
+        horaCreacion =new Date();
         estado=CREADA;
     }
 
-    public Date getHora_reserva() {
-        return hora_reserva;
+    public Date getHoraReserva() {
+        return horaReserva;
     }
 
-    public void setHora_reserva(Date hora_reserva) {
-        this.hora_reserva = hora_reserva;
+    public void setHoraReserva(Date horaReserva) {
+        this.horaReserva = horaReserva;
     }
 
     public double getCosto() {
@@ -86,24 +86,24 @@ public class Reserva extends Model {
         this.estado = estado;
     }
 
-    public Long getId_movibus_reservado() {
-        return id_movibus_reservado;
+    public Long getIdMovibusReservado() {
+        return idMovibusReservado;
     }
 
-    public void setId_movibus_reservado(Long id_movibus_reservado) {
-        this.id_movibus_reservado = id_movibus_reservado;
+    public void setIdMovibusReservado(Long idMovibusReservado) {
+        this.idMovibusReservado = idMovibusReservado;
     }
 
-    public Long getId_reserva() {
-        return id_reserva;
+    public Long getIdReserva() {
+        return idReserva;
     }
 
-    public Date getHora_creacion() {
-        return hora_creacion;
+    public Date getHoraCreacion() {
+        return horaCreacion;
     }
 
-    public Long getId_cliente() {
-        return id_cliente;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
 

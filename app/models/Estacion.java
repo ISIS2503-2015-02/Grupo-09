@@ -6,10 +6,11 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
+import play.libs.Json;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import play.libs.Json;
 
 
 @Entity
@@ -18,14 +19,14 @@ public class Estacion extends Model {
     //Finder
     //------------------------------------------------------------------------
 
-    public static Finder finder = new com.avaje.ebean.Model.Finder(Estacion.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(Estacion.class);
 
     //------------------------------------------------------------------------
     //Atributos
     //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_estacion;
+    private Long idEstacion;
 
     private String nombreEstacion;
 
@@ -37,26 +38,27 @@ public class Estacion extends Model {
     private List vcubs;
 
     public Estacion() {
+        // Constructor vacío debido a ppersistencia.
     }
 
 
     public Estacion( Long idEstacion, String nombreEstacion, String ubicacion, int vcubsCapacity )
     {
-        this.id_estacion = idEstacion;
+        this.idEstacion = idEstacion;
         this.nombreEstacion = nombreEstacion;
         this.ubicacion = ubicacion;
         this.vcubsCapacity = vcubsCapacity;
         vcubs = new ArrayList<Vcub>();
     }
 
-    public Long getId_estacion()
+    public Long getIdEstacion()
     {
-        return id_estacion;
+        return idEstacion;
     }
 
-    public void setId_estacion(Long idEstacion)
+    public void setIdEstacion(Long idEstacion)
     {
-        this.id_estacion = idEstacion;
+        this.idEstacion = idEstacion;
     }
 
     public String getNombreEstacion( )
@@ -88,7 +90,7 @@ public class Estacion extends Model {
     }
 
     public List<Vcub> getVcubs() {
-        return Vcub.finder.where().eq("id_estacion",id_estacion).findList();
+        return Vcub.finder.where().eq("id_estacion", idEstacion).findList();
     }
 
 

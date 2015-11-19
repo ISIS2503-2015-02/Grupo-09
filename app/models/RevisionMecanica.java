@@ -17,46 +17,47 @@ public class RevisionMecanica extends Model
     //Finder
     //------------------------------------------------------------------------
 
-    public static Model.Finder finder = new com.avaje.ebean.Model.Finder(RevisionMecanica.class);
+    public static final Model.Finder finder = new com.avaje.ebean.Model.Finder(RevisionMecanica.class);
 
     //------------------------------------------------------------------------
     //Atributos
     //------------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private Long id_revision;
+    private Long idRevision;
 
     @Temporal(TemporalType.DATE)
     private Date fechaRevision;
 
-    private double costo_Revision;
+    private double costoRevision;
 
     private double kilometraje;
 
-    private Long id_vehiculo;
+    private Long idVehiculo;
 
     //------------------------------------------------------------------------
     //Constructores
     //------------------------------------------------------------------------
 
     public RevisionMecanica() {
+        // Constructor vacío debido a ppersistencia.
     }
 
-    public RevisionMecanica(Date fechaRevision, double costo_Revision, double kilometraje, Long id_vehiculo) {
+    public RevisionMecanica(Date fechaRevision, double costoRevision, double kilometraje, Long idVehiculo) {
         this.fechaRevision = fechaRevision;
-        this.costo_Revision = costo_Revision;
+        this.costoRevision = costoRevision;
         this.kilometraje = kilometraje;
-        this.id_vehiculo = id_vehiculo;
+        this.idVehiculo = idVehiculo;
     }
 
-    public Long getId_revision()
+    public Long getIdRevision()
     {
-        return id_revision;
+        return idRevision;
     }
 
-    public void setId_revision(Long id_revision)
+    public void setIdRevision(Long idRevision)
     {
-        this.id_revision = id_revision;
+        this.idRevision = idRevision;
     }
 
     public Date getFechaRevision()
@@ -69,14 +70,14 @@ public class RevisionMecanica extends Model
         this.fechaRevision = fechaRevision;
     }
 
-    public double getCosto_Revision()
+    public double getCostoRevision()
     {
-        return costo_Revision;
+        return costoRevision;
     }
 
-    public void setCosto_Revision(double costo_Revision)
+    public void setCostoRevision(double costoRevision)
     {
-        this.costo_Revision = costo_Revision;
+        this.costoRevision = costoRevision;
     }
 
     public double getKilometraje()
@@ -89,12 +90,12 @@ public class RevisionMecanica extends Model
         this.kilometraje = kilometraje;
     }
 
-    public Long getId_vehiculo() {
-        return id_vehiculo;
+    public Long getIdVehiculo() {
+        return idVehiculo;
     }
 
-    public void setId_vehiculo(Long id_vehiculo) {
-        this.id_vehiculo = id_vehiculo;
+    public void setIdVehiculo(Long idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
 

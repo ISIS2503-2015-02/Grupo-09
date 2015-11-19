@@ -2,13 +2,11 @@ package models;
 
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.google.common.collect.ArrayListMultimap;
+import play.db.ebean.Model;
 import play.libs.Json;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by bdrangel10 on 17/08/2015.
@@ -18,15 +16,15 @@ public class MoviBusVehiculo extends Vehiculo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    public long id_vehiculo;
+    public long idVehiculo;
 
     public String modelo;
 
-    public Date fecha_compra;
+    public Date fechaCompra;
 
     public int estado;
 
-    public int tipo_vehiculo;
+    public int tipoVehiculo;
 
     @OneToOne
     @JoinColumn(name = "id_revision")
@@ -52,16 +50,16 @@ public class MoviBusVehiculo extends Vehiculo {
     //------------------------------------------------------------------------
     //Finder
     //------------------------------------------------------------------------
-    public static Finder finder = new com.avaje.ebean.Model.Finder(MoviBusVehiculo.class);
+    public static final Model.Finder finder  = new com.avaje.ebean.Model.Finder(MoviBusVehiculo.class);
 
     public MoviBusVehiculo()
     {
-
+        // Constructor vacío debido a ppersistencia.
     }
 
-    public MoviBusVehiculo(Long id, String modelo, Date fecha_compra, int estado)
+    public MoviBusVehiculo(Long id, String modelo, Date fechaCompra, int estado)
     {
-        super(id,modelo,fecha_compra,estado, Vehiculo.MOVIBUS);
+        super(id,modelo, fechaCompra,estado, Vehiculo.MOVIBUS);
     }
 
 

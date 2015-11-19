@@ -3,6 +3,7 @@ package controllers;
 import models.Datos;
 import models.MoviBusVehiculo;
 import models.Posicion;
+import models.Vehiculo;
 import play.db.ebean.Model;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -37,7 +38,7 @@ public class MapController extends Controller {
         while(iter.hasNext()){
             MoviBusVehiculo bus = iter.next();
 
-            long idBus = bus.getId_vehiculo();
+            long idBus = bus.getIdVehiculo();
             String id = "ID: "+idBus;
             Datos nDatos = bus.getUltimosDatos();
             String longitud = nDatos.getGpsAltitud();

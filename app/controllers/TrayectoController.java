@@ -2,7 +2,6 @@ package controllers;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.Driver;
 import models.Trayecto;
 import play.data.Form;
 import play.libs.Json;
@@ -13,7 +12,6 @@ import views.html.Application.addTrayectos;
 import views.html.Application.trayectos;
 
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -61,27 +59,27 @@ public class TrayectoController extends Controller{
 
     /**
      * Finaliza el trayecto
-     * @param hora_fin    Hora final del trayecto, si es null toma la hora del sistema
+     * @param horaFin    Hora final del trayecto, si es null toma la hora del sistema
      *@param nIncidentes Cantidad de incidentes que ocurrieron durante el trayecto
      */
-    public static void finalizarTrayecto(Long id_trayecto, Date hora_fin, int nIncidentes)
+    public static void finalizarTrayecto(Long idTrayecto, Date horaFin, int nIncidentes)
     {
-        Trayecto trayecto = (Trayecto)Trayecto.finder.byId(id_trayecto);
+        Trayecto trayecto = (Trayecto)Trayecto.finder.byId(idTrayecto);
         if(trayecto!=null)
         {
             trayecto.setEstado(Trayecto.FINALIZADO);
-            if(hora_fin==null)
+            if(horaFin==null)
             {
-                hora_fin=new Date();
+                horaFin=new Date();
             }
-            trayecto.setHora_fin(hora_fin);
+            trayecto.setHoraFin(horaFin);
             trayecto.setIncidentes(nIncidentes);
             trayecto.save();
         }
     }
 
-    public static List<Trayecto>  getTrayectosVehiculo(Long id_vehiculo)
+    public static List<Trayecto>  getTrayectosVehiculo(Long idVehiculo)
     {
-        return Trayecto.finder.where().eq("id_vehiculo",id_vehiculo).findList();
+        return Trayecto.finder.where().eq("id_vehiculo",idVehiculo).findList();
     }
 }
