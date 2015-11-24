@@ -4,7 +4,7 @@
 		module="arqui-g9_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20151015170854"
+		publication="20151124011103"
 	>
 		<description>
 		arqui-g9
@@ -51,5 +51,6 @@
 		<dependency org="com.typesafe.play" name="play-jdbc_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jpa_2.11" rev="2.4.2" conf="compile->default(compile)"/>
 		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.9.Final" conf="compile->default(compile)"/>
+		<dependency org="be.objectify" name="deadbolt-java_2.11" rev="2.4.3" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

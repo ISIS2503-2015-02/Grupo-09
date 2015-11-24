@@ -4,7 +4,6 @@ import models.Datos;
 import models.MoviBusVehiculo;
 import models.Posicion;
 import play.db.ebean.Model;
-import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.map;

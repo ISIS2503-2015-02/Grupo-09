@@ -8,7 +8,6 @@ import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.addConductores;
 import views.html.addMobibuses;
 import views.html.mobibuses;
 
@@ -27,7 +26,7 @@ public class MoviBusController extends VehiculoController {
         }
         MoviBusVehiculo nuevo = form.bindFromRequest().get();
         nuevo.save();
-        return redirect(routes.MoviBusController.readAll());
+        return readAll();
     }
 
     public Result createMobiBus(){

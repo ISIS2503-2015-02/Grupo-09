@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Dev/Grupo-09/conf/routes
-// @DATE:Thu Oct 15 17:29:30 COT 2015
+// @DATE:Tue Nov 24 01:11:26 COT 2015
 
 package router
 
@@ -449,7 +449,7 @@ Obtener todos los mobibuses del sistema""",
       "agregarDatosMovibus",
       Seq(classOf[Long]),
       "POST",
-      """Enviar los datos del mobibus (GPS, hora�)""",
+      """Enviar los datos del mobibus (GPS, hora)""",
       this.prefix + """mobibuses/$id<[^/]+>/datos"""
     )
   )
@@ -466,7 +466,7 @@ Obtener todos los mobibuses del sistema""",
       "readDatosMovibus",
       Seq(classOf[Long]),
       "GET",
-      """Obtener los datos registrados del mobibus (a trav�s del path param se podr�a indicar si traer s�lo el �ltimo dato, los n �ltimos datos, o la hora espec�fica de la que se quieren conocer los datos)  ** pueden ser mas rutas**""",
+      """Obtener los datos registrados del mobibus (a través del path param se podría indicar si traer sólo el último dato, los n últimos datos, o la hora específica de la que se quieren conocer los datos)  ** pueden ser mas rutas**""",
       this.prefix + """mobibuses/$id<[^/]+>/datos"""
     )
   )
@@ -483,7 +483,7 @@ Obtener todos los mobibuses del sistema""",
       "agregarRevisionMovibus",
       Seq(classOf[Long]),
       "POST",
-      """Registrar una revisi�n tecnomec�nica""",
+      """Registrar una revisión tecnomecánica""",
       this.prefix + """mobibuses/$id<[^/]+>/revisiones"""
     )
   )
@@ -500,7 +500,7 @@ Obtener todos los mobibuses del sistema""",
       "readRevisionesMovibus",
       Seq(classOf[Long]),
       "GET",
-      """Obtener las revisiones tecnomec�nicas del veh�culo""",
+      """Obtener las revisiones tecnomecánicas del vehículo""",
       this.prefix + """mobibuses/$id<[^/]+>/revisiones"""
     )
   )
@@ -517,7 +517,7 @@ Obtener todos los mobibuses del sistema""",
       "agregarTrayectoMovibus",
       Seq(classOf[Long]),
       "POST",
-      """Registrar el inicio de un trayecto o ruta (con la hora, informaci�n del conductor y Ruta esperada)""",
+      """Registrar el inicio de un trayecto o ruta (con la hora, información del conductor y Ruta esperada)""",
       this.prefix + """mobibuses/$id<[^/]+>/trayectos"""
     )
   )
@@ -551,7 +551,7 @@ Obtener todos los mobibuses del sistema""",
       "readTrayectosMovibus",
       Seq(classOf[Long]),
       "GET",
-      """Obtener los trayectos de un tranv�a (Para obtener tiempos de conductores y percances""",
+      """Obtener los trayectos de un tranvía (Para obtener tiempos de conductores y percances""",
       this.prefix + """mobibuses/$id<[^/]+>/trayectos/"""
     )
   )
@@ -792,7 +792,7 @@ Obtener todas las estaciones del sistema""",
       "readVcubsEstacion",
       Seq(classOf[Long]),
       "GET",
-      """Obtener los datos de una estaci�n""",
+      """Obtener los datos de una estación""",
       this.prefix + """estaciones/$id<[^/]+>"""
     )
   )
@@ -809,7 +809,7 @@ Obtener todas las estaciones del sistema""",
       "createEstacion",
       Nil,
       "GET",
-      """Registrar una nueva estaci�n""",
+      """Registrar una nueva estación""",
       this.prefix + """addEstaciones"""
     )
   )
@@ -843,7 +843,7 @@ Obtener todas las estaciones del sistema""",
       "modificarEstacion",
       Seq(classOf[Long]),
       "PUT",
-      """Modificar datos de una estaci�n""",
+      """Modificar datos de una estación""",
       this.prefix + """estaciones/$id<[^/]+>"""
     )
   )
@@ -860,9 +860,9 @@ Obtener todas las estaciones del sistema""",
       "alquilarBicicleta",
       Seq(classOf[Long], classOf[Long]),
       "DELETE",
-      """Obtener las bicicletas que se encuentran en una estaci�n
+      """Obtener las bicicletas que se encuentran en una estación
 GET     /estaciones/:id/bicicletas   controllers.EstacionController.
-Prestar una bicicleta en una estaci�n""",
+Prestar una bicicleta en una estación""",
       this.prefix + """estaciones/$id<[^/]+>/bicicletas/$id2<[^/]+>"""
     )
   )
@@ -879,7 +879,7 @@ Prestar una bicicleta en una estaci�n""",
       "devolverBicicleta",
       Seq(classOf[Long], classOf[Long]),
       "POST",
-      """Entregar una bicicleta en una estaci�n""",
+      """Entregar una bicicleta en una estación""",
       this.prefix + """estaciones/$id<[^/]+>/bicicletas"""
     )
   )

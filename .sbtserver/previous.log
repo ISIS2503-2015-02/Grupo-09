@@ -1,5 +1,5 @@
-New log file opened at Mon Oct 05 18:02:54 COT 2015 by 15508@USER-HP
-jvm 15508@USER-HP
+New log file opened at Mon Nov 23 23:36:51 COT 2015 by 11880@USER-HP
+jvm 11880@USER-HP
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.51-b03
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Dev\Grupo-09\project, returning: (grupo-09-build)
 Loading project definition from C:\Dev\Grupo-09\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@2d9a546b, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@7aa45352, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -69,7 +69,7 @@ Set current project to arqui-g9 (in build file:/C:/Dev/Grupo-09/)
 > server-handle-next-server-request
 > {file:/C:/Dev/Grupo-09/}root/*:playForkConfig
 Evaluating tasks: *:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@7654eb1, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@111c8b6e, check cycles: false
 Read from stdout: Updating {file:/C:/Dev/Grupo-09/}root...
 Updating {file:/C:/Dev/Grupo-09/}root...
 Other repositories:
@@ -84,7 +84,7 @@ resolving dependencies for configuration 'compile'
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.6 [compile->default(compile)]
 Read from stdout: Resolving org.scala-lang#scala-library;2.11.6 ...
 Resolving org.scala-lang#scala-library;2.11.6 ...
-sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1e5de2e5
+sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@97b07c0
 sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.6
 	found org.scala-lang#scala-library;2.11.6 in sbt-chain
 	[2.11.6] org.scala-lang#scala-library;2.11.6
@@ -636,7 +636,7 @@ downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-as
 	public: downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom
 	public: downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom.sha1
 sha1 OK for https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom
-	[SUCCESSFUL ] com.google.inject.extensions#guice-assistedinject;4.0!guice-assistedinject.pom(pom.original) (374ms)
+	[SUCCESSFUL ] com.google.inject.extensions#guice-assistedinject;4.0!guice-assistedinject.pom(pom.original) (445ms)
 Read from stdout: Resolving com.google.inject.extensions#extensions-parent;4.0 ...
 Resolving com.google.inject.extensions#extensions-parent;4.0 ...
 sbt-chain: Checking cache for: dependency: com.google.inject.extensions#extensions-parent;4.0 {}
@@ -1622,6 +1622,91 @@ sbt-chain: module revision found in cache: org.jboss#jandex;1.1.0.Final
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->runtime(*)]
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->compile]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.9.Final [compile->master]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->default(compile)]
+Read from stdout: Resolving be.objectify#deadbolt-java_2.11;2.4.3 ...
+Resolving be.objectify#deadbolt-java_2.11;2.4.3 ...
+sbt-chain: Checking cache for: dependency: be.objectify#deadbolt-java_2.11;2.4.3 {compile=[default(compile)]}
+sbt-chain: module revision found in cache: be.objectify#deadbolt-java_2.11;2.4.3
+	found be.objectify#deadbolt-java_2.11;2.4.3 in sbt-chain
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->runtime]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->master(compile)]
+Read from stdout: Resolving be.objectify#deadbolt-core_2.11;2.4.2 ...
+Resolving be.objectify#deadbolt-core_2.11;2.4.2 ...
+sbt-chain: Checking cache for: dependency: be.objectify#deadbolt-core_2.11;2.4.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+sbt-chain: module revision found in cache: be.objectify#deadbolt-core_2.11;2.4.2
+	found be.objectify#deadbolt-core_2.11;2.4.2 in sbt-chain
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->compile]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->master]
 resolving dependencies for configuration 'runtime'
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [runtime]
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [compile]
@@ -2573,6 +2658,79 @@ excluding dependency: org.springframework#spring-core;4.1.6.RELEASE {compile=[co
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->runtime(*)]
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->compile]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.9.Final [compile->master]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->default(compile)]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->runtime]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->master]
 resolving dependencies for configuration 'test'
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [test]
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [runtime]
@@ -3525,6 +3683,79 @@ excluding dependency: org.springframework#spring-core;4.1.6.RELEASE {compile=[co
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->runtime(*)]
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->compile]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.9.Final [compile->master]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->default(compile)]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->runtime]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->master]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.4.2 [test->default(compile)]
 Read from stdout: Resolving com.typesafe.play#play-test_2.11;2.4.2 ...
 Resolving com.typesafe.play#play-test_2.11;2.4.2 ...
@@ -3537,8 +3768,6 @@ sbt-chain: module revision found in cache: com.typesafe.play#play-test_2.11;2.4.
 == resolving dependencies com.typesafe.play#play-test_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
 == resolving dependencies com.typesafe.play#play-test_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
 == resolving dependencies com.typesafe.play#play-test_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
-== resolving dependencies com.typesafe.play#play-test_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->runtime(*)]
-== resolving dependencies com.typesafe.play#play-test_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile]
 == resolving dependencies com.typesafe.play#play-test_2.11;2.4.2->junit#junit;4.12 [compile->master(compile)]
 Read from stdout: Resolving junit#junit;4.12 ...
 Resolving junit#junit;4.12 ...
@@ -5417,6 +5646,79 @@ excluding dependency: org.springframework#spring-core;4.1.6.RELEASE {compile=[co
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->runtime(*)]
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->compile]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.9.Final [compile->master]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->default(compile)]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->runtime]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->master]
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [optional]
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [provided]
 resolving dependencies for configuration 'runtime-internal'
@@ -6371,6 +6673,79 @@ excluding dependency: org.springframework#spring-core;4.1.6.RELEASE {compile=[co
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->runtime(*)]
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->compile]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.9.Final [compile->master]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->default(compile)]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->runtime]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->master]
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [optional]
 resolving dependencies for configuration 'test-internal'
 == resolving dependencies for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT [test-internal]
@@ -7325,6 +7700,79 @@ excluding dependency: org.springframework#spring-core;4.1.6.RELEASE {compile=[co
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->runtime(*)]
 == resolving dependencies org.hibernate#hibernate-entitymanager;4.3.9.Final->org.javassist#javassist;3.19.0-GA [runtime->compile]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.3.9.Final [compile->master]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->default(compile)]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->runtime]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->master(compile)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [compile->compile(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->com.typesafe.play#play-cache_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-java_2.11;2.4.3->be.objectify#deadbolt-core_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->org.scala-lang#scala-library;2.11.6 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#twirl-api_2.11;1.1.1 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-java_2.11;2.4.2 [runtime->compile]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.0 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->runtime(*)]
+== resolving dependencies be.objectify#deadbolt-core_2.11;2.4.2->com.typesafe.play#play-netty-server_2.11;2.4.2 [runtime->compile]
+== resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->be.objectify#deadbolt-java_2.11;2.4.3 [compile->master]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.4.2 [test->default(compile)]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.4.2 [test->runtime]
 == resolving dependencies arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT->com.typesafe.play#play-test_2.11;2.4.2 [test->compile]
@@ -9109,6 +9557,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.11;2.4.2!play-jdbc_2.11.jar
 	[NOT REQUIRED] com.typesafe.play#play-java-jpa_2.11;2.4.2!play-java-jpa_2.11.jar
 	[NOT REQUIRED] org.hibernate#hibernate-entitymanager;4.3.9.Final!hibernate-entitymanager.jar
+	[NOT REQUIRED] be.objectify#deadbolt-java_2.11;2.4.3!deadbolt-java_2.11.jar
 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.4!commons-lang3.jar
 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)
 	[NOT REQUIRED] org.avaje.ebeanorm#avaje-ebeanorm;4.6.2!avaje-ebeanorm.jar
@@ -9190,6 +9639,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] org.jboss.spec.javax.transaction#jboss-transaction-api_1.2_spec;1.0.0.Final!jboss-transaction-api_1.2_spec.jar
 	[NOT REQUIRED] antlr#antlr;2.7.7!antlr.jar
 	[NOT REQUIRED] org.jboss#jandex;1.1.0.Final!jandex.jar
+	[NOT REQUIRED] be.objectify#deadbolt-core_2.11;2.4.2!deadbolt-core_2.11.jar
 	[NOT REQUIRED] com.typesafe.play#play-test_2.11;2.4.2!play-test_2.11.jar
 	[NOT REQUIRED] junit#junit;4.12!junit.jar
 	[NOT REQUIRED] com.novocode#junit-interface;0.11!junit-interface.jar
@@ -9267,7 +9717,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
-:: resolution report :: resolve 7816ms :: artifacts dl 254ms
+:: resolution report :: resolve 14026ms :: artifacts dl 4445ms
 	report for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT compile produced in C:\Dev\Grupo-09\target\resolution-cache\reports\arqui-g9-arqui-g9_2.11-compile.xml
 	report for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT runtime produced in C:\Dev\Grupo-09\target\resolution-cache\reports\arqui-g9-arqui-g9_2.11-runtime.xml
 	report for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT test produced in C:\Dev\Grupo-09\target\resolution-cache\reports\arqui-g9-arqui-g9_2.11-test.xml
@@ -9282,53 +9732,53 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	report for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT pom produced in C:\Dev\Grupo-09\target\resolution-cache\reports\arqui-g9-arqui-g9_2.11-pom.xml
 	report for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT scala-tool produced in C:\Dev\Grupo-09\target\resolution-cache\reports\arqui-g9-arqui-g9_2.11-scala-tool.xml
 	report for arqui-g9#arqui-g9_2.11;1.0-SNAPSHOT fork-run produced in C:\Dev\Grupo-09\target\resolution-cache\reports\arqui-g9-arqui-g9_2.11-fork-run.xml
-	resolve done (7816ms resolve - 254ms download)
+	resolve done (14026ms resolve - 4445ms download)
 Read from stdout: Done updating.
 Done updating.
-Total time: 13 s, completed Oct 5, 2015 6:40:06 PM
+Total time: 22 s, completed Nov 24, 2015 12:38:19 AM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > root/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@2747666b, check cycles: false
-Total time: 0 s, completed Oct 5, 2015 6:40:16 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@8634eaa, check cycles: false
+Total time: 0 s, completed Nov 24, 2015 12:38:23 AM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Dev/Grupo-09/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@4de88615, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@4ffacc1a, check cycles: false
 SLF4J: The following set of substitute loggers may have been accessed
 SLF4J: during the initialization phase. Logging calls during this
 SLF4J: phase were not honored. However, subsequent logging calls to these
 SLF4J: loggers will work as normally expected.
 SLF4J: See also http://www.slf4j.org/codes.html#substituteLogger
 SLF4J: org.webjars.CloseQuietly
-Invalidating C:\Dev\Grupo-09\target\scala-2.11\classes\controllers\routes.class: stamp changed from lastModified(1442465406362) to lastModified(1444065997068)
 
 Initial source changes: 
-	removed:Set()
+	removed:Set(C:\Dev\Grupo-09\app\Global.java, C:\Dev\Grupo-09\app\models\Administrador.java)
 	added: Set()
-	modified: Set(C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\mainBody.template.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\conductores.template.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java)
+	modified: Set(C:\Dev\Grupo-09\app\models\Posicion.java, C:\Dev\Grupo-09\app\controllers\MapController.java, C:\Dev\Grupo-09\app\controllers\Application.java, C:\Dev\Grupo-09\app\models\User.java, C:\Dev\Grupo-09\app\models\RevisionMecanica.java, C:\Dev\Grupo-09\app\models\Reserva.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\app\models\TranviaVehiculo.java, C:\Dev\Grupo-09\app\controllers\VehiculoController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\app\models\Estacion.java, C:\Dev\Grupo-09\app\controllers\DriverController.java, C:\Dev\Grupo-09\app\controllers\TrayectoController.java, C:\Dev\Grupo-09\app\models\Vcub.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\app\models\MoviBusVehiculo.java, C:\Dev\Grupo-09\app\controllers\VcubController.java, C:\Dev\Grupo-09\app\models\Trayecto.java, C:\Dev\Grupo-09\app\controllers\UserController.java, C:\Dev\Grupo-09\app\models\Vehiculo.java, C:\Dev\Grupo-09\app\models\Driver.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\app\controllers\TranviaVehController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java, C:\Dev\Grupo-09\app\controllers\MoviBusController.java, C:\Dev\Grupo-09\app\controllers\EstacionController.java, C:\Dev\Grupo-09\app\models\Datos.java, C:\Dev\Grupo-09\app\models\Emergencia.java)
 Removed products: Set()
 External API changes: API Changes: Set()
-Modified binary dependencies: Set(C:\Dev\Grupo-09\target\scala-2.11\classes\controllers\routes.class)
-Initial directly invalidated sources: Set(C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\mainBody.template.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\conductores.template.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java)
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Dev\Grupo-09\app\Global.java, C:\Dev\Grupo-09\app\models\Posicion.java, C:\Dev\Grupo-09\app\controllers\MapController.java, C:\Dev\Grupo-09\app\controllers\Application.java, C:\Dev\Grupo-09\app\models\User.java, C:\Dev\Grupo-09\app\models\RevisionMecanica.java, C:\Dev\Grupo-09\app\models\Reserva.java, C:\Dev\Grupo-09\app\models\Administrador.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\app\models\TranviaVehiculo.java, C:\Dev\Grupo-09\app\controllers\VehiculoController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\app\models\Estacion.java, C:\Dev\Grupo-09\app\controllers\DriverController.java, C:\Dev\Grupo-09\app\controllers\TrayectoController.java, C:\Dev\Grupo-09\app\models\Vcub.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\app\models\MoviBusVehiculo.java, C:\Dev\Grupo-09\app\controllers\VcubController.java, C:\Dev\Grupo-09\app\models\Trayecto.java, C:\Dev\Grupo-09\app\controllers\UserController.java, C:\Dev\Grupo-09\app\models\Vehiculo.java, C:\Dev\Grupo-09\app\models\Driver.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\app\controllers\TranviaVehController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java, C:\Dev\Grupo-09\app\controllers\MoviBusController.java, C:\Dev\Grupo-09\app\controllers\EstacionController.java, C:\Dev\Grupo-09\app\models\Datos.java, C:\Dev\Grupo-09\app\models\Emergencia.java)
 
 Sources indirectly invalidated by:
 	product: Set()
-	binary dep: Set(C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\mainBody.template.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\conductores.template.scala)
+	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\mainBody.template.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\target\scala-2.11\twirl\main\views\html\conductores.template.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java)
+All initially invalidated sources: Set(C:\Dev\Grupo-09\app\Global.java, C:\Dev\Grupo-09\app\models\Posicion.java, C:\Dev\Grupo-09\app\controllers\MapController.java, C:\Dev\Grupo-09\app\controllers\Application.java, C:\Dev\Grupo-09\app\models\User.java, C:\Dev\Grupo-09\app\models\RevisionMecanica.java, C:\Dev\Grupo-09\app\models\Reserva.java, C:\Dev\Grupo-09\app\models\Administrador.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\app\models\TranviaVehiculo.java, C:\Dev\Grupo-09\app\controllers\VehiculoController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\app\models\Estacion.java, C:\Dev\Grupo-09\app\controllers\DriverController.java, C:\Dev\Grupo-09\app\controllers\TrayectoController.java, C:\Dev\Grupo-09\app\models\Vcub.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\app\models\MoviBusVehiculo.java, C:\Dev\Grupo-09\app\controllers\VcubController.java, C:\Dev\Grupo-09\app\models\Trayecto.java, C:\Dev\Grupo-09\app\controllers\UserController.java, C:\Dev\Grupo-09\app\models\Vehiculo.java, C:\Dev\Grupo-09\app\models\Driver.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\app\controllers\TranviaVehController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java, C:\Dev\Grupo-09\app\controllers\MoviBusController.java, C:\Dev\Grupo-09\app\controllers\EstacionController.java, C:\Dev\Grupo-09\app\models\Datos.java, C:\Dev\Grupo-09\app\models\Emergencia.java)
 
-Read from stdout: Compiling 6 Scala sources and 1 Java source to C:\Dev\Grupo-09\target\scala-2.11\classes...
-Compiling 6 Scala sources and 1 Java source to C:\Dev\Grupo-09\target\scala-2.11\classes...
+Recompiling all 46 sources: invalidated sources (30) exceeded 50.0% of all sources
+Read from stdout: Compiling 22 Scala sources and 24 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...
+Compiling 22 Scala sources and 24 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...
 Getting compiler-interface from component compiler for Scala 2.11.6
 Other repositories:
 Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.6
 Other repositories:
 Default repositories:
-Running cached compiler 524dd3da, interfacing (CompilerInterface) with Scala compiler version 2.11.6
+Running cached compiler fe8051d, interfacing (CompilerInterface) with Scala compiler version 2.11.6
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -9337,53 +9787,316 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	-bootclasspath
 	C:\Program Files\Java\jdk1.8.0_51\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_51\jre\classes;C:\Users\USER\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.6.jar
 	-classpath
-	C:\Dev\Grupo-09\target\scala-2.11\classes;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-enhancer\jars\play-enhancer-1.1.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\twirl-api_2.11\jars\twirl-api_2.11-1.1.1.jar;C:\Users\USER\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.4.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-ebean_2.11\jars\play-ebean_2.11-1.0.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc-api_2.11\jars\play-jdbc-api_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\build-link\jars\build-link-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-exceptions\jars\play-exceptions-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.scala-stm\scala-stm_2.11\jars\scala-stm_2.11-0.7.jar;C:\Users\USER\.ivy2\cache\com.typesafe\config\bundles\config-1.3.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\joda-time\joda-time\jars\joda-time-2.8.1.jar;C:\Users\USER\.ivy2\cache\org.joda\joda-convert\jars\joda-convert-1.7.jar;C:\Users\USER\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.11.6.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\bundles\jackson-core-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-annotations\bundles\jackson-annotations-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\bundles\jackson-databind-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\bundles\jackson-datatype-jdk8-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\bundles\jackson-datatype-jsr310-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-netty-utils\jars\play-netty-utils-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.1.jar;C:\Users\USER\.ivy2\cache\ch.qos.logback\logback-core\jars\logback-core-1.1.3.jar;C:\Users\USER\.ivy2\cache\ch.qos.logback\logback-classic\jars\logback-classic-1.1.3.jar;C:\Users\USER\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.11.jar;C:\Users\USER\.ivy2\cache\com.typesafe.akka\akka-slf4j_2.11\jars\akka-slf4j_2.11-2.3.11.jar;C:\Users\USER\.ivy2\cache\commons-codec\commons-codec\jars\commons-codec-1.10.jar;C:\Users\USER\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.11.0.jar;C:\Users\USER\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.4.01.jar;C:\Users\USER\.ivy2\cache\javax.transaction\jta\jars\jta-1.1.jar;C:\Users\USER\.ivy2\cache\com.google.inject\guice\jars\guice-4.0.jar;C:\Users\USER\.ivy2\cache\javax.inject\javax.inject\jars\javax.inject-1.jar;C:\Users\USER\.ivy2\cache\aopalliance\aopalliance\jars\aopalliance-1.0.jar;C:\Users\USER\.ivy2\cache\com.google.inject.extensions\guice-assistedinject\jars\guice-assistedinject-4.0.jar;C:\Users\USER\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar;C:\Users\USER\.ivy2\cache\com.zaxxer\HikariCP\bundles\HikariCP-2.3.7.jar;C:\Users\USER\.ivy2\cache\com.h2database\h2\jars\h2-1.4.187.jar;C:\Users\USER\.ivy2\cache\tyrex\tyrex\jars\tyrex-1.0.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-java8-compat_2.11\bundles\scala-java8-compat_2.11-0.3.0.jar;C:\Users\USER\.ivy2\cache\org.yaml\snakeyaml\bundles\snakeyaml-1.15.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-validator\jars\hibernate-validator-5.0.3.Final.jar;C:\Users\USER\.ivy2\cache\javax.validation\validation-api\jars\validation-api-1.1.0.Final.jar;C:\Users\USER\.ivy2\cache\com.fasterxml\classmate\bundles\classmate-1.0.0.jar;C:\Users\USER\.ivy2\cache\org.jboss.logging\jboss-logging\jars\jboss-logging-3.2.1.Final.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-context\jars\spring-context-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-core\jars\spring-core-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-beans\jars\spring-beans-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.reflections\reflections\jars\reflections-0.9.9.jar;C:\Users\USER\.ivy2\cache\com.google.guava\guava\bundles\guava-18.0.jar;C:\Users\USER\.ivy2\cache\com.google.code.findbugs\annotations\jars\annotations-2.0.1.jar;C:\Users\USER\.ivy2\cache\net.jodah\typetools\bundles\typetools-0.4.1.jar;C:\Users\USER\.ivy2\cache\com.google.code.findbugs\jsr305\jars\jsr305-2.0.3.jar;C:\Users\USER\.ivy2\cache\org.apache.tomcat\tomcat-servlet-api\jars\tomcat-servlet-api-8.0.21.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc-evolutions_2.11\jars\play-jdbc-evolutions_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm\jars\avaje-ebeanorm-4.6.2.jar;C:\Users\USER\.ivy2\cache\javax.persistence\persistence-api\jars\persistence-api-1.0.jar;C:\Users\USER\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm-agent\jars\avaje-ebeanorm-agent-4.5.3.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-server_2.11\jars\play-server_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-netty-server_2.11\jars\play-netty-server_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\io.netty\netty\bundles\netty-3.10.3.Final.jar;C:\Users\USER\.ivy2\cache\com.typesafe.netty\netty-http-pipelining\jars\netty-http-pipelining-1.1.4.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.11.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.9.21.jar;C:\Users\USER\.ivy2\cache\oauth.signpost\signpost-core\jars\signpost-core-1.2.1.2.jar;C:\Users\USER\.ivy2\cache\oauth.signpost\signpost-commonshttp4\jars\signpost-commonshttp4-1.2.1.2.jar;C:\Users\USER\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.0.1.jar;C:\Users\USER\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.0.1.jar;C:\Users\USER\.ivy2\cache\commons-logging\commons-logging\jars\commons-logging-1.1.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-jpa_2.11\jars\play-java-jpa_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.1-api\jars\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-4.3.9.Final.jar;C:\Users\USER\.ivy2\cache\org.jboss.logging\jboss-logging-annotations\jars\jboss-logging-annotations-1.2.0.Beta1.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-4.3.9.Final.jar;C:\Users\USER\.ivy2\cache\org.jboss.spec.javax.transaction\jboss-transaction-api_1.2_spec\jars\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Users\USER\.ivy2\cache\dom4j\dom4j\jars\dom4j-1.6.1.jar;C:\Users\USER\.ivy2\cache\org.hibernate.common\hibernate-commons-annotations\jars\hibernate-commons-annotations-4.0.5.Final.jar;C:\Users\USER\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar;C:\Users\USER\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar
-Read from stdout: C:\Dev\Grupo-09\app\views\conductores.scala.html:216: value getId_conductor is not a member of java.util.List[models.Driver]
-C:\Dev\Grupo-09\app\views\conductores.scala.html:216: value getId_conductor is not a member of java.util.List[models.Driver]
-Read from stdout: <td>@conductores.getHomePhone()</td>
-                                    <td>@conductores.getHomePhone()</td>
+	C:\Dev\Grupo-09\target\scala-2.11\classes;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-enhancer\jars\play-enhancer-1.1.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\twirl-api_2.11\jars\twirl-api_2.11-1.1.1.jar;C:\Users\USER\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.4.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-ebean_2.11\jars\play-ebean_2.11-1.0.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc-api_2.11\jars\play-jdbc-api_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\build-link\jars\build-link-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-exceptions\jars\play-exceptions-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.scala-stm\scala-stm_2.11\jars\scala-stm_2.11-0.7.jar;C:\Users\USER\.ivy2\cache\com.typesafe\config\bundles\config-1.3.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\joda-time\joda-time\jars\joda-time-2.8.1.jar;C:\Users\USER\.ivy2\cache\org.joda\joda-convert\jars\joda-convert-1.7.jar;C:\Users\USER\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.11.6.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\bundles\jackson-core-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-annotations\bundles\jackson-annotations-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\bundles\jackson-databind-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\bundles\jackson-datatype-jdk8-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\bundles\jackson-datatype-jsr310-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-netty-utils\jars\play-netty-utils-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.1.jar;C:\Users\USER\.ivy2\cache\ch.qos.logback\logback-core\jars\logback-core-1.1.3.jar;C:\Users\USER\.ivy2\cache\ch.qos.logback\logback-classic\jars\logback-classic-1.1.3.jar;C:\Users\USER\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.11.jar;C:\Users\USER\.ivy2\cache\com.typesafe.akka\akka-slf4j_2.11\jars\akka-slf4j_2.11-2.3.11.jar;C:\Users\USER\.ivy2\cache\commons-codec\commons-codec\jars\commons-codec-1.10.jar;C:\Users\USER\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.11.0.jar;C:\Users\USER\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.4.01.jar;C:\Users\USER\.ivy2\cache\javax.transaction\jta\jars\jta-1.1.jar;C:\Users\USER\.ivy2\cache\com.google.inject\guice\jars\guice-4.0.jar;C:\Users\USER\.ivy2\cache\javax.inject\javax.inject\jars\javax.inject-1.jar;C:\Users\USER\.ivy2\cache\aopalliance\aopalliance\jars\aopalliance-1.0.jar;C:\Users\USER\.ivy2\cache\com.google.inject.extensions\guice-assistedinject\jars\guice-assistedinject-4.0.jar;C:\Users\USER\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar;C:\Users\USER\.ivy2\cache\com.zaxxer\HikariCP\bundles\HikariCP-2.3.7.jar;C:\Users\USER\.ivy2\cache\com.h2database\h2\jars\h2-1.4.187.jar;C:\Users\USER\.ivy2\cache\tyrex\tyrex\jars\tyrex-1.0.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-java8-compat_2.11\bundles\scala-java8-compat_2.11-0.3.0.jar;C:\Users\USER\.ivy2\cache\org.yaml\snakeyaml\bundles\snakeyaml-1.15.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-validator\jars\hibernate-validator-5.0.3.Final.jar;C:\Users\USER\.ivy2\cache\javax.validation\validation-api\jars\validation-api-1.1.0.Final.jar;C:\Users\USER\.ivy2\cache\com.fasterxml\classmate\bundles\classmate-1.0.0.jar;C:\Users\USER\.ivy2\cache\org.jboss.logging\jboss-logging\jars\jboss-logging-3.2.1.Final.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-context\jars\spring-context-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-core\jars\spring-core-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-beans\jars\spring-beans-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.reflections\reflections\jars\reflections-0.9.9.jar;C:\Users\USER\.ivy2\cache\com.google.guava\guava\bundles\guava-18.0.jar;C:\Users\USER\.ivy2\cache\com.google.code.findbugs\annotations\jars\annotations-2.0.1.jar;C:\Users\USER\.ivy2\cache\net.jodah\typetools\bundles\typetools-0.4.1.jar;C:\Users\USER\.ivy2\cache\com.google.code.findbugs\jsr305\jars\jsr305-2.0.3.jar;C:\Users\USER\.ivy2\cache\org.apache.tomcat\tomcat-servlet-api\jars\tomcat-servlet-api-8.0.21.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc-evolutions_2.11\jars\play-jdbc-evolutions_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm\jars\avaje-ebeanorm-4.6.2.jar;C:\Users\USER\.ivy2\cache\javax.persistence\persistence-api\jars\persistence-api-1.0.jar;C:\Users\USER\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm-agent\jars\avaje-ebeanorm-agent-4.5.3.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-server_2.11\jars\play-server_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-netty-server_2.11\jars\play-netty-server_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\io.netty\netty\bundles\netty-3.10.3.Final.jar;C:\Users\USER\.ivy2\cache\com.typesafe.netty\netty-http-pipelining\jars\netty-http-pipelining-1.1.4.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.11.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.9.21.jar;C:\Users\USER\.ivy2\cache\oauth.signpost\signpost-core\jars\signpost-core-1.2.1.2.jar;C:\Users\USER\.ivy2\cache\oauth.signpost\signpost-commonshttp4\jars\signpost-commonshttp4-1.2.1.2.jar;C:\Users\USER\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.0.1.jar;C:\Users\USER\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.0.1.jar;C:\Users\USER\.ivy2\cache\commons-logging\commons-logging\jars\commons-logging-1.1.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-jpa_2.11\jars\play-java-jpa_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.1-api\jars\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-4.3.9.Final.jar;C:\Users\USER\.ivy2\cache\org.jboss.logging\jboss-logging-annotations\jars\jboss-logging-annotations-1.2.0.Beta1.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-4.3.9.Final.jar;C:\Users\USER\.ivy2\cache\org.jboss.spec.javax.transaction\jboss-transaction-api_1.2_spec\jars\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Users\USER\.ivy2\cache\dom4j\dom4j\jars\dom4j-1.6.1.jar;C:\Users\USER\.ivy2\cache\org.hibernate.common\hibernate-commons-annotations\jars\hibernate-commons-annotations-4.0.5.Final.jar;C:\Users\USER\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar;C:\Users\USER\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar;C:\Users\USER\.ivy2\cache\be.objectify\deadbolt-java_2.11\jars\deadbolt-java_2.11-2.4.3.jar;C:\Users\USER\.ivy2\cache\be.objectify\deadbolt-core_2.11\jars\deadbolt-core_2.11-2.4.2.jar
+Read from stdout: C:\Dev\Grupo-09\app\controllers\Application.java:5: object Application is not a member of package views.html
+C:\Dev\Grupo-09\app\controllers\Application.java:5: object Application is not a member of package views.html
+Read from stdout: import views.html.Application.*;
+import views.html.Application.*;
 Read from stdout: ^
-                                       ^
-Read from stdout: C:\Dev\Grupo-09\app\views\conductores.scala.html:217: value getFullName is not a member of java.util.List[models.Driver]
-C:\Dev\Grupo-09\app\views\conductores.scala.html:217: value getFullName is not a member of java.util.List[models.Driver]
-Read from stdout: <td>@conductores.getMobilePhone()</td>
-                                    <td>@conductores.getMobilePhone()</td>
-Read from stdout: ^
-                                           ^
-Read from stdout: C:\Dev\Grupo-09\app\views\conductores.scala.html:218: value getDocumentNumber is not a member of java.util.List[models.Driver]
-C:\Dev\Grupo-09\app\views\conductores.scala.html:218: value getDocumentNumber is not a member of java.util.List[models.Driver]
-Read from stdout: <td>@conductores.getAddress()</td>
-                                    <td>@conductores.getAddress()</td>
-Read from stdout: ^
-                                         ^
-Read from stdout: C:\Dev\Grupo-09\app\views\conductores.scala.html:220: value getHomePhone is not a member of java.util.List[models.Driver]
-C:\Dev\Grupo-09\app\views\conductores.scala.html:220: value getHomePhone is not a member of java.util.List[models.Driver]
-Read from stdout: }
-                                }
-Read from stdout: ^
-           ^
-Read from stdout: C:\Dev\Grupo-09\app\views\conductores.scala.html:222: value getMobilePhone is not a member of java.util.List[models.Driver]
-C:\Dev\Grupo-09\app\views\conductores.scala.html:222: value getMobilePhone is not a member of java.util.List[models.Driver]
-Read from stdout: </table>
-                            </table>
-Read from stdout: ^
-          ^
-Read from stdout: C:\Dev\Grupo-09\app\views\conductores.scala.html:224: value getAddress is not a member of java.util.List[models.Driver]
-C:\Dev\Grupo-09\app\views\conductores.scala.html:224: value getAddress is not a member of java.util.List[models.Driver]
-Read from stdout: </div>
-                    </div>
-Read from stdout: ^
-                  ^
-Read from stdout: C:\Dev\Grupo-09\app\views\mainBody.scala.html:4: not found: value theme
-C:\Dev\Grupo-09\app\views\mainBody.scala.html:4: not found: value theme
-Read from stdout: @theme{
-@theme{
-Read from stdout: ^
-    ^
-Read from stdout: 7 errors found
-7 errors found
+       ^
+Read from stdout: one error found
+one error found
 Compilation failed (CompilerInterface)
-Total time: 39 s, completed Oct 5, 2015 6:41:02 PM
+Total time: 26 s, completed Nov 24, 2015 12:38:57 AM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Dev/Grupo-09/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@7c887e40, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Dev\Grupo-09\app\Global.java, C:\Dev\Grupo-09\app\models\Administrador.java)
+	added: Set()
+	modified: Set(C:\Dev\Grupo-09\app\models\Posicion.java, C:\Dev\Grupo-09\app\controllers\MapController.java, C:\Dev\Grupo-09\app\controllers\Application.java, C:\Dev\Grupo-09\app\models\User.java, C:\Dev\Grupo-09\app\models\RevisionMecanica.java, C:\Dev\Grupo-09\app\models\Reserva.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\app\models\TranviaVehiculo.java, C:\Dev\Grupo-09\app\controllers\VehiculoController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\app\models\Estacion.java, C:\Dev\Grupo-09\app\controllers\DriverController.java, C:\Dev\Grupo-09\app\controllers\TrayectoController.java, C:\Dev\Grupo-09\app\models\Vcub.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\app\models\MoviBusVehiculo.java, C:\Dev\Grupo-09\app\controllers\VcubController.java, C:\Dev\Grupo-09\app\models\Trayecto.java, C:\Dev\Grupo-09\app\controllers\UserController.java, C:\Dev\Grupo-09\app\models\Vehiculo.java, C:\Dev\Grupo-09\app\models\Driver.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\app\controllers\TranviaVehController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java, C:\Dev\Grupo-09\app\controllers\MoviBusController.java, C:\Dev\Grupo-09\app\controllers\EstacionController.java, C:\Dev\Grupo-09\app\models\Datos.java, C:\Dev\Grupo-09\app\models\Emergencia.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Dev\Grupo-09\app\Global.java, C:\Dev\Grupo-09\app\models\Posicion.java, C:\Dev\Grupo-09\app\controllers\MapController.java, C:\Dev\Grupo-09\app\controllers\Application.java, C:\Dev\Grupo-09\app\models\User.java, C:\Dev\Grupo-09\app\models\RevisionMecanica.java, C:\Dev\Grupo-09\app\models\Reserva.java, C:\Dev\Grupo-09\app\models\Administrador.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\app\models\TranviaVehiculo.java, C:\Dev\Grupo-09\app\controllers\VehiculoController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\app\models\Estacion.java, C:\Dev\Grupo-09\app\controllers\DriverController.java, C:\Dev\Grupo-09\app\controllers\TrayectoController.java, C:\Dev\Grupo-09\app\models\Vcub.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\app\models\MoviBusVehiculo.java, C:\Dev\Grupo-09\app\controllers\VcubController.java, C:\Dev\Grupo-09\app\models\Trayecto.java, C:\Dev\Grupo-09\app\controllers\UserController.java, C:\Dev\Grupo-09\app\models\Vehiculo.java, C:\Dev\Grupo-09\app\models\Driver.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\app\controllers\TranviaVehController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java, C:\Dev\Grupo-09\app\controllers\MoviBusController.java, C:\Dev\Grupo-09\app\controllers\EstacionController.java, C:\Dev\Grupo-09\app\models\Datos.java, C:\Dev\Grupo-09\app\models\Emergencia.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Dev\Grupo-09\app\Global.java, C:\Dev\Grupo-09\app\models\Posicion.java, C:\Dev\Grupo-09\app\controllers\MapController.java, C:\Dev\Grupo-09\app\controllers\Application.java, C:\Dev\Grupo-09\app\models\User.java, C:\Dev\Grupo-09\app\models\RevisionMecanica.java, C:\Dev\Grupo-09\app\models\Reserva.java, C:\Dev\Grupo-09\app\models\Administrador.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\Routes.scala, C:\Dev\Grupo-09\app\models\TranviaVehiculo.java, C:\Dev\Grupo-09\app\controllers\VehiculoController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\javascript\JavaScriptReverseRoutes.scala, C:\Dev\Grupo-09\app\models\Estacion.java, C:\Dev\Grupo-09\app\controllers\DriverController.java, C:\Dev\Grupo-09\app\controllers\TrayectoController.java, C:\Dev\Grupo-09\app\models\Vcub.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\ReverseRoutes.scala, C:\Dev\Grupo-09\app\models\MoviBusVehiculo.java, C:\Dev\Grupo-09\app\controllers\VcubController.java, C:\Dev\Grupo-09\app\models\Trayecto.java, C:\Dev\Grupo-09\app\controllers\UserController.java, C:\Dev\Grupo-09\app\models\Vehiculo.java, C:\Dev\Grupo-09\app\models\Driver.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\router\RoutesPrefix.scala, C:\Dev\Grupo-09\app\controllers\TranviaVehController.java, C:\Dev\Grupo-09\target\scala-2.11\routes\main\controllers\routes.java, C:\Dev\Grupo-09\app\controllers\MoviBusController.java, C:\Dev\Grupo-09\app\controllers\EstacionController.java, C:\Dev\Grupo-09\app\models\Datos.java, C:\Dev\Grupo-09\app\models\Emergencia.java)
+
+Recompiling all 46 sources: invalidated sources (30) exceeded 50.0% of all sources
+Read from stdout: Compiling 22 Scala sources and 24 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...
+Compiling 22 Scala sources and 24 Java sources to C:\Dev\Grupo-09\target\scala-2.11\classes...
+Getting compiler-interface from component compiler for Scala 2.11.6
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.6
+Other repositories:
+Default repositories:
+Running cached compiler 7467a0f4, interfacing (CompilerInterface) with Scala compiler version 2.11.6
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	C:\Program Files\Java\jdk1.8.0_51\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_51\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_51\jre\classes;C:\Users\USER\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.6.jar
+	-classpath
+	C:\Dev\Grupo-09\target\scala-2.11\classes;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-enhancer\jars\play-enhancer-1.1.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\twirl-api_2.11\jars\twirl-api_2.11-1.1.1.jar;C:\Users\USER\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.4.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-ebean_2.11\jars\play-ebean_2.11-1.0.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc-api_2.11\jars\play-jdbc-api_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\build-link\jars\build-link-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-exceptions\jars\play-exceptions-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.scala-stm\scala-stm_2.11\jars\scala-stm_2.11-0.7.jar;C:\Users\USER\.ivy2\cache\com.typesafe\config\bundles\config-1.3.0.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\joda-time\joda-time\jars\joda-time-2.8.1.jar;C:\Users\USER\.ivy2\cache\org.joda\joda-convert\jars\joda-convert-1.7.jar;C:\Users\USER\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.11.6.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\bundles\jackson-core-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-annotations\bundles\jackson-annotations-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\bundles\jackson-databind-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\bundles\jackson-datatype-jdk8-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\bundles\jackson-datatype-jsr310-2.5.4.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-netty-utils\jars\play-netty-utils-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.7.12.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.1.jar;C:\Users\USER\.ivy2\cache\ch.qos.logback\logback-core\jars\logback-core-1.1.3.jar;C:\Users\USER\.ivy2\cache\ch.qos.logback\logback-classic\jars\logback-classic-1.1.3.jar;C:\Users\USER\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.11.jar;C:\Users\USER\.ivy2\cache\com.typesafe.akka\akka-slf4j_2.11\jars\akka-slf4j_2.11-2.3.11.jar;C:\Users\USER\.ivy2\cache\commons-codec\commons-codec\jars\commons-codec-1.10.jar;C:\Users\USER\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.11.0.jar;C:\Users\USER\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.4.01.jar;C:\Users\USER\.ivy2\cache\javax.transaction\jta\jars\jta-1.1.jar;C:\Users\USER\.ivy2\cache\com.google.inject\guice\jars\guice-4.0.jar;C:\Users\USER\.ivy2\cache\javax.inject\javax.inject\jars\javax.inject-1.jar;C:\Users\USER\.ivy2\cache\aopalliance\aopalliance\jars\aopalliance-1.0.jar;C:\Users\USER\.ivy2\cache\com.google.inject.extensions\guice-assistedinject\jars\guice-assistedinject-4.0.jar;C:\Users\USER\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar;C:\Users\USER\.ivy2\cache\com.zaxxer\HikariCP\bundles\HikariCP-2.3.7.jar;C:\Users\USER\.ivy2\cache\com.h2database\h2\jars\h2-1.4.187.jar;C:\Users\USER\.ivy2\cache\tyrex\tyrex\jars\tyrex-1.0.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.scala-lang.modules\scala-java8-compat_2.11\bundles\scala-java8-compat_2.11-0.3.0.jar;C:\Users\USER\.ivy2\cache\org.yaml\snakeyaml\bundles\snakeyaml-1.15.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-validator\jars\hibernate-validator-5.0.3.Final.jar;C:\Users\USER\.ivy2\cache\javax.validation\validation-api\jars\validation-api-1.1.0.Final.jar;C:\Users\USER\.ivy2\cache\com.fasterxml\classmate\bundles\classmate-1.0.0.jar;C:\Users\USER\.ivy2\cache\org.jboss.logging\jboss-logging\jars\jboss-logging-3.2.1.Final.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-context\jars\spring-context-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-core\jars\spring-core-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.springframework\spring-beans\jars\spring-beans-4.1.6.RELEASE.jar;C:\Users\USER\.ivy2\cache\org.reflections\reflections\jars\reflections-0.9.9.jar;C:\Users\USER\.ivy2\cache\com.google.guava\guava\bundles\guava-18.0.jar;C:\Users\USER\.ivy2\cache\com.google.code.findbugs\annotations\jars\annotations-2.0.1.jar;C:\Users\USER\.ivy2\cache\net.jodah\typetools\bundles\typetools-0.4.1.jar;C:\Users\USER\.ivy2\cache\com.google.code.findbugs\jsr305\jars\jsr305-2.0.3.jar;C:\Users\USER\.ivy2\cache\org.apache.tomcat\tomcat-servlet-api\jars\tomcat-servlet-api-8.0.21.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-jdbc-evolutions_2.11\jars\play-jdbc-evolutions_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm\jars\avaje-ebeanorm-4.6.2.jar;C:\Users\USER\.ivy2\cache\javax.persistence\persistence-api\jars\persistence-api-1.0.jar;C:\Users\USER\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm-agent\jars\avaje-ebeanorm-agent-4.5.3.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-server_2.11\jars\play-server_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-netty-server_2.11\jars\play-netty-server_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\io.netty\netty\bundles\netty-3.10.3.Final.jar;C:\Users\USER\.ivy2\cache\com.typesafe.netty\netty-http-pipelining\jars\netty-http-pipelining-1.1.4.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.11.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.9.21.jar;C:\Users\USER\.ivy2\cache\oauth.signpost\signpost-core\jars\signpost-core-1.2.1.2.jar;C:\Users\USER\.ivy2\cache\oauth.signpost\signpost-commonshttp4\jars\signpost-commonshttp4-1.2.1.2.jar;C:\Users\USER\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.0.1.jar;C:\Users\USER\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.0.1.jar;C:\Users\USER\.ivy2\cache\commons-logging\commons-logging\jars\commons-logging-1.1.1.jar;C:\Users\USER\.ivy2\cache\com.typesafe.play\play-java-jpa_2.11\jars\play-java-jpa_2.11-2.4.2.jar;C:\Users\USER\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.1-api\jars\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-4.3.9.Final.jar;C:\Users\USER\.ivy2\cache\org.jboss.logging\jboss-logging-annotations\jars\jboss-logging-annotations-1.2.0.Beta1.jar;C:\Users\USER\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-4.3.9.Final.jar;C:\Users\USER\.ivy2\cache\org.jboss.spec.javax.transaction\jboss-transaction-api_1.2_spec\jars\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Users\USER\.ivy2\cache\dom4j\dom4j\jars\dom4j-1.6.1.jar;C:\Users\USER\.ivy2\cache\org.hibernate.common\hibernate-commons-annotations\jars\hibernate-commons-annotations-4.0.5.Final.jar;C:\Users\USER\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar;C:\Users\USER\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar;C:\Users\USER\.ivy2\cache\be.objectify\deadbolt-java_2.11\jars\deadbolt-java_2.11-2.4.3.jar;C:\Users\USER\.ivy2\cache\be.objectify\deadbolt-core_2.11\jars\deadbolt-core_2.11-2.4.2.jar
+Scala compilation took 19.000154841 s
+Attempting to call com.sun.tools.javac.api.JavacTool@491ad9fc directly...
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java:11: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\DriverController.java:11: package views.html.Application does not exist
+Read from stdout: views.html.Application.addConductores
+views.html.Application.addConductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java:12: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\DriverController.java:12: package views.html.Application does not exist
+Read from stdout: views.html.Application.conductores
+views.html.Application.conductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\EstacionController.java:14: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\EstacionController.java:14: package views.html.Application does not exist
+Read from stdout: views.html.Application.addConductores
+views.html.Application.addConductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\EstacionController.java:15: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\EstacionController.java:15: package views.html.Application does not exist
+Read from stdout: views.html.Application.addEstaciones
+views.html.Application.addEstaciones
+Read from stdout: C:\Dev\Grupo-09\app\controllers\EstacionController.java:16: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\EstacionController.java:16: package views.html.Application does not exist
+Read from stdout: views.html.Application.estaciones
+views.html.Application.estaciones
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MapController.java:9: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\MapController.java:9: package views.html.Application does not exist
+Read from stdout: views.html.Application.map
+views.html.Application.map
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MoviBusController.java:11: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\MoviBusController.java:11: package views.html.Application does not exist
+Read from stdout: views.html.Application.addMobibuses
+views.html.Application.addMobibuses
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MoviBusController.java:12: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\MoviBusController.java:12: package views.html.Application does not exist
+Read from stdout: views.html.Application.mobibuses
+views.html.Application.mobibuses
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:12: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:12: package views.html.Application does not exist
+Read from stdout: views.html.Application.addMobibuses
+views.html.Application.addMobibuses
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:13: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:13: package views.html.Application does not exist
+Read from stdout: views.html.Application.addTranvias
+views.html.Application.addTranvias
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:14: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:14: package views.html.Application does not exist
+Read from stdout: views.html.Application.tranvias
+views.html.Application.tranvias
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TrayectoController.java:12: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\TrayectoController.java:12: package views.html.Application does not exist
+Read from stdout: views.html.Application.addTrayectos
+views.html.Application.addTrayectos
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TrayectoController.java:13: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\TrayectoController.java:13: package views.html.Application does not exist
+Read from stdout: views.html.Application.trayectos
+views.html.Application.trayectos
+Read from stdout: C:\Dev\Grupo-09\app\controllers\UserController.java:11: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\UserController.java:11: package views.html.Application does not exist
+Read from stdout: views.html.Application.addConductores
+views.html.Application.addConductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\UserController.java:12: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\UserController.java:12: package views.html.Application does not exist
+Read from stdout: views.html.Application.addUsuarios
+views.html.Application.addUsuarios
+Read from stdout: C:\Dev\Grupo-09\app\controllers\UserController.java:13: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\UserController.java:13: package views.html.Application does not exist
+Read from stdout: views.html.Application.usuarios
+views.html.Application.usuarios
+Read from stdout: C:\Dev\Grupo-09\app\controllers\VcubController.java:13: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\VcubController.java:13: package views.html.Application does not exist
+Read from stdout: views.html.Application.addVCubs
+views.html.Application.addVCubs
+Read from stdout: C:\Dev\Grupo-09\app\controllers\VcubController.java:14: package views.html.Application does not exist
+C:\Dev\Grupo-09\app\controllers\VcubController.java:14: package views.html.Application does not exist
+Read from stdout: views.html.Application.vcubs
+views.html.Application.vcubs
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java:26: cannot find symbol
+Read from stdout: symbol:   variable addConductores
+Read from stdout: location: class controllers.DriverController
+C:\Dev\Grupo-09\app\controllers\DriverController.java:26: cannot find symbol
+  symbol:   variable addConductores
+  location: class controllers.DriverController
+Read from stdout: addConductores
+addConductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java:34: cannot find symbol
+Read from stdout: symbol:   variable addConductores
+Read from stdout: location: class controllers.DriverController
+C:\Dev\Grupo-09\app\controllers\DriverController.java:34: cannot find symbol
+  symbol:   variable addConductores
+  location: class controllers.DriverController
+Read from stdout: addConductores
+addConductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java:47: cannot find symbol
+Read from stdout: symbol:   variable conductores
+Read from stdout: location: class controllers.DriverController
+C:\Dev\Grupo-09\app\controllers\DriverController.java:47: cannot find symbol
+  symbol:   variable conductores
+  location: class controllers.DriverController
+Read from stdout: conductores
+conductores
+Read from stdout: C:\Dev\Grupo-09\app\controllers\EstacionController.java:29: cannot find symbol
+Read from stdout: symbol:   variable addEstaciones
+Read from stdout: location: class controllers.EstacionController
+C:\Dev\Grupo-09\app\controllers\EstacionController.java:29: cannot find symbol
+  symbol:   variable addEstaciones
+  location: class controllers.EstacionController
+Read from stdout: addEstaciones
+addEstaciones
+Read from stdout: C:\Dev\Grupo-09\app\controllers\EstacionController.java:37: cannot find symbol
+Read from stdout: symbol:   variable addEstaciones
+Read from stdout: location: class controllers.EstacionController
+C:\Dev\Grupo-09\app\controllers\EstacionController.java:37: cannot find symbol
+  symbol:   variable addEstaciones
+  location: class controllers.EstacionController
+Read from stdout: addEstaciones
+addEstaciones
+Read from stdout: C:\Dev\Grupo-09\app\controllers\EstacionController.java:50: cannot find symbol
+Read from stdout: symbol:   variable estaciones
+Read from stdout: location: class controllers.EstacionController
+C:\Dev\Grupo-09\app\controllers\EstacionController.java:50: cannot find symbol
+  symbol:   variable estaciones
+  location: class controllers.EstacionController
+Read from stdout: estaciones
+estaciones
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MapController.java:52: cannot find symbol
+Read from stdout: symbol:   variable map
+Read from stdout: location: class controllers.MapController
+C:\Dev\Grupo-09\app\controllers\MapController.java:52: cannot find symbol
+  symbol:   variable map
+  location: class controllers.MapController
+Read from stdout: map
+map
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MoviBusController.java:25: cannot find symbol
+Read from stdout: symbol:   variable addMobibuses
+Read from stdout: location: class controllers.MoviBusController
+C:\Dev\Grupo-09\app\controllers\MoviBusController.java:25: cannot find symbol
+  symbol:   variable addMobibuses
+  location: class controllers.MoviBusController
+Read from stdout: addMobibuses
+addMobibuses
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MoviBusController.java:33: cannot find symbol
+Read from stdout: symbol:   variable addMobibuses
+Read from stdout: location: class controllers.MoviBusController
+C:\Dev\Grupo-09\app\controllers\MoviBusController.java:33: cannot find symbol
+  symbol:   variable addMobibuses
+  location: class controllers.MoviBusController
+Read from stdout: addMobibuses
+addMobibuses
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MoviBusController.java:66: cannot find symbol
+Read from stdout: symbol:   variable mobibuses
+Read from stdout: location: class controllers.MoviBusController
+C:\Dev\Grupo-09\app\controllers\MoviBusController.java:66: cannot find symbol
+  symbol:   variable mobibuses
+  location: class controllers.MoviBusController
+Read from stdout: mobibuses
+mobibuses
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:28: cannot find symbol
+Read from stdout: symbol:   variable addTranvias
+Read from stdout: location: class controllers.TranviaVehController
+C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:28: cannot find symbol
+  symbol:   variable addTranvias
+  location: class controllers.TranviaVehController
+Read from stdout: addTranvias
+addTranvias
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:36: cannot find symbol
+Read from stdout: symbol:   variable addTranvias
+Read from stdout: location: class controllers.TranviaVehController
+C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:36: cannot find symbol
+  symbol:   variable addTranvias
+  location: class controllers.TranviaVehController
+Read from stdout: addTranvias
+addTranvias
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:63: cannot find symbol
+Read from stdout: symbol:   variable tranvias
+Read from stdout: location: class controllers.TranviaVehController
+C:\Dev\Grupo-09\app\controllers\TranviaVehController.java:63: cannot find symbol
+  symbol:   variable tranvias
+  location: class controllers.TranviaVehController
+Read from stdout: tranvias
+tranvias
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TrayectoController.java:27: cannot find symbol
+Read from stdout: symbol:   variable addTrayectos
+Read from stdout: location: class controllers.TrayectoController
+C:\Dev\Grupo-09\app\controllers\TrayectoController.java:27: cannot find symbol
+  symbol:   variable addTrayectos
+  location: class controllers.TrayectoController
+Read from stdout: addTrayectos
+addTrayectos
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TrayectoController.java:35: cannot find symbol
+Read from stdout: symbol:   variable addTrayectos
+Read from stdout: location: class controllers.TrayectoController
+C:\Dev\Grupo-09\app\controllers\TrayectoController.java:35: cannot find symbol
+  symbol:   variable addTrayectos
+  location: class controllers.TrayectoController
+Read from stdout: addTrayectos
+addTrayectos
+Read from stdout: C:\Dev\Grupo-09\app\controllers\TrayectoController.java:51: cannot find symbol
+Read from stdout: symbol:   variable trayectos
+Read from stdout: location: class controllers.TrayectoController
+C:\Dev\Grupo-09\app\controllers\TrayectoController.java:51: cannot find symbol
+  symbol:   variable trayectos
+  location: class controllers.TrayectoController
+Read from stdout: trayectos
+trayectos
+Read from stdout: C:\Dev\Grupo-09\app\controllers\UserController.java:27: cannot find symbol
+Read from stdout: symbol:   variable addUsuarios
+Read from stdout: location: class controllers.UserController
+C:\Dev\Grupo-09\app\controllers\UserController.java:27: cannot find symbol
+  symbol:   variable addUsuarios
+  location: class controllers.UserController
+Read from stdout: addUsuarios
+addUsuarios
+Read from stdout: C:\Dev\Grupo-09\app\controllers\UserController.java:35: cannot find symbol
+Read from stdout: symbol:   variable addUsuarios
+Read from stdout: location: class controllers.UserController
+C:\Dev\Grupo-09\app\controllers\UserController.java:35: cannot find symbol
+  symbol:   variable addUsuarios
+  location: class controllers.UserController
+Read from stdout: addUsuarios
+addUsuarios
+Read from stdout: C:\Dev\Grupo-09\app\controllers\UserController.java:50: cannot find symbol
+Read from stdout: symbol:   variable usuarios
+Read from stdout: location: class controllers.UserController
+C:\Dev\Grupo-09\app\controllers\UserController.java:50: cannot find symbol
+  symbol:   variable usuarios
+  location: class controllers.UserController
+Read from stdout: usuarios
+usuarios
+Read from stdout: C:\Dev\Grupo-09\app\controllers\VcubController.java:28: cannot find symbol
+Read from stdout: symbol:   variable addVCubs
+Read from stdout: location: class controllers.VcubController
+C:\Dev\Grupo-09\app\controllers\VcubController.java:28: cannot find symbol
+  symbol:   variable addVCubs
+  location: class controllers.VcubController
+Read from stdout: addVCubs
+addVCubs
+Read from stdout: C:\Dev\Grupo-09\app\controllers\VcubController.java:37: cannot find symbol
+Read from stdout: symbol:   variable addVCubs
+Read from stdout: location: class controllers.VcubController
+C:\Dev\Grupo-09\app\controllers\VcubController.java:37: cannot find symbol
+  symbol:   variable addVCubs
+  location: class controllers.VcubController
+Read from stdout: addVCubs
+addVCubs
+Read from stdout: C:\Dev\Grupo-09\app\controllers\VcubController.java:52: cannot find symbol
+Read from stdout: symbol:   variable vcubs
+Read from stdout: location: class controllers.VcubController
+C:\Dev\Grupo-09\app\controllers\VcubController.java:52: cannot find symbol
+  symbol:   variable vcubs
+  location: class controllers.VcubController
+Read from stdout: vcubs
+vcubs
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MapController.java: Some input files use or override a deprecated API.
+C:\Dev\Grupo-09\app\controllers\MapController.java: Some input files use or override a deprecated API.
+Read from stdout: C:\Dev\Grupo-09\app\controllers\MapController.java: Recompile with -Xlint:deprecation for details.
+C:\Dev\Grupo-09\app\controllers\MapController.java: Recompile with -Xlint:deprecation for details.
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java: Some input files use unchecked or unsafe operations.
+C:\Dev\Grupo-09\app\controllers\DriverController.java: Some input files use unchecked or unsafe operations.
+Read from stdout: C:\Dev\Grupo-09\app\controllers\DriverController.java: Recompile with -Xlint:unchecked for details.
+C:\Dev\Grupo-09\app\controllers\DriverController.java: Recompile with -Xlint:unchecked for details.
+Total time: 27 s, completed Nov 24, 2015 12:40:48 AM
 > server-post-command-cleanup
 > server-handle-next-server-request
 Done executing sbt server engine, result Right(Exit(0))
@@ -9392,4 +10105,4 @@ Waiting for socket thread
 Waiting for request processor thread
 Waiting for command engine result
 Returning control to sbt launcher with result Exit(0)
-Closing the 15508@USER-HP logs at Mon Oct 05 18:42:51 COT 2015, goodbye.
+Closing the 11880@USER-HP logs at Tue Nov 24 00:40:56 COT 2015, goodbye.

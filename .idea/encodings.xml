@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/app/controllers/MoviBusController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/models/Emergencia.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/models/Vehiculo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/secured/MyDeadboltHandler.java" charset="windows-1252" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

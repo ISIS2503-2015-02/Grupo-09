@@ -5,12 +5,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by USER on 16/08/2015.
  */
 @Entity
-public class User extends Model {
+public class User extends Model{
 
     //------------------------------------------------------------------------
     //Finder
@@ -41,7 +43,6 @@ public class User extends Model {
     public Long id_vcub_alquilada;
 
     public Long id_ultimaReserva;
-
 
     //------------------------------------------------------------------------
     // Constructors

@@ -4,7 +4,7 @@
 		module="grupo-09-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20151015170839"
+		publication="20151124010926"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
